@@ -1,0 +1,35 @@
+# API-only WebWalkerQA + MemEvolve import/runtime dependencies.
+# Versions follow the pinned upstream requirements where possible.
+# Multimodal modules are imported eagerly by FlashOAgents even for WebWalkerQA.
+python-dotenv==1.0.1
+# Bundled mini-swe-agent requires newer GPT-5 support than the top-level
+# upstream requirements. These versions satisfy its own pyproject constraints.
+openai==1.99.9
+huggingface-hub==0.29.3
+PyYAML==6.0.2
+Jinja2==3.1.6
+rich==13.9.4
+json_repair==0.44.1
+tqdm==4.67.1
+requests==2.32.3
+httpx[socks]==0.28.1
+pillow==11.1.0
+pandas==2.2.3
+openpyxl==3.1.5
+biopython==1.85
+python-pptx==1.0.2
+mammoth==1.9.0
+markdownify==1.1.0
+pdfminer.six==20240706
+puremagic==1.30
+pydub==0.25.1
+SpeechRecognition==3.14.1
+beautifulsoup4==4.13.3
+youtube-transcript-api==1.0.2
+litellm==1.75.9
+tenacity==9.1.2
+typer==0.15.2
+prompt_toolkit==3.0.50
+pydantic==2.10.6
+textual>=0.50.0
+pytest==8.3.5

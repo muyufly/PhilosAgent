@@ -1,0 +1,786 @@
+diff --git a/Flash-Searcher-main/EvolveLab/providers/__init__.py b/Flash-Searcher-main/EvolveLab/providers/__init__.py
+index d59de9a..8b9148a 100644
+--- a/Flash-Searcher-main/EvolveLab/providers/__init__.py
++++ b/Flash-Searcher-main/EvolveLab/providers/__init__.py
+@@ -1,10 +1,29 @@
+-"""
+-Memory providers for different frameworks
+-"""
+-
+-from .agent_kb_provider import AgentKBProvider
+-from .skillweaver_provider import SkillWeaverProvider
+-from .mobilee_provider import MobileEProvider
+-from .expel_provider import ExpeLProvider
+-
+-__all__ = ["AgentKBProvider", "SkillWeaverProvider", "MobileEProvider", "ExpeLProvider"]
+\ No newline at end of file
++# Modified for PhiloAgent (2026-10-29): state integration and runtime compatibility.
++"""
++Memory providers for different frameworks
++"""
++
++from importlib import import_module
++
++__all__ = ["AgentKBProvider", "SkillWeaverProvider", "MobileEProvider", "ExpeLProvider"]
++
++_PROVIDER_MODULES = {
++    "AgentKBProvider": ".agent_kb_provider",
++    "SkillWeaverProvider": ".skillweaver_provider",
++    "MobileEProvider": ".mobilee_provider",
++    "ExpeLProvider": ".expel_provider",
++}
++
++
++def __getattr__(name):
++    """Load optional provider dependencies only when that export is requested."""
++    module_name = _PROVIDER_MODULES.get(name)
++    if module_name is None:
++        raise AttributeError(f"module {__name__!r} has no attribute {name!r}")
++    provider = getattr(import_module(module_name, __name__), name)
++    globals()[name] = provider
++    return provider
++
++
++def __dir__():
++    return sorted(set(globals()) | set(__all__))
+diff --git a/Flash-Searcher-main/EvolveLab/providers/lightweight_memory_provider.py b/Flash-Searcher-main/EvolveLab/providers/lightweight_memory_provider.py
+index 2affc35..66de824 100644
+--- a/Flash-Searcher-main/EvolveLab/providers/lightweight_memory_provider.py
++++ b/Flash-Searcher-main/EvolveLab/providers/lightweight_memory_provider.py
+@@ -1,3 +1,4 @@
++# Modified for PhiloAgent (2026-10-29): state integration and runtime compatibility.
+ """
+ Lightweight Memory Provider
+ 
+@@ -997,6 +998,18 @@ Only provide the JSON array, nothing else.
+         
+         try:
+             trajectory_str = json.dumps(trajectory_data.trajectory or [], ensure_ascii=False)
++            # PhiloAgent: expose the current candidate's principles to the native
++            # extractor; no extra LLM call or new memory-selection algorithm.
++            orientation_items = self.config.get("philo_orientation_items", [])
++            orientation_section = ""
++            if orientation_items:
++                orientation_section = (
++                    "\n**Current revisable working principles:**\n"
++                    + "\n".join(f"- {item}" for item in orientation_items)
++                    + "\nUse these as provisional criteria for selecting and generalizing "
++                    "experience. They are not task evidence. Do not copy the principles "
++                    "themselves as learned facts; ground each extracted insight in the trajectory.\n"
++                )
+             
+             prompt = f"""Extract reusable learnings from this successful execution.
+ 
+@@ -1034,7 +1047,7 @@ Example: "When web_search fails, try alternative query phrasings or search terms
+ - Strategic = planning/decisions, Operational = execution/handling
+ - Only valuable insights, skip obvious points
+ - Focus on the agent itself in the trajectory, ignore the guidance content of the memory system
+-
++{orientation_section}
+ **Your Extraction:**"""
+ 
+             response = self._call_llm(prompt)
+diff --git a/Flash-Searcher-main/FlashOAgents/mm_tools.py b/Flash-Searcher-main/FlashOAgents/mm_tools.py
+index 337477b..d4a6699 100644
+--- a/Flash-Searcher-main/FlashOAgents/mm_tools.py
++++ b/Flash-Searcher-main/FlashOAgents/mm_tools.py
+@@ -1,5 +1,6 @@
+ #!/usr/bin/env python
+ # coding=utf-8
++# Modified for PhiloAgent (2026-10-29): state integration and runtime compatibility.
+ # Copyright 2025 The OPPO Inc. Personal AI team. All rights reserved.
+ #
+ # Licensed under the Apache License, Version 2.0 (the "License");
+@@ -41,7 +42,8 @@ from pptx import Presentation
+ import shutil
+ import textwrap
+ 
+-load_dotenv(override=True)
++if not os.environ.get("PHILO_LINEAGE_ROOT"):
++    load_dotenv(override=True)
+ 
+ class VisualInspectorTool(Tool):
+     name = "inspect_file_as_image"
+diff --git a/Flash-Searcher-main/MemEvolve/core/auto_evolver.py b/Flash-Searcher-main/MemEvolve/core/auto_evolver.py
+index dcc3816..689dd01 100644
+--- a/Flash-Searcher-main/MemEvolve/core/auto_evolver.py
++++ b/Flash-Searcher-main/MemEvolve/core/auto_evolver.py
+@@ -1,5 +1,6 @@
+ #!/usr/bin/env python
+ # coding=utf-8
++# Modified for PhiloAgent (2026-10-29): state integration and runtime compatibility.
+ 
+ """
+ AutoEvolver
+@@ -168,7 +169,8 @@ class AutoEvolver:
+         if checkpoint_file.exists():
+             checkpoint_file.unlink()
+ 
+-    def _run_memory_evolver(self, round_dir: Path, checkpoint: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
++    def _run_memory_evolver(self, round_dir: Path, checkpoint: Optional[Dict[str, Any]] = None,
++                           current_provider: Optional[str] = None) -> Dict[str, Any]:
+         """
+         Run memory evolution pipeline with checkpoint support.
+         
+@@ -183,11 +185,27 @@ class AutoEvolver:
+         
+         Returns dict with keys: analysis, generation, creation, validation, validated_systems
+         """
++        parent_provider = current_provider or self.state.get("best_provider", self.default_provider)
++        if checkpoint and checkpoint.get("parent_provider", parent_provider) != parent_provider:
++            raise ValueError("Checkpoint parent provider does not match the current round parent")
++        if os.getenv("PHILO_LINEAGE_ROOT"):
++            from philoagent.orientation import env_context
++            parent_snapshot = env_context(parent_provider)
++            if (checkpoint and checkpoint.get("parent_orientation_sha256", parent_snapshot.sha256)
++                    != parent_snapshot.sha256):
++                raise ValueError("Checkpoint orientation does not match the current parent snapshot")
++
+         evolver = MemoryEvolver(
+             work_dir=str(round_dir),
+             analysis_model_id=self.analysis_model_id,
+             gen_model_id=self.gen_model_id,
+         )
++        # Generation reads its template from the saved analysis state. Keep this
++        # binding correct even when analysis is skipped after a checkpoint/retry.
++        analysis_state = evolver.state.setdefault("phases", {}).setdefault("analyze", {})
++        analysis_matches_parent = analysis_state.get("default_provider") == parent_provider
++        analysis_state["default_provider"] = parent_provider
++        evolver._save_state()
+         
+         result = {
+             "analysis": None,
+@@ -212,7 +230,7 @@ class AutoEvolver:
+                 print(f"[CLI Fix Detected] Found {len(validated_from_state)} validated systems from manual CLI commands")
+         
+         # Use the union of both (prefer CLI state as it's more recent)
+-        all_validated = list(set(validated_from_checkpoint + validated_from_state))
++        all_validated = list(dict.fromkeys(validated_from_checkpoint + validated_from_state))
+         if all_validated:
+             existing_count = len(all_validated)
+             systems_to_generate = max(0, self.num_systems - existing_count)
+@@ -252,23 +270,24 @@ class AutoEvolver:
+         # PHASE 1: Generation - Generate all systems first
+         # ===================================================================
+         print(f"\n{'='*70}")
+-        print(f"[PHASE 1: GENERATION] Generating {systems_to_generate - start_idx} system(s)")
++        print(f"[PHASE 1: GENERATION] Generating {self.num_systems - start_idx} system(s)")
+         print(f"{'='*70}")
+         
+-        for system_idx in range(start_idx, systems_to_generate):
++        for system_idx in range(start_idx, self.num_systems):
+             print(f"\n[Generation] System {system_idx + 1}/{self.num_systems}")
+             
+             # Analysis (only if not already done or if checkpoint says to skip)
+             if system_idx == 0:
+                 # First system: run analysis
+-                if checkpoint and checkpoint.get("evolution_completed", {}).get("analysis"):
++                if (checkpoint and checkpoint.get("evolution_completed", {}).get("analysis")
++                        and analysis_matches_parent):
+                     print(f"[Checkpoint] Skipping analysis (already completed)")
+                     result["analysis"] = checkpoint.get("evolution_results", {}).get("analysis", {"success": True})
+                 else:
+                     try:
+                         result["analysis"] = evolver.analyze(
+                             task_logs_dir=str(round_dir / "base_logs"),
+-                            default_provider=self.default_provider,
++                            default_provider=parent_provider,
+                         )
+                         if not result["analysis"].get("success"):
+                             print(f"Warning: Analysis failed, continuing with limited info")
+@@ -281,7 +300,7 @@ class AutoEvolver:
+                 try:
+                     result["analysis"] = evolver.analyze(
+                         task_logs_dir=str(round_dir / "base_logs"),
+-                        default_provider=self.default_provider,
++                        default_provider=parent_provider,
+                     )
+                     if not result["analysis"].get("success"):
+                         print(f"Warning: Analysis failed, continuing with limited info")
+@@ -298,6 +317,12 @@ class AutoEvolver:
+                 print(f"[Checkpoint] System {system_idx + 1} already generated: {gen_config_path.name}")
+                 with open(gen_config_path, 'r', encoding='utf-8') as f:
+                     gen_config = json.load(f)
++                recorded_parent = gen_config.get("_generation_metadata", {}).get("parent_provider")
++                if recorded_parent is not None and recorded_parent != parent_provider:
++                    raise ValueError("Saved generated candidate refers to a different parent provider")
++                if os.getenv("PHILO_LINEAGE_ROOT"):
++                    if gen_config.get("_orientation_parent", {}).get("snapshot") != parent_snapshot.to_dict():
++                        raise ValueError("Saved generated candidate refers to a different orientation snapshot")
+                 gen_result = {
+                     "success": True,
+                     "config_path": str(gen_config_path),
+@@ -808,6 +833,18 @@ class AutoEvolver:
+             checkpoint = self._load_checkpoint(r)
+             if checkpoint:
+                 print(f"[Checkpoint] Resuming round {r} from checkpoint")
++            checkpoint = checkpoint or {}
++            if checkpoint.get("parent_provider", current_provider) != current_provider:
++                raise ValueError("Checkpoint parent provider does not match evolve_state.json")
++            checkpoint["parent_provider"] = current_provider
++            if os.getenv("PHILO_LINEAGE_ROOT"):
++                from philoagent.orientation import env_context
++                parent_snapshot = env_context(current_provider)
++                expected_hash = checkpoint.get("parent_orientation_sha256", self.state.get("best_orientation_sha256"))
++                if expected_hash is not None and expected_hash != parent_snapshot.sha256:
++                    raise ValueError("Saved round state does not match its parent orientation snapshot")
++                checkpoint["parent_orientation_sha256"] = parent_snapshot.sha256
++            self._save_checkpoint(r, checkpoint)
+             
+             try:
+                 # Step 0: Rename base provider storage for fair evolution
+@@ -862,7 +899,7 @@ class AutoEvolver:
+                 if checkpoint and checkpoint.get("step_completed", 0) >= 2:
+                     print(f"[Checkpoint] Step 2 marked complete, checking for updates...")
+                     # Even if step 2 is complete, check for CLI manual fixes
+-                    evolution = self._run_memory_evolver(round_dir, checkpoint)
++                    evolution = self._run_memory_evolver(round_dir, checkpoint, current_provider)
+                     validated_systems = evolution.get("validated_systems", [])
+                     
+                     # If validated_systems changed (due to CLI fixes), update checkpoint
+@@ -877,7 +914,7 @@ class AutoEvolver:
+                         self._save_checkpoint(r, checkpoint)
+                 else:
+                     print(f"\nStep 2: Evolving memory systems")
+-                    evolution = self._run_memory_evolver(round_dir, checkpoint)
++                    evolution = self._run_memory_evolver(round_dir, checkpoint, current_provider)
+                     validated_systems = evolution.get("validated_systems", [])
+                     
+                     checkpoint = checkpoint or {}
+@@ -968,6 +1005,12 @@ class AutoEvolver:
+                     "best_provider_after": winner,
+                     "dataset_cursor_after": dataset_cursor,
+                 }
++                winner_snapshot = None
++                if os.getenv("PHILO_LINEAGE_ROOT"):
++                    from philoagent.orientation import env_context, assert_unchanged
++                    assert_unchanged(parent_snapshot)
++                    winner_snapshot = env_context(winner)
++                    summary["winner_orientation_snapshot"] = winner_snapshot.to_dict()
+                 history.append(summary)
+ 
+                 # Save round summary
+@@ -982,6 +1025,8 @@ class AutoEvolver:
+                     "dataset_cursor": dataset_cursor,
+                     "best_provider": current_provider,
+                 })
++                if winner_snapshot is not None:
++                    self.state["best_orientation_sha256"] = winner_snapshot.sha256
+                 self.state["history"].append({
+                     "round": r,
+                     "winner": winner,
+@@ -1004,4 +1049,4 @@ class AutoEvolver:
+         with open(history_path, "w", encoding="utf-8") as f:
+             json.dump(history, f, indent=2, ensure_ascii=False)
+ 
+-        return {"history_path": str(history_path), "rounds": len(history), "history": history}
+\ No newline at end of file
++        return {"history_path": str(history_path), "rounds": len(history), "history": history}
+diff --git a/Flash-Searcher-main/MemEvolve/core/memory_evolver.py b/Flash-Searcher-main/MemEvolve/core/memory_evolver.py
+index b5c1526..80b0d38 100644
+--- a/Flash-Searcher-main/MemEvolve/core/memory_evolver.py
++++ b/Flash-Searcher-main/MemEvolve/core/memory_evolver.py
+@@ -1,5 +1,6 @@
+ #!/usr/bin/env python
+ # coding=utf-8
++# Modified for PhiloAgent (2026-10-29): state integration and runtime compatibility.
+ 
+ """
+ Memory Evolution Engine
+@@ -21,7 +22,8 @@ from ..phases.phase_generator import PhaseGenerator
+ from ..phases.phase_validator import PhaseValidator
+ from ..config import ANALYSIS_MAX_STEPS, CREATIVITY_INDEX
+ 
+-load_dotenv(override=True)
++if not os.environ.get("PHILO_LINEAGE_ROOT"):
++    load_dotenv(override=True)
+ 
+ 
+ class MemoryEvolver:
+diff --git a/Flash-Searcher-main/MemEvolve/phases/memory_creator.py b/Flash-Searcher-main/MemEvolve/phases/memory_creator.py
+index 0007e3f..f2ce4cb 100644
+--- a/Flash-Searcher-main/MemEvolve/phases/memory_creator.py
++++ b/Flash-Searcher-main/MemEvolve/phases/memory_creator.py
+@@ -1,11 +1,13 @@
+ #!/usr/bin/env python3
+ """
++# Modified for PhiloAgent (2026-10-29): state integration and runtime compatibility.
+ Memory System Creator
+ 
+ Tool class for safely creating new memory systems
+ """
+ 
+ import json
++import os
+ import re
+ from pathlib import Path
+ from typing import Dict, Any, Tuple
+@@ -14,6 +16,40 @@ from typing import Dict, Any, Tuple
+ class MemorySystemCreator:
+     """Tool class for safely creating new memory systems"""
+ 
++    @staticmethod
++    def _create_orientation_state(memory_system_config: Dict[str, Any], provider_name: str,
++                                  config_updates: Dict[str, Any]):
++        """Materialize an optional candidate state from its recorded parent snapshot."""
++        import ast
++
++        parent = memory_system_config.get("_orientation_parent")
++        lineage_root = os.getenv("PHILO_LINEAGE_ROOT")
++        has_items = "orientation_items" in memory_system_config
++        items = memory_system_config.get("orientation_items")
++        if "orientation_items" in config_updates:
++            if has_items:
++                raise ValueError("orientation_items supplied twice")
++            has_items = True
++            items = config_updates.pop("orientation_items")
++            if isinstance(items, str):
++                try:
++                    items = json.loads(items)
++                except json.JSONDecodeError:
++                    items = ast.literal_eval(items)
++
++        if not parent and not lineage_root and not has_items:
++            return None  # Original upstream commands remain usable without the adapter.
++        if not lineage_root or not parent:
++            raise ValueError("Orientation creation requires PHILO_LINEAGE_ROOT and a recorded parent snapshot")
++        if Path(parent["lineage_root"]).resolve() != Path(lineage_root).resolve():
++            raise ValueError("Generated orientation belongs to a different lineage root")
++        if has_items and (not isinstance(items, list) or not all(isinstance(x, str) for x in items)):
++            raise ValueError("orientation_items must be a list of strings")
++
++        from philoagent.orientation import fork_from_snapshot
++        kwargs = {"orientation_items": items} if has_items else {}
++        return fork_from_snapshot(lineage_root, parent["snapshot"], provider_name, **kwargs)
++
+     @staticmethod
+     def _normalize_config_key(key: str) -> str:
+         """
+@@ -93,7 +129,7 @@ class MemorySystemCreator:
+                     return {"success": False, "error": f"Missing required key: {key}"}
+ 
+             provider_info = memory_system_config["provider_code"]
+-            config_updates = memory_system_config["config_updates"]
++            config_updates = dict(memory_system_config["config_updates"])
+             memory_type_info = memory_system_config["memory_type_info"]
+ 
+             # Validate provider_code format
+@@ -110,7 +146,21 @@ class MemorySystemCreator:
+             # 1. Create provider file
+             provider_path = base_path / f"EvolveLab/providers/{provider_info['module_name']}.py"
+             if provider_path.exists():
+-                return {"success": False, "error": f"Provider file {provider_path} already exists"}
++                # A resumed adapter creation may have written code before a later
++                # registration step failed. Only identical code is safe to reuse.
++                if (not memory_system_config.get("_orientation_parent") or
++                        provider_path.read_text(encoding="utf-8") != provider_info["code"]):
++                    return {"success": False, "error": f"Provider file {provider_path} already exists"}
++
++            validation_result = MemorySystemCreator._validate_config_updates(config_updates)
++            if not validation_result["success"]:
++                return {"success": False, "error": "Configuration validation failed",
++                        "validation_errors": validation_result["errors"]}
++            orientation_path = MemorySystemCreator._create_orientation_state(
++                memory_system_config, memory_type_info["enum_value"], config_updates
++            )
++            if orientation_path is not None:
++                results["orientation_path"] = str(orientation_path)
+ 
+             # Ensure directory exists
+             provider_path.parent.mkdir(parents=True, exist_ok=True)
+diff --git a/Flash-Searcher-main/MemEvolve/phases/phase_analyzer.py b/Flash-Searcher-main/MemEvolve/phases/phase_analyzer.py
+index 6bd8bea..7885aa1 100644
+--- a/Flash-Searcher-main/MemEvolve/phases/phase_analyzer.py
++++ b/Flash-Searcher-main/MemEvolve/phases/phase_analyzer.py
+@@ -1,5 +1,6 @@
+ #!/usr/bin/env python
+ # coding=utf-8
++# Modified for PhiloAgent (2026-10-29): state integration and runtime compatibility.
+ 
+ """
+ Phase 1: Analysis phase for memory evolution
+@@ -7,6 +8,7 @@ Analyzes task trajectories to identify memory system issues
+ """
+ 
+ import json
++import os
+ import yaml
+ from datetime import datetime
+ from pathlib import Path
+@@ -81,14 +83,21 @@ class PhaseAnalyzer:
+         # Run analysis
+         print(f"[Analyze] Running AnalysisAgent...")
+         result = analysis_agent(prompt)
++        orientation_snapshot = getattr(self, "_orientation_snapshot", None)
++        if orientation_snapshot is not None:
++            from philoagent.orientation import assert_unchanged
++            assert_unchanged(orientation_snapshot)
+         
+         print(f"[Analyze] Analysis complete")
+         
+-        return {
++        response = {
+             "success": True,
+             "agent_result": result,
+             "stats": stats
+         }
++        if orientation_snapshot is not None:
++            response["orientation_snapshot"] = orientation_snapshot.to_dict()
++        return response
+     
+     def _collect_task_stats(self, task_logs_dir: Path) -> Dict:
+         """
+@@ -334,4 +343,16 @@ Below is an example provider for reference. You should implement your own innova
+             total_tasks=stats['total_tasks'],
+             overview=overview
+         )
++        self._orientation_snapshot = None
++        if os.getenv("PHILO_LINEAGE_ROOT"):
++            from philoagent.orientation import env_context
++            self._orientation_snapshot = env_context(default_provider)
++            prompt += (
++                "\n\n### Current inherited orientation state\n"
++                "This is the current parent's mutable orientation, not a fixed seed. "
++                "An empty list means no current orientation. Consider its usefulness "
++                "alongside the observed task evidence; it may be retained, revised, or removed "
++                "during candidate generation. Do not modify lineage files during analysis.\n"
++                + json.dumps(self._orientation_snapshot.to_dict(), ensure_ascii=False)
++            )
+         return prompt
+diff --git a/Flash-Searcher-main/MemEvolve/phases/phase_generator.py b/Flash-Searcher-main/MemEvolve/phases/phase_generator.py
+index c64cbe1..d83a94e 100644
+--- a/Flash-Searcher-main/MemEvolve/phases/phase_generator.py
++++ b/Flash-Searcher-main/MemEvolve/phases/phase_generator.py
+@@ -1,5 +1,6 @@
+ #!/usr/bin/env python
+ # coding=utf-8
++# Modified for PhiloAgent (2026-10-29): state integration and runtime compatibility.
+ 
+ """
+ Phase 2: Generation phase for memory evolution
+@@ -7,6 +8,7 @@ Generates new memory system configurations based on analysis
+ """
+ 
+ import json
++import ast
+ import os
+ import re
+ import yaml
+@@ -83,6 +85,10 @@ class PhaseGenerator:
+         prompt = self._build_generation_prompt(
+             analysis_text, memory_types_ref, creativity_index
+         )
++        orientation_snapshot = getattr(self, "_orientation_snapshot", None)
++        if orientation_snapshot is not None:
++            if analysis_data.get("orientation_snapshot") != orientation_snapshot.to_dict():
++                raise ValueError("Analysis orientation snapshot is missing or differs from the current parent; rerun analysis")
+         
+         config = self._generate_single_system(prompt, creativity_index)
+         if not config:
+@@ -235,6 +241,32 @@ Below is an example provider for reference. You should implement your own innova
+         # Insert existing systems warning at the beginning of the prompt
+         if existing_systems_section:
+             prompt = existing_systems_section + "\n" + prompt
++
++        self._orientation_snapshot = None
++        if os.getenv("PHILO_LINEAGE_ROOT"):
++            from philoagent.orientation import env_context
++            self._orientation_snapshot = env_context(self.default_provider)
++            prompt += (
++                "\n\n### Current inherited orientation state\n"
++                + json.dumps(self._orientation_snapshot.to_dict(), ensure_ascii=False)
++                + "\nThis is the current parent state, not an immutable seed. You may retain, "
++                "revise, or remove it based on the analysis. In the Configuration section, "
++                "optionally emit **orientation_items**: followed by a single-line JSON list "
++                "of strings. Omit the field to inherit the current items unchanged; [] "
++                "explicitly removes all orientation. Do not put this field in provider code. "
++                "The shared adapter supplies the current orientation as BEGIN text memory. "
++                "It also supplies config['philo_orientation_items'] (the current list) and "
++                "config['philo_orientation_sha256'] (its snapshot identity). The same items "
++                "are available as request.additional_params['philo_orientation_items'] and "
++                "trajectory_data.metadata['philo_orientation_items']. Memory extraction "
++                "should consult these current criteria without copying them into learned "
++                "task facts or hardcoding seed text. You may revise how retrieval, extraction, "
++                "or management uses the criteria; an empty list supplies no criteria. "
++                "Provider code must not write, reset, or reseed lineage orientation; it is "
++                "frozen during task execution and changes only at candidate creation. "
++                "You may still change the provider's retrieval, ingestion, storage, and "
++                "management implementation through the normal generated code.\n"
++            )
+         
+         return prompt
+     
+@@ -289,8 +321,17 @@ Below is an example provider for reference. You should implement your own innova
+                 config["_generation_metadata"] = {
+                     "temperature": temperature,
+                     "model_id": self.model_id,
+-                    "timestamp": timestamp
++                    "timestamp": timestamp,
++                    "parent_provider": self.default_provider,
+                 }
++                orientation_snapshot = getattr(self, "_orientation_snapshot", None)
++                if orientation_snapshot is not None:
++                    from philoagent.orientation import assert_unchanged
++                    assert_unchanged(orientation_snapshot)
++                    config["_orientation_parent"] = {
++                        "lineage_root": str(orientation_snapshot.path.parent.parent.resolve()),
++                        "snapshot": orientation_snapshot.to_dict(),
++                    }
+                 print(f"  Successfully parsed system (temperature={temperature:.2f})")
+                 return config
+             else:
+@@ -366,7 +407,7 @@ Below is an example provider for reference. You should implement your own innova
+             
+             print(f"  Successfully parsed: {len(config_updates)} config parameters")
+             
+-            return {
++            config = {
+                 "provider_code": {
+                     "class_name": class_name,
+                     "module_name": module_name,
+@@ -378,6 +419,18 @@ Below is an example provider for reference. You should implement your own innova
+                     "enum_value": enum_value
+                 }
+             }
++            if "orientation_items" in config_updates:
++                raw_items = config_updates.pop("orientation_items")
++                try:
++                    orientation_items = json.loads(raw_items)
++                except json.JSONDecodeError:
++                    orientation_items = ast.literal_eval(raw_items)
++                if not isinstance(orientation_items, list) or not all(
++                    isinstance(item, str) for item in orientation_items
++                ):
++                    raise ValueError("orientation_items must be a list of strings")
++                config["orientation_items"] = orientation_items
++            return config
+             
+         except Exception as e:
+             print(f"  Parse error: {e}")
+diff --git a/Flash-Searcher-main/MemEvolve/phases/phase_validator.py b/Flash-Searcher-main/MemEvolve/phases/phase_validator.py
+index 88564a5..e78a4fa 100644
+--- a/Flash-Searcher-main/MemEvolve/phases/phase_validator.py
++++ b/Flash-Searcher-main/MemEvolve/phases/phase_validator.py
+@@ -1,5 +1,6 @@
+ #!/usr/bin/env python
+ # coding=utf-8
++# Modified for PhiloAgent (2026-10-29): state integration and runtime compatibility.
+ 
+ """
+ Phase 4: Validation phase for memory evolution
+@@ -22,7 +23,8 @@ from dotenv import load_dotenv
+ from ..config import DEFAULT_DATASETS, IMPORT_TIMEOUT_SEC
+ from ..validators.swe_agent_validator import SWEAgentValidator
+ 
+-load_dotenv(override=True)
++if not os.environ.get("PHILO_LINEAGE_ROOT"):
++    load_dotenv(override=True)
+ 
+ 
+ class PhaseValidator:
+@@ -440,7 +442,7 @@ class PhaseValidator:
+             sys.path = [p for p in sys.path if not p.startswith(main_codebase)]
+             
+             sys.path.insert(0, isolated_env_abs)
+-            os.environ["PYTHONPATH"] = f"{isolated_env_abs}:{original_pythonpath}"
++            os.environ["PYTHONPATH"] = os.pathsep.join(filter(None, [isolated_env_abs, original_pythonpath]))
+             
+             print(f"    [Simulation] Creating model instance...")
+             try:
+diff --git a/Flash-Searcher-main/MemEvolve/utils/run_provider.py b/Flash-Searcher-main/MemEvolve/utils/run_provider.py
+index 6c9cebe..da2a821 100644
+--- a/Flash-Searcher-main/MemEvolve/utils/run_provider.py
++++ b/Flash-Searcher-main/MemEvolve/utils/run_provider.py
+@@ -1,5 +1,6 @@
+ #!/usr/bin/env python
+ # coding=utf-8
++# Modified for PhiloAgent (2026-10-29): state integration and runtime compatibility.
+ 
+ """
+ run_provider for AutoEvolver.
+@@ -46,7 +47,7 @@ def run_provider(dataset_name: str, provider_name: str, task_indices: List[int],
+         raise FileNotFoundError(f"Runner script not found: {runner_path}")
+     
+     cmd = [
+-        "python",
++        sys.executable,
+         str(runner_path),
+         "--infile",
+         str(dataset_file),
+diff --git a/Flash-Searcher-main/base_agent.py b/Flash-Searcher-main/base_agent.py
+index 146ab1c..76d458e 100644
+--- a/Flash-Searcher-main/base_agent.py
++++ b/Flash-Searcher-main/base_agent.py
+@@ -1,5 +1,6 @@
+ #!/usr/bin/env python
+ # coding=utf-8
++# Modified for PhiloAgent (2026-10-29): state integration and runtime compatibility.
+ # Copyright 2025 The OPPO Inc. PersonalAI team. All rights reserved.
+ #
+ # Licensed under the Apache License, Version 2.0 (the "License");
+@@ -14,6 +15,7 @@
+ # See the License for the specific language governing permissions and
+ # limitations under the License.
+ 
++import os
+ from dotenv import load_dotenv
+ from utils import safe_json_loads
+ 
+@@ -21,7 +23,8 @@ from FlashOAgents import ToolCallingAgent
+ from FlashOAgents import ActionStep, PlanningStep, TaskStep, SummaryStep
+ from FlashOAgents import WebSearchTool, CrawlPageTool, VisualInspectorTool, AudioInspectorTool, TextInspectorTool
+ 
+-load_dotenv(override=True)
++if not os.environ.get("PHILO_LINEAGE_ROOT"):
++    load_dotenv(override=True)
+ 
+ class BaseAgent:
+     def __init__(self, model):
+@@ -173,4 +176,4 @@ class ReviewAgent(BaseAgent):
+             max_steps=max_steps,
+             prompts_type=prompts_type,
+             memory_provider=None
+-        )
+\ No newline at end of file
++        )
+diff --git a/Flash-Searcher-main/evolve_cli.py b/Flash-Searcher-main/evolve_cli.py
+index 3c81036..8462f88 100644
+--- a/Flash-Searcher-main/evolve_cli.py
++++ b/Flash-Searcher-main/evolve_cli.py
+@@ -1,5 +1,6 @@
+ #!/usr/bin/env python
+ # coding=utf-8
++# Modified for PhiloAgent (2026-10-29): state integration and runtime compatibility.
+ 
+ """
+ MemEvolve Command-Line Interface
+@@ -7,13 +8,15 @@ Provides commands for memory system evolution workflow
+ """
+ 
+ import argparse
++import os
+ import json
+ import sys
+ from pathlib import Path
+ 
+ from dotenv import load_dotenv
+ 
+-load_dotenv(override=True)
++if not os.environ.get("PHILO_LINEAGE_ROOT"):
++    load_dotenv(override=True)
+ 
+ 
+ def cmd_analyze(args):
+diff --git a/Flash-Searcher-main/mini-swe-agent/src/minisweagent/agents/interactive.py b/Flash-Searcher-main/mini-swe-agent/src/minisweagent/agents/interactive.py
+index c808734..1f94e09 100644
+--- a/Flash-Searcher-main/mini-swe-agent/src/minisweagent/agents/interactive.py
++++ b/Flash-Searcher-main/mini-swe-agent/src/minisweagent/agents/interactive.py
+@@ -1,3 +1,4 @@
++# Modified for PhiloAgent (2026-10-29): state integration and runtime compatibility.
+ """A small generalization of the default agent that puts the user in the loop.
+ 
+ There are three modes:
+@@ -19,7 +20,8 @@ from minisweagent import global_config_dir
+ from minisweagent.agents.default import AgentConfig, DefaultAgent, LimitsExceeded, NonTerminatingException, Submitted
+ 
+ console = Console(highlight=False)
+-prompt_session = PromptSession(history=FileHistory(global_config_dir / "interactive_history.txt"))
++# PhiloAgent: headless auto-repair must not create a Windows console at import.
++prompt_session = None
+ 
+ 
+ @dataclass
+@@ -117,6 +119,9 @@ class InteractiveAgent(DefaultAgent):
+ 
+     def _prompt_and_handle_special(self, prompt: str) -> str:
+         """Prompts the user, takes care of /h (followed by requery) and sets the mode. Returns the user input."""
++        global prompt_session
++        if prompt_session is None:
++            prompt_session = PromptSession(history=FileHistory(global_config_dir / "interactive_history.txt"))
+         console.print(prompt, end="")
+         user_input = prompt_session.prompt("")
+         if user_input == "/h":
+diff --git a/Flash-Searcher-main/run_flash_searcher_webwalkerqa.py b/Flash-Searcher-main/run_flash_searcher_webwalkerqa.py
+index 65b7053..0df7257 100644
+--- a/Flash-Searcher-main/run_flash_searcher_webwalkerqa.py
++++ b/Flash-Searcher-main/run_flash_searcher_webwalkerqa.py
+@@ -1,5 +1,6 @@
+ #!/usr/bin/env python
+ # coding=utf-8
++# Modified for PhiloAgent (2026-10-29): state integration and runtime compatibility.
+ # Copyright 2025 The OPPO Inc. PersonalAI team. All rights reserved.
+ #
+ # Licensed under the Apache License, Version 2.0 (the "License");
+@@ -26,6 +27,8 @@ from dotenv import load_dotenv
+ from concurrent.futures import ThreadPoolExecutor, as_completed
+ from datetime import datetime
+ import uuid
++import hashlib
++from pathlib import Path
+ from FlashOAgents import OpenAIServerModel
+ from base_agent import SearchAgent
+ from utils import read_jsonl, write_jsonl
+@@ -45,7 +48,8 @@ logging.basicConfig(
+ )
+ logger = logging.getLogger(__name__)
+ 
+-load_dotenv(override=True)
++if not os.environ.get("PHILO_LINEAGE_ROOT"):
++    load_dotenv(override=True)
+ 
+ 
+ def judge_webwalkerqa_answer(question, golden_answer, pred_answer, model="gpt-5-mini"):
+@@ -196,10 +200,14 @@ def load_memory_provider(memory_type_str, model=None):
+         memory_type = MemoryType(memory_type_str)
+     except ValueError:
+         logger.error(f"Invalid memory type: {memory_type_str}")
++        if os.environ.get("PHILO_LINEAGE_ROOT"):
++            raise
+         return None
+     
+     if memory_type not in PROVIDER_MAPPING:
+         logger.error(f"Memory type {memory_type_str} not found in PROVIDER_MAPPING")
++        if os.environ.get("PHILO_LINEAGE_ROOT"):
++            raise ValueError(f"Unregistered experimental memory provider: {memory_type_str}")
+         return None
+     
+     try:
+@@ -207,15 +215,28 @@ def load_memory_provider(memory_type_str, model=None):
+         module = __import__(f"EvolveLab.providers.{module_name}", fromlist=[class_name])
+         provider_class = getattr(module, class_name)
+         config = get_memory_config(memory_type)
++        orientation_snapshot = None
++        if os.environ.get("PHILO_LINEAGE_ROOT"):
++            from philoagent.runtime import configure_provider
++            config, orientation_snapshot = configure_provider(memory_type_str, config)
++            # Save the first imported version; never relabel cached code with a
++            # later on-disk hash. The wrapper checks it before/after each call.
++            if not hasattr(module, "_philo_loaded_code_sha256"):
++                module._philo_loaded_code_sha256 = hashlib.sha256(Path(module.__file__).read_bytes()).hexdigest()
+         if model is not None:
+             try:
+                 config["model"] = model
+             except Exception:
+                 pass
+         provider = provider_class(config=config)
++        if orientation_snapshot is not None:
++            from philoagent.runtime import OrientedProvider
++            provider = OrientedProvider(provider, orientation_snapshot, module.__file__, module._philo_loaded_code_sha256)
+         
+         if not provider.initialize():
+             logger.error(f"Failed to initialize memory provider: {memory_type_str}")
++            if os.environ.get("PHILO_LINEAGE_ROOT"):
++                raise RuntimeError(f"Failed to initialize experimental provider: {memory_type_str}")
+             return None
+         
+         logger.info(f"Memory provider loaded: {memory_type_str}")
+@@ -224,6 +245,9 @@ def load_memory_provider(memory_type_str, model=None):
+         logger.error(f"Failed to load memory provider {memory_type_str}: {e}")
+         import traceback
+         traceback.print_exc()
++        if os.environ.get("PHILO_LINEAGE_ROOT"):
++            # An experimental run must not silently turn into a memory-free run.
++            raise
+         return None
+ 
+ 

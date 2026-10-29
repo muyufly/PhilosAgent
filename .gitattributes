@@ -1,0 +1,8 @@
+* text=auto eol=lf
+*.png -text
+*.jpg -text
+*.jpeg -text
+*.gif -text
+*.pdf -text
+# Keep the recorded patch SHA-256 identical on Windows and Unix.
+*.patch -text

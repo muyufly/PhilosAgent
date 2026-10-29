@@ -1,0 +1,16 @@
+{
+  "repository": "https://github.com/bingreeky/MemEvolve.git",
+  "commit": "6035d5659d7a092dbfa6a87b1a32a3cee652ba54",
+  "license": "Apache-2.0; bundled mini-swe-agent MIT",
+  "local_changes_patch": "MemEvolve.philoagent.patch",
+  "patch_sha256": "f86c5a5d01b7489b0d46dbefd3c8f4705425971144de73e9b911201ffc26a20a",
+  "distribution": "vendored source snapshot",
+  "excluded": [
+    "Git metadata",
+    "model caches",
+    "runtime state",
+    "local credentials",
+    "downloaded datasets",
+    "editor metadata"
+  ]
+}

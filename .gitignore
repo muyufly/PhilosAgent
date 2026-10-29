@@ -1,0 +1,26 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+.env
+.env.*
+!.env.example
+/runs/
+/data/
+/tmp/
+.DS_Store
+.cursor/
+
+# Upstream contains model downloads and runtime state; retain only helper code.
+/vendor/MemEvolve/Flash-Searcher-main/storage/*
+!/vendor/MemEvolve/Flash-Searcher-main/storage/tools/
+
+# Keep the upstream dataset instructions/sampler, not downloaded task data.
+/vendor/MemEvolve/Flash-Searcher-main/data/*
+!/vendor/MemEvolve/Flash-Searcher-main/data/gaia/
+!/vendor/MemEvolve/Flash-Searcher-main/data/webwalkerqa/
+/vendor/MemEvolve/Flash-Searcher-main/data/gaia/*
+!/vendor/MemEvolve/Flash-Searcher-main/data/gaia/README.md
+/vendor/MemEvolve/Flash-Searcher-main/data/webwalkerqa/*
+!/vendor/MemEvolve/Flash-Searcher-main/data/webwalkerqa/sample_webwalkerqa.py
