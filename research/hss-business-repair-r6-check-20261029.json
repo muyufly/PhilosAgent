@@ -1,0 +1,279 @@
+{
+  "recorded_utc": "2026-10-29T12:39:56.571195+00:00",
+  "kind": "candidate_collision_repair_verification",
+  "user_observation_time_hkt": "2026-10-29 20:12",
+  "adapter_revision": "repair-r6",
+  "protocol_revision": "repair-r4",
+  "source_hash_matches_freeze": true,
+  "upstream_hash_matches_freeze": true,
+  "tests": {
+    "full": {
+      "passed": 425,
+      "failed": 0
+    },
+    "focused": {
+      "passed": 31,
+      "failed": 0
+    }
+  },
+  "root_cause": [
+    "two_different_pending_candidates_reused_all_provider_identifiers",
+    "native_creation_returned_success_with_empty_created_list"
+  ],
+  "target": {
+    "job_id": "business-native-r1",
+    "status": "running",
+    "pid": 21768,
+    "process_owned": true,
+    "loaded_revision": "repair-r6",
+    "created": {
+      "created": [
+        "covenant_memory_hss_981b56bc6b12",
+        "covenant_memory"
+      ],
+      "failed": []
+    },
+    "validated": {
+      "validated": [
+        "covenant_memory_hss_981b56bc6b12",
+        "covenant_memory"
+      ],
+      "failed": []
+    },
+    "checkpoint_step_completed": 2,
+    "new_provider_file_exists": true,
+    "first_provider_source_unchanged": true,
+    "first_generated_config_unchanged": true
+  },
+  "offline_recovery": {
+    "original_attempt": 1742,
+    "original_attempt_usage": {
+      "prompt_tokens": 23147,
+      "completion_tokens": 28179,
+      "total_tokens": 51326
+    },
+    "original_provider": "covenant_memory",
+    "repaired_provider": "covenant_memory_hss_981b56bc6b12",
+    "new_model_requests": 0,
+    "generated_code_executed": false,
+    "native_creation_and_validation_required": true
+  },
+  "namespace_projection": {
+    "method": "deterministic_namespace_projection",
+    "collisions": [
+      "class_name",
+      "module_name",
+      "enum_name",
+      "enum_value",
+      "storage_namespace"
+    ],
+    "identifier_map": {
+      "class_name": {
+        "before": "CovenantMemoryProvider",
+        "after": "CovenantMemoryProvider_hss_981b56bc6b12"
+      },
+      "module_name": {
+        "before": "covenant_memory_provider",
+        "after": "covenant_memory_provider_hss_981b56bc6b12"
+      },
+      "enum_name": {
+        "before": "COVENANT_MEMORY",
+        "after": "COVENANT_MEMORY_hss_981b56bc6b12"
+      },
+      "enum_value": {
+        "before": "covenant_memory",
+        "after": "covenant_memory_hss_981b56bc6b12"
+      }
+    },
+    "storage_namespace_map": {
+      "covenant_memory": "covenant_memory_hss_981b56bc6b12"
+    },
+    "pending_config_sources": [
+      "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01\\jobs\\business-native-r1\\evolution\\round_00\\generated_system_1.json"
+    ],
+    "original_code_sha256": "57d09793bcb10ebedc1847cd2dde68de376427b806992ccc603e2aa2de64db2f",
+    "projected_code_sha256": "064543739a47e62bde772c955bd85575b46670463242318fba242ec7b30c6f96",
+    "algorithm_ast_preserved_under_inverse_namespace_map": true,
+    "orientation_unchanged": true
+  },
+  "resumed_requests": [
+    {
+      "attempt": 2707,
+      "role": "analysis",
+      "status": "success",
+      "usage": {
+        "prompt_tokens": 40747,
+        "completion_tokens": 317,
+        "total_tokens": 41064
+      }
+    },
+    {
+      "attempt": 2709,
+      "role": "analysis",
+      "status": "success",
+      "usage": {
+        "prompt_tokens": 71119,
+        "completion_tokens": 688,
+        "total_tokens": 71807
+      }
+    },
+    {
+      "attempt": 2711,
+      "role": "analysis",
+      "status": "success",
+      "usage": {
+        "prompt_tokens": 177484,
+        "completion_tokens": 2378,
+        "total_tokens": 179862
+      }
+    },
+    {
+      "attempt": 2723,
+      "role": "analysis",
+      "status": "success",
+      "usage": {
+        "prompt_tokens": 228005,
+        "completion_tokens": 8959,
+        "total_tokens": 236964
+      }
+    },
+    {
+      "attempt": 2771,
+      "role": "memory_retrieval",
+      "status": "success",
+      "usage": {
+        "prompt_tokens": 240,
+        "completion_tokens": 78,
+        "total_tokens": 318
+      }
+    },
+    {
+      "attempt": 2776,
+      "role": "memory_retrieval",
+      "status": "success",
+      "usage": {
+        "prompt_tokens": 991,
+        "completion_tokens": 391,
+        "total_tokens": 1382
+      }
+    },
+    {
+      "attempt": 2780,
+      "role": "memory_ingestion",
+      "status": "success",
+      "usage": {
+        "prompt_tokens": 329,
+        "completion_tokens": 896,
+        "total_tokens": 1225
+      }
+    },
+    {
+      "attempt": 2791,
+      "role": "memory_retrieval",
+      "status": "success",
+      "usage": {
+        "prompt_tokens": 734,
+        "completion_tokens": 2184,
+        "total_tokens": 2918
+      }
+    },
+    {
+      "attempt": 2796,
+      "role": "actor",
+      "status": "started",
+      "usage": null
+    }
+  ],
+  "resumed_request_counts_by_role": {
+    "analysis": 4,
+    "memory_retrieval": 3,
+    "memory_ingestion": 1,
+    "actor": 1
+  },
+  "other_workers": [
+    {
+      "job_id": "business-fixed-r1",
+      "pid": 23416,
+      "same_pid": true,
+      "same_process_identity": true,
+      "owned": true,
+      "loaded_adapter_revision": "repair-r4"
+    },
+    {
+      "job_id": "business-full-r1",
+      "pid": 28784,
+      "same_pid": true,
+      "same_process_identity": true,
+      "owned": true,
+      "loaded_adapter_revision": "repair-r5"
+    },
+    {
+      "job_id": "humanities-fixed-r1",
+      "pid": 25276,
+      "same_pid": true,
+      "same_process_identity": true,
+      "owned": true,
+      "loaded_adapter_revision": "repair-r5"
+    },
+    {
+      "job_id": "humanities-full-r1",
+      "pid": 9392,
+      "same_pid": true,
+      "same_process_identity": true,
+      "owned": true,
+      "loaded_adapter_revision": "repair-r4"
+    },
+    {
+      "job_id": "humanities-native-r1",
+      "pid": 24496,
+      "same_pid": true,
+      "same_process_identity": true,
+      "owned": true,
+      "loaded_adapter_revision": "repair-r4"
+    },
+    {
+      "job_id": "social-fixed-r1",
+      "pid": 26364,
+      "same_pid": true,
+      "same_process_identity": true,
+      "owned": true,
+      "loaded_adapter_revision": "repair-r4"
+    },
+    {
+      "job_id": "social-full-r1",
+      "pid": 30716,
+      "same_pid": true,
+      "same_process_identity": true,
+      "owned": true,
+      "loaded_adapter_revision": "repair-r4"
+    },
+    {
+      "job_id": "social-native-r1",
+      "pid": 25976,
+      "same_pid": true,
+      "same_process_identity": true,
+      "owned": true,
+      "loaded_adapter_revision": "repair-r4"
+    }
+  ],
+  "supervisor_owned": true,
+  "counts": {
+    "queued": 18,
+    "running": 9,
+    "complete": 0,
+    "failed": 0,
+    "interrupted": 0
+  },
+  "budget": {
+    "attempt_count": 2800,
+    "successful_requests": 2782,
+    "failed_requests": 12,
+    "actual_tokens": 53375044,
+    "reserved_unknown_tokens": 509359,
+    "effective_tokens": 53884403,
+    "blocked_reason": null,
+    "max_inflight_requests": 6
+  },
+  "pending_at_check": 6,
+  "note": "Offline namespace repair used zero new model requests. Native resumption re-analyzes the saved second candidate; resumed model requests are charged normally. Lineage failure and SDK request failure are separate counts."
+}

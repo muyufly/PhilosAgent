@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PhiloAgent · 研究与写作</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="shell-header">
+    <div class="brand"><span class="brand-mark" aria-hidden="true">φ</span><span>PhiloAgent</span></div>
+    <div class="workspace-switch"><label for="workspace">当前智能体</label><select id="workspace"><option value="default">default</option></select><button id="refresh" class="quiet" type="button">刷新</button></div>
+  </header>
+  <main class="canvas">
+    <div class="title-row"><div><h1>研究与写作</h1><p id="summary">导入一份哲学系统，开始第一个任务。</p></div><span id="state" class="state">未初始化</span></div>
+    <div class="workspace-layout">
+      <aside class="system-column" aria-label="哲学系统与任务记录">
+        <section class="panel system-panel">
+          <div class="section-heading"><h2>哲学系统</h2><span id="provider" class="muted">—</span></div>
+          <p id="system-name" class="system-name">尚未导入</p>
+          <details id="system-details"><summary>查看当前系统</summary><div id="system-text" class="system-text">导入后会在这里显示完整内容。</div><p id="system-hash" class="hash muted"></p></details>
+          <details id="import-details" open><summary>导入并新建智能体</summary>
+            <form id="import-form">
+              <label for="agent-name">新智能体名称</label><input id="agent-name" name="name" value="my-agent" pattern="[A-Za-z0-9][A-Za-z0-9_-]{0,63}" maxlength="64" required autocomplete="off">
+              <label for="system-file">初始哲学系统</label><input id="system-file" type="file" accept=".json,.md,.txt" required>
+              <p class="field-note">JSON、Markdown 或 TXT。原文完整保留，每次导入建立独立智能体。</p>
+              <button id="import-button" type="submit">导入系统</button><p id="import-error" class="error" role="alert"></p>
+            </form>
+          </details>
+        </section>
+        <section class="panel history-panel"><div class="section-heading"><h2>最近任务</h2><span id="task-count" class="muted num">0 项</span></div><div id="history" class="history"><p class="empty">完成的作品与未完成的任务会留在这里。</p></div></section>
+        <section class="panel evolve-panel"><details id="evolve-details"><summary>手动演化</summary><p class="field-note">使用独立开发题集，延续当前哲学系统与已积累的经验。</p><form id="evolve-form"><label for="dev-file">开发任务集</label><input id="dev-file" type="file" accept=".jsonl" required><label for="rounds">演化轮数</label><input id="rounds" type="number" min="1" max="100" value="1" required><p class="field-note">至少四题。运行过程会调用模型；完成后采用完整胜者状态。</p><button id="evolve-button" type="submit">运行演化</button><p id="evolve-error" class="error" role="alert"></p></form></details></section>
+      </aside>
+      <div class="work-column">
+        <section class="panel task-panel">
+          <div class="section-heading"><h2>新任务</h2><span class="muted">作答 → 评分 → 学习</span></div>
+          <form id="task-form">
+            <div class="task-topline"><div><label for="domain">研究领域</label><select id="domain"><option value="humanities">人文学科</option><option value="social">社会科学</option><option value="business">商业研究</option></select></div><p class="field-note">可自主搜索、读取网页并调用记忆工具。</p></div>
+            <label for="question">任务问题</label><textarea id="question" rows="4" placeholder="描述你要研究的问题，或希望完成的作品……" required></textarea>
+            <details class="task-extras"><summary>补充材料与交付要求</summary><label for="materials">补充材料</label><textarea id="materials" rows="3" placeholder="粘贴文本、链接或已有观点"></textarea><label for="deliverable">交付要求</label><textarea id="deliverable" rows="2" placeholder="例如：中文研究备忘录，说明证据、反例与结论"></textarea></details>
+            <div class="submit-row"><p id="run-note" class="field-note">请先导入初始哲学系统。</p><button id="run-button" class="primary" type="submit" disabled>开始任务</button></div><p id="run-error" class="error" role="alert"></p>
+          </form>
+        </section>
+        <section class="panel result-panel" aria-label="任务结果">
+          <div class="section-heading"><h2 id="result-title">作品与过程</h2><span id="result-state" class="muted">等待任务</span></div>
+          <div class="result-tabs" role="tablist" aria-label="任务详情"><button id="tab-answer" role="tab" aria-selected="true" aria-controls="result-content" data-tab="answer">作品</button><button id="tab-grade" role="tab" aria-selected="false" aria-controls="result-content" data-tab="grade">评分</button><button id="tab-tools" role="tab" aria-selected="false" aria-controls="result-content" data-tab="tools">工具记录</button><button id="tab-learning" role="tab" aria-selected="false" aria-controls="result-content" data-tab="learning">学习</button><button id="tab-usage" role="tab" aria-selected="false" aria-controls="result-content" data-tab="usage">用量</button></div>
+          <div id="result-content" class="result-content empty" role="tabpanel" aria-labelledby="tab-answer" tabindex="0">任务完成后，作品会先保存，再进入独立评分和经验学习。</div>
+          <p id="result-error" class="error" role="status"></p>
+        </section>
+        <p id="connection-message" class="connection-message" role="status" aria-live="polite"></p>
+      </div>
+    </div>
+    <footer>哲学系统决定起点，经验在每次任务后积累。<span>本机运行 · 操作会调用已配置的模型</span></footer>
+  </main>
+</body>
+</html>

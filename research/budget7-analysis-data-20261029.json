@@ -1,0 +1,2173 @@
+{
+  "generated_utc": "2026-10-29T04:26:17.210267+00:00",
+  "status": "complete",
+  "selection": [
+    "engineering-p0-phi0-r00",
+    "engineering-p0-phi1-r00",
+    "engineering-p1-phi0-r00",
+    "engineering-p1-phi1-r00",
+    "dialectical-p1-phi1-r00",
+    "critical-p1-phi1-r00",
+    "none-p1-phi1-r00"
+  ],
+  "accepted_count": 7,
+  "original_completed_count": 5,
+  "original_failed_count": 2,
+  "supplement_count": 2,
+  "entries": [
+    {
+      "job_id": "engineering-p0-phi0-r00",
+      "original_status": "complete",
+      "acceptance": "original",
+      "accepted": true,
+      "evidence_root": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\engineering-p0-phi0-r00",
+      "accuracy": 0.0,
+      "original_evidence_root": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\engineering-p0-phi0-r00",
+      "supplement_receipt": null,
+      "correct": 0,
+      "count": 4,
+      "winner": "philo_engineering_p0_phi0_r00_8f9f6434eba59a",
+      "initial_phi": [
+        "先明确任务目标、已知条件与输出要求，避免遗漏关键约束。",
+        "将复杂问题分解为可处理的步骤，按依赖关系组织求解过程。",
+        "核对所用材料、计算与假设，发现不一致时检查相关步骤。",
+        "依据任务结果检查方法的效果，记录已知错误并修订无效做法。"
+      ],
+      "final_phi": [
+        "先明确任务目标、已知条件与输出要求，避免遗漏关键约束。",
+        "将复杂问题分解为可处理的步骤，按依赖关系组织求解过程。",
+        "核对所用材料、计算与假设，发现不一致时检查相关步骤。",
+        "依据任务结果检查方法的效果，记录已知错误并修订无效做法。"
+      ],
+      "phi_initial_count": 4,
+      "phi_final_count": 4,
+      "final_phi_changed": false,
+      "any_winner_code_changed": false,
+      "any_winner_phi_changed": false,
+      "rounds": [
+        {
+          "round": 0,
+          "parent": {
+            "provider": "lightweight_memory",
+            "module": "lightweight_memory_provider",
+            "class_name": "LightweightMemoryProvider",
+            "source_path": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\engineering-p0-phi0-r00\\workspace\\EvolveLab\\providers\\lightweight_memory_provider.py",
+            "code_sha256": "ce0c1f36ca9fb095c8448fab9b3e35e3c97e5928d115fdf98d56f48c842750f4",
+            "orientation_snapshot": {
+              "schema_version": 1,
+              "initialized": true,
+              "provider_id": "lightweight_memory",
+              "parent_provider_id": null,
+              "parent_sha256": null,
+              "items": [
+                "先明确任务目标、已知条件与输出要求，避免遗漏关键约束。",
+                "将复杂问题分解为可处理的步骤，按依赖关系组织求解过程。",
+                "核对所用材料、计算与假设，发现不一致时检查相关步骤。",
+                "依据任务结果检查方法的效果，记录已知错误并修订无效做法。"
+              ],
+              "sha256": "4e2a00ed48231595c64838aadd03d83493b2868e838912ed49cd2aab0b0d9810"
+            },
+            "orientation_items_sha256": "e5cf95a911537084cab9b185160579083f36423fc4fec67ba8742741d4059cde"
+          },
+          "winner": {
+            "provider": "lightweight_memory",
+            "module": "lightweight_memory_provider",
+            "class_name": "LightweightMemoryProvider",
+            "source_path": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\engineering-p0-phi0-r00\\workspace\\EvolveLab\\providers\\lightweight_memory_provider.py",
+            "code_sha256": "ce0c1f36ca9fb095c8448fab9b3e35e3c97e5928d115fdf98d56f48c842750f4",
+            "orientation_snapshot": {
+              "schema_version": 1,
+              "initialized": true,
+              "provider_id": "lightweight_memory",
+              "parent_provider_id": null,
+              "parent_sha256": null,
+              "items": [
+                "先明确任务目标、已知条件与输出要求，避免遗漏关键约束。",
+                "将复杂问题分解为可处理的步骤，按依赖关系组织求解过程。",
+                "核对所用材料、计算与假设，发现不一致时检查相关步骤。",
+                "依据任务结果检查方法的效果，记录已知错误并修订无效做法。"
+              ],
+              "sha256": "4e2a00ed48231595c64838aadd03d83493b2868e838912ed49cd2aab0b0d9810"
+            },
+            "orientation_items_sha256": "e5cf95a911537084cab9b185160579083f36423fc4fec67ba8742741d4059cde"
+          },
+          "winner_code_changed": false,
+          "winner_orientation_items_changed": false,
+          "candidates": [
+            {
+              "provider": "philo_engineering_p0_phi0_r00_e1c79e585250fc",
+              "module": "lightweight_memory_provider",
+              "class_name": "LightweightMemoryProvider",
+              "source_path": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\engineering-p0-phi0-r00\\workspace\\EvolveLab\\providers\\lightweight_memory_provider.py",
+              "code_sha256": "ce0c1f36ca9fb095c8448fab9b3e35e3c97e5928d115fdf98d56f48c842750f4",
+              "orientation_snapshot": {
+                "schema_version": 1,
+                "initialized": true,
+                "provider_id": "philo_engineering_p0_phi0_r00_e1c79e585250fc",
+                "parent_provider_id": "lightweight_memory",
+                "parent_sha256": "4e2a00ed48231595c64838aadd03d83493b2868e838912ed49cd2aab0b0d9810",
+                "items": [
+                  "先明确任务目标、已知条件与输出要求，避免遗漏关键约束。",
+                  "将复杂问题分解为可处理的步骤，按依赖关系组织求解过程。",
+                  "核对所用材料、计算与假设，发现不一致时检查相关步骤。",
+                  "依据任务结果检查方法的效果，记录已知错误并修订无效做法。"
+                ],
+                "sha256": "9c37912b3ee61df26feb54c21d3bfe4e979b1881808cae211280a14e5a9b13f7"
+              },
+              "orientation_items_sha256": "e5cf95a911537084cab9b185160579083f36423fc4fec67ba8742741d4059cde",
+              "code_changed_vs_parent": false,
+              "orientation_items_changed_vs_parent": false,
+              "actual_loaded": true,
+              "orientation_sent_to_actor": true
+            }
+          ]
+        },
+        {
+          "round": 1,
+          "parent": {
+            "provider": "lightweight_memory",
+            "module": "lightweight_memory_provider",
+            "class_name": "LightweightMemoryProvider",
+            "source_path": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\engineering-p0-phi0-r00\\workspace\\EvolveLab\\providers\\lightweight_memory_provider.py",
+            "code_sha256": "ce0c1f36ca9fb095c8448fab9b3e35e3c97e5928d115fdf98d56f48c842750f4",
+            "orientation_snapshot": {
+              "schema_version": 1,
+              "initialized": true,
+              "provider_id": "lightweight_memory",
+              "parent_provider_id": null,
+              "parent_sha256": null,
+              "items": [
+                "先明确任务目标、已知条件与输出要求，避免遗漏关键约束。",
+                "将复杂问题分解为可处理的步骤，按依赖关系组织求解过程。",
+                "核对所用材料、计算与假设，发现不一致时检查相关步骤。",
+                "依据任务结果检查方法的效果，记录已知错误并修订无效做法。"
+              ],
+              "sha256": "4e2a00ed48231595c64838aadd03d83493b2868e838912ed49cd2aab0b0d9810"
+            },
+            "orientation_items_sha256": "e5cf95a911537084cab9b185160579083f36423fc4fec67ba8742741d4059cde"
+          },
+          "winner": {
+            "provider": "philo_engineering_p0_phi0_r00_8f9f6434eba59a",
+            "module": "lightweight_memory_provider",
+            "class_name": "LightweightMemoryProvider",
+            "source_path": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\engineering-p0-phi0-r00\\workspace\\EvolveLab\\providers\\lightweight_memory_provider.py",
+            "code_sha256": "ce0c1f36ca9fb095c8448fab9b3e35e3c97e5928d115fdf98d56f48c842750f4",
+            "orientation_snapshot": {
+              "schema_version": 1,
+              "initialized": true,
+              "provider_id": "philo_engineering_p0_phi0_r00_8f9f6434eba59a",
+              "parent_provider_id": "lightweight_memory",
+              "parent_sha256": "4e2a00ed48231595c64838aadd03d83493b2868e838912ed49cd2aab0b0d9810",
+              "items": [
+                "先明确任务目标、已知条件与输出要求，避免遗漏关键约束。",
+                "将复杂问题分解为可处理的步骤，按依赖关系组织求解过程。",
+                "核对所用材料、计算与假设，发现不一致时检查相关步骤。",
+                "依据任务结果检查方法的效果，记录已知错误并修订无效做法。"
+              ],
+              "sha256": "3adffc15d52c5cf8a5753a7977105571b15963e80306f7f5c5c86de0f78ffdd8"
+            },
+            "orientation_items_sha256": "e5cf95a911537084cab9b185160579083f36423fc4fec67ba8742741d4059cde"
+          },
+          "winner_code_changed": false,
+          "winner_orientation_items_changed": false,
+          "candidates": [
+            {
+              "provider": "philo_engineering_p0_phi0_r00_8f9f6434eba59a",
+              "module": "lightweight_memory_provider",
+              "class_name": "LightweightMemoryProvider",
+              "source_path": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\engineering-p0-phi0-r00\\workspace\\EvolveLab\\providers\\lightweight_memory_provider.py",
+              "code_sha256": "ce0c1f36ca9fb095c8448fab9b3e35e3c97e5928d115fdf98d56f48c842750f4",
+              "orientation_snapshot": {
+                "schema_version": 1,
+                "initialized": true,
+                "provider_id": "philo_engineering_p0_phi0_r00_8f9f6434eba59a",
+                "parent_provider_id": "lightweight_memory",
+                "parent_sha256": "4e2a00ed48231595c64838aadd03d83493b2868e838912ed49cd2aab0b0d9810",
+                "items": [
+                  "先明确任务目标、已知条件与输出要求，避免遗漏关键约束。",
+                  "将复杂问题分解为可处理的步骤，按依赖关系组织求解过程。",
+                  "核对所用材料、计算与假设，发现不一致时检查相关步骤。",
+                  "依据任务结果检查方法的效果，记录已知错误并修订无效做法。"
+                ],
+                "sha256": "3adffc15d52c5cf8a5753a7977105571b15963e80306f7f5c5c86de0f78ffdd8"
+              },
+              "orientation_items_sha256": "e5cf95a911537084cab9b185160579083f36423fc4fec67ba8742741d4059cde",
+              "code_changed_vs_parent": false,
+              "orientation_items_changed_vs_parent": false,
+              "actual_loaded": true,
+              "orientation_sent_to_actor": true
+            }
+          ]
+        }
+      ],
+      "factor_checks": {
+        "frozen_code_preserved": true,
+        "frozen_orientation_preserved": true
+      },
+      "loaded_provider_evidence": [
+        {
+          "provider": "lightweight_memory",
+          "code_sha256": "ce0c1f36ca9fb095c8448fab9b3e35e3c97e5928d115fdf98d56f48c842750f4",
+          "operations": {
+            "loaded": 18,
+            "initialize": 18,
+            "provide_memory": 48,
+            "take_in_memory": 18
+          },
+          "orientation_sent_to_actor": true
+        },
+        {
+          "provider": "philo_engineering_p0_phi0_r00_e1c79e585250fc",
+          "code_sha256": "ce0c1f36ca9fb095c8448fab9b3e35e3c97e5928d115fdf98d56f48c842750f4",
+          "operations": {
+            "loaded": 6,
+            "initialize": 6,
+            "provide_memory": 17,
+            "take_in_memory": 6
+          },
+          "orientation_sent_to_actor": true
+        },
+        {
+          "provider": "philo_engineering_p0_phi0_r00_8f9f6434eba59a",
+          "code_sha256": "ce0c1f36ca9fb095c8448fab9b3e35e3c97e5928d115fdf98d56f48c842750f4",
+          "operations": {
+            "loaded": 18,
+            "initialize": 18,
+            "provide_memory": 46,
+            "take_in_memory": 14
+          },
+          "orientation_sent_to_actor": true
+        }
+      ],
+      "heldout_tasks": [
+        {
+          "task_id": "wwqa-b6dc4fc48b23f56feee99f1989b574afbcad862d74eb9ca898ea821c35890d59",
+          "judgement": "incorrect",
+          "question": "Which NIME 2024 board members have made contributions to the conference proceedings, and what were these contributions?",
+          "fixed_task_sha256": "8ff50e05d5d0fe781f62a80264bf135b4b721510017bfaa5384c1e04cf41a08c",
+          "source": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\engineering-p0-phi0-r00\\terminal\\task_logs\\1.json",
+          "sha256": "1c6e5310de9e343850fb7ff56ac345a22310741afc1b13fef070a62e9846de47"
+        },
+        {
+          "task_id": "wwqa-afc759d29ba884948cae9a5a98576b7e63f1b3d9d335a134791d125ce041ed12",
+          "judgement": "incorrect",
+          "question": "在腾讯推出的数字藏经洞与数字长城项目中，哪种数字技术被共同采用来实现文物的高度还原？",
+          "fixed_task_sha256": "2b45e2b0f8f9b2269d526fe46bdbe14325fe51cb41ef2366b8a41ffa9fc6179e",
+          "source": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\engineering-p0-phi0-r00\\terminal\\task_logs\\2.json",
+          "sha256": "05f4b8be5884fc18581777d079eb57b6ff18c22d4080c88e29a9276dfebd6819"
+        },
+        {
+          "task_id": "wwqa-c8d40a03538e21c5ad96936dfa7f0b455708f8d965bc770446faca009461b2f7",
+          "judgement": "incorrect",
+          "question": "在山东大学计算机科学与技术学院，哪些国际知名教授在2019年和2020年间访问学院，并进行了关于大数据与并行计算的学术交流？",
+          "fixed_task_sha256": "f647d4b2065ace7f996749fa1d2b022eb87e44f8cd1b96a927f4953ea01e382f",
+          "source": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\engineering-p0-phi0-r00\\terminal\\task_logs\\3.json",
+          "sha256": "c8c1009a8525d25562a5ebddf3cb14d0c9153f7e7bece3fdcbdf0900568808ca"
+        },
+        {
+          "task_id": "wwqa-1a6c0761185591373428ef4791949d040c38d5020c5d3f39890e09201e28d7ec",
+          "judgement": "incorrect",
+          "question": "北方工业大学信息学院2023年最后举办的学术活动是在什么日期？",
+          "fixed_task_sha256": "a639bfccb83ba93835dd5a5feae167770413568610c66b8203e2e9b3b7380867",
+          "source": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\engineering-p0-phi0-r00\\terminal\\task_logs\\4.json",
+          "sha256": "9d5b19a644825bb1d0b51e4928bcda56862e65447eabddc4f158f660c5c2f0ad"
+        }
+      ],
+      "result_file": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\engineering-p0-phi0-r00\\result.json",
+      "result_sha256": "a5f9e75d3848af732c9bbedcec40b84ef295deb0bf0a93d822d797fb0380a1ff"
+    },
+    {
+      "job_id": "engineering-p0-phi1-r00",
+      "original_status": "complete",
+      "acceptance": "original",
+      "accepted": true,
+      "evidence_root": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\engineering-p0-phi1-r00",
+      "accuracy": 0.25,
+      "original_evidence_root": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\engineering-p0-phi1-r00",
+      "supplement_receipt": null,
+      "correct": 1,
+      "count": 4,
+      "winner": "philo_engineering_p0_phi1_r00_43f3ff830b7c87",
+      "initial_phi": [
+        "先明确任务目标、已知条件与输出要求，避免遗漏关键约束。",
+        "将复杂问题分解为可处理的步骤，按依赖关系组织求解过程。",
+        "核对所用材料、计算与假设，发现不一致时检查相关步骤。",
+        "依据任务结果检查方法的效果，记录已知错误并修订无效做法。"
+      ],
+      "final_phi": [
+        "先明确任务目标、已知条件与输出要求，避免遗漏关键约束。",
+        "将复杂问题分解为可处理的步骤，按依赖关系组织求解过程。",
+        "核对所用材料、计算与假设，发现不一致时检查相关步骤。",
+        "依据任务结果检查方法的效果，记录已知错误并修订无效做法。",
+        "对事实类任务，预判可能的来源冲突（如年份、归属、类别），提前规划两条独立验证路径。",
+        "优先采信一手权威来源；当答案仅来自数据集镜像或聚合摘要时，明确标注证据强度并寻找一手佐证。"
+      ],
+      "phi_initial_count": 4,
+      "phi_final_count": 6,
+      "final_phi_changed": true,
+      "any_winner_code_changed": false,
+      "any_winner_phi_changed": true,
+      "rounds": [
+        {
+          "round": 0,
+          "parent": {
+            "provider": "lightweight_memory",
+            "module": "lightweight_memory_provider",
+            "class_name": "LightweightMemoryProvider",
+            "source_path": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\engineering-p0-phi1-r00\\workspace\\EvolveLab\\providers\\lightweight_memory_provider.py",
+            "code_sha256": "ce0c1f36ca9fb095c8448fab9b3e35e3c97e5928d115fdf98d56f48c842750f4",
+            "orientation_snapshot": {
+              "schema_version": 1,
+              "initialized": true,
+              "provider_id": "lightweight_memory",
+              "parent_provider_id": null,
+              "parent_sha256": null,
+              "items": [
+                "先明确任务目标、已知条件与输出要求，避免遗漏关键约束。",
+                "将复杂问题分解为可处理的步骤，按依赖关系组织求解过程。",
+                "核对所用材料、计算与假设，发现不一致时检查相关步骤。",
+                "依据任务结果检查方法的效果，记录已知错误并修订无效做法。"
+              ],
+              "sha256": "4e2a00ed48231595c64838aadd03d83493b2868e838912ed49cd2aab0b0d9810"
+            },
+            "orientation_items_sha256": "e5cf95a911537084cab9b185160579083f36423fc4fec67ba8742741d4059cde"
+          },
+          "winner": {
+            "provider": "philo_engineering_p0_phi1_r00_451b28fe5b9851",
+            "module": "lightweight_memory_provider",
+            "class_name": "LightweightMemoryProvider",
+            "source_path": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\engineering-p0-phi1-r00\\workspace\\EvolveLab\\providers\\lightweight_memory_provider.py",
+            "code_sha256": "ce0c1f36ca9fb095c8448fab9b3e35e3c97e5928d115fdf98d56f48c842750f4",
+            "orientation_snapshot": {
+              "schema_version": 1,
+              "initialized": true,
+              "provider_id": "philo_engineering_p0_phi1_r00_451b28fe5b9851",
+              "parent_provider_id": "lightweight_memory",
+              "parent_sha256": "4e2a00ed48231595c64838aadd03d83493b2868e838912ed49cd2aab0b0d9810",
+              "items": [
+                "先明确任务目标、已知条件与输出要求，避免遗漏关键约束。",
+                "将复杂问题分解为可处理的步骤，按依赖关系组织求解过程。",
+                "核对所用材料、计算与假设，发现不一致时检查相关步骤。",
+                "依据任务结果检查方法的效果，记录已知错误并修订无效做法。",
+                "对事实类任务，预判可能的来源冲突（如年份、归属、类别），提前规划两条独立验证路径。"
+              ],
+              "sha256": "77fd89b3cdeda9946dd068d9eee6cad30a3da61d6626c505f83f90a3fb6b956c"
+            },
+            "orientation_items_sha256": "b8f757ac66c17dc8409cece850aba53c0d4407d5f8aafdbc829151f370d0c5de"
+          },
+          "winner_code_changed": false,
+          "winner_orientation_items_changed": true,
+          "candidates": [
+            {
+              "provider": "philo_engineering_p0_phi1_r00_451b28fe5b9851",
+              "module": "lightweight_memory_provider",
+              "class_name": "LightweightMemoryProvider",
+              "source_path": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\engineering-p0-phi1-r00\\workspace\\EvolveLab\\providers\\lightweight_memory_provider.py",
+              "code_sha256": "ce0c1f36ca9fb095c8448fab9b3e35e3c97e5928d115fdf98d56f48c842750f4",
+              "orientation_snapshot": {
+                "schema_version": 1,
+                "initialized": true,
+                "provider_id": "philo_engineering_p0_phi1_r00_451b28fe5b9851",
+                "parent_provider_id": "lightweight_memory",
+                "parent_sha256": "4e2a00ed48231595c64838aadd03d83493b2868e838912ed49cd2aab0b0d9810",
+                "items": [
+                  "先明确任务目标、已知条件与输出要求，避免遗漏关键约束。",
+                  "将复杂问题分解为可处理的步骤，按依赖关系组织求解过程。",
+                  "核对所用材料、计算与假设，发现不一致时检查相关步骤。",
+                  "依据任务结果检查方法的效果，记录已知错误并修订无效做法。",
+                  "对事实类任务，预判可能的来源冲突（如年份、归属、类别），提前规划两条独立验证路径。"
+                ],
+                "sha256": "77fd89b3cdeda9946dd068d9eee6cad30a3da61d6626c505f83f90a3fb6b956c"
+              },
+              "orientation_items_sha256": "b8f757ac66c17dc8409cece850aba53c0d4407d5f8aafdbc829151f370d0c5de",
+              "code_changed_vs_parent": false,
+              "orientation_items_changed_vs_parent": true,
+              "actual_loaded": true,
+              "orientation_sent_to_actor": true
+            }
+          ]
+        },
+        {
+          "round": 1,
+          "parent": {
+            "provider": "philo_engineering_p0_phi1_r00_451b28fe5b9851",
+            "module": "lightweight_memory_provider",
+            "class_name": "LightweightMemoryProvider",
+            "source_path": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\engineering-p0-phi1-r00\\workspace\\EvolveLab\\providers\\lightweight_memory_provider.py",
+            "code_sha256": "ce0c1f36ca9fb095c8448fab9b3e35e3c97e5928d115fdf98d56f48c842750f4",
+            "orientation_snapshot": {
+              "schema_version": 1,
+              "initialized": true,
+              "provider_id": "philo_engineering_p0_phi1_r00_451b28fe5b9851",
+              "parent_provider_id": "lightweight_memory",
+              "parent_sha256": "4e2a00ed48231595c64838aadd03d83493b2868e838912ed49cd2aab0b0d9810",
+              "items": [
+                "先明确任务目标、已知条件与输出要求，避免遗漏关键约束。",
+                "将复杂问题分解为可处理的步骤，按依赖关系组织求解过程。",
+                "核对所用材料、计算与假设，发现不一致时检查相关步骤。",
+                "依据任务结果检查方法的效果，记录已知错误并修订无效做法。",
+                "对事实类任务，预判可能的来源冲突（如年份、归属、类别），提前规划两条独立验证路径。"
+              ],
+              "sha256": "77fd89b3cdeda9946dd068d9eee6cad30a3da61d6626c505f83f90a3fb6b956c"
+            },
+            "orientation_items_sha256": "b8f757ac66c17dc8409cece850aba53c0d4407d5f8aafdbc829151f370d0c5de"
+          },
+          "winner": {
+            "provider": "philo_engineering_p0_phi1_r00_43f3ff830b7c87",
+            "module": "lightweight_memory_provider",
+            "class_name": "LightweightMemoryProvider",
+            "source_path": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\engineering-p0-phi1-r00\\workspace\\EvolveLab\\providers\\lightweight_memory_provider.py",
+            "code_sha256": "ce0c1f36ca9fb095c8448fab9b3e35e3c97e5928d115fdf98d56f48c842750f4",
+            "orientation_snapshot": {
+              "schema_version": 1,
+              "initialized": true,
+              "provider_id": "philo_engineering_p0_phi1_r00_43f3ff830b7c87",
+              "parent_provider_id": "philo_engineering_p0_phi1_r00_451b28fe5b9851",
+              "parent_sha256": "77fd89b3cdeda9946dd068d9eee6cad30a3da61d6626c505f83f90a3fb6b956c",
+              "items": [
+                "先明确任务目标、已知条件与输出要求，避免遗漏关键约束。",
+                "将复杂问题分解为可处理的步骤，按依赖关系组织求解过程。",
+                "核对所用材料、计算与假设，发现不一致时检查相关步骤。",
+                "依据任务结果检查方法的效果，记录已知错误并修订无效做法。",
+                "对事实类任务，预判可能的来源冲突（如年份、归属、类别），提前规划两条独立验证路径。",
+                "优先采信一手权威来源；当答案仅来自数据集镜像或聚合摘要时，明确标注证据强度并寻找一手佐证。"
+              ],
+              "sha256": "3ae139f670ac9ab30e9972c7c35ddc5afa6a2159b88ea44760992f6e485d85e2"
+            },
+            "orientation_items_sha256": "56f8e74ad8ebd1be336095e8cec1173776472ea9c83beeb1cb6f9e40ebf6dbca"
+          },
+          "winner_code_changed": false,
+          "winner_orientation_items_changed": true,
+          "candidates": [
+            {
+              "provider": "philo_engineering_p0_phi1_r00_43f3ff830b7c87",
+              "module": "lightweight_memory_provider",
+              "class_name": "LightweightMemoryProvider",
+              "source_path": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\engineering-p0-phi1-r00\\workspace\\EvolveLab\\providers\\lightweight_memory_provider.py",
+              "code_sha256": "ce0c1f36ca9fb095c8448fab9b3e35e3c97e5928d115fdf98d56f48c842750f4",
+              "orientation_snapshot": {
+                "schema_version": 1,
+                "initialized": true,
+                "provider_id": "philo_engineering_p0_phi1_r00_43f3ff830b7c87",
+                "parent_provider_id": "philo_engineering_p0_phi1_r00_451b28fe5b9851",
+                "parent_sha256": "77fd89b3cdeda9946dd068d9eee6cad30a3da61d6626c505f83f90a3fb6b956c",
+                "items": [
+                  "先明确任务目标、已知条件与输出要求，避免遗漏关键约束。",
+                  "将复杂问题分解为可处理的步骤，按依赖关系组织求解过程。",
+                  "核对所用材料、计算与假设，发现不一致时检查相关步骤。",
+                  "依据任务结果检查方法的效果，记录已知错误并修订无效做法。",
+                  "对事实类任务，预判可能的来源冲突（如年份、归属、类别），提前规划两条独立验证路径。",
+                  "优先采信一手权威来源；当答案仅来自数据集镜像或聚合摘要时，明确标注证据强度并寻找一手佐证。"
+                ],
+                "sha256": "3ae139f670ac9ab30e9972c7c35ddc5afa6a2159b88ea44760992f6e485d85e2"
+              },
+              "orientation_items_sha256": "56f8e74ad8ebd1be336095e8cec1173776472ea9c83beeb1cb6f9e40ebf6dbca",
+              "code_changed_vs_parent": false,
+              "orientation_items_changed_vs_parent": true,
+              "actual_loaded": true,
+              "orientation_sent_to_actor": true
+            }
+          ]
+        }
+      ],
+      "factor_checks": {
+        "frozen_code_preserved": true,
+        "frozen_orientation_preserved": true
+      },
+      "loaded_provider_evidence": [
+        {
+          "provider": "lightweight_memory",
+          "code_sha256": "ce0c1f36ca9fb095c8448fab9b3e35e3c97e5928d115fdf98d56f48c842750f4",
+          "operations": {
+            "loaded": 6,
+            "initialize": 6,
+            "provide_memory": 23,
+            "take_in_memory": 6
+          },
+          "orientation_sent_to_actor": true
+        },
+        {
+          "provider": "philo_engineering_p0_phi1_r00_451b28fe5b9851",
+          "code_sha256": "ce0c1f36ca9fb095c8448fab9b3e35e3c97e5928d115fdf98d56f48c842750f4",
+          "operations": {
+            "loaded": 18,
+            "initialize": 18,
+            "provide_memory": 44,
+            "take_in_memory": 18
+          },
+          "orientation_sent_to_actor": true
+        },
+        {
+          "provider": "philo_engineering_p0_phi1_r00_43f3ff830b7c87",
+          "code_sha256": "ce0c1f36ca9fb095c8448fab9b3e35e3c97e5928d115fdf98d56f48c842750f4",
+          "operations": {
+            "loaded": 18,
+            "initialize": 18,
+            "provide_memory": 45,
+            "take_in_memory": 14
+          },
+          "orientation_sent_to_actor": true
+        }
+      ],
+      "heldout_tasks": [
+        {
+          "task_id": "wwqa-b6dc4fc48b23f56feee99f1989b574afbcad862d74eb9ca898ea821c35890d59",
+          "judgement": "incorrect",
+          "question": "Which NIME 2024 board members have made contributions to the conference proceedings, and what were these contributions?",
+          "fixed_task_sha256": "8ff50e05d5d0fe781f62a80264bf135b4b721510017bfaa5384c1e04cf41a08c",
+          "source": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\engineering-p0-phi1-r00\\terminal\\task_logs\\1.json",
+          "sha256": "7a552c195aa1d167dee8078033e90ce944aeb4200759bd1f53b465be557edda8"
+        },
+        {
+          "task_id": "wwqa-afc759d29ba884948cae9a5a98576b7e63f1b3d9d335a134791d125ce041ed12",
+          "judgement": "correct",
+          "question": "在腾讯推出的数字藏经洞与数字长城项目中，哪种数字技术被共同采用来实现文物的高度还原？",
+          "fixed_task_sha256": "2b45e2b0f8f9b2269d526fe46bdbe14325fe51cb41ef2366b8a41ffa9fc6179e",
+          "source": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\engineering-p0-phi1-r00\\terminal\\task_logs\\2.json",
+          "sha256": "f731cc4ca32fb2c9158f5841b49bafce08b87006522c86c188f15ae3efeaced7"
+        },
+        {
+          "task_id": "wwqa-c8d40a03538e21c5ad96936dfa7f0b455708f8d965bc770446faca009461b2f7",
+          "judgement": "incorrect",
+          "question": "在山东大学计算机科学与技术学院，哪些国际知名教授在2019年和2020年间访问学院，并进行了关于大数据与并行计算的学术交流？",
+          "fixed_task_sha256": "f647d4b2065ace7f996749fa1d2b022eb87e44f8cd1b96a927f4953ea01e382f",
+          "source": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\engineering-p0-phi1-r00\\terminal\\task_logs\\3.json",
+          "sha256": "cc7e3a029d7f8d001ddb61675d01aa37276e6be16739fbd9f9255a37ec589a04"
+        },
+        {
+          "task_id": "wwqa-1a6c0761185591373428ef4791949d040c38d5020c5d3f39890e09201e28d7ec",
+          "judgement": "incorrect",
+          "question": "北方工业大学信息学院2023年最后举办的学术活动是在什么日期？",
+          "fixed_task_sha256": "a639bfccb83ba93835dd5a5feae167770413568610c66b8203e2e9b3b7380867",
+          "source": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\engineering-p0-phi1-r00\\terminal\\task_logs\\4.json",
+          "sha256": "7520fd72b897afdb2dc62fcb237550eefd1d55be9b8bd9dededd801526466fa1"
+        }
+      ],
+      "result_file": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\engineering-p0-phi1-r00\\result.json",
+      "result_sha256": "1b6ff0ccb802c7142bb11c4a904c3e6854f0d20450af1dcc2c6fcc1c9331749b"
+    },
+    {
+      "job_id": "engineering-p1-phi0-r00",
+      "original_status": "complete",
+      "acceptance": "original",
+      "accepted": true,
+      "evidence_root": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\engineering-p1-phi0-r00",
+      "accuracy": 0.25,
+      "original_evidence_root": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\engineering-p1-phi0-r00",
+      "supplement_receipt": null,
+      "correct": 1,
+      "count": 4,
+      "winner": "lattice_cortex_memory",
+      "initial_phi": [
+        "先明确任务目标、已知条件与输出要求，避免遗漏关键约束。",
+        "将复杂问题分解为可处理的步骤，按依赖关系组织求解过程。",
+        "核对所用材料、计算与假设，发现不一致时检查相关步骤。",
+        "依据任务结果检查方法的效果，记录已知错误并修订无效做法。"
+      ],
+      "final_phi": [
+        "先明确任务目标、已知条件与输出要求，避免遗漏关键约束。",
+        "将复杂问题分解为可处理的步骤，按依赖关系组织求解过程。",
+        "核对所用材料、计算与假设，发现不一致时检查相关步骤。",
+        "依据任务结果检查方法的效果，记录已知错误并修订无效做法。"
+      ],
+      "phi_initial_count": 4,
+      "phi_final_count": 4,
+      "final_phi_changed": false,
+      "any_winner_code_changed": true,
+      "any_winner_phi_changed": false,
+      "rounds": [
+        {
+          "round": 0,
+          "parent": {
+            "provider": "lightweight_memory",
+            "module": "lightweight_memory_provider",
+            "class_name": "LightweightMemoryProvider",
+            "source_path": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\engineering-p1-phi0-r00\\workspace\\EvolveLab\\providers\\lightweight_memory_provider.py",
+            "code_sha256": "ce0c1f36ca9fb095c8448fab9b3e35e3c97e5928d115fdf98d56f48c842750f4",
+            "orientation_snapshot": {
+              "schema_version": 1,
+              "initialized": true,
+              "provider_id": "lightweight_memory",
+              "parent_provider_id": null,
+              "parent_sha256": null,
+              "items": [
+                "先明确任务目标、已知条件与输出要求，避免遗漏关键约束。",
+                "将复杂问题分解为可处理的步骤，按依赖关系组织求解过程。",
+                "核对所用材料、计算与假设，发现不一致时检查相关步骤。",
+                "依据任务结果检查方法的效果，记录已知错误并修订无效做法。"
+              ],
+              "sha256": "4e2a00ed48231595c64838aadd03d83493b2868e838912ed49cd2aab0b0d9810"
+            },
+            "orientation_items_sha256": "e5cf95a911537084cab9b185160579083f36423fc4fec67ba8742741d4059cde"
+          },
+          "winner": {
+            "provider": "facetloom_memory",
+            "module": "facetloom_memory_provider",
+            "class_name": "FacetLoomMemoryProvider",
+            "source_path": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\engineering-p1-phi0-r00\\workspace\\EvolveLab\\providers\\facetloom_memory_provider.py",
+            "code_sha256": "036e3f8d71f77be4cf89f53ec26f29aa0d0538a3de25c4bc5a1d81944c3e9172",
+            "orientation_snapshot": {
+              "schema_version": 1,
+              "initialized": true,
+              "provider_id": "facetloom_memory",
+              "parent_provider_id": "lightweight_memory",
+              "parent_sha256": "4e2a00ed48231595c64838aadd03d83493b2868e838912ed49cd2aab0b0d9810",
+              "items": [
+                "先明确任务目标、已知条件与输出要求，避免遗漏关键约束。",
+                "将复杂问题分解为可处理的步骤，按依赖关系组织求解过程。",
+                "核对所用材料、计算与假设，发现不一致时检查相关步骤。",
+                "依据任务结果检查方法的效果，记录已知错误并修订无效做法。"
+              ],
+              "sha256": "57d4eccf23fd2fd812e9332f119fb639e8a5e3a18b8830c9f26c4024d977e54c"
+            },
+            "orientation_items_sha256": "e5cf95a911537084cab9b185160579083f36423fc4fec67ba8742741d4059cde"
+          },
+          "winner_code_changed": true,
+          "winner_orientation_items_changed": false,
+          "candidates": [
+            {
+              "provider": "facetloom_memory",
+              "module": "facetloom_memory_provider",
+              "class_name": "FacetLoomMemoryProvider",
+              "source_path": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\engineering-p1-phi0-r00\\workspace\\EvolveLab\\providers\\facetloom_memory_provider.py",
+              "code_sha256": "036e3f8d71f77be4cf89f53ec26f29aa0d0538a3de25c4bc5a1d81944c3e9172",
+              "orientation_snapshot": {
+                "schema_version": 1,
+                "initialized": true,
+                "provider_id": "facetloom_memory",
+                "parent_provider_id": "lightweight_memory",
+                "parent_sha256": "4e2a00ed48231595c64838aadd03d83493b2868e838912ed49cd2aab0b0d9810",
+                "items": [
+                  "先明确任务目标、已知条件与输出要求，避免遗漏关键约束。",
+                  "将复杂问题分解为可处理的步骤，按依赖关系组织求解过程。",
+                  "核对所用材料、计算与假设，发现不一致时检查相关步骤。",
+                  "依据任务结果检查方法的效果，记录已知错误并修订无效做法。"
+                ],
+                "sha256": "57d4eccf23fd2fd812e9332f119fb639e8a5e3a18b8830c9f26c4024d977e54c"
+              },
+              "orientation_items_sha256": "e5cf95a911537084cab9b185160579083f36423fc4fec67ba8742741d4059cde",
+              "code_changed_vs_parent": true,
+              "orientation_items_changed_vs_parent": false,
+              "actual_loaded": true,
+              "orientation_sent_to_actor": true
+            }
+          ]
+        },
+        {
+          "round": 1,
+          "parent": {
+            "provider": "facetloom_memory",
+            "module": "facetloom_memory_provider",
+            "class_name": "FacetLoomMemoryProvider",
+            "source_path": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\engineering-p1-phi0-r00\\workspace\\EvolveLab\\providers\\facetloom_memory_provider.py",
+            "code_sha256": "036e3f8d71f77be4cf89f53ec26f29aa0d0538a3de25c4bc5a1d81944c3e9172",
+            "orientation_snapshot": {
+              "schema_version": 1,
+              "initialized": true,
+              "provider_id": "facetloom_memory",
+              "parent_provider_id": "lightweight_memory",
+              "parent_sha256": "4e2a00ed48231595c64838aadd03d83493b2868e838912ed49cd2aab0b0d9810",
+              "items": [
+                "先明确任务目标、已知条件与输出要求，避免遗漏关键约束。",
+                "将复杂问题分解为可处理的步骤，按依赖关系组织求解过程。",
+                "核对所用材料、计算与假设，发现不一致时检查相关步骤。",
+                "依据任务结果检查方法的效果，记录已知错误并修订无效做法。"
+              ],
+              "sha256": "57d4eccf23fd2fd812e9332f119fb639e8a5e3a18b8830c9f26c4024d977e54c"
+            },
+            "orientation_items_sha256": "e5cf95a911537084cab9b185160579083f36423fc4fec67ba8742741d4059cde"
+          },
+          "winner": {
+            "provider": "lattice_cortex_memory",
+            "module": "lattice_cortex_memory_provider",
+            "class_name": "LatticeCortexMemoryProvider",
+            "source_path": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\engineering-p1-phi0-r00\\workspace\\EvolveLab\\providers\\lattice_cortex_memory_provider.py",
+            "code_sha256": "a64e503b3d8d66e6cb3715e86200c48d109bb1207c223aa69e3d79b5db803d63",
+            "orientation_snapshot": {
+              "schema_version": 1,
+              "initialized": true,
+              "provider_id": "lattice_cortex_memory",
+              "parent_provider_id": "facetloom_memory",
+              "parent_sha256": "57d4eccf23fd2fd812e9332f119fb639e8a5e3a18b8830c9f26c4024d977e54c",
+              "items": [
+                "先明确任务目标、已知条件与输出要求，避免遗漏关键约束。",
+                "将复杂问题分解为可处理的步骤，按依赖关系组织求解过程。",
+                "核对所用材料、计算与假设，发现不一致时检查相关步骤。",
+                "依据任务结果检查方法的效果，记录已知错误并修订无效做法。"
+              ],
+              "sha256": "0beda46b0546f836462b7ab7d8171ac202c3e9c4bd659eef2d8f2b668811ed44"
+            },
+            "orientation_items_sha256": "e5cf95a911537084cab9b185160579083f36423fc4fec67ba8742741d4059cde"
+          },
+          "winner_code_changed": true,
+          "winner_orientation_items_changed": false,
+          "candidates": [
+            {
+              "provider": "lattice_cortex_memory",
+              "module": "lattice_cortex_memory_provider",
+              "class_name": "LatticeCortexMemoryProvider",
+              "source_path": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\engineering-p1-phi0-r00\\workspace\\EvolveLab\\providers\\lattice_cortex_memory_provider.py",
+              "code_sha256": "a64e503b3d8d66e6cb3715e86200c48d109bb1207c223aa69e3d79b5db803d63",
+              "orientation_snapshot": {
+                "schema_version": 1,
+                "initialized": true,
+                "provider_id": "lattice_cortex_memory",
+                "parent_provider_id": "facetloom_memory",
+                "parent_sha256": "57d4eccf23fd2fd812e9332f119fb639e8a5e3a18b8830c9f26c4024d977e54c",
+                "items": [
+                  "先明确任务目标、已知条件与输出要求，避免遗漏关键约束。",
+                  "将复杂问题分解为可处理的步骤，按依赖关系组织求解过程。",
+                  "核对所用材料、计算与假设，发现不一致时检查相关步骤。",
+                  "依据任务结果检查方法的效果，记录已知错误并修订无效做法。"
+                ],
+                "sha256": "0beda46b0546f836462b7ab7d8171ac202c3e9c4bd659eef2d8f2b668811ed44"
+              },
+              "orientation_items_sha256": "e5cf95a911537084cab9b185160579083f36423fc4fec67ba8742741d4059cde",
+              "code_changed_vs_parent": true,
+              "orientation_items_changed_vs_parent": false,
+              "actual_loaded": true,
+              "orientation_sent_to_actor": true
+            }
+          ]
+        }
+      ],
+      "factor_checks": {
+        "frozen_code_preserved": true,
+        "frozen_orientation_preserved": true
+      },
+      "loaded_provider_evidence": [
+        {
+          "provider": "lightweight_memory",
+          "code_sha256": "ce0c1f36ca9fb095c8448fab9b3e35e3c97e5928d115fdf98d56f48c842750f4",
+          "operations": {
+            "loaded": 6,
+            "initialize": 6,
+            "provide_memory": 23,
+            "take_in_memory": 6
+          },
+          "orientation_sent_to_actor": true
+        },
+        {
+          "provider": "facetloom_memory",
+          "code_sha256": "036e3f8d71f77be4cf89f53ec26f29aa0d0538a3de25c4bc5a1d81944c3e9172",
+          "operations": {
+            "loaded": 18,
+            "initialize": 18,
+            "provide_memory": 45,
+            "take_in_memory": 18
+          },
+          "orientation_sent_to_actor": true
+        },
+        {
+          "provider": "lattice_cortex_memory",
+          "code_sha256": "a64e503b3d8d66e6cb3715e86200c48d109bb1207c223aa69e3d79b5db803d63",
+          "operations": {
+            "loaded": 18,
+            "initialize": 18,
+            "provide_memory": 47,
+            "take_in_memory": 14
+          },
+          "orientation_sent_to_actor": true
+        }
+      ],
+      "heldout_tasks": [
+        {
+          "task_id": "wwqa-b6dc4fc48b23f56feee99f1989b574afbcad862d74eb9ca898ea821c35890d59",
+          "judgement": "incorrect",
+          "question": "Which NIME 2024 board members have made contributions to the conference proceedings, and what were these contributions?",
+          "fixed_task_sha256": "8ff50e05d5d0fe781f62a80264bf135b4b721510017bfaa5384c1e04cf41a08c",
+          "source": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\engineering-p1-phi0-r00\\terminal\\task_logs\\1.json",
+          "sha256": "cfb950e0f08c3e78a857b416d9218557714aa6ed1745f95ecf70bd6ca6c11123"
+        },
+        {
+          "task_id": "wwqa-afc759d29ba884948cae9a5a98576b7e63f1b3d9d335a134791d125ce041ed12",
+          "judgement": "correct",
+          "question": "在腾讯推出的数字藏经洞与数字长城项目中，哪种数字技术被共同采用来实现文物的高度还原？",
+          "fixed_task_sha256": "2b45e2b0f8f9b2269d526fe46bdbe14325fe51cb41ef2366b8a41ffa9fc6179e",
+          "source": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\engineering-p1-phi0-r00\\terminal\\task_logs\\2.json",
+          "sha256": "473e60b46c87a5d10adda629f00f0aa3e8c8c91d9ea2e0ae1c54224f608933ac"
+        },
+        {
+          "task_id": "wwqa-c8d40a03538e21c5ad96936dfa7f0b455708f8d965bc770446faca009461b2f7",
+          "judgement": "incorrect",
+          "question": "在山东大学计算机科学与技术学院，哪些国际知名教授在2019年和2020年间访问学院，并进行了关于大数据与并行计算的学术交流？",
+          "fixed_task_sha256": "f647d4b2065ace7f996749fa1d2b022eb87e44f8cd1b96a927f4953ea01e382f",
+          "source": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\engineering-p1-phi0-r00\\terminal\\task_logs\\3.json",
+          "sha256": "e0c29b2fe4514bf70540e80992152f414cbea329320a5bbc315827579ccc1a9b"
+        },
+        {
+          "task_id": "wwqa-1a6c0761185591373428ef4791949d040c38d5020c5d3f39890e09201e28d7ec",
+          "judgement": "incorrect",
+          "question": "北方工业大学信息学院2023年最后举办的学术活动是在什么日期？",
+          "fixed_task_sha256": "a639bfccb83ba93835dd5a5feae167770413568610c66b8203e2e9b3b7380867",
+          "source": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\engineering-p1-phi0-r00\\terminal\\task_logs\\4.json",
+          "sha256": "1d4edac7dc28a79a51ff39066a4b97a92eaebcde5c6dc0d5b06bbeee6196eb31"
+        }
+      ],
+      "result_file": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\engineering-p1-phi0-r00\\result.json",
+      "result_sha256": "fcbc6e3ec6aa23c895cee3beb7085e1fffe4831464d7906d192c94610e266d52"
+    },
+    {
+      "job_id": "engineering-p1-phi1-r00",
+      "original_status": "failed",
+      "acceptance": "terminal_replay",
+      "accepted": true,
+      "evidence_root": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\budget7\\terminal_replay\\jobs\\engineering-p1-phi1-r00",
+      "accuracy": 0.0,
+      "original_evidence_root": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\engineering-p1-phi1-r00",
+      "supplement_receipt": {
+        "status_file": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\budget7\\terminal_replay\\jobs\\engineering-p1-phi1-r00\\replay_status.json",
+        "status_sha256": "f9c6c1e0935a7f3bdfdd3cab952f711306b8a57e2a1c459db399e71d306b537e",
+        "attempt_database": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\budget7\\terminal_replay\\replay_attempts.sqlite",
+        "attempt_state": "complete"
+      },
+      "correct": 0,
+      "count": 4,
+      "winner": "cinderglass_memory",
+      "initial_phi": [
+        "先明确任务目标、已知条件与输出要求，避免遗漏关键约束。",
+        "将复杂问题分解为可处理的步骤，按依赖关系组织求解过程。",
+        "核对所用材料、计算与假设，发现不一致时检查相关步骤。",
+        "依据任务结果检查方法的效果，记录已知错误并修订无效做法。"
+      ],
+      "final_phi": [
+        "先明确任务目标、已知条件与输出要求，避免遗漏关键约束。",
+        "将复杂问题分解为可处理的步骤，按依赖关系组织求解过程。",
+        "核对所用材料、计算与假设，发现不一致时检查相关步骤。",
+        "依据任务结果检查方法的效果，记录已知错误并修订无效做法。"
+      ],
+      "phi_initial_count": 4,
+      "phi_final_count": 4,
+      "final_phi_changed": false,
+      "any_winner_code_changed": true,
+      "any_winner_phi_changed": false,
+      "rounds": [
+        {
+          "round": 0,
+          "parent": {
+            "provider": "lightweight_memory",
+            "module": "lightweight_memory_provider",
+            "class_name": "LightweightMemoryProvider",
+            "source_path": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\budget7\\terminal_replay\\jobs\\engineering-p1-phi1-r00\\workspace\\EvolveLab\\providers\\lightweight_memory_provider.py",
+            "code_sha256": "ce0c1f36ca9fb095c8448fab9b3e35e3c97e5928d115fdf98d56f48c842750f4",
+            "orientation_snapshot": {
+              "schema_version": 1,
+              "initialized": true,
+              "provider_id": "lightweight_memory",
+              "parent_provider_id": null,
+              "parent_sha256": null,
+              "items": [
+                "先明确任务目标、已知条件与输出要求，避免遗漏关键约束。",
+                "将复杂问题分解为可处理的步骤，按依赖关系组织求解过程。",
+                "核对所用材料、计算与假设，发现不一致时检查相关步骤。",
+                "依据任务结果检查方法的效果，记录已知错误并修订无效做法。"
+              ],
+              "sha256": "4e2a00ed48231595c64838aadd03d83493b2868e838912ed49cd2aab0b0d9810"
+            },
+            "orientation_items_sha256": "e5cf95a911537084cab9b185160579083f36423fc4fec67ba8742741d4059cde"
+          },
+          "winner": {
+            "provider": "latticeweave_memory",
+            "module": "latticeweave_provider",
+            "class_name": "LatticeWeaveMemoryProvider",
+            "source_path": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\budget7\\terminal_replay\\jobs\\engineering-p1-phi1-r00\\workspace\\EvolveLab\\providers\\latticeweave_provider.py",
+            "code_sha256": "4d3077eb17375900647d76c9a1bda5c90e38ca03bf3e7c9bdb2bba54c12035d8",
+            "orientation_snapshot": {
+              "schema_version": 1,
+              "initialized": true,
+              "provider_id": "latticeweave_memory",
+              "parent_provider_id": "lightweight_memory",
+              "parent_sha256": "4e2a00ed48231595c64838aadd03d83493b2868e838912ed49cd2aab0b0d9810",
+              "items": [
+                "先明确任务目标、已知条件与输出要求，避免遗漏关键约束。",
+                "将复杂问题分解为可处理的步骤，按依赖关系组织求解过程。",
+                "核对所用材料、计算与假设，发现不一致时检查相关步骤。",
+                "依据任务结果检查方法的效果，记录已知错误并修订无效做法。"
+              ],
+              "sha256": "83e09f401b59e0b6e834afe6763e7ba9b80a652b74007af3b122c5b7d1352d26"
+            },
+            "orientation_items_sha256": "e5cf95a911537084cab9b185160579083f36423fc4fec67ba8742741d4059cde"
+          },
+          "winner_code_changed": true,
+          "winner_orientation_items_changed": false,
+          "candidates": [
+            {
+              "provider": "latticeweave_memory",
+              "module": "latticeweave_provider",
+              "class_name": "LatticeWeaveMemoryProvider",
+              "source_path": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\budget7\\terminal_replay\\jobs\\engineering-p1-phi1-r00\\workspace\\EvolveLab\\providers\\latticeweave_provider.py",
+              "code_sha256": "4d3077eb17375900647d76c9a1bda5c90e38ca03bf3e7c9bdb2bba54c12035d8",
+              "orientation_snapshot": {
+                "schema_version": 1,
+                "initialized": true,
+                "provider_id": "latticeweave_memory",
+                "parent_provider_id": "lightweight_memory",
+                "parent_sha256": "4e2a00ed48231595c64838aadd03d83493b2868e838912ed49cd2aab0b0d9810",
+                "items": [
+                  "先明确任务目标、已知条件与输出要求，避免遗漏关键约束。",
+                  "将复杂问题分解为可处理的步骤，按依赖关系组织求解过程。",
+                  "核对所用材料、计算与假设，发现不一致时检查相关步骤。",
+                  "依据任务结果检查方法的效果，记录已知错误并修订无效做法。"
+                ],
+                "sha256": "83e09f401b59e0b6e834afe6763e7ba9b80a652b74007af3b122c5b7d1352d26"
+              },
+              "orientation_items_sha256": "e5cf95a911537084cab9b185160579083f36423fc4fec67ba8742741d4059cde",
+              "code_changed_vs_parent": true,
+              "orientation_items_changed_vs_parent": false,
+              "actual_loaded": true,
+              "orientation_sent_to_actor": true
+            }
+          ]
+        },
+        {
+          "round": 1,
+          "parent": {
+            "provider": "latticeweave_memory",
+            "module": "latticeweave_provider",
+            "class_name": "LatticeWeaveMemoryProvider",
+            "source_path": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\budget7\\terminal_replay\\jobs\\engineering-p1-phi1-r00\\workspace\\EvolveLab\\providers\\latticeweave_provider.py",
+            "code_sha256": "4d3077eb17375900647d76c9a1bda5c90e38ca03bf3e7c9bdb2bba54c12035d8",
+            "orientation_snapshot": {
+              "schema_version": 1,
+              "initialized": true,
+              "provider_id": "latticeweave_memory",
+              "parent_provider_id": "lightweight_memory",
+              "parent_sha256": "4e2a00ed48231595c64838aadd03d83493b2868e838912ed49cd2aab0b0d9810",
+              "items": [
+                "先明确任务目标、已知条件与输出要求，避免遗漏关键约束。",
+                "将复杂问题分解为可处理的步骤，按依赖关系组织求解过程。",
+                "核对所用材料、计算与假设，发现不一致时检查相关步骤。",
+                "依据任务结果检查方法的效果，记录已知错误并修订无效做法。"
+              ],
+              "sha256": "83e09f401b59e0b6e834afe6763e7ba9b80a652b74007af3b122c5b7d1352d26"
+            },
+            "orientation_items_sha256": "e5cf95a911537084cab9b185160579083f36423fc4fec67ba8742741d4059cde"
+          },
+          "winner": {
+            "provider": "cinderglass_memory",
+            "module": "cinderglass_memory_provider",
+            "class_name": "CinderglassMemoryProvider",
+            "source_path": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\budget7\\terminal_replay\\jobs\\engineering-p1-phi1-r00\\workspace\\EvolveLab\\providers\\cinderglass_memory_provider.py",
+            "code_sha256": "b7c1fc05eede8df440d607607e56d530e0c756db5d4d5062e1c7bfe2e553beb1",
+            "orientation_snapshot": {
+              "schema_version": 1,
+              "initialized": true,
+              "provider_id": "cinderglass_memory",
+              "parent_provider_id": "latticeweave_memory",
+              "parent_sha256": "83e09f401b59e0b6e834afe6763e7ba9b80a652b74007af3b122c5b7d1352d26",
+              "items": [
+                "先明确任务目标、已知条件与输出要求，避免遗漏关键约束。",
+                "将复杂问题分解为可处理的步骤，按依赖关系组织求解过程。",
+                "核对所用材料、计算与假设，发现不一致时检查相关步骤。",
+                "依据任务结果检查方法的效果，记录已知错误并修订无效做法。"
+              ],
+              "sha256": "5aac3e90edd039999d89daaa39b58560851118c3efc54080db9f5495cffcedd4"
+            },
+            "orientation_items_sha256": "e5cf95a911537084cab9b185160579083f36423fc4fec67ba8742741d4059cde"
+          },
+          "winner_code_changed": true,
+          "winner_orientation_items_changed": false,
+          "candidates": [
+            {
+              "provider": "cinderglass_memory",
+              "module": "cinderglass_memory_provider",
+              "class_name": "CinderglassMemoryProvider",
+              "source_path": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\budget7\\terminal_replay\\jobs\\engineering-p1-phi1-r00\\workspace\\EvolveLab\\providers\\cinderglass_memory_provider.py",
+              "code_sha256": "b7c1fc05eede8df440d607607e56d530e0c756db5d4d5062e1c7bfe2e553beb1",
+              "orientation_snapshot": {
+                "schema_version": 1,
+                "initialized": true,
+                "provider_id": "cinderglass_memory",
+                "parent_provider_id": "latticeweave_memory",
+                "parent_sha256": "83e09f401b59e0b6e834afe6763e7ba9b80a652b74007af3b122c5b7d1352d26",
+                "items": [
+                  "先明确任务目标、已知条件与输出要求，避免遗漏关键约束。",
+                  "将复杂问题分解为可处理的步骤，按依赖关系组织求解过程。",
+                  "核对所用材料、计算与假设，发现不一致时检查相关步骤。",
+                  "依据任务结果检查方法的效果，记录已知错误并修订无效做法。"
+                ],
+                "sha256": "5aac3e90edd039999d89daaa39b58560851118c3efc54080db9f5495cffcedd4"
+              },
+              "orientation_items_sha256": "e5cf95a911537084cab9b185160579083f36423fc4fec67ba8742741d4059cde",
+              "code_changed_vs_parent": true,
+              "orientation_items_changed_vs_parent": false,
+              "actual_loaded": true,
+              "orientation_sent_to_actor": true
+            }
+          ]
+        }
+      ],
+      "factor_checks": {
+        "frozen_code_preserved": true,
+        "frozen_orientation_preserved": true
+      },
+      "loaded_provider_evidence": [
+        {
+          "provider": "cinderglass_memory",
+          "code_sha256": "b7c1fc05eede8df440d607607e56d530e0c756db5d4d5062e1c7bfe2e553beb1",
+          "operations": {
+            "loaded": 23,
+            "initialize": 23,
+            "take_in_memory": 18,
+            "provide_memory": 56
+          },
+          "orientation_sent_to_actor": true
+        },
+        {
+          "provider": "latticeweave_memory",
+          "code_sha256": "4d3077eb17375900647d76c9a1bda5c90e38ca03bf3e7c9bdb2bba54c12035d8",
+          "operations": {
+            "loaded": 18,
+            "initialize": 18,
+            "provide_memory": 45,
+            "take_in_memory": 18
+          },
+          "orientation_sent_to_actor": true
+        },
+        {
+          "provider": "lightweight_memory",
+          "code_sha256": "ce0c1f36ca9fb095c8448fab9b3e35e3c97e5928d115fdf98d56f48c842750f4",
+          "operations": {
+            "loaded": 6,
+            "initialize": 6,
+            "take_in_memory": 6,
+            "provide_memory": 25
+          },
+          "orientation_sent_to_actor": true
+        }
+      ],
+      "heldout_tasks": [
+        {
+          "task_id": "wwqa-b6dc4fc48b23f56feee99f1989b574afbcad862d74eb9ca898ea821c35890d59",
+          "judgement": "incorrect",
+          "question": "Which NIME 2024 board members have made contributions to the conference proceedings, and what were these contributions?",
+          "fixed_task_sha256": "8ff50e05d5d0fe781f62a80264bf135b4b721510017bfaa5384c1e04cf41a08c",
+          "source": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\budget7\\terminal_replay\\jobs\\engineering-p1-phi1-r00\\terminal\\task_logs\\1.json",
+          "sha256": "15c734a58ad1f6589ebd3c1ddb8168a2251e8b8d4e38bd6d678a2866abeee646"
+        },
+        {
+          "task_id": "wwqa-afc759d29ba884948cae9a5a98576b7e63f1b3d9d335a134791d125ce041ed12",
+          "judgement": "incorrect",
+          "question": "在腾讯推出的数字藏经洞与数字长城项目中，哪种数字技术被共同采用来实现文物的高度还原？",
+          "fixed_task_sha256": "2b45e2b0f8f9b2269d526fe46bdbe14325fe51cb41ef2366b8a41ffa9fc6179e",
+          "source": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\budget7\\terminal_replay\\jobs\\engineering-p1-phi1-r00\\terminal\\task_logs\\2.json",
+          "sha256": "cd4dabb3dc20f18201dbfca855adf32021020853440f2771d5cae67b94113f9e"
+        },
+        {
+          "task_id": "wwqa-c8d40a03538e21c5ad96936dfa7f0b455708f8d965bc770446faca009461b2f7",
+          "judgement": "incorrect",
+          "question": "在山东大学计算机科学与技术学院，哪些国际知名教授在2019年和2020年间访问学院，并进行了关于大数据与并行计算的学术交流？",
+          "fixed_task_sha256": "f647d4b2065ace7f996749fa1d2b022eb87e44f8cd1b96a927f4953ea01e382f",
+          "source": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\budget7\\terminal_replay\\jobs\\engineering-p1-phi1-r00\\terminal\\task_logs\\3.json",
+          "sha256": "7b5ba348b251b694957cb0605c6081028d3a40074420eafdf7945d35cd7759bc"
+        },
+        {
+          "task_id": "wwqa-1a6c0761185591373428ef4791949d040c38d5020c5d3f39890e09201e28d7ec",
+          "judgement": "incorrect",
+          "question": "北方工业大学信息学院2023年最后举办的学术活动是在什么日期？",
+          "fixed_task_sha256": "a639bfccb83ba93835dd5a5feae167770413568610c66b8203e2e9b3b7380867",
+          "source": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\budget7\\terminal_replay\\jobs\\engineering-p1-phi1-r00\\terminal\\task_logs\\4.json",
+          "sha256": "e68f6b2a5c9593b39f40441fd43e6c3c42cf9a9c6959b8ad6a849f475e38cc71"
+        }
+      ],
+      "result_file": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\budget7\\terminal_replay\\jobs\\engineering-p1-phi1-r00\\result.json",
+      "result_sha256": "3b5a93a831791451259b448599b442c4448a825c1243581fca43c3ceeb83f1d0",
+      "supplement_details": {
+        "classification": "exploratory_with_disclosed_terminal_replay",
+        "terminal_replay": true,
+        "replay_reason": "actor_tool_call_parser_string_indices",
+        "original_failure_preserved": true,
+        "new_api_request_count": 90,
+        "new_web_request_count": 79,
+        "new_chat_total_tokens": 375695,
+        "winner_before": {
+          "provider": "cinderglass_memory",
+          "code_sha256": "b7c1fc05eede8df440d607607e56d530e0c756db5d4d5062e1c7bfe2e553beb1",
+          "module_name": "cinderglass_memory_provider",
+          "class_name": "CinderglassMemoryProvider",
+          "effective_config_sha256": "88062d8487a6678e116ec7f5570025f944bd7f49ab79502641a400ad7a1ef0a8",
+          "orientation_snapshot_id": "5aac3e90edd039999d89daaa39b58560851118c3efc54080db9f5495cffcedd4",
+          "orientation_items_sha256": "e5cf95a911537084cab9b185160579083f36423fc4fec67ba8742741d4059cde",
+          "orientation_file_sha256": "58c7bad6996e98a5bd055a7fa3f7e5bc9c41befad95f7fa1a2252557011bb157",
+          "evolve_state_sha256": "22232f9a0ebdf3d58bfd171a1fac73d4b2e2aea80254fea29c20e49af80d0be2"
+        },
+        "winner_after": {
+          "provider": "cinderglass_memory",
+          "code_sha256": "b7c1fc05eede8df440d607607e56d530e0c756db5d4d5062e1c7bfe2e553beb1",
+          "module_name": "cinderglass_memory_provider",
+          "class_name": "CinderglassMemoryProvider",
+          "effective_config_sha256": "88062d8487a6678e116ec7f5570025f944bd7f49ab79502641a400ad7a1ef0a8",
+          "orientation_snapshot_id": "5aac3e90edd039999d89daaa39b58560851118c3efc54080db9f5495cffcedd4",
+          "orientation_items_sha256": "e5cf95a911537084cab9b185160579083f36423fc4fec67ba8742741d4059cde",
+          "orientation_file_sha256": "58c7bad6996e98a5bd055a7fa3f7e5bc9c41befad95f7fa1a2252557011bb157",
+          "evolve_state_sha256": "22232f9a0ebdf3d58bfd171a1fac73d4b2e2aea80254fea29c20e49af80d0be2"
+        }
+      }
+    },
+    {
+      "job_id": "dialectical-p1-phi1-r00",
+      "original_status": "complete",
+      "acceptance": "original",
+      "accepted": true,
+      "evidence_root": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\dialectical-p1-phi1-r00",
+      "accuracy": 0.25,
+      "original_evidence_root": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\dialectical-p1-phi1-r00",
+      "supplement_receipt": null,
+      "correct": 1,
+      "count": 4,
+      "winner": "causal_trigger_memory",
+      "initial_phi": [
+        "从具体条件与相关关系理解问题，避免脱离情境套用既有结论。",
+        "检查条件和阶段是否发生变化，据此调整原有判断的适用范围。",
+        "分析实际存在的相互制约，识别当前起主要作用的关系与因素。",
+        "依据任务实践的结果检验认识，保留有效经验并修订不合条件的判断。"
+      ],
+      "final_phi": [
+        "从具体条件与相关关系理解问题，避免脱离情境套用既有结论。",
+        "检查条件和阶段是否发生变化，据此调整原有判断的适用范围。",
+        "分析实际存在的相互制约，识别当前起主要作用的关系与因素。",
+        "依据任务实践的结果检验认识，保留有效经验并修订不合条件的判断。"
+      ],
+      "phi_initial_count": 4,
+      "phi_final_count": 4,
+      "final_phi_changed": false,
+      "any_winner_code_changed": true,
+      "any_winner_phi_changed": false,
+      "rounds": [
+        {
+          "round": 0,
+          "parent": {
+            "provider": "lightweight_memory",
+            "module": "lightweight_memory_provider",
+            "class_name": "LightweightMemoryProvider",
+            "source_path": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\dialectical-p1-phi1-r00\\workspace\\EvolveLab\\providers\\lightweight_memory_provider.py",
+            "code_sha256": "ce0c1f36ca9fb095c8448fab9b3e35e3c97e5928d115fdf98d56f48c842750f4",
+            "orientation_snapshot": {
+              "schema_version": 1,
+              "initialized": true,
+              "provider_id": "lightweight_memory",
+              "parent_provider_id": null,
+              "parent_sha256": null,
+              "items": [
+                "从具体条件与相关关系理解问题，避免脱离情境套用既有结论。",
+                "检查条件和阶段是否发生变化，据此调整原有判断的适用范围。",
+                "分析实际存在的相互制约，识别当前起主要作用的关系与因素。",
+                "依据任务实践的结果检验认识，保留有效经验并修订不合条件的判断。"
+              ],
+              "sha256": "320b5fa787ef953e59987deeda40645f27cd95af7b378a86e95188162d213211"
+            },
+            "orientation_items_sha256": "40c3ae500087e48d6c493b1c9b2a541529203ea4cebcb2785a5c0ab8614bc942"
+          },
+          "winner": {
+            "provider": "lightweight_memory",
+            "module": "lightweight_memory_provider",
+            "class_name": "LightweightMemoryProvider",
+            "source_path": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\dialectical-p1-phi1-r00\\workspace\\EvolveLab\\providers\\lightweight_memory_provider.py",
+            "code_sha256": "ce0c1f36ca9fb095c8448fab9b3e35e3c97e5928d115fdf98d56f48c842750f4",
+            "orientation_snapshot": {
+              "schema_version": 1,
+              "initialized": true,
+              "provider_id": "lightweight_memory",
+              "parent_provider_id": null,
+              "parent_sha256": null,
+              "items": [
+                "从具体条件与相关关系理解问题，避免脱离情境套用既有结论。",
+                "检查条件和阶段是否发生变化，据此调整原有判断的适用范围。",
+                "分析实际存在的相互制约，识别当前起主要作用的关系与因素。",
+                "依据任务实践的结果检验认识，保留有效经验并修订不合条件的判断。"
+              ],
+              "sha256": "320b5fa787ef953e59987deeda40645f27cd95af7b378a86e95188162d213211"
+            },
+            "orientation_items_sha256": "40c3ae500087e48d6c493b1c9b2a541529203ea4cebcb2785a5c0ab8614bc942"
+          },
+          "winner_code_changed": false,
+          "winner_orientation_items_changed": false,
+          "candidates": [
+            {
+              "provider": "dialectic_slot_memory",
+              "module": "dialectic_slot_memory_provider",
+              "class_name": "DialecticSlotMemoryProvider",
+              "source_path": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\dialectical-p1-phi1-r00\\workspace\\EvolveLab\\providers\\dialectic_slot_memory_provider.py",
+              "code_sha256": "b4c9c9a8a4ec070a62abab7a9eebf1d2023f7396bff04d6d7087e583909c98b3",
+              "orientation_snapshot": {
+                "schema_version": 1,
+                "initialized": true,
+                "provider_id": "dialectic_slot_memory",
+                "parent_provider_id": "lightweight_memory",
+                "parent_sha256": "320b5fa787ef953e59987deeda40645f27cd95af7b378a86e95188162d213211",
+                "items": [
+                  "从具体条件与相关关系理解问题，避免脱离情境套用既有结论。",
+                  "检查条件和阶段是否发生变化，据此调整原有判断的适用范围。",
+                  "分析实际存在的相互制约，识别当前起主要作用的关系与因素。",
+                  "依据任务实践的结果检验认识，保留有效经验并修订不合条件的判断；对失败轨迹同样进行诊断，把错误转化为可复用的辨别性检查。"
+                ],
+                "sha256": "58ab94a4fc8fbd5de1c499ed6fe69a1103f8e8f4f12d642cbd47048d337b0baf"
+              },
+              "orientation_items_sha256": "57a19f081f4a0ea3907cae4fa6d93838a1955ca7a2b5a0c04f4fc669d8ed4372",
+              "code_changed_vs_parent": true,
+              "orientation_items_changed_vs_parent": true,
+              "actual_loaded": true,
+              "orientation_sent_to_actor": true
+            }
+          ]
+        },
+        {
+          "round": 1,
+          "parent": {
+            "provider": "lightweight_memory",
+            "module": "lightweight_memory_provider",
+            "class_name": "LightweightMemoryProvider",
+            "source_path": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\dialectical-p1-phi1-r00\\workspace\\EvolveLab\\providers\\lightweight_memory_provider.py",
+            "code_sha256": "ce0c1f36ca9fb095c8448fab9b3e35e3c97e5928d115fdf98d56f48c842750f4",
+            "orientation_snapshot": {
+              "schema_version": 1,
+              "initialized": true,
+              "provider_id": "lightweight_memory",
+              "parent_provider_id": null,
+              "parent_sha256": null,
+              "items": [
+                "从具体条件与相关关系理解问题，避免脱离情境套用既有结论。",
+                "检查条件和阶段是否发生变化，据此调整原有判断的适用范围。",
+                "分析实际存在的相互制约，识别当前起主要作用的关系与因素。",
+                "依据任务实践的结果检验认识，保留有效经验并修订不合条件的判断。"
+              ],
+              "sha256": "320b5fa787ef953e59987deeda40645f27cd95af7b378a86e95188162d213211"
+            },
+            "orientation_items_sha256": "40c3ae500087e48d6c493b1c9b2a541529203ea4cebcb2785a5c0ab8614bc942"
+          },
+          "winner": {
+            "provider": "causal_trigger_memory",
+            "module": "causal_trigger_memory_provider",
+            "class_name": "CausalTriggerMemoryProvider",
+            "source_path": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\dialectical-p1-phi1-r00\\workspace\\EvolveLab\\providers\\causal_trigger_memory_provider.py",
+            "code_sha256": "2bb750161014666ddd8b38a4a0229bb1f78d4c1ba9061331a313aee690ea03f8",
+            "orientation_snapshot": {
+              "schema_version": 1,
+              "initialized": true,
+              "provider_id": "causal_trigger_memory",
+              "parent_provider_id": "lightweight_memory",
+              "parent_sha256": "320b5fa787ef953e59987deeda40645f27cd95af7b378a86e95188162d213211",
+              "items": [
+                "从具体条件与相关关系理解问题，避免脱离情境套用既有结论。",
+                "检查条件和阶段是否发生变化，据此调整原有判断的适用范围。",
+                "分析实际存在的相互制约，识别当前起主要作用的关系与因素。",
+                "依据任务实践的结果检验认识，保留有效经验并修订不合条件的判断。"
+              ],
+              "sha256": "751a696dd91031b953fcc43b33bb1b4665016452ebe0e248d62770cfcbff238a"
+            },
+            "orientation_items_sha256": "40c3ae500087e48d6c493b1c9b2a541529203ea4cebcb2785a5c0ab8614bc942"
+          },
+          "winner_code_changed": true,
+          "winner_orientation_items_changed": false,
+          "candidates": [
+            {
+              "provider": "causal_trigger_memory",
+              "module": "causal_trigger_memory_provider",
+              "class_name": "CausalTriggerMemoryProvider",
+              "source_path": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\dialectical-p1-phi1-r00\\workspace\\EvolveLab\\providers\\causal_trigger_memory_provider.py",
+              "code_sha256": "2bb750161014666ddd8b38a4a0229bb1f78d4c1ba9061331a313aee690ea03f8",
+              "orientation_snapshot": {
+                "schema_version": 1,
+                "initialized": true,
+                "provider_id": "causal_trigger_memory",
+                "parent_provider_id": "lightweight_memory",
+                "parent_sha256": "320b5fa787ef953e59987deeda40645f27cd95af7b378a86e95188162d213211",
+                "items": [
+                  "从具体条件与相关关系理解问题，避免脱离情境套用既有结论。",
+                  "检查条件和阶段是否发生变化，据此调整原有判断的适用范围。",
+                  "分析实际存在的相互制约，识别当前起主要作用的关系与因素。",
+                  "依据任务实践的结果检验认识，保留有效经验并修订不合条件的判断。"
+                ],
+                "sha256": "751a696dd91031b953fcc43b33bb1b4665016452ebe0e248d62770cfcbff238a"
+              },
+              "orientation_items_sha256": "40c3ae500087e48d6c493b1c9b2a541529203ea4cebcb2785a5c0ab8614bc942",
+              "code_changed_vs_parent": true,
+              "orientation_items_changed_vs_parent": false,
+              "actual_loaded": true,
+              "orientation_sent_to_actor": true
+            }
+          ]
+        }
+      ],
+      "factor_checks": {
+        "frozen_code_preserved": true,
+        "frozen_orientation_preserved": true
+      },
+      "loaded_provider_evidence": [
+        {
+          "provider": "lightweight_memory",
+          "code_sha256": "ce0c1f36ca9fb095c8448fab9b3e35e3c97e5928d115fdf98d56f48c842750f4",
+          "operations": {
+            "loaded": 18,
+            "initialize": 18,
+            "provide_memory": 47,
+            "take_in_memory": 18
+          },
+          "orientation_sent_to_actor": true
+        },
+        {
+          "provider": "dialectic_slot_memory",
+          "code_sha256": "b4c9c9a8a4ec070a62abab7a9eebf1d2023f7396bff04d6d7087e583909c98b3",
+          "operations": {
+            "loaded": 6,
+            "initialize": 6,
+            "provide_memory": 19,
+            "take_in_memory": 6
+          },
+          "orientation_sent_to_actor": true
+        },
+        {
+          "provider": "causal_trigger_memory",
+          "code_sha256": "2bb750161014666ddd8b38a4a0229bb1f78d4c1ba9061331a313aee690ea03f8",
+          "operations": {
+            "loaded": 18,
+            "initialize": 18,
+            "provide_memory": 46,
+            "take_in_memory": 14
+          },
+          "orientation_sent_to_actor": true
+        }
+      ],
+      "heldout_tasks": [
+        {
+          "task_id": "wwqa-b6dc4fc48b23f56feee99f1989b574afbcad862d74eb9ca898ea821c35890d59",
+          "judgement": "incorrect",
+          "question": "Which NIME 2024 board members have made contributions to the conference proceedings, and what were these contributions?",
+          "fixed_task_sha256": "8ff50e05d5d0fe781f62a80264bf135b4b721510017bfaa5384c1e04cf41a08c",
+          "source": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\dialectical-p1-phi1-r00\\terminal\\task_logs\\1.json",
+          "sha256": "4a0387cc36f3edb1f102c2ced75972c944176816bbf2eae3f4548077b82329af"
+        },
+        {
+          "task_id": "wwqa-afc759d29ba884948cae9a5a98576b7e63f1b3d9d335a134791d125ce041ed12",
+          "judgement": "correct",
+          "question": "在腾讯推出的数字藏经洞与数字长城项目中，哪种数字技术被共同采用来实现文物的高度还原？",
+          "fixed_task_sha256": "2b45e2b0f8f9b2269d526fe46bdbe14325fe51cb41ef2366b8a41ffa9fc6179e",
+          "source": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\dialectical-p1-phi1-r00\\terminal\\task_logs\\2.json",
+          "sha256": "922e25753a8edd7bc3d09f4e94e0549f126f292cfc1f5896c485faef634cdc9f"
+        },
+        {
+          "task_id": "wwqa-c8d40a03538e21c5ad96936dfa7f0b455708f8d965bc770446faca009461b2f7",
+          "judgement": "incorrect",
+          "question": "在山东大学计算机科学与技术学院，哪些国际知名教授在2019年和2020年间访问学院，并进行了关于大数据与并行计算的学术交流？",
+          "fixed_task_sha256": "f647d4b2065ace7f996749fa1d2b022eb87e44f8cd1b96a927f4953ea01e382f",
+          "source": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\dialectical-p1-phi1-r00\\terminal\\task_logs\\3.json",
+          "sha256": "d4e5fe57798bae91749e6df874977ee94e1baeb42a4abeccd070c506fc524f7c"
+        },
+        {
+          "task_id": "wwqa-1a6c0761185591373428ef4791949d040c38d5020c5d3f39890e09201e28d7ec",
+          "judgement": "incorrect",
+          "question": "北方工业大学信息学院2023年最后举办的学术活动是在什么日期？",
+          "fixed_task_sha256": "a639bfccb83ba93835dd5a5feae167770413568610c66b8203e2e9b3b7380867",
+          "source": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\dialectical-p1-phi1-r00\\terminal\\task_logs\\4.json",
+          "sha256": "57408f4ef7aa6e28eb2875388ed40aa6cbde6398b16ea61cca6fe7bef6a91688"
+        }
+      ],
+      "result_file": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\dialectical-p1-phi1-r00\\result.json",
+      "result_sha256": "7092f31d3e59039e045f0ae6df97e4845b9bceb3254942553a755e02b1c3860a"
+    },
+    {
+      "job_id": "critical-p1-phi1-r00",
+      "original_status": "failed",
+      "acceptance": "rejected_candidate",
+      "accepted": true,
+      "evidence_root": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\budget7\\rejected_candidate\\jobs\\critical-p1-phi1-r00",
+      "accuracy": 0.0,
+      "original_evidence_root": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\critical-p1-phi1-r00",
+      "supplement_receipt": {
+        "status_file": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\budget7\\rejected_candidate\\jobs\\critical-p1-phi1-r00\\continuation_status.json",
+        "status_sha256": "b8da2fb1753218afc0b13e714e9aca02788feb4ac73d2d81187572d029100ed9",
+        "attempt_database": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\budget7\\rejected_candidate\\continuation_attempts.sqlite",
+        "attempt_state": "complete"
+      },
+      "correct": 0,
+      "count": 4,
+      "winner": "lightweight_memory",
+      "initial_phi": [
+        "将当前解释视为可修订的猜想，明确它依赖的条件与假设。",
+        "比较能够解释现象的竞争解释，避免过早将单一解释视为定论。",
+        "主动寻找可能反驳当前判断的材料，检查它与已有证据的关系。",
+        "依据检验结果修订或放弃解释，避免仅为保护旧结论追加任意假设。"
+      ],
+      "final_phi": [
+        "将当前解释视为可修订的猜想，明确它依赖的条件与假设。",
+        "比较能够解释现象的竞争解释，避免过早将单一解释视为定论。",
+        "主动寻找可能反驳当前判断的材料，检查它与已有证据的关系。",
+        "依据检验结果修订或放弃解释，避免仅为保护旧结论追加任意假设。"
+      ],
+      "phi_initial_count": 4,
+      "phi_final_count": 4,
+      "final_phi_changed": false,
+      "any_winner_code_changed": false,
+      "any_winner_phi_changed": false,
+      "rounds": [
+        {
+          "round": 0,
+          "parent": {
+            "provider": "lightweight_memory",
+            "module": "lightweight_memory_provider",
+            "class_name": "LightweightMemoryProvider",
+            "source_path": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\budget7\\rejected_candidate\\jobs\\critical-p1-phi1-r00\\workspace\\EvolveLab\\providers\\lightweight_memory_provider.py",
+            "code_sha256": "ce0c1f36ca9fb095c8448fab9b3e35e3c97e5928d115fdf98d56f48c842750f4",
+            "orientation_snapshot": {
+              "schema_version": 1,
+              "initialized": true,
+              "provider_id": "lightweight_memory",
+              "parent_provider_id": null,
+              "parent_sha256": null,
+              "items": [
+                "将当前解释视为可修订的猜想，明确它依赖的条件与假设。",
+                "比较能够解释现象的竞争解释，避免过早将单一解释视为定论。",
+                "主动寻找可能反驳当前判断的材料，检查它与已有证据的关系。",
+                "依据检验结果修订或放弃解释，避免仅为保护旧结论追加任意假设。"
+              ],
+              "sha256": "b6220069be0e9af9ee956284eb54dd0c8e0ff7d6e3ac3c19e7ac0fcb82c9bba6"
+            },
+            "orientation_items_sha256": "fe361f6e210e9c68451fab01b3c4eb0d473e2c4ffa309e1cf76c3f021da2c9c1"
+          },
+          "winner": {
+            "provider": "lightweight_memory",
+            "module": "lightweight_memory_provider",
+            "class_name": "LightweightMemoryProvider",
+            "source_path": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\budget7\\rejected_candidate\\jobs\\critical-p1-phi1-r00\\workspace\\EvolveLab\\providers\\lightweight_memory_provider.py",
+            "code_sha256": "ce0c1f36ca9fb095c8448fab9b3e35e3c97e5928d115fdf98d56f48c842750f4",
+            "orientation_snapshot": {
+              "schema_version": 1,
+              "initialized": true,
+              "provider_id": "lightweight_memory",
+              "parent_provider_id": null,
+              "parent_sha256": null,
+              "items": [
+                "将当前解释视为可修订的猜想，明确它依赖的条件与假设。",
+                "比较能够解释现象的竞争解释，避免过早将单一解释视为定论。",
+                "主动寻找可能反驳当前判断的材料，检查它与已有证据的关系。",
+                "依据检验结果修订或放弃解释，避免仅为保护旧结论追加任意假设。"
+              ],
+              "sha256": "b6220069be0e9af9ee956284eb54dd0c8e0ff7d6e3ac3c19e7ac0fcb82c9bba6"
+            },
+            "orientation_items_sha256": "fe361f6e210e9c68451fab01b3c4eb0d473e2c4ffa309e1cf76c3f021da2c9c1"
+          },
+          "winner_code_changed": false,
+          "winner_orientation_items_changed": false,
+          "candidates": [
+            {
+              "provider": "causal_ledger_memory",
+              "module": "causal_ledger_memory_provider",
+              "class_name": "CausalLedgerMemoryProvider",
+              "source_path": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\budget7\\rejected_candidate\\jobs\\critical-p1-phi1-r00\\workspace\\EvolveLab\\providers\\causal_ledger_memory_provider.py",
+              "code_sha256": "e5a95bbc6a46238d16231e88f635f735b963eea555adabadc2877ace41a7fa3f",
+              "orientation_snapshot": {
+                "schema_version": 1,
+                "initialized": true,
+                "provider_id": "causal_ledger_memory",
+                "parent_provider_id": "lightweight_memory",
+                "parent_sha256": "b6220069be0e9af9ee956284eb54dd0c8e0ff7d6e3ac3c19e7ac0fcb82c9bba6",
+                "items": [
+                  "将当前解释视为可修订的猜想，明确它依赖的条件与假设。",
+                  "比较能够解释现象的竞争解释，避免过早将单一解释视为定论。",
+                  "主动寻找可能反驳当前判断的材料，检查它与已有证据的关系。",
+                  "依据检验结果修订或放弃解释，避免仅为保护旧结论追加任意假设。"
+                ],
+                "sha256": "ef261842b52f8e64d49472906c05bcafe5fe4db3915f73f6799cbc454557df06"
+              },
+              "orientation_items_sha256": "fe361f6e210e9c68451fab01b3c4eb0d473e2c4ffa309e1cf76c3f021da2c9c1",
+              "code_changed_vs_parent": true,
+              "orientation_items_changed_vs_parent": false,
+              "actual_loaded": true,
+              "orientation_sent_to_actor": true
+            }
+          ]
+        },
+        {
+          "round": 1,
+          "parent": {
+            "provider": "lightweight_memory",
+            "module": "lightweight_memory_provider",
+            "class_name": "LightweightMemoryProvider",
+            "source_path": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\budget7\\rejected_candidate\\jobs\\critical-p1-phi1-r00\\workspace\\EvolveLab\\providers\\lightweight_memory_provider.py",
+            "code_sha256": "ce0c1f36ca9fb095c8448fab9b3e35e3c97e5928d115fdf98d56f48c842750f4",
+            "orientation_snapshot": {
+              "schema_version": 1,
+              "initialized": true,
+              "provider_id": "lightweight_memory",
+              "parent_provider_id": null,
+              "parent_sha256": null,
+              "items": [
+                "将当前解释视为可修订的猜想，明确它依赖的条件与假设。",
+                "比较能够解释现象的竞争解释，避免过早将单一解释视为定论。",
+                "主动寻找可能反驳当前判断的材料，检查它与已有证据的关系。",
+                "依据检验结果修订或放弃解释，避免仅为保护旧结论追加任意假设。"
+              ],
+              "sha256": "b6220069be0e9af9ee956284eb54dd0c8e0ff7d6e3ac3c19e7ac0fcb82c9bba6"
+            },
+            "orientation_items_sha256": "fe361f6e210e9c68451fab01b3c4eb0d473e2c4ffa309e1cf76c3f021da2c9c1"
+          },
+          "winner": {
+            "provider": "lightweight_memory",
+            "module": "lightweight_memory_provider",
+            "class_name": "LightweightMemoryProvider",
+            "source_path": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\budget7\\rejected_candidate\\jobs\\critical-p1-phi1-r00\\workspace\\EvolveLab\\providers\\lightweight_memory_provider.py",
+            "code_sha256": "ce0c1f36ca9fb095c8448fab9b3e35e3c97e5928d115fdf98d56f48c842750f4",
+            "orientation_snapshot": {
+              "schema_version": 1,
+              "initialized": true,
+              "provider_id": "lightweight_memory",
+              "parent_provider_id": null,
+              "parent_sha256": null,
+              "items": [
+                "将当前解释视为可修订的猜想，明确它依赖的条件与假设。",
+                "比较能够解释现象的竞争解释，避免过早将单一解释视为定论。",
+                "主动寻找可能反驳当前判断的材料，检查它与已有证据的关系。",
+                "依据检验结果修订或放弃解释，避免仅为保护旧结论追加任意假设。"
+              ],
+              "sha256": "b6220069be0e9af9ee956284eb54dd0c8e0ff7d6e3ac3c19e7ac0fcb82c9bba6"
+            },
+            "orientation_items_sha256": "fe361f6e210e9c68451fab01b3c4eb0d473e2c4ffa309e1cf76c3f021da2c9c1"
+          },
+          "winner_code_changed": false,
+          "winner_orientation_items_changed": false,
+          "candidates": []
+        }
+      ],
+      "factor_checks": {
+        "frozen_code_preserved": true,
+        "frozen_orientation_preserved": true
+      },
+      "loaded_provider_evidence": [
+        {
+          "provider": "lightweight_memory",
+          "code_sha256": "ce0c1f36ca9fb095c8448fab9b3e35e3c97e5928d115fdf98d56f48c842750f4",
+          "operations": {
+            "loaded": 26,
+            "initialize": 26,
+            "take_in_memory": 22,
+            "provide_memory": 77
+          },
+          "orientation_sent_to_actor": true
+        },
+        {
+          "provider": "causal_ledger_memory",
+          "code_sha256": "e5a95bbc6a46238d16231e88f635f735b963eea555adabadc2877ace41a7fa3f",
+          "operations": {
+            "loaded": 6,
+            "initialize": 6,
+            "provide_memory": 19,
+            "take_in_memory": 6
+          },
+          "orientation_sent_to_actor": true
+        }
+      ],
+      "heldout_tasks": [
+        {
+          "task_id": "wwqa-b6dc4fc48b23f56feee99f1989b574afbcad862d74eb9ca898ea821c35890d59",
+          "judgement": "incorrect",
+          "question": "Which NIME 2024 board members have made contributions to the conference proceedings, and what were these contributions?",
+          "fixed_task_sha256": "8ff50e05d5d0fe781f62a80264bf135b4b721510017bfaa5384c1e04cf41a08c",
+          "source": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\budget7\\rejected_candidate\\jobs\\critical-p1-phi1-r00\\terminal\\task_logs\\1.json",
+          "sha256": "23decbec6264a77df9ba40983b63739a66a8ab14b7e9702b3480e7dc9f8c51cc"
+        },
+        {
+          "task_id": "wwqa-afc759d29ba884948cae9a5a98576b7e63f1b3d9d335a134791d125ce041ed12",
+          "judgement": "incorrect",
+          "question": "在腾讯推出的数字藏经洞与数字长城项目中，哪种数字技术被共同采用来实现文物的高度还原？",
+          "fixed_task_sha256": "2b45e2b0f8f9b2269d526fe46bdbe14325fe51cb41ef2366b8a41ffa9fc6179e",
+          "source": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\budget7\\rejected_candidate\\jobs\\critical-p1-phi1-r00\\terminal\\task_logs\\2.json",
+          "sha256": "e2ab76e41543ee9d67f1f503ac1fe221608ea273693edf10324cbda8f4506674"
+        },
+        {
+          "task_id": "wwqa-c8d40a03538e21c5ad96936dfa7f0b455708f8d965bc770446faca009461b2f7",
+          "judgement": "incorrect",
+          "question": "在山东大学计算机科学与技术学院，哪些国际知名教授在2019年和2020年间访问学院，并进行了关于大数据与并行计算的学术交流？",
+          "fixed_task_sha256": "f647d4b2065ace7f996749fa1d2b022eb87e44f8cd1b96a927f4953ea01e382f",
+          "source": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\budget7\\rejected_candidate\\jobs\\critical-p1-phi1-r00\\terminal\\task_logs\\3.json",
+          "sha256": "a910b281ecdac3fc59f92e6ba7ea1ab459b9dabc3ef87b7b6894af0ee1c2035e"
+        },
+        {
+          "task_id": "wwqa-1a6c0761185591373428ef4791949d040c38d5020c5d3f39890e09201e28d7ec",
+          "judgement": "incorrect",
+          "question": "北方工业大学信息学院2023年最后举办的学术活动是在什么日期？",
+          "fixed_task_sha256": "a639bfccb83ba93835dd5a5feae167770413568610c66b8203e2e9b3b7380867",
+          "source": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\budget7\\rejected_candidate\\jobs\\critical-p1-phi1-r00\\terminal\\task_logs\\4.json",
+          "sha256": "f5e6e66c696c317e648cfa71cdee8da27935176e44c5470af356ac197a379f7a"
+        }
+      ],
+      "result_file": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\budget7\\rejected_candidate\\jobs\\critical-p1-phi1-r00\\result.json",
+      "result_sha256": "762c30bf818bcae2195f2e2502e6c195147528f97d7e7ec58ba593829f38ccd2",
+      "supplement_details": {
+        "classification": "exploratory_with_disclosed_candidate_rejection",
+        "original_failure_preserved": true,
+        "new_api_request_count": 158,
+        "new_web_request_count": 119,
+        "new_chat_total_tokens": 712292,
+        "rejected_candidate_continuation": true,
+        "rejection_events": [
+          {
+            "event": "saved_generation_candidate_rejected",
+            "timestamp_utc": "2026-10-29T04:17:23.474613+00:00",
+            "category": "saved_generation_ast_rejection",
+            "candidate": "dialectic_hypothesis_memory",
+            "class_name": "DialecticHypothesisMemoryProvider",
+            "module_name": "dialectic_hypothesis_memory_provider",
+            "gate_error": "Generated provider uses a disallowed dynamic or network operation",
+            "ast_node": "Name",
+            "ast_name": "__import__",
+            "provider_source_line": 494,
+            "raw_line": 507,
+            "source_expression": "+ w.get(\"log_usage\", 0.2) * (__import__(\"math\").log1p(usage))",
+            "raw_sha256": "df02a824a0cffe2177e0c08ea9562fec3255cfa184bcd6f8f5d1fe16281bb166",
+            "parsed_code_sha256": "303776503f9496ba233ee7f4a72f6196ab9451c250d315cecf6c9403c6b077de",
+            "candidate_never_created_or_executed": true,
+            "constraint_limited_not_philosophy_performance": true,
+            "round": 1,
+            "parent_before": {
+              "provider": "lightweight_memory",
+              "code_sha256": "ce0c1f36ca9fb095c8448fab9b3e35e3c97e5928d115fdf98d56f48c842750f4",
+              "module_name": "lightweight_memory_provider",
+              "class_name": "LightweightMemoryProvider",
+              "effective_config_sha256": "e0540201f40b8c8b76251278349a50628b61750064f090deed18c5010cdcef14",
+              "orientation_snapshot_id": "b6220069be0e9af9ee956284eb54dd0c8e0ff7d6e3ac3c19e7ac0fcb82c9bba6",
+              "orientation_items_sha256": "fe361f6e210e9c68451fab01b3c4eb0d473e2c4ffa309e1cf76c3f021da2c9c1",
+              "orientation_file_sha256": "f911ab080d1f02f02de02c95c76a016bd3c23631a2d968d83a14f392acce26eb"
+            },
+            "checkpoint_sha256": "8c533997ba3213c12c0eaded251f0c3fdc8b65c7819bb46d2b7c5c10e59d6b18",
+            "analysis_sha256": "bd09a02a29b9e78029a9663962fec13d757edfbe4657676ac3d30640620647f0",
+            "discovery_log": "evolution/round_01/base_logs/3.json",
+            "discovery_sha256": "50765ed6d5b76c6dd14754b92b76b26d736c27da3973a5a214e1db1a94c667a9",
+            "round0_summary_sha256": "1ad0c440c29bec6d19c415c1b3b47768b3883a9bd7a95affcf200d67d54a65d6",
+            "raw_file": "evolution/round_01/llm_raw_output_20261029_115639.txt",
+            "api_prefix_count": 203,
+            "analysis_generation_creation_repeated": false,
+            "valid_children": [],
+            "parent_only_native_evaluation": true,
+            "reused_original_prefix": true
+          }
+        ]
+      }
+    },
+    {
+      "job_id": "none-p1-phi1-r00",
+      "original_status": "complete",
+      "acceptance": "original",
+      "accepted": true,
+      "evidence_root": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\none-p1-phi1-r00",
+      "accuracy": 0.25,
+      "original_evidence_root": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\none-p1-phi1-r00",
+      "supplement_receipt": null,
+      "correct": 1,
+      "count": 4,
+      "winner": "cadenceweave_memory",
+      "initial_phi": [],
+      "final_phi": [
+        "Prefer direct action and concrete steps over extended theoretical planning.",
+        "Honor explicit output-format constraints (units, separators, capitalization) exactly as stated.",
+        "When evidence is second-hand or inferred, label it clearly rather than presenting it as confirmed fact.",
+        "When instructions appear contradictory, comply with the explicit directive rather than analyzing the contradiction.",
+        "For multi-hop retrieval, prefer targeted queries over broad root-site crawls; pivot quickly when a path yields nothing."
+      ],
+      "phi_initial_count": 0,
+      "phi_final_count": 5,
+      "final_phi_changed": true,
+      "any_winner_code_changed": true,
+      "any_winner_phi_changed": true,
+      "rounds": [
+        {
+          "round": 0,
+          "parent": {
+            "provider": "lightweight_memory",
+            "module": "lightweight_memory_provider",
+            "class_name": "LightweightMemoryProvider",
+            "source_path": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\none-p1-phi1-r00\\workspace\\EvolveLab\\providers\\lightweight_memory_provider.py",
+            "code_sha256": "ce0c1f36ca9fb095c8448fab9b3e35e3c97e5928d115fdf98d56f48c842750f4",
+            "orientation_snapshot": {
+              "schema_version": 1,
+              "initialized": true,
+              "provider_id": "lightweight_memory",
+              "parent_provider_id": null,
+              "parent_sha256": null,
+              "items": [],
+              "sha256": "3f4f72910a9db20a84b71d2cfd0d8701af9d9b80a0a7da42fb5628f522213f4b"
+            },
+            "orientation_items_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+          },
+          "winner": {
+            "provider": "cadenceweave_memory",
+            "module": "cadenceweave_memory_provider",
+            "class_name": "CadenceWeaveMemoryProvider",
+            "source_path": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\none-p1-phi1-r00\\workspace\\EvolveLab\\providers\\cadenceweave_memory_provider.py",
+            "code_sha256": "f517fe0170cb77cfb32cb0851d7453feb2e751556f57f6ad167b4c95b4be65f2",
+            "orientation_snapshot": {
+              "schema_version": 1,
+              "initialized": true,
+              "provider_id": "cadenceweave_memory",
+              "parent_provider_id": "lightweight_memory",
+              "parent_sha256": "3f4f72910a9db20a84b71d2cfd0d8701af9d9b80a0a7da42fb5628f522213f4b",
+              "items": [
+                "Prefer direct action and concrete steps over extended theoretical planning.",
+                "Honor explicit output-format constraints (units, separators, capitalization) exactly as stated.",
+                "When evidence is second-hand or inferred, label it clearly rather than presenting it as confirmed fact.",
+                "When instructions appear contradictory, comply with the explicit directive rather than analyzing the contradiction.",
+                "For multi-hop retrieval, prefer targeted queries over broad root-site crawls; pivot quickly when a path yields nothing."
+              ],
+              "sha256": "e5dbe953f55c698a7609854b98affea0b3688f216ffa8ef95e21b050b5eec69e"
+            },
+            "orientation_items_sha256": "f86ebac8200886ff44789920c242b2dcac7ff4f07b7fdef3a157953a21b3da92"
+          },
+          "winner_code_changed": true,
+          "winner_orientation_items_changed": true,
+          "candidates": [
+            {
+              "provider": "cadenceweave_memory",
+              "module": "cadenceweave_memory_provider",
+              "class_name": "CadenceWeaveMemoryProvider",
+              "source_path": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\none-p1-phi1-r00\\workspace\\EvolveLab\\providers\\cadenceweave_memory_provider.py",
+              "code_sha256": "f517fe0170cb77cfb32cb0851d7453feb2e751556f57f6ad167b4c95b4be65f2",
+              "orientation_snapshot": {
+                "schema_version": 1,
+                "initialized": true,
+                "provider_id": "cadenceweave_memory",
+                "parent_provider_id": "lightweight_memory",
+                "parent_sha256": "3f4f72910a9db20a84b71d2cfd0d8701af9d9b80a0a7da42fb5628f522213f4b",
+                "items": [
+                  "Prefer direct action and concrete steps over extended theoretical planning.",
+                  "Honor explicit output-format constraints (units, separators, capitalization) exactly as stated.",
+                  "When evidence is second-hand or inferred, label it clearly rather than presenting it as confirmed fact.",
+                  "When instructions appear contradictory, comply with the explicit directive rather than analyzing the contradiction.",
+                  "For multi-hop retrieval, prefer targeted queries over broad root-site crawls; pivot quickly when a path yields nothing."
+                ],
+                "sha256": "e5dbe953f55c698a7609854b98affea0b3688f216ffa8ef95e21b050b5eec69e"
+              },
+              "orientation_items_sha256": "f86ebac8200886ff44789920c242b2dcac7ff4f07b7fdef3a157953a21b3da92",
+              "code_changed_vs_parent": true,
+              "orientation_items_changed_vs_parent": true,
+              "actual_loaded": true,
+              "orientation_sent_to_actor": true
+            }
+          ]
+        },
+        {
+          "round": 1,
+          "parent": {
+            "provider": "cadenceweave_memory",
+            "module": "cadenceweave_memory_provider",
+            "class_name": "CadenceWeaveMemoryProvider",
+            "source_path": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\none-p1-phi1-r00\\workspace\\EvolveLab\\providers\\cadenceweave_memory_provider.py",
+            "code_sha256": "f517fe0170cb77cfb32cb0851d7453feb2e751556f57f6ad167b4c95b4be65f2",
+            "orientation_snapshot": {
+              "schema_version": 1,
+              "initialized": true,
+              "provider_id": "cadenceweave_memory",
+              "parent_provider_id": "lightweight_memory",
+              "parent_sha256": "3f4f72910a9db20a84b71d2cfd0d8701af9d9b80a0a7da42fb5628f522213f4b",
+              "items": [
+                "Prefer direct action and concrete steps over extended theoretical planning.",
+                "Honor explicit output-format constraints (units, separators, capitalization) exactly as stated.",
+                "When evidence is second-hand or inferred, label it clearly rather than presenting it as confirmed fact.",
+                "When instructions appear contradictory, comply with the explicit directive rather than analyzing the contradiction.",
+                "For multi-hop retrieval, prefer targeted queries over broad root-site crawls; pivot quickly when a path yields nothing."
+              ],
+              "sha256": "e5dbe953f55c698a7609854b98affea0b3688f216ffa8ef95e21b050b5eec69e"
+            },
+            "orientation_items_sha256": "f86ebac8200886ff44789920c242b2dcac7ff4f07b7fdef3a157953a21b3da92"
+          },
+          "winner": {
+            "provider": "cadenceweave_memory",
+            "module": "cadenceweave_memory_provider",
+            "class_name": "CadenceWeaveMemoryProvider",
+            "source_path": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\none-p1-phi1-r00\\workspace\\EvolveLab\\providers\\cadenceweave_memory_provider.py",
+            "code_sha256": "f517fe0170cb77cfb32cb0851d7453feb2e751556f57f6ad167b4c95b4be65f2",
+            "orientation_snapshot": {
+              "schema_version": 1,
+              "initialized": true,
+              "provider_id": "cadenceweave_memory",
+              "parent_provider_id": "lightweight_memory",
+              "parent_sha256": "3f4f72910a9db20a84b71d2cfd0d8701af9d9b80a0a7da42fb5628f522213f4b",
+              "items": [
+                "Prefer direct action and concrete steps over extended theoretical planning.",
+                "Honor explicit output-format constraints (units, separators, capitalization) exactly as stated.",
+                "When evidence is second-hand or inferred, label it clearly rather than presenting it as confirmed fact.",
+                "When instructions appear contradictory, comply with the explicit directive rather than analyzing the contradiction.",
+                "For multi-hop retrieval, prefer targeted queries over broad root-site crawls; pivot quickly when a path yields nothing."
+              ],
+              "sha256": "e5dbe953f55c698a7609854b98affea0b3688f216ffa8ef95e21b050b5eec69e"
+            },
+            "orientation_items_sha256": "f86ebac8200886ff44789920c242b2dcac7ff4f07b7fdef3a157953a21b3da92"
+          },
+          "winner_code_changed": false,
+          "winner_orientation_items_changed": false,
+          "candidates": [
+            {
+              "provider": "latticetrace_memory",
+              "module": "latticetrace_memory_provider",
+              "class_name": "LatticeTraceMemoryProvider",
+              "source_path": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\none-p1-phi1-r00\\workspace\\EvolveLab\\providers\\latticetrace_memory_provider.py",
+              "code_sha256": "1773762368426de36250e2ba0577efbab797ac8c8c3bd6506d80c88937fc09d1",
+              "orientation_snapshot": {
+                "schema_version": 1,
+                "initialized": true,
+                "provider_id": "latticetrace_memory",
+                "parent_provider_id": "cadenceweave_memory",
+                "parent_sha256": "e5dbe953f55c698a7609854b98affea0b3688f216ffa8ef95e21b050b5eec69e",
+                "items": [
+                  "Prefer direct action and concrete steps over extended theoretical planning.",
+                  "Honor explicit output-format constraints (units, separators, capitalization) exactly as stated.",
+                  "When evidence is second-hand or inferred, label it clearly rather than presenting it as confirmed fact.",
+                  "When instructions appear contradictory, comply with the explicit directive rather than analyzing the contradiction.",
+                  "For multi-hop retrieval, prefer targeted queries over broad root-site crawls; pivot quickly when a path yields nothing."
+                ],
+                "sha256": "86be8d08a12c88cecdd1c9047488ce276ca6ffde9bce9b4bb721cd89b7c9f083"
+              },
+              "orientation_items_sha256": "f86ebac8200886ff44789920c242b2dcac7ff4f07b7fdef3a157953a21b3da92",
+              "code_changed_vs_parent": true,
+              "orientation_items_changed_vs_parent": false,
+              "actual_loaded": true,
+              "orientation_sent_to_actor": true
+            }
+          ]
+        }
+      ],
+      "factor_checks": {
+        "frozen_code_preserved": true,
+        "frozen_orientation_preserved": true
+      },
+      "loaded_provider_evidence": [
+        {
+          "provider": "lightweight_memory",
+          "code_sha256": "ce0c1f36ca9fb095c8448fab9b3e35e3c97e5928d115fdf98d56f48c842750f4",
+          "operations": {
+            "loaded": 6,
+            "initialize": 6,
+            "provide_memory": 23,
+            "take_in_memory": 6
+          },
+          "orientation_sent_to_actor": false
+        },
+        {
+          "provider": "cadenceweave_memory",
+          "code_sha256": "f517fe0170cb77cfb32cb0851d7453feb2e751556f57f6ad167b4c95b4be65f2",
+          "operations": {
+            "loaded": 26,
+            "initialize": 26,
+            "provide_memory": 69,
+            "take_in_memory": 22
+          },
+          "orientation_sent_to_actor": true
+        },
+        {
+          "provider": "latticetrace_memory",
+          "code_sha256": "1773762368426de36250e2ba0577efbab797ac8c8c3bd6506d80c88937fc09d1",
+          "operations": {
+            "loaded": 10,
+            "initialize": 10,
+            "provide_memory": 18,
+            "take_in_memory": 10
+          },
+          "orientation_sent_to_actor": true
+        }
+      ],
+      "heldout_tasks": [
+        {
+          "task_id": "wwqa-b6dc4fc48b23f56feee99f1989b574afbcad862d74eb9ca898ea821c35890d59",
+          "judgement": "incorrect",
+          "question": "Which NIME 2024 board members have made contributions to the conference proceedings, and what were these contributions?",
+          "fixed_task_sha256": "8ff50e05d5d0fe781f62a80264bf135b4b721510017bfaa5384c1e04cf41a08c",
+          "source": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\none-p1-phi1-r00\\terminal\\task_logs\\1.json",
+          "sha256": "a3970c5a88c01108ff1bfb7acc51cf868c56f060c1a43abe42f343440c261583"
+        },
+        {
+          "task_id": "wwqa-afc759d29ba884948cae9a5a98576b7e63f1b3d9d335a134791d125ce041ed12",
+          "judgement": "correct",
+          "question": "在腾讯推出的数字藏经洞与数字长城项目中，哪种数字技术被共同采用来实现文物的高度还原？",
+          "fixed_task_sha256": "2b45e2b0f8f9b2269d526fe46bdbe14325fe51cb41ef2366b8a41ffa9fc6179e",
+          "source": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\none-p1-phi1-r00\\terminal\\task_logs\\2.json",
+          "sha256": "20a63f3bb64925575623a35621577fc8fc03a6bfdea7d491747f78d6fcaca455"
+        },
+        {
+          "task_id": "wwqa-c8d40a03538e21c5ad96936dfa7f0b455708f8d965bc770446faca009461b2f7",
+          "judgement": "incorrect",
+          "question": "在山东大学计算机科学与技术学院，哪些国际知名教授在2019年和2020年间访问学院，并进行了关于大数据与并行计算的学术交流？",
+          "fixed_task_sha256": "f647d4b2065ace7f996749fa1d2b022eb87e44f8cd1b96a927f4953ea01e382f",
+          "source": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\none-p1-phi1-r00\\terminal\\task_logs\\3.json",
+          "sha256": "8a564b15a978c3e785ce87ba7e58cf78d760c0383de477096163b1329ab627e9"
+        },
+        {
+          "task_id": "wwqa-1a6c0761185591373428ef4791949d040c38d5020c5d3f39890e09201e28d7ec",
+          "judgement": "incorrect",
+          "question": "北方工业大学信息学院2023年最后举办的学术活动是在什么日期？",
+          "fixed_task_sha256": "a639bfccb83ba93835dd5a5feae167770413568610c66b8203e2e9b3b7380867",
+          "source": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\none-p1-phi1-r00\\terminal\\task_logs\\4.json",
+          "sha256": "b029bc6c200bbf6b91c9db30206e7f6b7abaceb22986d1abeaaed32a6b808a27"
+        }
+      ],
+      "result_file": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\none-p1-phi1-r00\\result.json",
+      "result_sha256": "bcc71008abd9dc4674ab3809cad2093f92ac3699b1e47ffb99c43b368c76b092"
+    }
+  ],
+  "engineering_effects": {
+    "P_when_phi_fixed": 0.25,
+    "P_when_phi_changes": -0.25,
+    "phi_when_P_fixed": 0.25,
+    "phi_when_P_changes": -0.25,
+    "interaction": -0.5
+  },
+  "joint_seed_differences_from_engineering": {
+    "dialectical": 0.25,
+    "critical": 0.0,
+    "none": 0.25
+  },
+  "additional_usage": [
+    {
+      "kind": "chat",
+      "requests": 1434,
+      "input_tokens": 6018261,
+      "output_tokens": 408272,
+      "total_tokens": 6426533,
+      "inflight": 0
+    },
+    {
+      "kind": "web",
+      "requests": 888,
+      "input_tokens": null,
+      "output_tokens": null,
+      "total_tokens": null,
+      "inflight": 0
+    }
+  ],
+  "additional_by_role": [
+    {
+      "role": "actor",
+      "kind": "chat",
+      "requests": 755,
+      "tokens": 3356643
+    },
+    {
+      "role": "actor",
+      "kind": "web",
+      "requests": 888,
+      "tokens": null
+    },
+    {
+      "role": "analysis",
+      "kind": "chat",
+      "requests": 35,
+      "tokens": 1385034
+    },
+    {
+      "role": "generation",
+      "kind": "chat",
+      "requests": 7,
+      "tokens": 176930
+    },
+    {
+      "role": "judge",
+      "kind": "chat",
+      "requests": 61,
+      "tokens": 29175
+    },
+    {
+      "role": "memory_ingestion",
+      "kind": "chat",
+      "requests": 49,
+      "tokens": 171446
+    },
+    {
+      "role": "memory_retrieval",
+      "kind": "chat",
+      "requests": 448,
+      "tokens": 968738
+    },
+    {
+      "role": "trajectory_summary",
+      "kind": "chat",
+      "requests": 5,
+      "tokens": 14533
+    },
+    {
+      "role": "warmup_ingestion",
+      "kind": "chat",
+      "requests": 74,
+      "tokens": 324034
+    }
+  ],
+  "budget_health": {
+    "inflight": 0,
+    "unknown_chat_usage": 0,
+    "denials": 0
+  },
+  "additional_by_job": [
+    {
+      "job": "critical-p1-phi1-r00",
+      "kind": "chat",
+      "requests": 361,
+      "tokens": 1971111
+    },
+    {
+      "job": "critical-p1-phi1-r00",
+      "kind": "web",
+      "requests": 239,
+      "tokens": null
+    },
+    {
+      "job": "dialectical-p1-phi1-r00",
+      "kind": "chat",
+      "requests": 428,
+      "tokens": 1716197
+    },
+    {
+      "job": "dialectical-p1-phi1-r00",
+      "kind": "web",
+      "requests": 250,
+      "tokens": null
+    },
+    {
+      "job": "engineering-p1-phi1-r00",
+      "kind": "chat",
+      "requests": 267,
+      "tokens": 1099662
+    },
+    {
+      "job": "engineering-p1-phi1-r00",
+      "kind": "web",
+      "requests": 167,
+      "tokens": null
+    },
+    {
+      "job": "none-p1-phi1-r00",
+      "kind": "chat",
+      "requests": 378,
+      "tokens": 1639563
+    },
+    {
+      "job": "none-p1-phi1-r00",
+      "kind": "web",
+      "requests": 232,
+      "tokens": null
+    }
+  ],
+  "additional_by_operation": [
+    {
+      "kind": "chat",
+      "operation": null,
+      "requests": 1434,
+      "tokens": 6426533
+    },
+    {
+      "kind": "web",
+      "operation": "fetch",
+      "requests": 367,
+      "tokens": null
+    },
+    {
+      "kind": "web",
+      "operation": "search",
+      "requests": 521,
+      "tokens": null
+    }
+  ],
+  "additional_request_outcomes": [
+    {
+      "kind": "chat",
+      "status": "success",
+      "http_status": null,
+      "requests": 1434
+    },
+    {
+      "kind": "web",
+      "status": "success",
+      "http_status": 200,
+      "requests": 854
+    },
+    {
+      "kind": "web",
+      "status": "success",
+      "http_status": 404,
+      "requests": 25
+    },
+    {
+      "kind": "web",
+      "status": "success",
+      "http_status": 500,
+      "requests": 1
+    },
+    {
+      "kind": "web",
+      "status": "success",
+      "http_status": 504,
+      "requests": 8
+    }
+  ],
+  "budget_state": {
+    "closed_reason": null,
+    "peak_inflight": 4
+  },
+  "extra_repeats": [
+    {
+      "job_id": "engineering-p0-phi0-r01",
+      "accuracy": 0.25,
+      "task_order": [
+        "wwqa-b6dc4fc48b23f56feee99f1989b574afbcad862d74eb9ca898ea821c35890d59",
+        "wwqa-c8d40a03538e21c5ad96936dfa7f0b455708f8d965bc770446faca009461b2f7",
+        "wwqa-1a6c0761185591373428ef4791949d040c38d5020c5d3f39890e09201e28d7ec",
+        "wwqa-afc759d29ba884948cae9a5a98576b7e63f1b3d9d335a134791d125ce041ed12"
+      ],
+      "result_file": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\engineering-p0-phi0-r01\\result.json",
+      "result_sha256": "3b3a98da4b7f48eba389724faf6b282893f81e50160eae2640241e8459e757a8"
+    },
+    {
+      "job_id": "engineering-p0-phi0-r02",
+      "accuracy": 0.25,
+      "task_order": [
+        "wwqa-c8d40a03538e21c5ad96936dfa7f0b455708f8d965bc770446faca009461b2f7",
+        "wwqa-afc759d29ba884948cae9a5a98576b7e63f1b3d9d335a134791d125ce041ed12",
+        "wwqa-1a6c0761185591373428ef4791949d040c38d5020c5d3f39890e09201e28d7ec",
+        "wwqa-b6dc4fc48b23f56feee99f1989b574afbcad862d74eb9ca898ea821c35890d59"
+      ],
+      "result_file": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\engineering-p0-phi0-r02\\result.json",
+      "result_sha256": "1b9c352ffca6bbc4248598f2896c85c2ff14c0bd1191986e48063a4a302815f8"
+    },
+    {
+      "job_id": "engineering-p0-phi1-r01",
+      "accuracy": 0.0,
+      "task_order": [
+        "wwqa-b6dc4fc48b23f56feee99f1989b574afbcad862d74eb9ca898ea821c35890d59",
+        "wwqa-c8d40a03538e21c5ad96936dfa7f0b455708f8d965bc770446faca009461b2f7",
+        "wwqa-1a6c0761185591373428ef4791949d040c38d5020c5d3f39890e09201e28d7ec",
+        "wwqa-afc759d29ba884948cae9a5a98576b7e63f1b3d9d335a134791d125ce041ed12"
+      ],
+      "result_file": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\engineering-p0-phi1-r01\\result.json",
+      "result_sha256": "6002dcb28c3039bd274800a181165c2f6add282eb12771572fcf2f40e5311fe9"
+    },
+    {
+      "job_id": "engineering-p0-phi1-r02",
+      "accuracy": 0.0,
+      "task_order": [
+        "wwqa-c8d40a03538e21c5ad96936dfa7f0b455708f8d965bc770446faca009461b2f7",
+        "wwqa-afc759d29ba884948cae9a5a98576b7e63f1b3d9d335a134791d125ce041ed12",
+        "wwqa-1a6c0761185591373428ef4791949d040c38d5020c5d3f39890e09201e28d7ec",
+        "wwqa-b6dc4fc48b23f56feee99f1989b574afbcad862d74eb9ca898ea821c35890d59"
+      ],
+      "result_file": "D:\\PhiloAgent\\runs\\ablation-webwalkerqa-20261029-v2\\jobs\\engineering-p0-phi1-r02\\result.json",
+      "result_sha256": "5d73b042907dd13a25be88b2bed95c5968c348d7faebd5c5225786f552b654a2"
+    }
+  ],
+  "caps": {
+    "chat_total_tokens": 14220327,
+    "chat_requests": 2666,
+    "web_requests": 1616
+  },
+  "historical_lower_bound_tokens": 34751743,
+  "original_design_sha256": "271d216ff1abc3b29881d35dd840c221fa6ad25fb504faf3aaaf31c8a571f00f",
+  "budget_launcher_sha256": "cb604df49c38d1d76c4447b84ad09cfde6236aff37f16b4d542c9d9c8d14aee4",
+  "compiler_sha256": "c93ebbc4ff9b6428db064b0147b4351b41be63a8fc7f93ef179ba62a7c6462ac",
+  "limitations": [
+    "four shared heldout tasks",
+    "one primary replicate",
+    "descriptive analysis",
+    "supplements preserve original failures"
+  ],
+  "initial_phi_audit": {
+    "path": "D:\\PhiloAgent\\research\\budget7-initial-phi-audit-20261029.json",
+    "sha256": "4f4cda80e98897fa256c09470f14a324f0493b6c3024906b7b4109b83cf0f621",
+    "status": "pass",
+    "all_initial_phi_transmission_verified": true,
+    "all_analysis_generation_requests_match_parent_phi": true
+  }
+}

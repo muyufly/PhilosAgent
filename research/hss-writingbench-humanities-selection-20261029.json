@@ -1,0 +1,95 @@
+{
+  "dataset": "WritingBench",
+  "source_commit": "ae2d5176449b7b769815482641d35926f26793eb",
+  "source_file": "data/writingbench/ae2d5176449b7b769815482641d35926f26793eb/benchmark_all.jsonl",
+  "domain": "humanities",
+  "lang": "zh",
+  "selection_basis": "从官方固定提交的中文文学艺术题中，优先选择实际书评、影视评论和读后感，兼顾作品、媒介、分析角度、读者与篇幅的多样性。按原题任务选择，不要求哲学冲突，不看模型成绩，不按预期组间收益筛选。",
+  "split_basis": "8 道学习、4 道留出；同一作品的近重复题不跨分割使用。留出覆盖新的文学作品、科幻和悬疑电影。原始 query 与 checklist 由 source_index 读取，不改写。",
+  "tasks": [
+    {
+      "source_index": 191,
+      "domain2": "Book Review",
+      "title": "《活着》的人物与苦难主题",
+      "split": "learning",
+      "selection_reason": "以人物和主题分析为核心，需要将经典小说与当代大学生生活联系，属于常见且完整的文学评论任务。"
+    },
+    {
+      "source_index": 207,
+      "domain2": "Reading Reflection",
+      "title": "都市生活中的《瓦尔登湖》",
+      "split": "learning",
+      "selection_reason": "面向公司内刊写读后感，需要比较作品生活方式与都市青年的处境，补充读者和发表场景适配。"
+    },
+    {
+      "source_index": 635,
+      "domain2": "Film/TV Review",
+      "title": "《隐秘的角落》角色与表演",
+      "split": "learning",
+      "selection_reason": "需要结合具体情节讨论人物设计、表演张力与观众体验，使影视分析不只围绕文本主题展开。"
+    },
+    {
+      "source_index": 371,
+      "domain2": "Book Review",
+      "title": "《百年孤独》的叙事与家族历史",
+      "split": "learning",
+      "selection_reason": "要求围绕多个指定情节解释写作手法、家族历史与当下意义，可以评价具体细节和整体解释的结合。"
+    },
+    {
+      "source_index": 193,
+      "domain2": "Film/TV Review",
+      "title": "《繁花》老洋房的美术设计",
+      "split": "learning",
+      "selection_reason": "聚焦场景、美术细节与历史对照，并要求纪录片文案风格，增加视觉文化分析和写作文体的变化。"
+    },
+    {
+      "source_index": 373,
+      "domain2": "Book Review",
+      "title": "童年经验篇章的阅读评论",
+      "split": "learning",
+      "selection_reason": "原题给出长篇参考书评及被评论篇章，需要理解现成材料、形成阅读回应并适配阅读平台评论区。"
+    },
+    {
+      "source_index": 804,
+      "domain2": "Reading Reflection",
+      "title": "《狂人日记》的伏笔与结局",
+      "split": "learning",
+      "selection_reason": "原题附作品文本，要求从关键事件推及结局、伏笔和时代背景，提供以具体文本证据展开论证的任务。"
+    },
+    {
+      "source_index": 801,
+      "domain2": "Film/TV Review",
+      "title": "中美军旅剧的叙事与战争主题",
+      "split": "learning",
+      "selection_reason": "比较《士兵突击》和《兄弟连》的结构、人物成长与文化背景，原题含参考材料，增加跨作品综合解释。"
+    },
+    {
+      "source_index": 372,
+      "domain2": "Book Review",
+      "title": "研究生视角下的《三体》书评",
+      "split": "holdout",
+      "selection_reason": "科幻作品和科研读者视角均不同于学习题，要求展开科技伦理、文明叙事与个人阅读反思，保留题库的自然要求。"
+    },
+    {
+      "source_index": 388,
+      "domain2": "Reading Reflection",
+      "title": "《挪威的森林》的青春与孤独",
+      "split": "holdout",
+      "selection_reason": "新作品要求引用片段、按文学论文格式分析并列出出处，可以检查阅读论证与引用、结构要求的共同完成。"
+    },
+    {
+      "source_index": 596,
+      "domain2": "Book Review",
+      "title": "《喜福会》的母女与文化认同",
+      "split": "holdout",
+      "selection_reason": "原题给出作品摘录，围绕文化冲突、代际关系与身份认同展开，补充不同文化语境和人物关系的解释。"
+    },
+    {
+      "source_index": 930,
+      "domain2": "Film/TV Review",
+      "title": "《消失的她》的悬疑叙事评论",
+      "split": "holdout",
+      "selection_reason": "原题含较长剧情和评论参考，要求综合剧本逻辑、叙事手法、场景细节及社会主题，形成面向影迷的完整长评。"
+    }
+  ]
+}

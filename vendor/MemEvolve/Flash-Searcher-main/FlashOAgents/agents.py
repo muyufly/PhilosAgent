@@ -20,6 +20,7 @@
 
 import importlib
 import json
+import os
 import re
 from copy import deepcopy
 import textwrap
@@ -666,6 +667,10 @@ class ToolCallingAgent(MultiStepAgent):
                     return "\n".join(combined_parts)
             
         except Exception as e:
+            if os.environ.get("PHILO_LINEAGE_ROOT"):
+                # An experimental task must not continue without its current
+                # orientation after the adapter rejects state/code integrity.
+                raise
             logger.warning(f"Memory provider error: {e}")
         
         return None

@@ -1,0 +1,383 @@
+{
+  "kind": "read_only_stop_cause_audit",
+  "recorded_utc": "2026-10-29T13:33:59.278714+00:00",
+  "experiment": "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01",
+  "conclusion": "One new usage-unknown APIConnectionError caused shared admission to stop; subsequent budget refusals cascaded into all active lineage failures. Two partial finalist selections and one existing duplicate-enum collapse require separate integrity repair before resumption.",
+  "initiating_attempt": {
+    "attempt": 3835,
+    "job_id": "humanities-native-r1",
+    "role": "actor",
+    "provider": "calibra_loom_memory",
+    "task_id": "WB0804",
+    "task_execution_id": "c680d3c9769f4db18a9dbc2241c35ac2",
+    "stage": "learning",
+    "error_type": "APIConnectionError",
+    "duration_seconds": 5.015,
+    "timeout_seconds": 300,
+    "sdk_max_retries": 0,
+    "max_tokens": 32768,
+    "recovery_index": 0,
+    "usage": null,
+    "response": null,
+    "started_hkt": "2026-10-29T21:14:02.348+08:00",
+    "finished_hkt": "2026-10-29T21:14:07.365+08:00",
+    "actual_call_location": "crawl_page webpage summarization model subcall; inherited actor audit role",
+    "ledger_path": "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01\\budget\\attempts\\003835.json",
+    "log_path": "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01\\jobs\\humanities-native-r1\\worker.log",
+    "log_line": 52899,
+    "additional_tool_attempts": 2,
+    "additional_tool_attempts_reached_sdk": 0
+  },
+  "cause_chain": [
+    "APIConnectionError with no response/usage",
+    "HSSBudget.finish set blocked_reason=unknown_usage",
+    "HSSBudget.begin rejected subsequent calls locally",
+    "workers failed task/finalist stages; supervisor stopped dispatching remaining jobs"
+  ],
+  "network_root_cause_limit": "Only exception type retained; original message, underlying __cause__, transport request id and HTTP status absent. Cannot distinguish DNS/TLS/reset/provider failure, server acceptance or actual billing. Configured 300s timeout is not an observed 300s timeout.",
+  "ledger": {
+    "attempt_count": 3837,
+    "successful_requests": 3824,
+    "failed_requests": 13,
+    "actual_tokens": 68638129,
+    "reserved_unknown_tokens": 509359,
+    "effective_tokens": 69147488,
+    "unknown_usage_attempts": 6,
+    "reserved_unknown_attempts": [
+      810,
+      845,
+      857,
+      858,
+      859
+    ],
+    "blocked_reason": "unknown_usage",
+    "limits": {
+      "max_calls": 60000,
+      "max_tokens": 350000000
+    },
+    "pending_count": 0,
+    "new_request_failures_since_r6": 1,
+    "new_unreserved_usage_unknown_attempts": [
+      3835
+    ],
+    "request_limit_reached": false,
+    "token_limit_reached": false
+  },
+  "lineage_failures": [
+    {
+      "job_id": "social-native-r1",
+      "failed_utc": "2026-10-29T13:14:09.644685+00:00",
+      "error_type": "RuntimeError",
+      "process_owned": false,
+      "evidence": "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01\\jobs\\social-native-r1\\worker.log",
+      "line": 60247,
+      "outer_failure_line": 60270,
+      "cause": "BudgetRefused: unknown_usage",
+      "consequence": "no successful finalist",
+      "loaded_revision": null
+    },
+    {
+      "job_id": "business-native-r1",
+      "failed_utc": "2026-10-29T13:14:11.180754+00:00",
+      "error_type": "RuntimeError",
+      "process_owned": false,
+      "evidence": "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01\\jobs\\business-native-r1\\worker.repair-r6.log",
+      "line": 15544,
+      "outer_failure_line": 15547,
+      "cause": "BudgetRefused: unknown_usage",
+      "consequence": "no successful finalist",
+      "loaded_revision": "repair-r6"
+    },
+    {
+      "job_id": "business-full-r1",
+      "failed_utc": "2026-10-29T13:14:12.738339+00:00",
+      "error_type": "RuntimeError",
+      "process_owned": false,
+      "evidence": "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01\\jobs\\business-full-r1\\worker.log",
+      "line": 59710,
+      "outer_failure_line": 59713,
+      "cause": "BudgetRefused: unknown_usage",
+      "consequence": "no successful finalist",
+      "loaded_revision": "repair-r5"
+    },
+    {
+      "job_id": "social-fixed-r1",
+      "failed_utc": "2026-10-29T13:14:14.977323+00:00",
+      "error_type": "RuntimeError",
+      "process_owned": false,
+      "evidence": "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01\\jobs\\social-fixed-r1\\worker.log",
+      "line": 63276,
+      "outer_failure_line": 63279,
+      "cause": "BudgetRefused: unknown_usage",
+      "consequence": "no successful finalist",
+      "loaded_revision": null
+    },
+    {
+      "job_id": "business-fixed-r1",
+      "failed_utc": "2026-10-29T13:14:17.075887+00:00",
+      "error_type": "RuntimeError",
+      "process_owned": false,
+      "evidence": "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01\\jobs\\business-fixed-r1\\worker.log",
+      "line": 57784,
+      "outer_failure_line": 57807,
+      "cause": "BudgetRefused: unknown_usage",
+      "consequence": "no successful finalist",
+      "loaded_revision": null
+    },
+    {
+      "job_id": "social-full-r1",
+      "failed_utc": "2026-10-29T13:14:18.783572+00:00",
+      "error_type": "RuntimeError",
+      "process_owned": false,
+      "evidence": "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01\\jobs\\social-full-r1\\worker.log",
+      "line": 74579,
+      "outer_failure_line": 74582,
+      "cause": "BudgetRefused: unknown_usage",
+      "consequence": "no successful finalist",
+      "loaded_revision": null
+    },
+    {
+      "job_id": "humanities-native-r1",
+      "failed_utc": "2026-10-29T13:14:20.660569+00:00",
+      "error_type": "BudgetRefused",
+      "process_owned": false,
+      "evidence": "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01\\jobs\\humanities-native-r1\\worker.log",
+      "line": 53117,
+      "outer_failure_line": null,
+      "cause": "BudgetRefused: unknown_usage",
+      "consequence": "direct budget refusal",
+      "loaded_revision": null
+    },
+    {
+      "job_id": "humanities-full-r1",
+      "failed_utc": "2026-10-29T13:14:22.647065+00:00",
+      "error_type": "BudgetRefused",
+      "process_owned": false,
+      "evidence": "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01\\jobs\\humanities-full-r1\\evolution\\round_01\\base_logs\\5.json",
+      "line": 99,
+      "outer_failure_line": null,
+      "cause": "BudgetRefused in saved task and runtime_summary; exact rejection text absent in latest standalone log",
+      "consequence": "direct budget refusal",
+      "loaded_revision": null
+    },
+    {
+      "job_id": "humanities-fixed-r1",
+      "failed_utc": "2026-10-29T13:14:37.682689+00:00",
+      "error_type": "RuntimeError",
+      "process_owned": false,
+      "evidence": "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01\\jobs\\humanities-fixed-r1\\worker.repair-r5.log",
+      "line": 12792,
+      "outer_failure_line": 12795,
+      "cause": "BudgetRefused: unknown_usage",
+      "consequence": "no successful finalist",
+      "loaded_revision": "repair-r5"
+    }
+  ],
+  "latest_report_counts": {
+    "queued": 18,
+    "running": 0,
+    "complete": 0,
+    "failed": 9,
+    "interrupted": 0
+  },
+  "supervisor": {
+    "status": "needs_attention",
+    "finished_utc": "2026-10-29T13:14:22.669207+00:00",
+    "process_owned": false,
+    "stale_counts": {
+      "queued": 18,
+      "running": 1,
+      "complete": 0,
+      "failed": 8,
+      "interrupted": 0
+    },
+    "stale_reason": "Standalone humanities-fixed-r1 finished after supervisor final snapshot; its wrapper refreshed report.json."
+  },
+  "partial_finalist_selections": [
+    {
+      "job_id": "humanities-native-r1",
+      "summary_path": "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01\\jobs\\humanities-native-r1\\evolution\\round_00\\round_summary.json",
+      "summary_timestamp": "2026-10-29T21:14:18.851466",
+      "finalists": {
+        "lightweight_memory": {
+          "success": true,
+          "quality_score": 86.3,
+          "graded_tasks": 3,
+          "error": null
+        },
+        "calibra_loom_memory": {
+          "success": false,
+          "quality_score": null,
+          "graded_tasks": null,
+          "error": "Error in generating tool call with model:\nShared budget blocked: unknown_usage"
+        }
+      },
+      "recorded_winner": "lightweight_memory",
+      "dataset_cursor_after": 4,
+      "evolve_state": {
+        "round": 1,
+        "dataset_name": "writingbench",
+        "dataset_cursor": 4,
+        "best_provider": "lightweight_memory",
+        "history": [
+          {
+            "round": 0,
+            "winner": "lightweight_memory",
+            "cursor": 4
+          }
+        ],
+        "best_orientation_sha256": "3f4f72910a9db20a84b71d2cfd0d8701af9d9b80a0a7da42fb5628f522213f4b"
+      },
+      "selection_valid": false,
+      "resume_boundary": "Reopen incomplete round_00 finalist comparison before selecting winner or using round_01; preserve prior evidence and account all requests.",
+      "round_00_checkpoint_removed": true,
+      "selection_should_be_excluded_from_analysis": true,
+      "resume_task_detail": {
+        "completed_finalist_tasks": 1,
+        "failed_task_id": "WB0804",
+        "failed_task_has_only_partial_trajectory": true,
+        "unstarted_finalist_tasks": 1,
+        "evidence_lines": {
+          "summary_failed": 695,
+          "winner": 699,
+          "cursor": 702
+        }
+      },
+      "round_01_failed_task": {
+        "request_count": 0,
+        "answer_present": false,
+        "memory_ingestion_complete": false,
+        "local_initialization_side_effects_not_ruled_out": true
+      }
+    },
+    {
+      "job_id": "humanities-full-r1",
+      "summary_path": "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01\\jobs\\humanities-full-r1\\evolution\\round_00\\round_summary.json",
+      "summary_timestamp": "2026-10-29T21:14:18.963817",
+      "finalists": {
+        "credence_lattice": {
+          "success": true,
+          "quality_score": 89.89999999999999,
+          "graded_tasks": 3,
+          "error": null
+        },
+        "lightweight_memory": {
+          "success": false,
+          "quality_score": null,
+          "graded_tasks": null,
+          "error": "Shared budget blocked: unknown_usage"
+        }
+      },
+      "recorded_winner": "credence_lattice",
+      "dataset_cursor_after": 4,
+      "evolve_state": {
+        "round": 1,
+        "dataset_name": "writingbench",
+        "dataset_cursor": 4,
+        "best_provider": "credence_lattice",
+        "history": [
+          {
+            "round": 0,
+            "winner": "credence_lattice",
+            "cursor": 4
+          }
+        ],
+        "best_orientation_sha256": "6ec96c26e494de1d592fa8f0d01548ed3ddcfaa8d44a3c9689fdb22023b076cb"
+      },
+      "selection_valid": false,
+      "resume_boundary": "Reopen incomplete round_00 finalist comparison before selecting winner or using round_01; preserve prior evidence and account all requests.",
+      "round_00_checkpoint_removed": true,
+      "selection_should_be_excluded_from_analysis": true,
+      "resume_task_detail": {
+        "failed_stage": "judge",
+        "saved_actor_answer_characters": 2944,
+        "unstarted_finalist_tasks": 2,
+        "actor_answer_should_be_preserved": true,
+        "evidence_lines": {
+          "summary_failed": 134,
+          "winner": 138,
+          "cursor": 141
+        }
+      },
+      "round_01_failed_task": {
+        "request_count": 0,
+        "answer_present": false,
+        "memory_ingestion_complete": false,
+        "local_initialization_side_effects_not_ruled_out": true
+      }
+    }
+  ],
+  "duplicate_enum_collapse": {
+    "job_id": "business-fixed-r1",
+    "candidate_configs": [
+      {
+        "slot": 1,
+        "class_name": "PraxisLoomProvider",
+        "module_name": "praxis_loom_provider",
+        "enum_name": "PRAXIS_LOOM_MEMORY",
+        "enum_value": "praxis_loom_memory",
+        "code_utf8_sha256": "8ebdf57f5dec357508cbdd1ab798f7e4fbdc5cf14422f3fb23912ffe0a84f039"
+      },
+      {
+        "slot": 2,
+        "class_name": "PraxisLoomMemoryProvider",
+        "module_name": "praxis_loom_memory_provider",
+        "enum_name": "PRAXIS_LOOM_MEMORY",
+        "enum_value": "praxis_loom_memory",
+        "code_utf8_sha256": "389712f58d1c75798b422d5ed842c25f74d540aaa8e4faadc0cb2f0331da4e91"
+      }
+    ],
+    "checkpoint_validated_systems": [
+      "praxis_loom_memory",
+      "praxis_loom_memory"
+    ],
+    "validated_unique": [
+      "praxis_loom_memory"
+    ],
+    "installed_registry_binding": [
+      "PraxisLoomProvider",
+      "praxis_loom_provider"
+    ],
+    "slot_2_independently_evaluated": false,
+    "worker_loaded_revision": "repair-r4",
+    "preexisting_before_network_failure": true,
+    "scan_scope": {
+      "jobs": 9,
+      "generated_configs": 18,
+      "other_jobs_namespace_and_source_binding_consistent": 8
+    },
+    "evidence": [
+      "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01\\jobs\\business-fixed-r1\\worker.log:40566",
+      "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01\\jobs\\business-fixed-r1\\workspace\\EvolveLab\\memory_types.py:63",
+      "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01\\jobs\\business-fixed-r1\\evolution\\round_00\\checkpoint.json:655",
+      "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01\\revisions\\repair-r6\\amendment.json:15"
+    ],
+    "existing_file_collision_repair_applicable": false
+  },
+  "code_evidence": {
+    "block_on_missing_usage": "philoagent/hss_budget.py:382-386",
+    "refuse_before_network": "philoagent/hss_budget.py:343-358",
+    "discard_exception_detail": "philoagent/hss_budget.py:693-696,726",
+    "only_empty_or_truncated_known_usage_retried": "philoagent/hss_budget.py:710-723",
+    "incomplete_finalist_selection": "vendor/MemEvolve/Flash-Searcher-main/MemEvolve/core/auto_evolver.py:988-995,1027-1050"
+  },
+  "offline_verification": {
+    "command": ".venv/Scripts/python.exe -X utf8 -m pytest tests/test_hss_budget.py -k \"unknown_usage_locks or network_exception_is_sanitized or recovery_never_retries_unknown or native_swe_transport_does_not_retry\" -q",
+    "passed": 4,
+    "failed": 0,
+    "paid_calls": 0,
+    "independent_fake_sdk_cascade_reproduced": true
+  },
+  "recommendations": [
+    "Retain sanitized transport exception chain and tool role metadata.",
+    "Introduce audited reservation/reconciliation for already-settled usage-unknown calls; preserve unknown rather than fabricate zero usage.",
+    "Treat shared admission block as resumable suspension rather than independent candidate failure; do not select winners until scheduled comparisons complete.",
+    "Invalidate the two incomplete winner decisions before any continuation; keep prior answers, snapshots and costs as evidence.",
+    "Repair business-fixed duplicate enum registration separately; do not reuse the file-collision-only recovery helper."
+  ],
+  "production_mutations_performed": false,
+  "experiment_restarted": false,
+  "adapter_source_matches_freeze": true,
+  "upstream_source_matches_freeze": true,
+  "final_check_utc": "2026-10-29T13:34:30.658720+00:00"
+}

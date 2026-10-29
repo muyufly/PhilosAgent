@@ -104,27 +104,26 @@ def read_page(url: str) -> str:
     Read and return the content of a webpage.
     
     Provider selection via WEB_ACCESS_PROVIDER environment variable:
+    - 'deepseek': Use DeepSeek Fetch API (reuses OPENAI_API_KEY)
     - 'jina' (default): Use Jina Reader API (requires JINA_API_KEY)
     - 'crawl4ai': Use crawl4ai library (free, open-source, no API key needed)
     
     Note: If both JINA_API_KEY and crawl4ai are configured, the provider
     specified in WEB_ACCESS_PROVIDER will be used. No automatic fallback.
     """
-    provider = os.getenv("WEB_ACCESS_PROVIDER", "jina").lower()
+    provider = os.getenv("WEB_ACCESS_PROVIDER", "jina").strip().lower()
     
-    if provider == "crawl4ai":
+    if provider == "deepseek":
+        from philoagent.web_tools import deepseek_fetch
+        return deepseek_fetch(url)
+    elif provider == "crawl4ai":
         return read_page_crawl4ai(url)
     elif provider == "jina":
         return read_page_jina(url)
     else:
-        # Invalid provider, default to jina with warning
-        import warnings
-        warnings.warn(
-            f"Invalid WEB_ACCESS_PROVIDER='{provider}'. "
-            f"Valid values are 'jina' or 'crawl4ai'. Using 'jina' as default.",
-            UserWarning
+        raise ValueError(
+            "WEB_ACCESS_PROVIDER must be 'deepseek', 'jina', or 'crawl4ai'."
         )
-        return read_page_jina(url)
 
 def web_search_google_serper(
     query: str, 
@@ -196,6 +195,23 @@ def web_search_google_serper(
             time.sleep(1)
     
     return [], "Unexpected error in web search"
+
+
+def web_search(
+    query: str,
+    filter_year: Optional[int] = None,
+    serp_num: int = 3,
+    max_retries: int = 3,
+) -> Tuple[List[Dict[str, Any]], str]:
+    """Select the configured search backend, preserving legacy Serper defaults."""
+    provider = os.getenv("WEB_SEARCH_PROVIDER", "serper").strip().lower()
+    if provider == "deepseek":
+        from philoagent.web_tools import deepseek_search
+        return deepseek_search(query, count=serp_num)
+    if provider == "serper":
+        return web_search_google_serper(query, filter_year, serp_num, max_retries)
+    raise ValueError("WEB_SEARCH_PROVIDER must be 'deepseek' or 'serper'.")
+
 
 class WikiSearchTool(Tool):
     name = "wiki_search"
@@ -277,7 +293,7 @@ class WebSearchTool(Tool):
 
     def forward(self, query: str) -> str:
         """Execute web search and return formatted results."""
-        search_results, error_msg = web_search_google_serper(query, serp_num=5)
+        search_results, error_msg = web_search(query, serp_num=5)
         
         if error_msg:
             return error_msg

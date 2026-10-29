@@ -9,6 +9,8 @@ __pycache__/
 /runs/
 /data/
 /tmp/
+/agent_data/
+/.taste-skill/
 .DS_Store
 .cursor/
 

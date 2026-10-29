@@ -1,0 +1,2114 @@
+[
+  {
+    "event_id": "event-0001",
+    "group": "M0",
+    "ingest": false,
+    "memory": "initial",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "provenance",
+    "task_id": "provenance_learn_01"
+  },
+  {
+    "event_id": "event-0002",
+    "group": "M1",
+    "ingest": true,
+    "memory": "persistent_primary_M",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "provenance",
+    "task_id": "provenance_learn_01"
+  },
+  {
+    "event_id": "event-0003",
+    "group": "S0",
+    "ingest": true,
+    "memory": "persistent_primary_M",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "provenance",
+    "task_id": "provenance_learn_01"
+  },
+  {
+    "event_id": "event-0004",
+    "group": "S1",
+    "ingest": true,
+    "memory": "persistent_primary_M",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "provenance",
+    "task_id": "provenance_learn_01"
+  },
+  {
+    "event_id": "event-0005",
+    "group": "M0",
+    "ingest": false,
+    "memory": "initial",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "provenance",
+    "task_id": "provenance_learn_02"
+  },
+  {
+    "event_id": "event-0006",
+    "group": "M1",
+    "ingest": true,
+    "memory": "persistent_primary_M",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "provenance",
+    "task_id": "provenance_learn_02"
+  },
+  {
+    "event_id": "event-0007",
+    "group": "S0",
+    "ingest": true,
+    "memory": "persistent_primary_M",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "provenance",
+    "task_id": "provenance_learn_02"
+  },
+  {
+    "event_id": "event-0008",
+    "group": "S1",
+    "ingest": true,
+    "memory": "persistent_primary_M",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "provenance",
+    "task_id": "provenance_learn_02"
+  },
+  {
+    "event_id": "event-0009",
+    "group": "M0",
+    "ingest": false,
+    "memory": "initial",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "provenance",
+    "task_id": "provenance_learn_03"
+  },
+  {
+    "event_id": "event-0010",
+    "group": "M1",
+    "ingest": true,
+    "memory": "persistent_primary_M",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "provenance",
+    "task_id": "provenance_learn_03"
+  },
+  {
+    "event_id": "event-0011",
+    "group": "S0",
+    "ingest": true,
+    "memory": "persistent_primary_M",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "provenance",
+    "task_id": "provenance_learn_03"
+  },
+  {
+    "event_id": "event-0012",
+    "group": "S1",
+    "ingest": true,
+    "memory": "persistent_primary_M",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "provenance",
+    "task_id": "provenance_learn_03"
+  },
+  {
+    "event_id": "event-0013",
+    "group": "M0",
+    "ingest": false,
+    "memory": "initial",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "provenance",
+    "task_id": "provenance_learn_04"
+  },
+  {
+    "event_id": "event-0014",
+    "group": "M1",
+    "ingest": true,
+    "memory": "persistent_primary_M",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "provenance",
+    "task_id": "provenance_learn_04"
+  },
+  {
+    "event_id": "event-0015",
+    "group": "S0",
+    "ingest": true,
+    "memory": "persistent_primary_M",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "provenance",
+    "task_id": "provenance_learn_04"
+  },
+  {
+    "event_id": "event-0016",
+    "group": "S1",
+    "ingest": true,
+    "memory": "persistent_primary_M",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "provenance",
+    "task_id": "provenance_learn_04"
+  },
+  {
+    "event_id": "event-0017",
+    "group": "S0",
+    "ingest": false,
+    "phase": "system_reflection",
+    "stream": "provenance",
+    "task_id": null
+  },
+  {
+    "event_id": "event-0018",
+    "group": "S0",
+    "ingest": false,
+    "memory": "discarded_copy",
+    "phase": "native_interface_validation",
+    "stream": "provenance",
+    "task_id": null
+  },
+  {
+    "event_id": "event-0019",
+    "group": "S1",
+    "ingest": false,
+    "phase": "system_reflection",
+    "stream": "provenance",
+    "task_id": null
+  },
+  {
+    "event_id": "event-0020",
+    "group": "S1",
+    "ingest": false,
+    "memory": "discarded_copy",
+    "phase": "native_interface_validation",
+    "stream": "provenance",
+    "task_id": null
+  },
+  {
+    "event_id": "event-0021",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "parent",
+    "stream": "provenance",
+    "task_id": "provenance_learn_01"
+  },
+  {
+    "event_id": "event-0022",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "candidate",
+    "stream": "provenance",
+    "task_id": "provenance_learn_01"
+  },
+  {
+    "event_id": "event-0023",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "candidate",
+    "stream": "provenance",
+    "task_id": "provenance_learn_02"
+  },
+  {
+    "event_id": "event-0024",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "parent",
+    "stream": "provenance",
+    "task_id": "provenance_learn_02"
+  },
+  {
+    "event_id": "event-0025",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "parent",
+    "stream": "provenance",
+    "task_id": "provenance_learn_03"
+  },
+  {
+    "event_id": "event-0026",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "candidate",
+    "stream": "provenance",
+    "task_id": "provenance_learn_03"
+  },
+  {
+    "event_id": "event-0027",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "candidate",
+    "stream": "provenance",
+    "task_id": "provenance_learn_04"
+  },
+  {
+    "event_id": "event-0028",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "parent",
+    "stream": "provenance",
+    "task_id": "provenance_learn_04"
+  },
+  {
+    "event_id": "event-0029",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "finalist_comparison",
+    "phi": "candidate",
+    "stream": "provenance",
+    "task_id": "provenance_learn_01"
+  },
+  {
+    "event_id": "event-0030",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "finalist_comparison",
+    "phi": "parent",
+    "stream": "provenance",
+    "task_id": "provenance_learn_01"
+  },
+  {
+    "event_id": "event-0031",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "finalist_comparison",
+    "phi": "parent",
+    "stream": "provenance",
+    "task_id": "provenance_learn_03"
+  },
+  {
+    "event_id": "event-0032",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "finalist_comparison",
+    "phi": "candidate",
+    "stream": "provenance",
+    "task_id": "provenance_learn_03"
+  },
+  {
+    "event_id": "event-0033",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "finalist_comparison",
+    "phi": "candidate",
+    "stream": "provenance",
+    "task_id": "provenance_learn_04"
+  },
+  {
+    "event_id": "event-0034",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "finalist_comparison",
+    "phi": "parent",
+    "stream": "provenance",
+    "task_id": "provenance_learn_04"
+  },
+  {
+    "adoption": "retain_initial",
+    "event_id": "event-0035",
+    "group": "S0",
+    "ingest": false,
+    "phase": "native_selection",
+    "stream": "provenance",
+    "task_id": null
+  },
+  {
+    "event_id": "event-0036",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "parent",
+    "stream": "provenance",
+    "task_id": "provenance_learn_01"
+  },
+  {
+    "event_id": "event-0037",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "candidate",
+    "stream": "provenance",
+    "task_id": "provenance_learn_01"
+  },
+  {
+    "event_id": "event-0038",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "candidate",
+    "stream": "provenance",
+    "task_id": "provenance_learn_02"
+  },
+  {
+    "event_id": "event-0039",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "parent",
+    "stream": "provenance",
+    "task_id": "provenance_learn_02"
+  },
+  {
+    "event_id": "event-0040",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "parent",
+    "stream": "provenance",
+    "task_id": "provenance_learn_03"
+  },
+  {
+    "event_id": "event-0041",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "candidate",
+    "stream": "provenance",
+    "task_id": "provenance_learn_03"
+  },
+  {
+    "event_id": "event-0042",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "candidate",
+    "stream": "provenance",
+    "task_id": "provenance_learn_04"
+  },
+  {
+    "event_id": "event-0043",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "parent",
+    "stream": "provenance",
+    "task_id": "provenance_learn_04"
+  },
+  {
+    "event_id": "event-0044",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "finalist_comparison",
+    "phi": "candidate",
+    "stream": "provenance",
+    "task_id": "provenance_learn_01"
+  },
+  {
+    "event_id": "event-0045",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "finalist_comparison",
+    "phi": "parent",
+    "stream": "provenance",
+    "task_id": "provenance_learn_01"
+  },
+  {
+    "event_id": "event-0046",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "finalist_comparison",
+    "phi": "parent",
+    "stream": "provenance",
+    "task_id": "provenance_learn_03"
+  },
+  {
+    "event_id": "event-0047",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "finalist_comparison",
+    "phi": "candidate",
+    "stream": "provenance",
+    "task_id": "provenance_learn_03"
+  },
+  {
+    "event_id": "event-0048",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "finalist_comparison",
+    "phi": "candidate",
+    "stream": "provenance",
+    "task_id": "provenance_learn_04"
+  },
+  {
+    "event_id": "event-0049",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "finalist_comparison",
+    "phi": "parent",
+    "stream": "provenance",
+    "task_id": "provenance_learn_04"
+  },
+  {
+    "adoption": "native_winner",
+    "event_id": "event-0050",
+    "group": "S1",
+    "ingest": false,
+    "phase": "native_selection",
+    "stream": "provenance",
+    "task_id": null
+  },
+  {
+    "event_id": "event-0051",
+    "group": "M0",
+    "ingest": false,
+    "memory": "initial",
+    "phase": "primary_holdout",
+    "phi": "initial",
+    "stream": "provenance",
+    "task_id": "provenance_probe_01"
+  },
+  {
+    "event_id": "event-0052",
+    "group": "M1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "primary_holdout",
+    "phi": "initial",
+    "stream": "provenance",
+    "task_id": "provenance_probe_01"
+  },
+  {
+    "event_id": "event-0053",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "primary_holdout",
+    "phi": "initial",
+    "stream": "provenance",
+    "task_id": "provenance_probe_01"
+  },
+  {
+    "event_id": "event-0054",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "primary_holdout",
+    "phi": "selected",
+    "stream": "provenance",
+    "task_id": "provenance_probe_01"
+  },
+  {
+    "event_id": "event-0055",
+    "group": "M0",
+    "ingest": false,
+    "memory": "initial",
+    "phase": "primary_holdout",
+    "phi": "initial",
+    "stream": "provenance",
+    "task_id": "provenance_probe_02"
+  },
+  {
+    "event_id": "event-0056",
+    "group": "M1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "primary_holdout",
+    "phi": "initial",
+    "stream": "provenance",
+    "task_id": "provenance_probe_02"
+  },
+  {
+    "event_id": "event-0057",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "primary_holdout",
+    "phi": "initial",
+    "stream": "provenance",
+    "task_id": "provenance_probe_02"
+  },
+  {
+    "event_id": "event-0058",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "primary_holdout",
+    "phi": "selected",
+    "stream": "provenance",
+    "task_id": "provenance_probe_02"
+  },
+  {
+    "event_id": "event-0059",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "same_phi_baseline",
+    "phi": "initial",
+    "repetition": 0,
+    "stream": "provenance",
+    "task_id": "provenance_probe_01"
+  },
+  {
+    "event_id": "event-0060",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "same_phi_baseline",
+    "phi": "initial",
+    "repetition": 1,
+    "stream": "provenance",
+    "task_id": "provenance_probe_01"
+  },
+  {
+    "event_id": "event-0061",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "paired_probe",
+    "phi": "initial",
+    "repetition": 0,
+    "stream": "provenance",
+    "task_id": "provenance_probe_01"
+  },
+  {
+    "event_id": "event-0062",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "paired_probe",
+    "phi": "selected",
+    "repetition": 0,
+    "stream": "provenance",
+    "task_id": "provenance_probe_01"
+  },
+  {
+    "event_id": "event-0063",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "paired_probe",
+    "phi": "selected",
+    "repetition": 1,
+    "stream": "provenance",
+    "task_id": "provenance_probe_01"
+  },
+  {
+    "event_id": "event-0064",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "paired_probe",
+    "phi": "initial",
+    "repetition": 1,
+    "stream": "provenance",
+    "task_id": "provenance_probe_01"
+  },
+  {
+    "event_id": "event-0065",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "same_phi_baseline",
+    "phi": "initial",
+    "repetition": 0,
+    "stream": "provenance",
+    "task_id": "provenance_probe_02"
+  },
+  {
+    "event_id": "event-0066",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "same_phi_baseline",
+    "phi": "initial",
+    "repetition": 1,
+    "stream": "provenance",
+    "task_id": "provenance_probe_02"
+  },
+  {
+    "event_id": "event-0067",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "paired_probe",
+    "phi": "selected",
+    "repetition": 0,
+    "stream": "provenance",
+    "task_id": "provenance_probe_02"
+  },
+  {
+    "event_id": "event-0068",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "paired_probe",
+    "phi": "initial",
+    "repetition": 0,
+    "stream": "provenance",
+    "task_id": "provenance_probe_02"
+  },
+  {
+    "event_id": "event-0069",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "paired_probe",
+    "phi": "initial",
+    "repetition": 1,
+    "stream": "provenance",
+    "task_id": "provenance_probe_02"
+  },
+  {
+    "event_id": "event-0070",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "paired_probe",
+    "phi": "selected",
+    "repetition": 1,
+    "stream": "provenance",
+    "task_id": "provenance_probe_02"
+  },
+  {
+    "event_id": "event-0071",
+    "group": "M1",
+    "ingest": true,
+    "memory": "persistent_primary_M",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "sequence",
+    "task_id": "sequence_learn_01"
+  },
+  {
+    "event_id": "event-0072",
+    "group": "S0",
+    "ingest": true,
+    "memory": "persistent_primary_M",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "sequence",
+    "task_id": "sequence_learn_01"
+  },
+  {
+    "event_id": "event-0073",
+    "group": "S1",
+    "ingest": true,
+    "memory": "persistent_primary_M",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "sequence",
+    "task_id": "sequence_learn_01"
+  },
+  {
+    "event_id": "event-0074",
+    "group": "M0",
+    "ingest": false,
+    "memory": "initial",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "sequence",
+    "task_id": "sequence_learn_01"
+  },
+  {
+    "event_id": "event-0075",
+    "group": "M1",
+    "ingest": true,
+    "memory": "persistent_primary_M",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "sequence",
+    "task_id": "sequence_learn_02"
+  },
+  {
+    "event_id": "event-0076",
+    "group": "S0",
+    "ingest": true,
+    "memory": "persistent_primary_M",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "sequence",
+    "task_id": "sequence_learn_02"
+  },
+  {
+    "event_id": "event-0077",
+    "group": "S1",
+    "ingest": true,
+    "memory": "persistent_primary_M",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "sequence",
+    "task_id": "sequence_learn_02"
+  },
+  {
+    "event_id": "event-0078",
+    "group": "M0",
+    "ingest": false,
+    "memory": "initial",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "sequence",
+    "task_id": "sequence_learn_02"
+  },
+  {
+    "event_id": "event-0079",
+    "group": "M1",
+    "ingest": true,
+    "memory": "persistent_primary_M",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "sequence",
+    "task_id": "sequence_learn_03"
+  },
+  {
+    "event_id": "event-0080",
+    "group": "S0",
+    "ingest": true,
+    "memory": "persistent_primary_M",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "sequence",
+    "task_id": "sequence_learn_03"
+  },
+  {
+    "event_id": "event-0081",
+    "group": "S1",
+    "ingest": true,
+    "memory": "persistent_primary_M",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "sequence",
+    "task_id": "sequence_learn_03"
+  },
+  {
+    "event_id": "event-0082",
+    "group": "M0",
+    "ingest": false,
+    "memory": "initial",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "sequence",
+    "task_id": "sequence_learn_03"
+  },
+  {
+    "event_id": "event-0083",
+    "group": "M1",
+    "ingest": true,
+    "memory": "persistent_primary_M",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "sequence",
+    "task_id": "sequence_learn_04"
+  },
+  {
+    "event_id": "event-0084",
+    "group": "S0",
+    "ingest": true,
+    "memory": "persistent_primary_M",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "sequence",
+    "task_id": "sequence_learn_04"
+  },
+  {
+    "event_id": "event-0085",
+    "group": "S1",
+    "ingest": true,
+    "memory": "persistent_primary_M",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "sequence",
+    "task_id": "sequence_learn_04"
+  },
+  {
+    "event_id": "event-0086",
+    "group": "M0",
+    "ingest": false,
+    "memory": "initial",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "sequence",
+    "task_id": "sequence_learn_04"
+  },
+  {
+    "event_id": "event-0087",
+    "group": "S0",
+    "ingest": false,
+    "phase": "system_reflection",
+    "stream": "sequence",
+    "task_id": null
+  },
+  {
+    "event_id": "event-0088",
+    "group": "S0",
+    "ingest": false,
+    "memory": "discarded_copy",
+    "phase": "native_interface_validation",
+    "stream": "sequence",
+    "task_id": null
+  },
+  {
+    "event_id": "event-0089",
+    "group": "S1",
+    "ingest": false,
+    "phase": "system_reflection",
+    "stream": "sequence",
+    "task_id": null
+  },
+  {
+    "event_id": "event-0090",
+    "group": "S1",
+    "ingest": false,
+    "memory": "discarded_copy",
+    "phase": "native_interface_validation",
+    "stream": "sequence",
+    "task_id": null
+  },
+  {
+    "event_id": "event-0091",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "parent",
+    "stream": "sequence",
+    "task_id": "sequence_learn_01"
+  },
+  {
+    "event_id": "event-0092",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "candidate",
+    "stream": "sequence",
+    "task_id": "sequence_learn_01"
+  },
+  {
+    "event_id": "event-0093",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "candidate",
+    "stream": "sequence",
+    "task_id": "sequence_learn_02"
+  },
+  {
+    "event_id": "event-0094",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "parent",
+    "stream": "sequence",
+    "task_id": "sequence_learn_02"
+  },
+  {
+    "event_id": "event-0095",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "parent",
+    "stream": "sequence",
+    "task_id": "sequence_learn_03"
+  },
+  {
+    "event_id": "event-0096",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "candidate",
+    "stream": "sequence",
+    "task_id": "sequence_learn_03"
+  },
+  {
+    "event_id": "event-0097",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "candidate",
+    "stream": "sequence",
+    "task_id": "sequence_learn_04"
+  },
+  {
+    "event_id": "event-0098",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "parent",
+    "stream": "sequence",
+    "task_id": "sequence_learn_04"
+  },
+  {
+    "event_id": "event-0099",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "finalist_comparison",
+    "phi": "candidate",
+    "stream": "sequence",
+    "task_id": "sequence_learn_01"
+  },
+  {
+    "event_id": "event-0100",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "finalist_comparison",
+    "phi": "parent",
+    "stream": "sequence",
+    "task_id": "sequence_learn_01"
+  },
+  {
+    "event_id": "event-0101",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "finalist_comparison",
+    "phi": "parent",
+    "stream": "sequence",
+    "task_id": "sequence_learn_03"
+  },
+  {
+    "event_id": "event-0102",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "finalist_comparison",
+    "phi": "candidate",
+    "stream": "sequence",
+    "task_id": "sequence_learn_03"
+  },
+  {
+    "event_id": "event-0103",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "finalist_comparison",
+    "phi": "candidate",
+    "stream": "sequence",
+    "task_id": "sequence_learn_04"
+  },
+  {
+    "event_id": "event-0104",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "finalist_comparison",
+    "phi": "parent",
+    "stream": "sequence",
+    "task_id": "sequence_learn_04"
+  },
+  {
+    "adoption": "retain_initial",
+    "event_id": "event-0105",
+    "group": "S0",
+    "ingest": false,
+    "phase": "native_selection",
+    "stream": "sequence",
+    "task_id": null
+  },
+  {
+    "event_id": "event-0106",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "parent",
+    "stream": "sequence",
+    "task_id": "sequence_learn_01"
+  },
+  {
+    "event_id": "event-0107",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "candidate",
+    "stream": "sequence",
+    "task_id": "sequence_learn_01"
+  },
+  {
+    "event_id": "event-0108",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "candidate",
+    "stream": "sequence",
+    "task_id": "sequence_learn_02"
+  },
+  {
+    "event_id": "event-0109",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "parent",
+    "stream": "sequence",
+    "task_id": "sequence_learn_02"
+  },
+  {
+    "event_id": "event-0110",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "parent",
+    "stream": "sequence",
+    "task_id": "sequence_learn_03"
+  },
+  {
+    "event_id": "event-0111",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "candidate",
+    "stream": "sequence",
+    "task_id": "sequence_learn_03"
+  },
+  {
+    "event_id": "event-0112",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "candidate",
+    "stream": "sequence",
+    "task_id": "sequence_learn_04"
+  },
+  {
+    "event_id": "event-0113",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "parent",
+    "stream": "sequence",
+    "task_id": "sequence_learn_04"
+  },
+  {
+    "event_id": "event-0114",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "finalist_comparison",
+    "phi": "candidate",
+    "stream": "sequence",
+    "task_id": "sequence_learn_01"
+  },
+  {
+    "event_id": "event-0115",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "finalist_comparison",
+    "phi": "parent",
+    "stream": "sequence",
+    "task_id": "sequence_learn_01"
+  },
+  {
+    "event_id": "event-0116",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "finalist_comparison",
+    "phi": "parent",
+    "stream": "sequence",
+    "task_id": "sequence_learn_03"
+  },
+  {
+    "event_id": "event-0117",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "finalist_comparison",
+    "phi": "candidate",
+    "stream": "sequence",
+    "task_id": "sequence_learn_03"
+  },
+  {
+    "event_id": "event-0118",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "finalist_comparison",
+    "phi": "candidate",
+    "stream": "sequence",
+    "task_id": "sequence_learn_04"
+  },
+  {
+    "event_id": "event-0119",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "finalist_comparison",
+    "phi": "parent",
+    "stream": "sequence",
+    "task_id": "sequence_learn_04"
+  },
+  {
+    "adoption": "native_winner",
+    "event_id": "event-0120",
+    "group": "S1",
+    "ingest": false,
+    "phase": "native_selection",
+    "stream": "sequence",
+    "task_id": null
+  },
+  {
+    "event_id": "event-0121",
+    "group": "M1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "primary_holdout",
+    "phi": "initial",
+    "stream": "sequence",
+    "task_id": "sequence_probe_01"
+  },
+  {
+    "event_id": "event-0122",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "primary_holdout",
+    "phi": "initial",
+    "stream": "sequence",
+    "task_id": "sequence_probe_01"
+  },
+  {
+    "event_id": "event-0123",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "primary_holdout",
+    "phi": "selected",
+    "stream": "sequence",
+    "task_id": "sequence_probe_01"
+  },
+  {
+    "event_id": "event-0124",
+    "group": "M0",
+    "ingest": false,
+    "memory": "initial",
+    "phase": "primary_holdout",
+    "phi": "initial",
+    "stream": "sequence",
+    "task_id": "sequence_probe_01"
+  },
+  {
+    "event_id": "event-0125",
+    "group": "M1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "primary_holdout",
+    "phi": "initial",
+    "stream": "sequence",
+    "task_id": "sequence_probe_02"
+  },
+  {
+    "event_id": "event-0126",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "primary_holdout",
+    "phi": "initial",
+    "stream": "sequence",
+    "task_id": "sequence_probe_02"
+  },
+  {
+    "event_id": "event-0127",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "primary_holdout",
+    "phi": "selected",
+    "stream": "sequence",
+    "task_id": "sequence_probe_02"
+  },
+  {
+    "event_id": "event-0128",
+    "group": "M0",
+    "ingest": false,
+    "memory": "initial",
+    "phase": "primary_holdout",
+    "phi": "initial",
+    "stream": "sequence",
+    "task_id": "sequence_probe_02"
+  },
+  {
+    "event_id": "event-0129",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "same_phi_baseline",
+    "phi": "initial",
+    "repetition": 0,
+    "stream": "sequence",
+    "task_id": "sequence_probe_01"
+  },
+  {
+    "event_id": "event-0130",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "same_phi_baseline",
+    "phi": "initial",
+    "repetition": 1,
+    "stream": "sequence",
+    "task_id": "sequence_probe_01"
+  },
+  {
+    "event_id": "event-0131",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "paired_probe",
+    "phi": "initial",
+    "repetition": 0,
+    "stream": "sequence",
+    "task_id": "sequence_probe_01"
+  },
+  {
+    "event_id": "event-0132",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "paired_probe",
+    "phi": "selected",
+    "repetition": 0,
+    "stream": "sequence",
+    "task_id": "sequence_probe_01"
+  },
+  {
+    "event_id": "event-0133",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "paired_probe",
+    "phi": "selected",
+    "repetition": 1,
+    "stream": "sequence",
+    "task_id": "sequence_probe_01"
+  },
+  {
+    "event_id": "event-0134",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "paired_probe",
+    "phi": "initial",
+    "repetition": 1,
+    "stream": "sequence",
+    "task_id": "sequence_probe_01"
+  },
+  {
+    "event_id": "event-0135",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "same_phi_baseline",
+    "phi": "initial",
+    "repetition": 0,
+    "stream": "sequence",
+    "task_id": "sequence_probe_02"
+  },
+  {
+    "event_id": "event-0136",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "same_phi_baseline",
+    "phi": "initial",
+    "repetition": 1,
+    "stream": "sequence",
+    "task_id": "sequence_probe_02"
+  },
+  {
+    "event_id": "event-0137",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "paired_probe",
+    "phi": "selected",
+    "repetition": 0,
+    "stream": "sequence",
+    "task_id": "sequence_probe_02"
+  },
+  {
+    "event_id": "event-0138",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "paired_probe",
+    "phi": "initial",
+    "repetition": 0,
+    "stream": "sequence",
+    "task_id": "sequence_probe_02"
+  },
+  {
+    "event_id": "event-0139",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "paired_probe",
+    "phi": "initial",
+    "repetition": 1,
+    "stream": "sequence",
+    "task_id": "sequence_probe_02"
+  },
+  {
+    "event_id": "event-0140",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "paired_probe",
+    "phi": "selected",
+    "repetition": 1,
+    "stream": "sequence",
+    "task_id": "sequence_probe_02"
+  },
+  {
+    "event_id": "event-0141",
+    "group": "S0",
+    "ingest": true,
+    "memory": "persistent_primary_M",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "authority",
+    "task_id": "authority_learn_01"
+  },
+  {
+    "event_id": "event-0142",
+    "group": "S1",
+    "ingest": true,
+    "memory": "persistent_primary_M",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "authority",
+    "task_id": "authority_learn_01"
+  },
+  {
+    "event_id": "event-0143",
+    "group": "M0",
+    "ingest": false,
+    "memory": "initial",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "authority",
+    "task_id": "authority_learn_01"
+  },
+  {
+    "event_id": "event-0144",
+    "group": "M1",
+    "ingest": true,
+    "memory": "persistent_primary_M",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "authority",
+    "task_id": "authority_learn_01"
+  },
+  {
+    "event_id": "event-0145",
+    "group": "S0",
+    "ingest": true,
+    "memory": "persistent_primary_M",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "authority",
+    "task_id": "authority_learn_02"
+  },
+  {
+    "event_id": "event-0146",
+    "group": "S1",
+    "ingest": true,
+    "memory": "persistent_primary_M",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "authority",
+    "task_id": "authority_learn_02"
+  },
+  {
+    "event_id": "event-0147",
+    "group": "M0",
+    "ingest": false,
+    "memory": "initial",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "authority",
+    "task_id": "authority_learn_02"
+  },
+  {
+    "event_id": "event-0148",
+    "group": "M1",
+    "ingest": true,
+    "memory": "persistent_primary_M",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "authority",
+    "task_id": "authority_learn_02"
+  },
+  {
+    "event_id": "event-0149",
+    "group": "S0",
+    "ingest": true,
+    "memory": "persistent_primary_M",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "authority",
+    "task_id": "authority_learn_03"
+  },
+  {
+    "event_id": "event-0150",
+    "group": "S1",
+    "ingest": true,
+    "memory": "persistent_primary_M",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "authority",
+    "task_id": "authority_learn_03"
+  },
+  {
+    "event_id": "event-0151",
+    "group": "M0",
+    "ingest": false,
+    "memory": "initial",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "authority",
+    "task_id": "authority_learn_03"
+  },
+  {
+    "event_id": "event-0152",
+    "group": "M1",
+    "ingest": true,
+    "memory": "persistent_primary_M",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "authority",
+    "task_id": "authority_learn_03"
+  },
+  {
+    "event_id": "event-0153",
+    "group": "S0",
+    "ingest": true,
+    "memory": "persistent_primary_M",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "authority",
+    "task_id": "authority_learn_04"
+  },
+  {
+    "event_id": "event-0154",
+    "group": "S1",
+    "ingest": true,
+    "memory": "persistent_primary_M",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "authority",
+    "task_id": "authority_learn_04"
+  },
+  {
+    "event_id": "event-0155",
+    "group": "M0",
+    "ingest": false,
+    "memory": "initial",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "authority",
+    "task_id": "authority_learn_04"
+  },
+  {
+    "event_id": "event-0156",
+    "group": "M1",
+    "ingest": true,
+    "memory": "persistent_primary_M",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "authority",
+    "task_id": "authority_learn_04"
+  },
+  {
+    "event_id": "event-0157",
+    "group": "S0",
+    "ingest": false,
+    "phase": "system_reflection",
+    "stream": "authority",
+    "task_id": null
+  },
+  {
+    "event_id": "event-0158",
+    "group": "S0",
+    "ingest": false,
+    "memory": "discarded_copy",
+    "phase": "native_interface_validation",
+    "stream": "authority",
+    "task_id": null
+  },
+  {
+    "event_id": "event-0159",
+    "group": "S1",
+    "ingest": false,
+    "phase": "system_reflection",
+    "stream": "authority",
+    "task_id": null
+  },
+  {
+    "event_id": "event-0160",
+    "group": "S1",
+    "ingest": false,
+    "memory": "discarded_copy",
+    "phase": "native_interface_validation",
+    "stream": "authority",
+    "task_id": null
+  },
+  {
+    "event_id": "event-0161",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "parent",
+    "stream": "authority",
+    "task_id": "authority_learn_01"
+  },
+  {
+    "event_id": "event-0162",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "candidate",
+    "stream": "authority",
+    "task_id": "authority_learn_01"
+  },
+  {
+    "event_id": "event-0163",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "candidate",
+    "stream": "authority",
+    "task_id": "authority_learn_02"
+  },
+  {
+    "event_id": "event-0164",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "parent",
+    "stream": "authority",
+    "task_id": "authority_learn_02"
+  },
+  {
+    "event_id": "event-0165",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "parent",
+    "stream": "authority",
+    "task_id": "authority_learn_03"
+  },
+  {
+    "event_id": "event-0166",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "candidate",
+    "stream": "authority",
+    "task_id": "authority_learn_03"
+  },
+  {
+    "event_id": "event-0167",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "candidate",
+    "stream": "authority",
+    "task_id": "authority_learn_04"
+  },
+  {
+    "event_id": "event-0168",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "parent",
+    "stream": "authority",
+    "task_id": "authority_learn_04"
+  },
+  {
+    "event_id": "event-0169",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "finalist_comparison",
+    "phi": "candidate",
+    "stream": "authority",
+    "task_id": "authority_learn_01"
+  },
+  {
+    "event_id": "event-0170",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "finalist_comparison",
+    "phi": "parent",
+    "stream": "authority",
+    "task_id": "authority_learn_01"
+  },
+  {
+    "event_id": "event-0171",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "finalist_comparison",
+    "phi": "parent",
+    "stream": "authority",
+    "task_id": "authority_learn_03"
+  },
+  {
+    "event_id": "event-0172",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "finalist_comparison",
+    "phi": "candidate",
+    "stream": "authority",
+    "task_id": "authority_learn_03"
+  },
+  {
+    "event_id": "event-0173",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "finalist_comparison",
+    "phi": "candidate",
+    "stream": "authority",
+    "task_id": "authority_learn_04"
+  },
+  {
+    "event_id": "event-0174",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "finalist_comparison",
+    "phi": "parent",
+    "stream": "authority",
+    "task_id": "authority_learn_04"
+  },
+  {
+    "adoption": "retain_initial",
+    "event_id": "event-0175",
+    "group": "S0",
+    "ingest": false,
+    "phase": "native_selection",
+    "stream": "authority",
+    "task_id": null
+  },
+  {
+    "event_id": "event-0176",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "parent",
+    "stream": "authority",
+    "task_id": "authority_learn_01"
+  },
+  {
+    "event_id": "event-0177",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "candidate",
+    "stream": "authority",
+    "task_id": "authority_learn_01"
+  },
+  {
+    "event_id": "event-0178",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "candidate",
+    "stream": "authority",
+    "task_id": "authority_learn_02"
+  },
+  {
+    "event_id": "event-0179",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "parent",
+    "stream": "authority",
+    "task_id": "authority_learn_02"
+  },
+  {
+    "event_id": "event-0180",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "parent",
+    "stream": "authority",
+    "task_id": "authority_learn_03"
+  },
+  {
+    "event_id": "event-0181",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "candidate",
+    "stream": "authority",
+    "task_id": "authority_learn_03"
+  },
+  {
+    "event_id": "event-0182",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "candidate",
+    "stream": "authority",
+    "task_id": "authority_learn_04"
+  },
+  {
+    "event_id": "event-0183",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "parent",
+    "stream": "authority",
+    "task_id": "authority_learn_04"
+  },
+  {
+    "event_id": "event-0184",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "finalist_comparison",
+    "phi": "candidate",
+    "stream": "authority",
+    "task_id": "authority_learn_01"
+  },
+  {
+    "event_id": "event-0185",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "finalist_comparison",
+    "phi": "parent",
+    "stream": "authority",
+    "task_id": "authority_learn_01"
+  },
+  {
+    "event_id": "event-0186",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "finalist_comparison",
+    "phi": "parent",
+    "stream": "authority",
+    "task_id": "authority_learn_03"
+  },
+  {
+    "event_id": "event-0187",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "finalist_comparison",
+    "phi": "candidate",
+    "stream": "authority",
+    "task_id": "authority_learn_03"
+  },
+  {
+    "event_id": "event-0188",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "finalist_comparison",
+    "phi": "candidate",
+    "stream": "authority",
+    "task_id": "authority_learn_04"
+  },
+  {
+    "event_id": "event-0189",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "finalist_comparison",
+    "phi": "parent",
+    "stream": "authority",
+    "task_id": "authority_learn_04"
+  },
+  {
+    "adoption": "native_winner",
+    "event_id": "event-0190",
+    "group": "S1",
+    "ingest": false,
+    "phase": "native_selection",
+    "stream": "authority",
+    "task_id": null
+  },
+  {
+    "event_id": "event-0191",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "primary_holdout",
+    "phi": "initial",
+    "stream": "authority",
+    "task_id": "authority_probe_01"
+  },
+  {
+    "event_id": "event-0192",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "primary_holdout",
+    "phi": "selected",
+    "stream": "authority",
+    "task_id": "authority_probe_01"
+  },
+  {
+    "event_id": "event-0193",
+    "group": "M0",
+    "ingest": false,
+    "memory": "initial",
+    "phase": "primary_holdout",
+    "phi": "initial",
+    "stream": "authority",
+    "task_id": "authority_probe_01"
+  },
+  {
+    "event_id": "event-0194",
+    "group": "M1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "primary_holdout",
+    "phi": "initial",
+    "stream": "authority",
+    "task_id": "authority_probe_01"
+  },
+  {
+    "event_id": "event-0195",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "primary_holdout",
+    "phi": "initial",
+    "stream": "authority",
+    "task_id": "authority_probe_02"
+  },
+  {
+    "event_id": "event-0196",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "primary_holdout",
+    "phi": "selected",
+    "stream": "authority",
+    "task_id": "authority_probe_02"
+  },
+  {
+    "event_id": "event-0197",
+    "group": "M0",
+    "ingest": false,
+    "memory": "initial",
+    "phase": "primary_holdout",
+    "phi": "initial",
+    "stream": "authority",
+    "task_id": "authority_probe_02"
+  },
+  {
+    "event_id": "event-0198",
+    "group": "M1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "primary_holdout",
+    "phi": "initial",
+    "stream": "authority",
+    "task_id": "authority_probe_02"
+  },
+  {
+    "event_id": "event-0199",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "same_phi_baseline",
+    "phi": "initial",
+    "repetition": 0,
+    "stream": "authority",
+    "task_id": "authority_probe_01"
+  },
+  {
+    "event_id": "event-0200",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "same_phi_baseline",
+    "phi": "initial",
+    "repetition": 1,
+    "stream": "authority",
+    "task_id": "authority_probe_01"
+  },
+  {
+    "event_id": "event-0201",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "paired_probe",
+    "phi": "initial",
+    "repetition": 0,
+    "stream": "authority",
+    "task_id": "authority_probe_01"
+  },
+  {
+    "event_id": "event-0202",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "paired_probe",
+    "phi": "selected",
+    "repetition": 0,
+    "stream": "authority",
+    "task_id": "authority_probe_01"
+  },
+  {
+    "event_id": "event-0203",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "paired_probe",
+    "phi": "selected",
+    "repetition": 1,
+    "stream": "authority",
+    "task_id": "authority_probe_01"
+  },
+  {
+    "event_id": "event-0204",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "paired_probe",
+    "phi": "initial",
+    "repetition": 1,
+    "stream": "authority",
+    "task_id": "authority_probe_01"
+  },
+  {
+    "event_id": "event-0205",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "same_phi_baseline",
+    "phi": "initial",
+    "repetition": 0,
+    "stream": "authority",
+    "task_id": "authority_probe_02"
+  },
+  {
+    "event_id": "event-0206",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "same_phi_baseline",
+    "phi": "initial",
+    "repetition": 1,
+    "stream": "authority",
+    "task_id": "authority_probe_02"
+  },
+  {
+    "event_id": "event-0207",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "paired_probe",
+    "phi": "selected",
+    "repetition": 0,
+    "stream": "authority",
+    "task_id": "authority_probe_02"
+  },
+  {
+    "event_id": "event-0208",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "paired_probe",
+    "phi": "initial",
+    "repetition": 0,
+    "stream": "authority",
+    "task_id": "authority_probe_02"
+  },
+  {
+    "event_id": "event-0209",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "paired_probe",
+    "phi": "initial",
+    "repetition": 1,
+    "stream": "authority",
+    "task_id": "authority_probe_02"
+  },
+  {
+    "event_id": "event-0210",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "paired_probe",
+    "phi": "selected",
+    "repetition": 1,
+    "stream": "authority",
+    "task_id": "authority_probe_02"
+  }
+]

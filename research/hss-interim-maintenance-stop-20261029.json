@@ -1,0 +1,16 @@
+{
+  "reason": "Native repair client is retrying budget refusal with 60-second sleeps; stop this archived lineage with zero pending model requests",
+  "worker": {
+    "status": "running",
+    "started_utc": "2026-10-29T11:04:34.968659+00:00",
+    "pid": 7904,
+    "process_identity": {
+      "pid": 7904,
+      "started_unix": 1793271874.489334,
+      "executable": "C:\\Users\\muyufly\\AppData\\Roaming\\uv\\python\\cpython-3.10.20-windows-x86_64-none\\python.exe"
+    },
+    "job_id": "social-native-r1"
+  },
+  "pending_requests": 0,
+  "budget_block": "maintenance_answer_integrity_20261029"
+}

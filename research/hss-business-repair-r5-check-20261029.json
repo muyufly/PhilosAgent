@@ -1,0 +1,140 @@
+{
+  "checked_hkt": "2026-10-29T19:52:24.079864+08:00",
+  "adapter_revision": "repair-r5",
+  "protocol_revision": "repair-r4",
+  "root_cause": "Native configuration regex also collected bold labels inside provider docstrings; validation treated those labels as config keys",
+  "recovered_job": "humanities-fixed-r1",
+  "job_running": true,
+  "worker_source": {
+    "job_id": "humanities-fixed-r1",
+    "recorded_utc": "2026-10-29T11:49:51.802358+00:00",
+    "pid": 25276,
+    "process_identity": {
+      "pid": 25276,
+      "started_unix": 1793274591.681017,
+      "executable": "C:\\Users\\muyufly\\AppData\\Roaming\\uv\\python\\cpython-3.10.20-windows-x86_64-none\\python.exe"
+    },
+    "adapter_sha256": "f493982236953794075d4c8d68e1a5aa330323440188fa680c6ba392b7a96b14",
+    "adapter_revision": "repair-r5",
+    "protocol_revision": "repair-r4",
+    "snapshot_path": "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01\\revisions\\repair-r5\\code_snapshot.after\\philoagent"
+  },
+  "full_regression_passed": 417,
+  "focused_tests_passed": 42,
+  "counts": {
+    "queued": 19,
+    "running": 8,
+    "complete": 0,
+    "failed": 0,
+    "interrupted": 0
+  },
+  "budget": {
+    "attempt_count": 1471,
+    "actual_tokens": 31022438,
+    "reserved_unknown_tokens": 509359,
+    "live_inflight_count": 6,
+    "blocked_reason": null
+  },
+  "candidate_reuse": {
+    "kind": "offline_saved_response_reuse",
+    "original_attempt": 1096,
+    "original_raw_path": "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01\\jobs\\humanities-fixed-r1\\evolution\\round_00\\llm_raw_output_20261029_193122.txt",
+    "original_raw_sha256": "0482aec98d209ad9ddd763d3447a06102fc3c097d7f5307786e2e7386d85a6cf",
+    "original_response_sha256": "b817dc3316b01254223422698d481ebce0e74392f0586b2db17659eeec3c1607",
+    "new_model_requests": 0,
+    "native_creation_and_validation_required": true,
+    "job_id": "humanities-fixed-r1",
+    "round": "round_00",
+    "candidate_index": 2,
+    "recovery_scope": "stopped_job",
+    "preserved_existing_candidates": {
+      "generated_system_1.json": "0e3e8399dd718de018a4a7a4b2c8305166c40e2fad4865a2c5e0f9df1e4b5f07"
+    },
+    "recorded_utc": "2026-10-29T11:49:24.119973+00:00",
+    "original_attempt_path": "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01\\budget\\attempts\\001096.json",
+    "original_attempt_usage": {
+      "prompt_tokens": 27817,
+      "completion_tokens": 43572,
+      "total_tokens": 71389
+    },
+    "generated_config": "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01\\jobs\\humanities-fixed-r1\\evolution\\round_00\\generated_system_2.json",
+    "generated_file_sha256": "6aef7d6610c5356f9b54474332a13f36e0b614f78a52e06e5ad7a7abd43f406e",
+    "provider": "warrant_memory",
+    "state_before": "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01\\jobs\\humanities-fixed-r1\\evolution\\round_00\\_saved_generation_recovery_2\\state.before.json",
+    "checkpoint_before": "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01\\jobs\\humanities-fixed-r1\\evolution\\round_00\\_saved_generation_recovery_2\\checkpoint.before.json",
+    "analysis_reused": true,
+    "generated_code_executed": false
+  },
+  "config_extraction": {
+    "method": "explicit_configuration_section",
+    "raw_response_sha256": "b817dc3316b01254223422698d481ebce0e74392f0586b2db17659eeec3c1607",
+    "retained_keys": [
+      "storage_dir",
+      "database_path",
+      "top_k_longterm",
+      "shortlist_size",
+      "max_strategic_memories",
+      "max_operational_memories",
+      "max_diagnostic_memories",
+      "memory_buffer_size",
+      "max_shortterm_items",
+      "shortterm_provision_interval",
+      "finalize_trigger_step",
+      "quota_trigger_step",
+      "quota_tolerance",
+      "numeric_citation_ratio"
+    ],
+    "source_lines": {
+      "storage_dir": [
+        1353
+      ],
+      "database_path": [
+        1354
+      ],
+      "top_k_longterm": [
+        1355
+      ],
+      "shortlist_size": [
+        1356
+      ],
+      "max_strategic_memories": [
+        1357
+      ],
+      "max_operational_memories": [
+        1358
+      ],
+      "max_diagnostic_memories": [
+        1359
+      ],
+      "memory_buffer_size": [
+        1360
+      ],
+      "max_shortterm_items": [
+        1361
+      ],
+      "shortterm_provision_interval": [
+        1362
+      ],
+      "finalize_trigger_step": [
+        1363
+      ],
+      "quota_trigger_step": [
+        1364
+      ],
+      "quota_tolerance": [
+        1365
+      ],
+      "numeric_citation_ratio": [
+        1366
+      ]
+    },
+    "discarded_native_keys": [
+      "Consolidation on insert",
+      "Constraint seeding",
+      "Late-stage re-provision",
+      "Transfer audit",
+      "transfer_criterion"
+    ]
+  },
+  "other_workers_restarted": false
+}

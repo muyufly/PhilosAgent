@@ -1,0 +1,156 @@
+{
+  "checked_hkt": "2026-10-29T18:17:43.614449+08:00",
+  "supervisor_alive": true,
+  "counts": {
+    "queued": 17,
+    "running": 6,
+    "complete": 0,
+    "failed": 4
+  },
+  "budget": {
+    "request_count": 404,
+    "successful_requests": 396,
+    "failed_requests": 2,
+    "total_tokens": 5549055,
+    "live_inflight_count": 6,
+    "unknown_usage_attempts": 0,
+    "blocked_reason": null
+  },
+  "saved_task_executions": [
+    {
+      "job_id": "business-fixed-r1",
+      "round": "round_00",
+      "stage": "base_logs",
+      "task_id": "WB0100",
+      "status": "started",
+      "quality_score": null,
+      "answer_chars": 0,
+      "path": "runs\\hss-business-formal-20261029-r01\\jobs\\business-fixed-r1\\evolution\\round_00\\base_logs\\1.json"
+    },
+    {
+      "job_id": "business-full-r1",
+      "round": "round_00",
+      "stage": "base_logs",
+      "task_id": "WB0100",
+      "status": "started",
+      "quality_score": null,
+      "answer_chars": 0,
+      "path": "runs\\hss-business-formal-20261029-r01\\jobs\\business-full-r1\\evolution\\round_00\\base_logs\\1.json"
+    },
+    {
+      "job_id": "business-native-r1",
+      "round": "round_00",
+      "stage": "base_logs",
+      "task_id": "WB0100",
+      "status": "started",
+      "quality_score": null,
+      "answer_chars": 0,
+      "path": "runs\\hss-business-formal-20261029-r01\\jobs\\business-native-r1\\evolution\\round_00\\base_logs\\1.json"
+    },
+    {
+      "job_id": "humanities-fixed-r1",
+      "round": "round_00",
+      "stage": "base_logs",
+      "task_id": "WB0193",
+      "status": "completed",
+      "quality_score": 82.8,
+      "answer_chars": 1149,
+      "path": "runs\\hss-business-formal-20261029-r01\\jobs\\humanities-fixed-r1\\evolution\\round_00\\base_logs\\1.json"
+    },
+    {
+      "job_id": "humanities-fixed-r1",
+      "round": "round_00",
+      "stage": "base_logs",
+      "task_id": "WB0191",
+      "status": "started",
+      "quality_score": null,
+      "answer_chars": 0,
+      "path": "runs\\hss-business-formal-20261029-r01\\jobs\\humanities-fixed-r1\\evolution\\round_00\\base_logs\\2.json"
+    },
+    {
+      "job_id": "humanities-full-r1",
+      "round": "round_00",
+      "stage": "base_logs",
+      "task_id": "WB0193",
+      "status": "completed",
+      "quality_score": 83.0,
+      "answer_chars": 1152,
+      "path": "runs\\hss-business-formal-20261029-r01\\jobs\\humanities-full-r1\\evolution\\round_00\\base_logs\\1.json"
+    },
+    {
+      "job_id": "humanities-full-r1",
+      "round": "round_00",
+      "stage": "base_logs",
+      "task_id": "WB0191",
+      "status": "judge_failed",
+      "quality_score": null,
+      "answer_chars": 2041,
+      "path": "runs\\hss-business-formal-20261029-r01\\jobs\\humanities-full-r1\\evolution\\round_00\\base_logs\\2.json"
+    },
+    {
+      "job_id": "humanities-native-r1",
+      "round": "round_00",
+      "stage": "base_logs",
+      "task_id": "WB0193",
+      "status": "judge_failed",
+      "quality_score": null,
+      "answer_chars": 1302,
+      "path": "runs\\hss-business-formal-20261029-r01\\jobs\\humanities-native-r1\\evolution\\round_00\\base_logs\\1.json"
+    },
+    {
+      "job_id": "humanities-native-r2",
+      "round": "round_00",
+      "stage": "base_logs",
+      "task_id": "WB0193",
+      "status": "started",
+      "quality_score": null,
+      "answer_chars": 0,
+      "path": "runs\\hss-business-formal-20261029-r01\\jobs\\humanities-native-r2\\evolution\\round_00\\base_logs\\1.json"
+    },
+    {
+      "job_id": "social-fixed-r1",
+      "round": "round_00",
+      "stage": "base_logs",
+      "task_id": "WB0682",
+      "status": "completed",
+      "quality_score": 25.0,
+      "answer_chars": 1042,
+      "path": "runs\\hss-business-formal-20261029-r01\\jobs\\social-fixed-r1\\evolution\\round_00\\base_logs\\1.json"
+    },
+    {
+      "job_id": "social-fixed-r1",
+      "round": "round_00",
+      "stage": "base_logs",
+      "task_id": "WB0133",
+      "status": "completed",
+      "quality_score": 72.6,
+      "answer_chars": 8491,
+      "path": "runs\\hss-business-formal-20261029-r01\\jobs\\social-fixed-r1\\evolution\\round_00\\base_logs\\2.json"
+    },
+    {
+      "job_id": "social-full-r1",
+      "round": "round_00",
+      "stage": "base_logs",
+      "task_id": "WB0682",
+      "status": "judge_failed",
+      "quality_score": null,
+      "answer_chars": 6866,
+      "path": "runs\\hss-business-formal-20261029-r01\\jobs\\social-full-r1\\evolution\\round_00\\base_logs\\1.json"
+    },
+    {
+      "job_id": "social-native-r1",
+      "round": "round_00",
+      "stage": "base_logs",
+      "task_id": "WB0682",
+      "status": "actor_failed",
+      "quality_score": null,
+      "answer_chars": 0,
+      "path": "runs\\hss-business-formal-20261029-r01\\jobs\\social-native-r1\\evolution\\round_00\\base_logs\\1.json"
+    }
+  ],
+  "findings": [
+    "Four lineages failed: three judge JSON parsing failures with paid answers retained, and one actor AgentGenerationError. No scoring repair or replay was performed during this status audit.",
+    "Confirmed actor response truncation at8192 tokens on social whitepaper task; early quality scores do not establish an ablation effect."
+  ],
+  "source_and_protocol_modified": false
+}

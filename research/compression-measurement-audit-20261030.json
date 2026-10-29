@@ -1,0 +1,1650 @@
+{
+  "audit": "offline scoring sensitivity, not truth or quality-loss estimate",
+  "input": "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01\\deadline_20261030\\results.jsonl",
+  "never_calls_model": true,
+  "original_records_unchanged": true,
+  "counts": {
+    "original_native_judge": 69,
+    "model_quick": 204,
+    "heuristic_approximate": 51
+  },
+  "heldout_counts": {
+    "model_quick": 86,
+    "heuristic_approximate": 22
+  },
+  "all": {
+    "n": 324,
+    "original_mean": 68.12659,
+    "uniform_rule_mean": 62.313855,
+    "rule_minus_original_mean": -5.812735,
+    "mean_absolute_difference": 13.137488,
+    "max_absolute_difference": 57.9865
+  },
+  "heldout": {
+    "n": 108,
+    "original_mean": 63.350845,
+    "uniform_rule_mean": 63.78946,
+    "rule_minus_original_mean": 0.438615,
+    "mean_absolute_difference": 9.242854,
+    "max_absolute_difference": 38.5205
+  },
+  "all_by_stage_and_method": [
+    {
+      "stage": "heldout",
+      "score_method": "heuristic_approximate",
+      "n": 22,
+      "original_mean": 65.540514,
+      "uniform_rule_mean": 65.540514,
+      "rule_minus_original_mean": 0.0,
+      "mean_absolute_difference": 0.0,
+      "max_absolute_difference": 0.0
+    },
+    {
+      "stage": "heldout",
+      "score_method": "model_quick",
+      "n": 86,
+      "original_mean": 62.790698,
+      "uniform_rule_mean": 63.341516,
+      "rule_minus_original_mean": 0.550819,
+      "mean_absolute_difference": 11.607305,
+      "max_absolute_difference": 38.5205
+    },
+    {
+      "stage": "learning",
+      "score_method": "heuristic_approximate",
+      "n": 29,
+      "original_mean": 56.045655,
+      "uniform_rule_mean": 56.045655,
+      "rule_minus_original_mean": 0.0,
+      "mean_absolute_difference": 0.0,
+      "max_absolute_difference": 0.0
+    },
+    {
+      "stage": "learning",
+      "score_method": "model_quick",
+      "n": 118,
+      "original_mean": 65.559322,
+      "uniform_rule_mean": 60.732546,
+      "rule_minus_original_mean": -4.826776,
+      "mean_absolute_difference": 15.927186,
+      "max_absolute_difference": 57.9865
+    },
+    {
+      "stage": "learning",
+      "score_method": "original_native_judge",
+      "n": 69,
+      "original_mean": 85.069565,
+      "uniform_rule_mean": 65.342941,
+      "rule_minus_original_mean": -19.726625,
+      "mean_absolute_difference": 19.984201,
+      "max_absolute_difference": 48.25129999999999
+    }
+  ],
+  "heldout_by_domain_group": [
+    {
+      "domain": "business",
+      "group": "fixed",
+      "n": 12,
+      "original_mean": 59.7868,
+      "uniform_rule_mean": 66.323275,
+      "rule_minus_original_mean": 6.536475,
+      "mean_absolute_difference": 10.323325,
+      "max_absolute_difference": 20.9056
+    },
+    {
+      "domain": "business",
+      "group": "full",
+      "n": 12,
+      "original_mean": 59.675833,
+      "uniform_rule_mean": 66.515992,
+      "rule_minus_original_mean": 6.840158,
+      "mean_absolute_difference": 10.669792,
+      "max_absolute_difference": 23.476100000000002
+    },
+    {
+      "domain": "business",
+      "group": "native",
+      "n": 12,
+      "original_mean": 57.117567,
+      "uniform_rule_mean": 68.619125,
+      "rule_minus_original_mean": 11.501558,
+      "mean_absolute_difference": 12.083975,
+      "max_absolute_difference": 32.5553
+    },
+    {
+      "domain": "humanities",
+      "group": "fixed",
+      "n": 12,
+      "original_mean": 66.1553,
+      "uniform_rule_mean": 56.516708,
+      "rule_minus_original_mean": -9.638592,
+      "mean_absolute_difference": 9.638592,
+      "max_absolute_difference": 38.5205
+    },
+    {
+      "domain": "humanities",
+      "group": "full",
+      "n": 12,
+      "original_mean": 65.275433,
+      "uniform_rule_mean": 57.867742,
+      "rule_minus_original_mean": -7.407692,
+      "mean_absolute_difference": 7.407692,
+      "max_absolute_difference": 19.8688
+    },
+    {
+      "domain": "humanities",
+      "group": "native",
+      "n": 12,
+      "original_mean": 66.360725,
+      "uniform_rule_mean": 61.945,
+      "rule_minus_original_mean": -4.415725,
+      "mean_absolute_difference": 4.415725,
+      "max_absolute_difference": 21.342100000000002
+    },
+    {
+      "domain": "social",
+      "group": "fixed",
+      "n": 12,
+      "original_mean": 62.176733,
+      "uniform_rule_mean": 63.715783,
+      "rule_minus_original_mean": 1.53905,
+      "mean_absolute_difference": 9.068817,
+      "max_absolute_difference": 21.154000000000003
+    },
+    {
+      "domain": "social",
+      "group": "full",
+      "n": 12,
+      "original_mean": 66.025883,
+      "uniform_rule_mean": 65.549583,
+      "rule_minus_original_mean": -0.4763,
+      "mean_absolute_difference": 9.982267,
+      "max_absolute_difference": 22.057199999999995
+    },
+    {
+      "domain": "social",
+      "group": "native",
+      "n": 12,
+      "original_mean": 67.583333,
+      "uniform_rule_mean": 67.051933,
+      "rule_minus_original_mean": -0.5314,
+      "mean_absolute_difference": 9.5955,
+      "max_absolute_difference": 19.5762
+    }
+  ],
+  "heldout_by_method": [
+    {
+      "score_method": "heuristic_approximate",
+      "n": 22,
+      "original_mean": 65.540514,
+      "uniform_rule_mean": 65.540514,
+      "rule_minus_original_mean": 0.0,
+      "mean_absolute_difference": 0.0,
+      "max_absolute_difference": 0.0
+    },
+    {
+      "score_method": "model_quick",
+      "n": 86,
+      "original_mean": 62.790698,
+      "uniform_rule_mean": 63.341516,
+      "rule_minus_original_mean": 0.550819,
+      "mean_absolute_difference": 11.607305,
+      "max_absolute_difference": 38.5205
+    }
+  ],
+  "heldout_by_group_method": [
+    {
+      "group": "fixed",
+      "score_method": "heuristic_approximate",
+      "n": 6,
+      "original_mean": 67.737667,
+      "uniform_rule_mean": 67.737667,
+      "rule_minus_original_mean": 0.0,
+      "mean_absolute_difference": 0.0,
+      "max_absolute_difference": 0.0
+    },
+    {
+      "group": "fixed",
+      "score_method": "model_quick",
+      "n": 30,
+      "original_mean": 61.7,
+      "uniform_rule_mean": 61.074773,
+      "rule_minus_original_mean": -0.625227,
+      "mean_absolute_difference": 11.612293,
+      "max_absolute_difference": 38.5205
+    },
+    {
+      "group": "full",
+      "score_method": "heuristic_approximate",
+      "n": 8,
+      "original_mean": 63.778225,
+      "uniform_rule_mean": 63.778225,
+      "rule_minus_original_mean": 0.0,
+      "mean_absolute_difference": 0.0,
+      "max_absolute_difference": 0.0
+    },
+    {
+      "group": "full",
+      "score_method": "model_quick",
+      "n": 28,
+      "original_mean": 63.625,
+      "uniform_rule_mean": 63.177643,
+      "rule_minus_original_mean": -0.447357,
+      "mean_absolute_difference": 12.025607,
+      "max_absolute_difference": 23.476100000000002
+    },
+    {
+      "group": "native",
+      "score_method": "heuristic_approximate",
+      "n": 8,
+      "original_mean": 65.654938,
+      "uniform_rule_mean": 65.654938,
+      "rule_minus_original_mean": 0.0,
+      "mean_absolute_difference": 0.0,
+      "max_absolute_difference": 0.0
+    },
+    {
+      "group": "native",
+      "score_method": "model_quick",
+      "n": 28,
+      "original_mean": 63.125,
+      "uniform_rule_mean": 65.934043,
+      "rule_minus_original_mean": 2.809043,
+      "mean_absolute_difference": 11.183657,
+      "max_absolute_difference": 32.5553
+    }
+  ],
+  "heldout_by_domain_method": [
+    {
+      "domain": "business",
+      "score_method": "heuristic_approximate",
+      "n": 4,
+      "original_mean": 73.9906,
+      "uniform_rule_mean": 73.9906,
+      "rule_minus_original_mean": 0.0,
+      "mean_absolute_difference": 0.0,
+      "max_absolute_difference": 0.0
+    },
+    {
+      "domain": "business",
+      "score_method": "model_quick",
+      "n": 32,
+      "original_mean": 56.96875,
+      "uniform_rule_mean": 66.298072,
+      "rule_minus_original_mean": 9.329322,
+      "mean_absolute_difference": 12.403909,
+      "max_absolute_difference": 32.5553
+    },
+    {
+      "domain": "humanities",
+      "score_method": "heuristic_approximate",
+      "n": 15,
+      "original_mean": 62.7665,
+      "uniform_rule_mean": 62.7665,
+      "rule_minus_original_mean": 0.0,
+      "mean_absolute_difference": 0.0,
+      "max_absolute_difference": 0.0
+    },
+    {
+      "domain": "humanities",
+      "score_method": "model_quick",
+      "n": 21,
+      "original_mean": 68.190476,
+      "uniform_rule_mean": 55.926471,
+      "rule_minus_original_mean": -12.264005,
+      "mean_absolute_difference": 12.264005,
+      "max_absolute_difference": 38.5205
+    },
+    {
+      "domain": "social",
+      "score_method": "heuristic_approximate",
+      "n": 3,
+      "original_mean": 68.1438,
+      "uniform_rule_mean": 68.1438,
+      "rule_minus_original_mean": 0.0,
+      "mean_absolute_difference": 0.0,
+      "max_absolute_difference": 0.0
+    },
+    {
+      "domain": "social",
+      "score_method": "model_quick",
+      "n": 33,
+      "original_mean": 65.0,
+      "uniform_rule_mean": 65.193218,
+      "rule_minus_original_mean": 0.193218,
+      "mean_absolute_difference": 10.416939,
+      "max_absolute_difference": 22.057199999999995
+    }
+  ],
+  "comparisons": [
+    {
+      "comparison": "full_minus_native",
+      "both_model_only": false,
+      "n": 36,
+      "original_paired_mean_difference": -0.028158,
+      "uniform_rule_paired_mean_difference": -2.560914,
+      "strict_positive_negative_direction_reversals": 6,
+      "winner_or_tie_changed": 7,
+      "by_domain": [
+        {
+          "domain": "humanities",
+          "n": 12,
+          "original_difference": -1.085292,
+          "uniform_rule_difference": -4.077258
+        },
+        {
+          "domain": "social",
+          "n": 12,
+          "original_difference": -1.55745,
+          "uniform_rule_difference": -1.50235
+        },
+        {
+          "domain": "business",
+          "n": 12,
+          "original_difference": 2.558267,
+          "uniform_rule_difference": -2.103133
+        }
+      ],
+      "pairs": [
+        {
+          "domain": "humanities",
+          "repetition": 1,
+          "task_id": "WB0372",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": 15.0,
+          "uniform_rule_difference": 2.3634000000000057
+        },
+        {
+          "domain": "humanities",
+          "repetition": 1,
+          "task_id": "WB0388",
+          "left_method": "heuristic_approximate",
+          "right_method": "heuristic_approximate",
+          "original_difference": 4.264200000000002,
+          "uniform_rule_difference": 4.264200000000002
+        },
+        {
+          "domain": "humanities",
+          "repetition": 1,
+          "task_id": "WB0596",
+          "left_method": "heuristic_approximate",
+          "right_method": "heuristic_approximate",
+          "original_difference": -5.9842999999999975,
+          "uniform_rule_difference": -5.9842999999999975
+        },
+        {
+          "domain": "humanities",
+          "repetition": 1,
+          "task_id": "WB0930",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": -2.0,
+          "uniform_rule_difference": -0.9204999999999899
+        },
+        {
+          "domain": "social",
+          "repetition": 1,
+          "task_id": "WB0342",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": -21.0,
+          "uniform_rule_difference": -11.5428
+        },
+        {
+          "domain": "social",
+          "repetition": 1,
+          "task_id": "WB0626",
+          "left_method": "heuristic_approximate",
+          "right_method": "model_quick",
+          "original_difference": -11.989999999999995,
+          "uniform_rule_difference": -2.181599999999989
+        },
+        {
+          "domain": "social",
+          "repetition": 1,
+          "task_id": "WB0753",
+          "left_method": "heuristic_approximate",
+          "right_method": "model_quick",
+          "original_difference": -13.699399999999997,
+          "uniform_rule_difference": -3.225200000000001
+        },
+        {
+          "domain": "social",
+          "repetition": 1,
+          "task_id": "WB0783",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": 36.0,
+          "uniform_rule_difference": 10.4846
+        },
+        {
+          "domain": "business",
+          "repetition": 1,
+          "task_id": "WB0572",
+          "left_method": "heuristic_approximate",
+          "right_method": "heuristic_approximate",
+          "original_difference": -4.300799999999995,
+          "uniform_rule_difference": -4.300799999999995
+        },
+        {
+          "domain": "business",
+          "repetition": 1,
+          "task_id": "WB0623",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": 25.0,
+          "uniform_rule_difference": 24.1321
+        },
+        {
+          "domain": "business",
+          "repetition": 1,
+          "task_id": "WB0777",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": -28.0,
+          "uniform_rule_difference": -19.886100000000006
+        },
+        {
+          "domain": "business",
+          "repetition": 1,
+          "task_id": "WB0837",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": 3.5,
+          "uniform_rule_difference": -2.217500000000001
+        },
+        {
+          "domain": "humanities",
+          "repetition": 2,
+          "task_id": "WB0372",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": -4.0,
+          "uniform_rule_difference": -4.1053
+        },
+        {
+          "domain": "humanities",
+          "repetition": 2,
+          "task_id": "WB0388",
+          "left_method": "heuristic_approximate",
+          "right_method": "heuristic_approximate",
+          "original_difference": 1.1367000000000047,
+          "uniform_rule_difference": 1.1367000000000047
+        },
+        {
+          "domain": "humanities",
+          "repetition": 2,
+          "task_id": "WB0596",
+          "left_method": "heuristic_approximate",
+          "right_method": "heuristic_approximate",
+          "original_difference": -6.1648,
+          "uniform_rule_difference": -6.1648
+        },
+        {
+          "domain": "humanities",
+          "repetition": 2,
+          "task_id": "WB0930",
+          "left_method": "model_quick",
+          "right_method": "heuristic_approximate",
+          "original_difference": 8.824600000000004,
+          "uniform_rule_difference": -11.044199999999996
+        },
+        {
+          "domain": "social",
+          "repetition": 2,
+          "task_id": "WB0342",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": 0.0,
+          "uniform_rule_difference": -2.2714
+        },
+        {
+          "domain": "social",
+          "repetition": 2,
+          "task_id": "WB0626",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": 14.0,
+          "uniform_rule_difference": 7.270800000000008
+        },
+        {
+          "domain": "social",
+          "repetition": 2,
+          "task_id": "WB0753",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": -24.0,
+          "uniform_rule_difference": -24.133999999999993
+        },
+        {
+          "domain": "social",
+          "repetition": 2,
+          "task_id": "WB0783",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": -38.0,
+          "uniform_rule_difference": -16.924000000000007
+        },
+        {
+          "domain": "business",
+          "repetition": 2,
+          "task_id": "WB0572",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": -2.0,
+          "uniform_rule_difference": -2.900499999999994
+        },
+        {
+          "domain": "business",
+          "repetition": 2,
+          "task_id": "WB0623",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": -16.0,
+          "uniform_rule_difference": -13.275400000000005
+        },
+        {
+          "domain": "business",
+          "repetition": 2,
+          "task_id": "WB0777",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": 25.0,
+          "uniform_rule_difference": 10.441599999999994
+        },
+        {
+          "domain": "business",
+          "repetition": 2,
+          "task_id": "WB0837",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": 4.0,
+          "uniform_rule_difference": 1.394999999999996
+        },
+        {
+          "domain": "humanities",
+          "repetition": 3,
+          "task_id": "WB0372",
+          "left_method": "model_quick",
+          "right_method": "heuristic_approximate",
+          "original_difference": 14.632999999999996,
+          "uniform_rule_difference": 3.4329999999999927
+        },
+        {
+          "domain": "humanities",
+          "repetition": 3,
+          "task_id": "WB0388",
+          "left_method": "model_quick",
+          "right_method": "heuristic_approximate",
+          "original_difference": 12.108199999999997,
+          "uniform_rule_difference": 3.9010999999999996
+        },
+        {
+          "domain": "humanities",
+          "repetition": 3,
+          "task_id": "WB0596",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": -34.0,
+          "uniform_rule_difference": -40.3074
+        },
+        {
+          "domain": "humanities",
+          "repetition": 3,
+          "task_id": "WB0930",
+          "left_method": "heuristic_approximate",
+          "right_method": "model_quick",
+          "original_difference": -16.841099999999997,
+          "uniform_rule_difference": 4.501000000000005
+        },
+        {
+          "domain": "social",
+          "repetition": 3,
+          "task_id": "WB0342",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": -8.0,
+          "uniform_rule_difference": 2.9425999999999988
+        },
+        {
+          "domain": "social",
+          "repetition": 3,
+          "task_id": "WB0626",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": 14.0,
+          "uniform_rule_difference": 5.756999999999998
+        },
+        {
+          "domain": "social",
+          "repetition": 3,
+          "task_id": "WB0753",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": 12.0,
+          "uniform_rule_difference": 17.428600000000003
+        },
+        {
+          "domain": "social",
+          "repetition": 3,
+          "task_id": "WB0783",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": 22.0,
+          "uniform_rule_difference": -1.6328000000000031
+        },
+        {
+          "domain": "business",
+          "repetition": 3,
+          "task_id": "WB0572",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": 5.0,
+          "uniform_rule_difference": 2.2073999999999927
+        },
+        {
+          "domain": "business",
+          "repetition": 3,
+          "task_id": "WB0623",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": 56.0,
+          "uniform_rule_difference": 6.938900000000004
+        },
+        {
+          "domain": "business",
+          "repetition": 3,
+          "task_id": "WB0777",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": -35.5,
+          "uniform_rule_difference": -28.827799999999996
+        },
+        {
+          "domain": "business",
+          "repetition": 3,
+          "task_id": "WB0837",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": -2.0,
+          "uniform_rule_difference": 1.055499999999995
+        }
+      ]
+    },
+    {
+      "comparison": "full_minus_native",
+      "both_model_only": true,
+      "n": 25,
+      "original_paired_mean_difference": 0.68,
+      "uniform_rule_paired_mean_difference": -3.06112,
+      "strict_positive_negative_direction_reversals": 4,
+      "winner_or_tie_changed": 5,
+      "by_domain": [
+        {
+          "domain": "humanities",
+          "n": 4,
+          "original_difference": -6.25,
+          "uniform_rule_difference": -10.74245
+        },
+        {
+          "domain": "social",
+          "n": 10,
+          "original_difference": 0.7,
+          "uniform_rule_difference": -1.26214
+        },
+        {
+          "domain": "business",
+          "n": 11,
+          "original_difference": 3.181818,
+          "uniform_rule_difference": -1.903345
+        }
+      ],
+      "pairs": [
+        {
+          "domain": "humanities",
+          "repetition": 1,
+          "task_id": "WB0372",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": 15.0,
+          "uniform_rule_difference": 2.3634000000000057
+        },
+        {
+          "domain": "humanities",
+          "repetition": 1,
+          "task_id": "WB0930",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": -2.0,
+          "uniform_rule_difference": -0.9204999999999899
+        },
+        {
+          "domain": "social",
+          "repetition": 1,
+          "task_id": "WB0342",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": -21.0,
+          "uniform_rule_difference": -11.5428
+        },
+        {
+          "domain": "social",
+          "repetition": 1,
+          "task_id": "WB0783",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": 36.0,
+          "uniform_rule_difference": 10.4846
+        },
+        {
+          "domain": "business",
+          "repetition": 1,
+          "task_id": "WB0623",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": 25.0,
+          "uniform_rule_difference": 24.1321
+        },
+        {
+          "domain": "business",
+          "repetition": 1,
+          "task_id": "WB0777",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": -28.0,
+          "uniform_rule_difference": -19.886100000000006
+        },
+        {
+          "domain": "business",
+          "repetition": 1,
+          "task_id": "WB0837",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": 3.5,
+          "uniform_rule_difference": -2.217500000000001
+        },
+        {
+          "domain": "humanities",
+          "repetition": 2,
+          "task_id": "WB0372",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": -4.0,
+          "uniform_rule_difference": -4.1053
+        },
+        {
+          "domain": "social",
+          "repetition": 2,
+          "task_id": "WB0342",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": 0.0,
+          "uniform_rule_difference": -2.2714
+        },
+        {
+          "domain": "social",
+          "repetition": 2,
+          "task_id": "WB0626",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": 14.0,
+          "uniform_rule_difference": 7.270800000000008
+        },
+        {
+          "domain": "social",
+          "repetition": 2,
+          "task_id": "WB0753",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": -24.0,
+          "uniform_rule_difference": -24.133999999999993
+        },
+        {
+          "domain": "social",
+          "repetition": 2,
+          "task_id": "WB0783",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": -38.0,
+          "uniform_rule_difference": -16.924000000000007
+        },
+        {
+          "domain": "business",
+          "repetition": 2,
+          "task_id": "WB0572",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": -2.0,
+          "uniform_rule_difference": -2.900499999999994
+        },
+        {
+          "domain": "business",
+          "repetition": 2,
+          "task_id": "WB0623",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": -16.0,
+          "uniform_rule_difference": -13.275400000000005
+        },
+        {
+          "domain": "business",
+          "repetition": 2,
+          "task_id": "WB0777",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": 25.0,
+          "uniform_rule_difference": 10.441599999999994
+        },
+        {
+          "domain": "business",
+          "repetition": 2,
+          "task_id": "WB0837",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": 4.0,
+          "uniform_rule_difference": 1.394999999999996
+        },
+        {
+          "domain": "humanities",
+          "repetition": 3,
+          "task_id": "WB0596",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": -34.0,
+          "uniform_rule_difference": -40.3074
+        },
+        {
+          "domain": "social",
+          "repetition": 3,
+          "task_id": "WB0342",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": -8.0,
+          "uniform_rule_difference": 2.9425999999999988
+        },
+        {
+          "domain": "social",
+          "repetition": 3,
+          "task_id": "WB0626",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": 14.0,
+          "uniform_rule_difference": 5.756999999999998
+        },
+        {
+          "domain": "social",
+          "repetition": 3,
+          "task_id": "WB0753",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": 12.0,
+          "uniform_rule_difference": 17.428600000000003
+        },
+        {
+          "domain": "social",
+          "repetition": 3,
+          "task_id": "WB0783",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": 22.0,
+          "uniform_rule_difference": -1.6328000000000031
+        },
+        {
+          "domain": "business",
+          "repetition": 3,
+          "task_id": "WB0572",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": 5.0,
+          "uniform_rule_difference": 2.2073999999999927
+        },
+        {
+          "domain": "business",
+          "repetition": 3,
+          "task_id": "WB0623",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": 56.0,
+          "uniform_rule_difference": 6.938900000000004
+        },
+        {
+          "domain": "business",
+          "repetition": 3,
+          "task_id": "WB0777",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": -35.5,
+          "uniform_rule_difference": -28.827799999999996
+        },
+        {
+          "domain": "business",
+          "repetition": 3,
+          "task_id": "WB0837",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": -2.0,
+          "uniform_rule_difference": 1.055499999999995
+        }
+      ]
+    },
+    {
+      "comparison": "fixed_minus_native",
+      "both_model_only": false,
+      "n": 36,
+      "original_paired_mean_difference": -0.980931,
+      "uniform_rule_paired_mean_difference": -3.686764,
+      "strict_positive_negative_direction_reversals": 6,
+      "winner_or_tie_changed": 7,
+      "by_domain": [
+        {
+          "domain": "humanities",
+          "n": 12,
+          "original_difference": -0.205425,
+          "uniform_rule_difference": -5.428292
+        },
+        {
+          "domain": "social",
+          "n": 12,
+          "original_difference": -5.4066,
+          "uniform_rule_difference": -3.33615
+        },
+        {
+          "domain": "business",
+          "n": 12,
+          "original_difference": 2.669233,
+          "uniform_rule_difference": -2.29585
+        }
+      ],
+      "pairs": [
+        {
+          "domain": "humanities",
+          "repetition": 1,
+          "task_id": "WB0372",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": -35.0,
+          "uniform_rule_difference": -41.1995
+        },
+        {
+          "domain": "humanities",
+          "repetition": 1,
+          "task_id": "WB0388",
+          "left_method": "model_quick",
+          "right_method": "heuristic_approximate",
+          "original_difference": 4.269300000000001,
+          "uniform_rule_difference": 0.23390000000000555
+        },
+        {
+          "domain": "humanities",
+          "repetition": 1,
+          "task_id": "WB0596",
+          "left_method": "heuristic_approximate",
+          "right_method": "heuristic_approximate",
+          "original_difference": -7.077500000000001,
+          "uniform_rule_difference": -7.077500000000001
+        },
+        {
+          "domain": "humanities",
+          "repetition": 1,
+          "task_id": "WB0930",
+          "left_method": "heuristic_approximate",
+          "right_method": "model_quick",
+          "original_difference": -14.604200000000006,
+          "uniform_rule_difference": -1.3766999999999996
+        },
+        {
+          "domain": "social",
+          "repetition": 1,
+          "task_id": "WB0342",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": -2.0,
+          "uniform_rule_difference": -11.585999999999999
+        },
+        {
+          "domain": "social",
+          "repetition": 1,
+          "task_id": "WB0626",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": -28.0,
+          "uniform_rule_difference": 0.49260000000001014
+        },
+        {
+          "domain": "social",
+          "repetition": 1,
+          "task_id": "WB0753",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": 0.0,
+          "uniform_rule_difference": -3.5214
+        },
+        {
+          "domain": "social",
+          "repetition": 1,
+          "task_id": "WB0783",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": 23.0,
+          "uniform_rule_difference": 10.470400000000005
+        },
+        {
+          "domain": "business",
+          "repetition": 1,
+          "task_id": "WB0572",
+          "left_method": "model_quick",
+          "right_method": "heuristic_approximate",
+          "original_difference": -28.910799999999995,
+          "uniform_rule_difference": -11.706899999999997
+        },
+        {
+          "domain": "business",
+          "repetition": 1,
+          "task_id": "WB0623",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": 21.0,
+          "uniform_rule_difference": 18.282400000000003
+        },
+        {
+          "domain": "business",
+          "repetition": 1,
+          "task_id": "WB0777",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": 23.0,
+          "uniform_rule_difference": -0.23160000000000025
+        },
+        {
+          "domain": "business",
+          "repetition": 1,
+          "task_id": "WB0837",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": -29.0,
+          "uniform_rule_difference": -13.898800000000008
+        },
+        {
+          "domain": "humanities",
+          "repetition": 2,
+          "task_id": "WB0372",
+          "left_method": "heuristic_approximate",
+          "right_method": "model_quick",
+          "original_difference": -7.917699999999996,
+          "uniform_rule_difference": -2.9076999999999913
+        },
+        {
+          "domain": "humanities",
+          "repetition": 2,
+          "task_id": "WB0388",
+          "left_method": "model_quick",
+          "right_method": "heuristic_approximate",
+          "original_difference": -1.6282999999999959,
+          "uniform_rule_difference": -2.034399999999998
+        },
+        {
+          "domain": "humanities",
+          "repetition": 2,
+          "task_id": "WB0596",
+          "left_method": "model_quick",
+          "right_method": "heuristic_approximate",
+          "original_difference": 37.9275,
+          "uniform_rule_difference": 1.5872000000000028
+        },
+        {
+          "domain": "humanities",
+          "repetition": 2,
+          "task_id": "WB0930",
+          "left_method": "model_quick",
+          "right_method": "heuristic_approximate",
+          "original_difference": 8.824600000000004,
+          "uniform_rule_difference": -3.2968999999999937
+        },
+        {
+          "domain": "social",
+          "repetition": 2,
+          "task_id": "WB0342",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": -28.0,
+          "uniform_rule_difference": -18.955399999999997
+        },
+        {
+          "domain": "social",
+          "repetition": 2,
+          "task_id": "WB0626",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": -10.0,
+          "uniform_rule_difference": -6.664999999999992
+        },
+        {
+          "domain": "social",
+          "repetition": 2,
+          "task_id": "WB0753",
+          "left_method": "heuristic_approximate",
+          "right_method": "model_quick",
+          "original_difference": -15.879199999999997,
+          "uniform_rule_difference": -6.378599999999992
+        },
+        {
+          "domain": "social",
+          "repetition": 2,
+          "task_id": "WB0783",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": -2.0,
+          "uniform_rule_difference": 1.0451999999999941
+        },
+        {
+          "domain": "business",
+          "repetition": 2,
+          "task_id": "WB0572",
+          "left_method": "heuristic_approximate",
+          "right_method": "model_quick",
+          "original_difference": 24.8416,
+          "uniform_rule_difference": 0.4650000000000034
+        },
+        {
+          "domain": "business",
+          "repetition": 2,
+          "task_id": "WB0623",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": -2.0,
+          "uniform_rule_difference": 0.4650000000000034
+        },
+        {
+          "domain": "business",
+          "repetition": 2,
+          "task_id": "WB0777",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": 14.0,
+          "uniform_rule_difference": -4.710300000000004
+        },
+        {
+          "domain": "business",
+          "repetition": 2,
+          "task_id": "WB0837",
+          "left_method": "heuristic_approximate",
+          "right_method": "model_quick",
+          "original_difference": 12.599999999999994,
+          "uniform_rule_difference": 1.6657999999999902
+        },
+        {
+          "domain": "humanities",
+          "repetition": 3,
+          "task_id": "WB0372",
+          "left_method": "model_quick",
+          "right_method": "heuristic_approximate",
+          "original_difference": 14.632999999999996,
+          "uniform_rule_difference": 5.23299999999999
+        },
+        {
+          "domain": "humanities",
+          "repetition": 3,
+          "task_id": "WB0388",
+          "left_method": "model_quick",
+          "right_method": "heuristic_approximate",
+          "original_difference": -13.891800000000003,
+          "uniform_rule_difference": -17.46
+        },
+        {
+          "domain": "humanities",
+          "repetition": 3,
+          "task_id": "WB0596",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": 33.0,
+          "uniform_rule_difference": 6.394500000000001
+        },
+        {
+          "domain": "humanities",
+          "repetition": 3,
+          "task_id": "WB0930",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": -21.0,
+          "uniform_rule_difference": -3.2353999999999985
+        },
+        {
+          "domain": "social",
+          "repetition": 3,
+          "task_id": "WB0342",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": -30.0,
+          "uniform_rule_difference": -10.288800000000002
+        },
+        {
+          "domain": "social",
+          "repetition": 3,
+          "task_id": "WB0626",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": -2.0,
+          "uniform_rule_difference": -14.1582
+        },
+        {
+          "domain": "social",
+          "repetition": 3,
+          "task_id": "WB0753",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": 6.0,
+          "uniform_rule_difference": 19.267399999999995
+        },
+        {
+          "domain": "social",
+          "repetition": 3,
+          "task_id": "WB0783",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": 24.0,
+          "uniform_rule_difference": 0.24399999999999977
+        },
+        {
+          "domain": "business",
+          "repetition": 3,
+          "task_id": "WB0572",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": 5.0,
+          "uniform_rule_difference": 1.510799999999989
+        },
+        {
+          "domain": "business",
+          "repetition": 3,
+          "task_id": "WB0623",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": 41.0,
+          "uniform_rule_difference": 6.240499999999997
+        },
+        {
+          "domain": "business",
+          "repetition": 3,
+          "task_id": "WB0777",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": -31.5,
+          "uniform_rule_difference": -25.051299999999998
+        },
+        {
+          "domain": "business",
+          "repetition": 3,
+          "task_id": "WB0837",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": -18.0,
+          "uniform_rule_difference": -0.5808000000000106
+        }
+      ]
+    },
+    {
+      "comparison": "fixed_minus_native",
+      "both_model_only": true,
+      "n": 23,
+      "original_paired_mean_difference": -2.108696,
+      "uniform_rule_paired_mean_difference": -3.898683,
+      "strict_positive_negative_direction_reversals": 5,
+      "winner_or_tie_changed": 6,
+      "by_domain": [
+        {
+          "domain": "humanities",
+          "n": 3,
+          "original_difference": -7.666667,
+          "uniform_rule_difference": -12.680133
+        },
+        {
+          "domain": "social",
+          "n": 11,
+          "original_difference": -4.454545,
+          "uniform_rule_difference": -3.059564
+        },
+        {
+          "domain": "business",
+          "n": 9,
+          "original_difference": 2.611111,
+          "uniform_rule_difference": -1.997122
+        }
+      ],
+      "pairs": [
+        {
+          "domain": "humanities",
+          "repetition": 1,
+          "task_id": "WB0372",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": -35.0,
+          "uniform_rule_difference": -41.1995
+        },
+        {
+          "domain": "social",
+          "repetition": 1,
+          "task_id": "WB0342",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": -2.0,
+          "uniform_rule_difference": -11.585999999999999
+        },
+        {
+          "domain": "social",
+          "repetition": 1,
+          "task_id": "WB0626",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": -28.0,
+          "uniform_rule_difference": 0.49260000000001014
+        },
+        {
+          "domain": "social",
+          "repetition": 1,
+          "task_id": "WB0753",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": 0.0,
+          "uniform_rule_difference": -3.5214
+        },
+        {
+          "domain": "social",
+          "repetition": 1,
+          "task_id": "WB0783",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": 23.0,
+          "uniform_rule_difference": 10.470400000000005
+        },
+        {
+          "domain": "business",
+          "repetition": 1,
+          "task_id": "WB0623",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": 21.0,
+          "uniform_rule_difference": 18.282400000000003
+        },
+        {
+          "domain": "business",
+          "repetition": 1,
+          "task_id": "WB0777",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": 23.0,
+          "uniform_rule_difference": -0.23160000000000025
+        },
+        {
+          "domain": "business",
+          "repetition": 1,
+          "task_id": "WB0837",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": -29.0,
+          "uniform_rule_difference": -13.898800000000008
+        },
+        {
+          "domain": "social",
+          "repetition": 2,
+          "task_id": "WB0342",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": -28.0,
+          "uniform_rule_difference": -18.955399999999997
+        },
+        {
+          "domain": "social",
+          "repetition": 2,
+          "task_id": "WB0626",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": -10.0,
+          "uniform_rule_difference": -6.664999999999992
+        },
+        {
+          "domain": "social",
+          "repetition": 2,
+          "task_id": "WB0783",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": -2.0,
+          "uniform_rule_difference": 1.0451999999999941
+        },
+        {
+          "domain": "business",
+          "repetition": 2,
+          "task_id": "WB0623",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": -2.0,
+          "uniform_rule_difference": 0.4650000000000034
+        },
+        {
+          "domain": "business",
+          "repetition": 2,
+          "task_id": "WB0777",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": 14.0,
+          "uniform_rule_difference": -4.710300000000004
+        },
+        {
+          "domain": "humanities",
+          "repetition": 3,
+          "task_id": "WB0596",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": 33.0,
+          "uniform_rule_difference": 6.394500000000001
+        },
+        {
+          "domain": "humanities",
+          "repetition": 3,
+          "task_id": "WB0930",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": -21.0,
+          "uniform_rule_difference": -3.2353999999999985
+        },
+        {
+          "domain": "social",
+          "repetition": 3,
+          "task_id": "WB0342",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": -30.0,
+          "uniform_rule_difference": -10.288800000000002
+        },
+        {
+          "domain": "social",
+          "repetition": 3,
+          "task_id": "WB0626",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": -2.0,
+          "uniform_rule_difference": -14.1582
+        },
+        {
+          "domain": "social",
+          "repetition": 3,
+          "task_id": "WB0753",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": 6.0,
+          "uniform_rule_difference": 19.267399999999995
+        },
+        {
+          "domain": "social",
+          "repetition": 3,
+          "task_id": "WB0783",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": 24.0,
+          "uniform_rule_difference": 0.24399999999999977
+        },
+        {
+          "domain": "business",
+          "repetition": 3,
+          "task_id": "WB0572",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": 5.0,
+          "uniform_rule_difference": 1.510799999999989
+        },
+        {
+          "domain": "business",
+          "repetition": 3,
+          "task_id": "WB0623",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": 41.0,
+          "uniform_rule_difference": 6.240499999999997
+        },
+        {
+          "domain": "business",
+          "repetition": 3,
+          "task_id": "WB0777",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": -31.5,
+          "uniform_rule_difference": -25.051299999999998
+        },
+        {
+          "domain": "business",
+          "repetition": 3,
+          "task_id": "WB0837",
+          "left_method": "model_quick",
+          "right_method": "model_quick",
+          "original_difference": -18.0,
+          "uniform_rule_difference": -0.5808000000000106
+        }
+      ]
+    }
+  ],
+  "uniform_rule_all_heldout_groups": [
+    {
+      "group": "fixed",
+      "n": 36,
+      "original_mean": 62.706278,
+      "uniform_rule_mean": 62.185256,
+      "rule_minus_original_mean": -0.521022,
+      "mean_absolute_difference": 9.676911,
+      "max_absolute_difference": 38.5205
+    },
+    {
+      "group": "full",
+      "n": 36,
+      "original_mean": 63.65905,
+      "uniform_rule_mean": 63.311106,
+      "rule_minus_original_mean": -0.347944,
+      "mean_absolute_difference": 9.35325,
+      "max_absolute_difference": 23.476100000000002
+    },
+    {
+      "group": "native",
+      "n": 36,
+      "original_mean": 63.687208,
+      "uniform_rule_mean": 65.872019,
+      "rule_minus_original_mean": 2.184811,
+      "mean_absolute_difference": 8.6984,
+      "max_absolute_difference": 32.5553
+    }
+  ],
+  "largest_score_changes": [
+    {
+      "job_id": "humanities-fixed-r3",
+      "task_id": "WB0596",
+      "score": 88.0,
+      "score_method": "model_quick",
+      "uniform_rule_score": 49.4795
+    },
+    {
+      "job_id": "humanities-fixed-r2",
+      "task_id": "WB0596",
+      "score": 93.0,
+      "score_method": "model_quick",
+      "uniform_rule_score": 56.6597
+    },
+    {
+      "job_id": "business-native-r3",
+      "task_id": "WB0623",
+      "score": 31.0,
+      "score_method": "model_quick",
+      "uniform_rule_score": 63.5553
+    },
+    {
+      "job_id": "business-native-r2",
+      "task_id": "WB0572",
+      "score": 46.0,
+      "score_method": "model_quick",
+      "uniform_rule_score": 70.3766
+    },
+    {
+      "job_id": "business-full-r2",
+      "task_id": "WB0572",
+      "score": 44.0,
+      "score_method": "model_quick",
+      "uniform_rule_score": 67.4761
+    },
+    {
+      "job_id": "social-full-r1",
+      "task_id": "WB0342",
+      "score": 46.0,
+      "score_method": "model_quick",
+      "uniform_rule_score": 68.0572
+    },
+    {
+      "job_id": "humanities-native-r3",
+      "task_id": "WB0930",
+      "score": 82.0,
+      "score_method": "model_quick",
+      "uniform_rule_score": 60.6579
+    },
+    {
+      "job_id": "social-fixed-r3",
+      "task_id": "WB0342",
+      "score": 40.0,
+      "score_method": "model_quick",
+      "uniform_rule_score": 61.154
+    },
+    {
+      "job_id": "business-full-r3",
+      "task_id": "WB0777",
+      "score": 11.0,
+      "score_method": "model_quick",
+      "uniform_rule_score": 32.1291
+    },
+    {
+      "job_id": "business-fixed-r3",
+      "task_id": "WB0777",
+      "score": 15.0,
+      "score_method": "model_quick",
+      "uniform_rule_score": 35.9056
+    },
+    {
+      "job_id": "social-full-r1",
+      "task_id": "WB0783",
+      "score": 82.0,
+      "score_method": "model_quick",
+      "uniform_rule_score": 61.6652
+    },
+    {
+      "job_id": "humanities-full-r2",
+      "task_id": "WB0930",
+      "score": 82.0,
+      "score_method": "model_quick",
+      "uniform_rule_score": 62.1312
+    }
+  ],
+  "note": "69 original-native-judge records reuse the exact same answer and original score, so they are not independent before-after experiments. There are no original-native-judge heldout answers in the deadline set. Removing rule-scored pairs changes the sample as well as the score method. Uniform-rule regrading is a sensitivity analysis on identical works; it does not establish which scoring method is accurate.",
+  "reuse_verification": {
+    "n": 69,
+    "answer_or_score_differences_from_source": [],
+    "source_phases": {
+      "evolution": 69
+    },
+    "original_terminal_directories": 0,
+    "original_terminal_task_records": 0
+  }
+}

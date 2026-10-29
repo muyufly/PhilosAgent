@@ -1,0 +1,163 @@
+{
+  "failed_learning": "native_skips_extraction; actual_failure_logs_visible_to_system_reflection",
+  "groups": {
+    "M0": {
+      "adopt_phi": false,
+      "memory_start": "initial_per_task",
+      "ordinary_learning": false,
+      "phi": false,
+      "system_reflection": false
+    },
+    "M1": {
+      "adopt_phi": false,
+      "memory_start": "previous_primary_learning_task",
+      "ordinary_learning": true,
+      "phi": false,
+      "system_reflection": false
+    },
+    "S0": {
+      "adopt_phi": false,
+      "memory_start": "previous_primary_learning_task",
+      "ordinary_learning": true,
+      "phi": true,
+      "system_reflection": true
+    },
+    "S1": {
+      "adopt_phi": true,
+      "memory_start": "previous_primary_learning_task",
+      "ordinary_learning": true,
+      "phi": true,
+      "system_reflection": true
+    }
+  },
+  "holdout": {
+    "M0_memory": "initial_M_copy",
+    "after_inspection_changes": "new_exploratory_version_and_new_confirmatory_holdout",
+    "each_task": "fresh_process_and_full_final_M_copy",
+    "feedback_to_evolver": false,
+    "ingestion": false,
+    "ordering": "primary_holdout_after_revision; probes_use_independent_copies"
+  },
+  "initial_memory": "native_seven_coldstart_priors_plus_four_public_methods",
+  "isolation": {
+    "allow_extra_failure_ingestion": false,
+    "allow_tool_or_P_evolution": false,
+    "holdout_material_in_learning_directory": false,
+    "process": "new_for_every_primary_task_and_comparison_and_probe",
+    "retrieval_phi": "unchanged_native_synthesis_without_complete_Phi",
+    "state": "full_provider_storage_and_private_cache_copy; no_shared_writes"
+  },
+  "limits": {
+    "actor_max_output_tokens": 3072,
+    "actor_max_steps": 6,
+    "analysis_max_output_tokens": 4096,
+    "analysis_max_steps": 4,
+    "candidate_auto_repairs": 0,
+    "candidates_per_system_lineage": 1,
+    "generation_max_output_tokens": 12000,
+    "maximum_inflight_requests": 1,
+    "native_workers": 1,
+    "sdk_retries": 0,
+    "task_retries": 0,
+    "validation_max_output_tokens": 3072
+  },
+  "method_location": "four_strategic_items_in_initial_native_M_not_Phi",
+  "method_update_rule": "native_ordinary_learning_only; no_separate_method_editor",
+  "method_visibility": "same_retrieval_candidate_position; selection_is_native_not_forced",
+  "ordinary_reflection": "native_successful_trajectory_extraction; no_additional_reflection_model",
+  "p": "same_native_lightweight_provider_source_and_nonrouting_configuration",
+  "paired_probes": {
+    "M": "final_primary_learning_M",
+    "P": "fixed",
+    "identical_phi": "record_retention_and_measure_execution_variability",
+    "lineage": "S1",
+    "new_independent_samples": false,
+    "phi0_repetitions_per_task": 2,
+    "phit_repetitions_per_task": 2,
+    "primary_holdout_reused_as_repeat": false,
+    "same_phi_condition": "Phi0_with_final_S1_M",
+    "same_phi_repetitions_per_task": 2,
+    "version_order": "ABBA_for_first_probe_BAAB_for_second"
+  },
+  "sampling": {
+    "api_seed": null,
+    "deterministic_model_outputs": false,
+    "model": "deepseek-flash",
+    "model_changes_require_new_proposal": true,
+    "temperature": 0,
+    "thinking": "disabled"
+  },
+  "scoring": {
+    "aggregation_unit": "independent_task_stream_or_lineage_not_API_call_or_replay",
+    "constraint_failure_independent_of_reward": true,
+    "deterministic_environment": true,
+    "failure_classes": [
+      "decision_failure",
+      "constraint_failure",
+      "invalid_output",
+      "no_action",
+      "environment_tool_failure",
+      "budget_interruption"
+    ],
+    "oracle": "evaluator_only; never_actor_or_reflection_or_seed",
+    "report": [
+      "completed",
+      "reward",
+      "cost",
+      "utility",
+      "time",
+      "violations",
+      "invalid_calls",
+      "precondition_failures",
+      "actual_tool_trace",
+      "model_tokens"
+    ]
+  },
+  "stopping": {
+    "failed_network_or_model_request": "stop; no_automatic_retry",
+    "on_unit_trigger": "stop_after_inflight_response; retain_incomplete_lineage; no_extra_budget",
+    "pending_request": "stop",
+    "price": "not_assumed; provider_bill_and_rates_needed_for_currency_cap",
+    "request_limit": "hard_pre_network_cap",
+    "stage_limits": "must_be_approved_before_live_execution",
+    "token_limit": "soft_stop_with_pre_request_reservation_and_post_response_settlement",
+    "unit_review_triggers": {
+      "actor_task": {
+        "actual_tokens": 51000,
+        "requests": 12
+      },
+      "interface_validation": {
+        "actual_tokens": 32288,
+        "requests": 4
+      },
+      "system_analysis_generation": {
+        "actual_tokens": 113000,
+        "requests": 8
+      }
+    },
+    "unknown_usage": "stop"
+  },
+  "system_reflection": {
+    "S0_actor_receives_shadow_candidate_or_analysis": false,
+    "S0_adoption": "retain_Phi0_even_if_shadow_selection_prefers_candidate",
+    "S1_adoption": "selected_parent_or_candidate; no_forced_change",
+    "boundary": "after_all_four_primary_learning_tasks_before_any_holdout",
+    "comparison": "parent_and_one_candidate_each_rerun_four_learning_tasks",
+    "comparison_memory": "fresh_identical_final_primary_M_per_task; ingestion_disabled",
+    "discovery_actor_executions": "the_four_primary_learning_tasks; no_extra_discovery_replay",
+    "extra_experience_returned_to_primary_M": false,
+    "finalists": "parent_and_candidate_each_rerun_three_prespecified_learning_tasks",
+    "inputs": "actual_primary_learning_logs_and_final_M_and_current_Phi_only",
+    "later_learning_under_revised_phi": false,
+    "malformed_candidate": "record_and_exclude; keep_parent; no_silent_retry",
+    "proposal": "native_phi_only_analyze_generate_create; P_frozen; retention_allowed",
+    "same_opportunities_for": [
+      "S0",
+      "S1"
+    ],
+    "selection": "native_AutoEvolver_select_top_accuracy_then_total_model_tokens",
+    "selection_metric_limit": "native_success_ranking_does_not_optimize_net_utility; report_both",
+    "technical_failure": "stop_and_preserve; never_treat_as_decision_failure",
+    "validation": "native_fast_interface_validation_in_discarded_copy; no_auto_fix"
+  }
+}

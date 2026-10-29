@@ -6,6 +6,7 @@ Memory System Creator
 Tool class for safely creating new memory systems
 """
 
+import hashlib
 import json
 import os
 import re
@@ -145,7 +146,26 @@ class MemorySystemCreator:
 
             # 1. Create provider file
             provider_path = base_path / f"EvolveLab/providers/{provider_info['module_name']}.py"
-            if provider_path.exists():
+            freeze_code = memory_system_config.get("_philo_freeze_code")
+            if "_philo_freeze_code" in memory_system_config:
+                if (not isinstance(freeze_code, dict) or set(freeze_code) != {
+                    "module_name", "class_name", "source_sha256"
+                }):
+                    raise ValueError("Frozen code requires audited module_name, class_name and source_sha256")
+                for key in ("module_name", "class_name"):
+                    if (not isinstance(freeze_code[key], str) or
+                            not re.fullmatch(r"[A-Za-z_][A-Za-z0-9_]*", freeze_code[key]) or
+                            provider_info[key] != freeze_code[key]):
+                        raise ValueError(f"Frozen code {key} differs from the audited parent")
+                source_hash = freeze_code["source_sha256"]
+                if not isinstance(source_hash, str) or not re.fullmatch(r"[0-9a-f]{64}", source_hash):
+                    raise ValueError("Frozen code source_sha256 is invalid")
+                if (not provider_path.is_file() or provider_path.is_symlink() or
+                        hashlib.sha256(provider_path.read_bytes()).hexdigest() != source_hash):
+                    raise ValueError("Frozen code source does not match the audited parent hash")
+                if provider_path.read_text(encoding="utf-8") != provider_info["code"]:
+                    raise ValueError("Frozen code text differs from the audited parent source")
+            elif provider_path.exists():
                 # A resumed adapter creation may have written code before a later
                 # registration step failed. Only identical code is safe to reuse.
                 if (not memory_system_config.get("_orientation_parent") or
@@ -162,11 +182,16 @@ class MemorySystemCreator:
             if orientation_path is not None:
                 results["orientation_path"] = str(orientation_path)
 
-            # Ensure directory exists
-            provider_path.parent.mkdir(parents=True, exist_ok=True)
-
-            with open(provider_path, 'w', encoding='utf-8') as f:
-                f.write(provider_info["code"])
+            if freeze_code is not None:
+                # Alias candidates register the exact parent module/class. Do
+                # not even reserialize identical text: newline conversion would
+                # change the actual bytes of a supposedly fixed tool.
+                results["provider_source_frozen"] = True
+                results["provider_source_sha256"] = source_hash
+            else:
+                provider_path.parent.mkdir(parents=True, exist_ok=True)
+                with open(provider_path, 'w', encoding='utf-8') as f:
+                    f.write(provider_info["code"])
             results["provider_created"] = str(provider_path)
 
             # 2. Update memory_types.py - using simplified comment marker logic

@@ -290,6 +290,10 @@ def process_item(item, model_config, summary_interval, prompts_type, max_steps, 
     
     try:
         result = search_agent(enhanced_question)
+        if os.environ.get("PHILO_LINEAGE_ROOT") and "error" in result:
+            # BaseAgent.forward turns exhausted retries into an error mapping.
+            # Do not relabel that failed experimental task as a success.
+            raise RuntimeError(f"Actor failed during experimental task: {result['error']}")
         
         try:
             agent_messages = search_agent.agent_fn.write_memory_to_messages(include_system_prompt=False)
@@ -333,8 +337,12 @@ def process_item(item, model_config, summary_interval, prompts_type, max_steps, 
                 if success:
                     logger.debug(f"Memory ingested: {msg}")
                 else:
+                    if os.environ.get("PHILO_LINEAGE_ROOT"):
+                        raise RuntimeError(f"Memory ingestion failed: {msg}")
                     logger.warning(f"Memory ingestion failed: {msg}")
             except Exception as e:
+                if os.environ.get("PHILO_LINEAGE_ROOT"):
+                    raise
                 logger.warning(f"take_in_memory failed: {e}")
         
         token_counter = TokenCounter.from_model(task_model)
@@ -362,6 +370,10 @@ def process_item(item, model_config, summary_interval, prompts_type, max_steps, 
         return enrich_result_with_metrics(task_result, timer, token_counter)
         
     except Exception as e:
+        if os.environ.get("PHILO_LINEAGE_ROOT"):
+            # Preserve experimental failures for the calling evaluator instead
+            # of saving an apparently usable task result and continuing.
+            raise
         import traceback
         error_msg = traceback.format_exc()
         logger.error(f"Exception occurred while processing question: {question[:100]}...\nError: {error_msg}")
@@ -509,6 +521,8 @@ def main(args):
             if temp_provider:
                 memory_name = temp_provider.get_memory_type().value + "_"
         except Exception as e:
+            if os.environ.get("PHILO_LINEAGE_ROOT"):
+                raise
             logger.warning(f"Failed to create temp provider for memory name: {e}")
             try:
                 memory_type = MemoryType(args.memory_provider)
@@ -572,6 +586,10 @@ def main(args):
                     elif result.get("status") == "error":
                         logger.warning(f"Task error [{len(results)}/{len(futures)}]: {result['question'][:80]}... | Error: {result.get('error', 'Unknown')}")
             except Exception as e:
+                if os.environ.get("PHILO_LINEAGE_ROOT"):
+                    for pending in futures:
+                        pending.cancel()
+                    raise
                 import traceback
                 logger.error(f"Failed to get result from future: {traceback.format_exc()}")
 
@@ -635,4 +653,3 @@ if __name__ == '__main__':
     args = parser.parse_args()
     
     main(args)
-

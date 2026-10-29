@@ -1,0 +1,181 @@
+{
+  "status": "stopped_in_revision_analysis",
+  "formal_matrix_started": false,
+  "minimal_protocol_completed": false,
+  "model": "deepseek-flash",
+  "planned": {
+    "training_tasks": 2,
+    "revision_proposals": 1,
+    "probe_executions": 4
+  },
+  "completed": {
+    "training_tasks": 2,
+    "revision_proposals": 0,
+    "probe_executions": 0
+  },
+  "training_results": [
+    {
+      "task_id": "train_01",
+      "done": true,
+      "time": 2,
+      "deadline": 3,
+      "reward": 12,
+      "cost": 0,
+      "utility": 12,
+      "success": true,
+      "completed": true,
+      "feedback": "12单位按时交付。",
+      "violations": [],
+      "observations": 2,
+      "audit": [
+        {
+          "tool": "act",
+          "argument": "trial",
+          "result": {
+            "ok": true,
+            "observation": "测试作业完成，无返工，已撤销测试占用。",
+            "time": 1,
+            "remaining": 2,
+            "done": false
+          }
+        },
+        {
+          "tool": "act",
+          "argument": "primary",
+          "result": {
+            "ok": true,
+            "observation": "12单位按时交付。",
+            "time": 2,
+            "remaining": 1,
+            "done": true
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "train_02",
+      "done": true,
+      "time": 2,
+      "deadline": 3,
+      "reward": 4,
+      "cost": 0,
+      "utility": 4,
+      "success": true,
+      "completed": true,
+      "feedback": "6单位按时交付。",
+      "violations": [],
+      "observations": 2,
+      "audit": [
+        {
+          "tool": "act",
+          "argument": "trial",
+          "result": {
+            "ok": true,
+            "observation": "测试出现内存错误，撤销占用，产生2单位返工损耗。",
+            "time": 1,
+            "remaining": 2,
+            "done": false
+          }
+        },
+        {
+          "tool": "act",
+          "argument": "reserve",
+          "result": {
+            "ok": true,
+            "observation": "6单位按时交付。",
+            "time": 2,
+            "remaining": 1,
+            "done": true
+          }
+        }
+      ]
+    }
+  ],
+  "paid_requests": 23,
+  "actual_tokens": 160028,
+  "unknown_usage_attempts": 0,
+  "limits": {
+    "max_calls": 100,
+    "max_tokens": 300000
+  },
+  "roles": {
+    "actor-and-memory:decision_smoke:train": {
+      "requests": 18,
+      "prompt_tokens": 62345,
+      "completion_tokens": 3766,
+      "total_tokens": 66111
+    },
+    "decision-evolve-analysis": {
+      "requests": 3,
+      "prompt_tokens": 84176,
+      "completion_tokens": 1254,
+      "total_tokens": 85430
+    },
+    "decision-evolve-trajectory-summary": {
+      "requests": 2,
+      "prompt_tokens": 7733,
+      "completion_tokens": 754,
+      "total_tokens": 8487
+    }
+  },
+  "paid_transport_failures": 0,
+  "replayed_paid_calls_without_network": [
+    19,
+    20
+  ],
+  "local_stops": [
+    {
+      "success": false,
+      "stage": "analysis",
+      "error_type": "ValueError",
+      "budget": {
+        "version": 1,
+        "limits": {
+          "max_calls": 100,
+          "max_tokens": 300000
+        },
+        "model": "deepseek-flash",
+        "request_count_scope": "hard_cap_before_network",
+        "token_limit_scope": "soft_stop_with_conservative_reservation",
+        "token_estimate": "serialized_request_utf8_bytes + max_output + 4096",
+        "token_tail_limit": "At most one admitted request beyond the estimate; no tokenizer-independent numeric bound. Failed or interrupted request usage may be unknown.",
+        "actual_tokens": 136648,
+        "unknown_usage_attempts": 0,
+        "blocked_reason": null,
+        "attempt_count": 22,
+        "ledger_path": "D:\\PhiloAgent\\runs\\philosophy-system-smoke-20261029-r00\\decision_smoke\\budget\\budget.json"
+      },
+      "generated_code_executed": false,
+      "probe_evaluation_started": false
+    },
+    {
+      "success": false,
+      "stage": "analysis",
+      "error_type": "ValueError",
+      "budget": {
+        "version": 1,
+        "limits": {
+          "max_calls": 100,
+          "max_tokens": 300000
+        },
+        "model": "deepseek-flash",
+        "request_count_scope": "hard_cap_before_network",
+        "token_limit_scope": "soft_stop_with_conservative_reservation",
+        "token_estimate": "serialized_request_utf8_bytes + max_output + 4096",
+        "token_tail_limit": "At most one admitted request beyond the estimate; no tokenizer-independent numeric bound. Failed or interrupted request usage may be unknown.",
+        "actual_tokens": 160028,
+        "unknown_usage_attempts": 0,
+        "blocked_reason": null,
+        "attempt_count": 23,
+        "ledger_path": "D:\\PhiloAgent\\runs\\philosophy-system-smoke-20261029-r00\\decision_smoke\\budget\\budget.json"
+      },
+      "generated_code_executed": false,
+      "probe_evaluation_started": false
+    }
+  ],
+  "memory_unchanged_after_analysis": true,
+  "source_adapter_matches_amendment": true,
+  "run_dir": "D:\\PhiloAgent\\runs\\philosophy-system-smoke-20261029-r00",
+  "evidence_root": "D:\\PhiloAgent\\runs\\philosophy-system-smoke-20261029-r00\\decision_smoke",
+  "interpretation": "No evidence yet of successful philosophy revision or paired behavioral effect. Training decisions are confounded by ordinary-memory suggestions."
+}

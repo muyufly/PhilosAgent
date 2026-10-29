@@ -1,0 +1,230 @@
+[
+  {
+    "case": "纸偶第一批",
+    "constraints": [
+      "不得在未展开时强扣；强扣只会造成失败交付。"
+    ],
+    "deadline": 4,
+    "objective": "按实际阶段完成纸偶交付，避免无效工序及检查开销。",
+    "options": {
+      "flat_sleeve": {
+        "cost": 0,
+        "description": "直接平放入封套交付",
+        "one_use": true,
+        "reversible": true,
+        "terminal": true,
+        "time": 1
+      },
+      "side_clip": {
+        "cost": 0,
+        "description": "沿横脊侧扣交付；要求已经展开",
+        "one_use": true,
+        "reversible": true,
+        "terminal": true,
+        "time": 1
+      },
+      "top_clip": {
+        "cost": 0,
+        "description": "沿纵脊顶扣交付；要求已经展开",
+        "one_use": true,
+        "reversible": true,
+        "terminal": true,
+        "time": 1
+      },
+      "unfold": {
+        "cost": 0,
+        "description": "展开纸偶；工序完成后可观察标记是否清晰",
+        "one_use": true,
+        "reversible": true,
+        "terminal": false,
+        "time": 1
+      }
+    },
+    "rules": "调用按所列时间和费用结算；wait和非法调用消耗1单位。每个行动最多实际执行一次。检查可重复且每次计费。操作时长超过剩余窗口则耗尽剩余时间，该操作不执行也不收费。正好在截止时完成的操作有效。前置条件不满足的行动不执行，消耗1单位；可稍后再试。完成终结行动或到期后不得继续。工具只返回实际观察，不能访问其他行动的结果。",
+    "scenario": "纸偶需要先展开再沿脊线扣合。横脊用侧扣，纵脊用顶扣；完整展开扣合值13单位，平放封套值6单位。展开动作会形成实际脊线；未展开时测量不出脊线。本批尚未展开。",
+    "sources": {
+      "fold_catalogue": {
+        "cost": 1,
+        "description": "纸张供应商的平面折线图；不是展开后的实际脊线",
+        "time": 2
+      },
+      "seam_gauge": {
+        "cost": 1,
+        "description": "触规；仅在已经展开时能读出实际脊线",
+        "time": 1
+      }
+    },
+    "task_id": "sequence_learn_01"
+  },
+  {
+    "case": "纸偶第二批",
+    "constraints": [
+      "不得在未展开时强扣；强扣只会造成失败交付。"
+    ],
+    "deadline": 4,
+    "objective": "按实际阶段完成纸偶交付，避免无效工序及检查开销。",
+    "options": {
+      "flat_sleeve": {
+        "cost": 0,
+        "description": "直接平放入封套交付",
+        "one_use": true,
+        "reversible": true,
+        "terminal": true,
+        "time": 1
+      },
+      "side_clip": {
+        "cost": 0,
+        "description": "沿横脊侧扣交付；要求已经展开",
+        "one_use": true,
+        "reversible": true,
+        "terminal": true,
+        "time": 1
+      },
+      "top_clip": {
+        "cost": 0,
+        "description": "沿纵脊顶扣交付；要求已经展开",
+        "one_use": true,
+        "reversible": true,
+        "terminal": true,
+        "time": 1
+      },
+      "unfold": {
+        "cost": 0,
+        "description": "展开纸偶；工序完成后可观察标记是否清晰",
+        "one_use": true,
+        "reversible": true,
+        "terminal": false,
+        "time": 1
+      }
+    },
+    "rules": "调用按所列时间和费用结算；wait和非法调用消耗1单位。每个行动最多实际执行一次。检查可重复且每次计费。操作时长超过剩余窗口则耗尽剩余时间，该操作不执行也不收费。正好在截止时完成的操作有效。前置条件不满足的行动不执行，消耗1单位；可稍后再试。完成终结行动或到期后不得继续。工具只返回实际观察，不能访问其他行动的结果。",
+    "scenario": "纸偶需要先展开再沿脊线扣合。横脊用侧扣，纵脊用顶扣；完整展开扣合值13单位，平放封套值6单位。展开动作会形成实际脊线；未展开时测量不出脊线。本批尚未展开。",
+    "sources": {
+      "fold_catalogue": {
+        "cost": 1,
+        "description": "纸张供应商的平面折线图；不是展开后的实际脊线",
+        "time": 2
+      },
+      "seam_gauge": {
+        "cost": 1,
+        "description": "触规；仅在已经展开时能读出实际脊线",
+        "time": 1
+      }
+    },
+    "task_id": "sequence_learn_02"
+  },
+  {
+    "case": "遮挡定位标的第三批",
+    "constraints": [
+      "不得在未展开时强扣；强扣只会造成失败交付。"
+    ],
+    "deadline": 4,
+    "objective": "按实际阶段完成纸偶交付，避免无效工序及检查开销。",
+    "options": {
+      "flat_sleeve": {
+        "cost": 0,
+        "description": "直接平放入封套交付",
+        "one_use": true,
+        "reversible": true,
+        "terminal": true,
+        "time": 1
+      },
+      "side_clip": {
+        "cost": 0,
+        "description": "沿横脊侧扣交付；要求已经展开",
+        "one_use": true,
+        "reversible": true,
+        "terminal": true,
+        "time": 1
+      },
+      "top_clip": {
+        "cost": 0,
+        "description": "沿纵脊顶扣交付；要求已经展开",
+        "one_use": true,
+        "reversible": true,
+        "terminal": true,
+        "time": 1
+      },
+      "unfold": {
+        "cost": 0,
+        "description": "展开纸偶；工序完成后可观察标记是否清晰",
+        "one_use": true,
+        "reversible": true,
+        "terminal": false,
+        "time": 1
+      }
+    },
+    "rules": "调用按所列时间和费用结算；wait和非法调用消耗1单位。每个行动最多实际执行一次。检查可重复且每次计费。操作时长超过剩余窗口则耗尽剩余时间，该操作不执行也不收费。正好在截止时完成的操作有效。前置条件不满足的行动不执行，消耗1单位；可稍后再试。完成终结行动或到期后不得继续。工具只返回实际观察，不能访问其他行动的结果。",
+    "scenario": "纸偶需要先展开再沿脊线扣合。横脊用侧扣，纵脊用顶扣；完整展开扣合值13单位，平放封套值6单位。展开动作会形成实际脊线；未展开时测量不出脊线。本批尚未展开。本批展开后的标记可能被遮挡，可用触规读取。",
+    "sources": {
+      "fold_catalogue": {
+        "cost": 1,
+        "description": "纸张供应商的平面折线图；不是展开后的实际脊线",
+        "time": 2
+      },
+      "seam_gauge": {
+        "cost": 1,
+        "description": "触规；仅在已经展开时能读出实际脊线",
+        "time": 1
+      }
+    },
+    "task_id": "sequence_learn_03"
+  },
+  {
+    "case": "已展开的展示件",
+    "constraints": [
+      "不得在未展开时强扣；强扣只会造成失败交付。"
+    ],
+    "deadline": 1,
+    "objective": "按实际阶段完成纸偶交付，避免无效工序及检查开销。",
+    "options": {
+      "flat_sleeve": {
+        "cost": 0,
+        "description": "直接平放入封套交付",
+        "one_use": true,
+        "reversible": true,
+        "terminal": true,
+        "time": 1
+      },
+      "side_clip": {
+        "cost": 0,
+        "description": "沿横脊侧扣交付；要求已经展开",
+        "one_use": true,
+        "reversible": true,
+        "terminal": true,
+        "time": 1
+      },
+      "top_clip": {
+        "cost": 0,
+        "description": "沿纵脊顶扣交付；要求已经展开",
+        "one_use": true,
+        "reversible": true,
+        "terminal": true,
+        "time": 1
+      },
+      "unfold": {
+        "cost": 0,
+        "description": "展开纸偶；工序完成后可观察标记是否清晰",
+        "one_use": true,
+        "reversible": true,
+        "terminal": false,
+        "time": 1
+      }
+    },
+    "rules": "调用按所列时间和费用结算；wait和非法调用消耗1单位。每个行动最多实际执行一次。检查可重复且每次计费。操作时长超过剩余窗口则耗尽剩余时间，该操作不执行也不收费。正好在截止时完成的操作有效。前置条件不满足的行动不执行，消耗1单位；可稍后再试。完成终结行动或到期后不得继续。工具只返回实际观察，不能访问其他行动的结果。",
+    "scenario": "纸偶需要先展开再沿脊线扣合。横脊用侧扣，纵脊用顶扣；完整展开扣合值13单位，平放封套值6单位。展开动作会形成实际脊线；未展开时测量不出脊线。本件已经展开，横脊清晰可见。",
+    "sources": {
+      "fold_catalogue": {
+        "cost": 1,
+        "description": "纸张供应商的平面折线图；不是展开后的实际脊线",
+        "time": 2
+      },
+      "seam_gauge": {
+        "cost": 1,
+        "description": "触规；仅在已经展开时能读出实际脊线",
+        "time": 1
+      }
+    },
+    "task_id": "sequence_learn_04"
+  }
+]

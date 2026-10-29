@@ -1,0 +1,15 @@
+{
+  "reason": "User requested repair after application restart terminated Python workers; conservative reservation, actual usage remains unknown",
+  "reconciled_attempts": [
+    810,
+    845,
+    857,
+    858,
+    859
+  ],
+  "reserved_unknown_tokens_added": 509359,
+  "actual_tokens": 11836560,
+  "effective_tokens": 12345919,
+  "unknown_usage_attempts": 5,
+  "blocked_reason": "maintenance_repair_20261029"
+}

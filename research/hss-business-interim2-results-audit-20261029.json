@@ -1,0 +1,898 @@
+{
+  "snapshot_path": "research\\hss-business-interim2-20261029.snapshot.json",
+  "snapshot_sha256": "d44446b1a77121f9729a2b792fdc7f6337f07ef9eee0d29c43914e54e12d1705",
+  "captured_start_utc": "2026-10-29T15:23:18.439659+00:00",
+  "captured_end_utc": "2026-10-29T15:23:20.770409+00:00",
+  "scope": "descriptive_interim_only_no_holdout_or_causal_effect_claim",
+  "active_records": 145,
+  "completed_records": 134,
+  "completed_distinct_tasks": 16,
+  "record_status_counts": {
+    "completed": 134,
+    "actor_recovery_started": 3,
+    "graded": 1,
+    "actor_failed": 2,
+    "started": 5
+  },
+  "completed_by_domain": {
+    "humanities": {
+      "records": 52,
+      "distinct_tasks": 6,
+      "phase_counts": {
+        "base": 12,
+        "batch": 23,
+        "finalist": 17
+      },
+      "task_ids": [
+        "WB0191",
+        "WB0193",
+        "WB0371",
+        "WB0373",
+        "WB0635",
+        "WB0804"
+      ]
+    },
+    "social": {
+      "records": 47,
+      "distinct_tasks": 6,
+      "phase_counts": {
+        "base": 11,
+        "batch": 18,
+        "finalist": 18
+      },
+      "task_ids": [
+        "WB0126",
+        "WB0133",
+        "WB0143",
+        "WB0628",
+        "WB0682",
+        "WB0704"
+      ]
+    },
+    "business": {
+      "records": 35,
+      "distinct_tasks": 4,
+      "phase_counts": {
+        "base": 6,
+        "batch": 18,
+        "finalist": 11
+      },
+      "task_ids": [
+        "WB0086",
+        "WB0100",
+        "WB0307",
+        "WB0835"
+      ]
+    }
+  },
+  "completed_by_phase": {
+    "base": {
+      "records": 29,
+      "distinct_tasks": 11
+    },
+    "batch": {
+      "records": 59,
+      "distinct_tasks": 9
+    },
+    "finalist": {
+      "records": 46,
+      "distinct_tasks": 9
+    }
+  },
+  "completed_by_repetition": {
+    "1": 130,
+    "2": 4
+  },
+  "complete_rounds": [
+    {
+      "job_id": "humanities-native-r1",
+      "round": 0,
+      "source_path": "jobs\\humanities-native-r1\\evolution\\round_00\\round_summary.json",
+      "finalist_task_ids": [
+        "WB0191",
+        "WB0371",
+        "WB0804"
+      ],
+      "winner": "calibra_loom_memory",
+      "best_provider_before": "lightweight_memory",
+      "best_provider_after": "calibra_loom_memory",
+      "finalists": {
+        "lightweight_memory": {
+          "scores": {
+            "WB0191": 87.3,
+            "WB0804": 86.4,
+            "WB0371": 85.2
+          },
+          "recomputed_mean": 86.3,
+          "reported_mean": 86.3,
+          "count": 3,
+          "exact_task_set": true,
+          "memory_ingested": true,
+          "success": true,
+          "failures": [],
+          "mean_matches": true
+        },
+        "calibra_loom_memory": {
+          "scores": {
+            "WB0191": 91.9,
+            "WB0804": 88.3,
+            "WB0371": 89.0
+          },
+          "recomputed_mean": 89.73333333333333,
+          "reported_mean": 89.73333333333333,
+          "count": 3,
+          "exact_task_set": true,
+          "memory_ingested": true,
+          "success": true,
+          "failures": [],
+          "mean_matches": true
+        }
+      },
+      "winner_is_argmax": true,
+      "winner_vs_before_delta_only_if_both_finalists": 3.433333333333337,
+      "selection_valid": true
+    },
+    {
+      "job_id": "humanities-full-r1",
+      "round": 0,
+      "source_path": "jobs\\humanities-full-r1\\evolution\\round_00\\round_summary.json",
+      "finalist_task_ids": [
+        "WB0191",
+        "WB0371",
+        "WB0804"
+      ],
+      "winner": "credence_lattice",
+      "best_provider_before": "lightweight_memory",
+      "best_provider_after": "credence_lattice",
+      "finalists": {
+        "credence_lattice": {
+          "scores": {
+            "WB0191": 88.1,
+            "WB0804": 90.8,
+            "WB0371": 90.8
+          },
+          "recomputed_mean": 89.89999999999999,
+          "reported_mean": 89.89999999999999,
+          "count": 3,
+          "exact_task_set": true,
+          "memory_ingested": true,
+          "success": true,
+          "failures": [],
+          "mean_matches": true
+        },
+        "lightweight_memory": {
+          "scores": {
+            "WB0191": 89.7,
+            "WB0804": 90.7,
+            "WB0371": 88.9
+          },
+          "recomputed_mean": 89.76666666666667,
+          "reported_mean": 89.76666666666667,
+          "count": 3,
+          "exact_task_set": true,
+          "memory_ingested": true,
+          "success": true,
+          "failures": [],
+          "mean_matches": true
+        }
+      },
+      "winner_is_argmax": true,
+      "winner_vs_before_delta_only_if_both_finalists": 0.13333333333332575,
+      "selection_valid": true
+    },
+    {
+      "job_id": "social-native-r1",
+      "round": 0,
+      "source_path": "jobs\\social-native-r1\\evolution\\round_00\\round_summary.json",
+      "finalist_task_ids": [
+        "WB0126",
+        "WB0628",
+        "WB0682"
+      ],
+      "winner": "praxis_ledger",
+      "best_provider_before": "lightweight_memory",
+      "best_provider_after": "praxis_ledger",
+      "finalists": {
+        "praxis_ledger": {
+          "scores": {
+            "WB0682": 90.2,
+            "WB0628": 87.8,
+            "WB0126": 87.2
+          },
+          "recomputed_mean": 88.4,
+          "reported_mean": 88.39999999999999,
+          "count": 3,
+          "exact_task_set": true,
+          "memory_ingested": true,
+          "success": true,
+          "failures": [],
+          "mean_matches": true
+        },
+        "cairn_memory": {
+          "scores": {
+            "WB0682": 87.2,
+            "WB0628": 87.4,
+            "WB0126": 77.8
+          },
+          "recomputed_mean": 84.13333333333334,
+          "reported_mean": 84.13333333333334,
+          "count": 3,
+          "exact_task_set": true,
+          "memory_ingested": true,
+          "success": true,
+          "failures": [],
+          "mean_matches": true
+        }
+      },
+      "winner_is_argmax": true,
+      "winner_vs_before_delta_only_if_both_finalists": null,
+      "selection_valid": true
+    },
+    {
+      "job_id": "social-fixed-r1",
+      "round": 0,
+      "source_path": "jobs\\social-fixed-r1\\evolution\\round_00\\round_summary.json",
+      "finalist_task_ids": [
+        "WB0126",
+        "WB0628",
+        "WB0682"
+      ],
+      "winner": "palimpsest_memory",
+      "best_provider_before": "lightweight_memory",
+      "best_provider_after": "palimpsest_memory",
+      "finalists": {
+        "palimpsest_memory": {
+          "scores": {
+            "WB0682": 91.6,
+            "WB0628": 91.6,
+            "WB0126": 78.2
+          },
+          "recomputed_mean": 87.13333333333333,
+          "reported_mean": 87.13333333333333,
+          "count": 3,
+          "exact_task_set": true,
+          "memory_ingested": true,
+          "success": true,
+          "failures": [],
+          "mean_matches": true
+        },
+        "praxis_weave_memory": {
+          "scores": {
+            "WB0682": 88.0,
+            "WB0628": 87.6,
+            "WB0126": 80.0
+          },
+          "recomputed_mean": 85.2,
+          "reported_mean": 85.2,
+          "count": 3,
+          "exact_task_set": true,
+          "memory_ingested": true,
+          "success": true,
+          "failures": [],
+          "mean_matches": true
+        }
+      },
+      "winner_is_argmax": true,
+      "winner_vs_before_delta_only_if_both_finalists": null,
+      "selection_valid": true
+    },
+    {
+      "job_id": "social-full-r1",
+      "round": 0,
+      "source_path": "jobs\\social-full-r1\\evolution\\round_00\\round_summary.json",
+      "finalist_task_ids": [
+        "WB0126",
+        "WB0628",
+        "WB0682"
+      ],
+      "winner": "lightweight_memory",
+      "best_provider_before": "lightweight_memory",
+      "best_provider_after": "lightweight_memory",
+      "finalists": {
+        "lightweight_memory": {
+          "scores": {
+            "WB0682": 87.2,
+            "WB0628": 91.0,
+            "WB0126": 91.4
+          },
+          "recomputed_mean": 89.86666666666667,
+          "reported_mean": 89.86666666666667,
+          "count": 3,
+          "exact_task_set": true,
+          "memory_ingested": true,
+          "success": true,
+          "failures": [],
+          "mean_matches": true
+        },
+        "praxisloom_memory": {
+          "scores": {
+            "WB0682": 93.4,
+            "WB0628": 87.0,
+            "WB0126": 83.0
+          },
+          "recomputed_mean": 87.8,
+          "reported_mean": 87.8,
+          "count": 3,
+          "exact_task_set": true,
+          "memory_ingested": true,
+          "success": true,
+          "failures": [],
+          "mean_matches": true
+        }
+      },
+      "winner_is_argmax": true,
+      "winner_vs_before_delta_only_if_both_finalists": 0.0,
+      "selection_valid": true
+    }
+  ],
+  "pre_evolution_round00_base_repetition1": [
+    {
+      "domain": "business",
+      "task_id": "WB0100",
+      "groups": {
+        "native": {
+          "score": 0.0,
+          "provider": "lightweight_memory",
+          "path": "jobs\\business-native-r1\\evolution\\round_00\\base_logs\\1.json",
+          "dimensions": {
+            "material_accuracy": 0.0,
+            "strategic_analysis": 0.0,
+            "argument": 0.0,
+            "execution": 0.0,
+            "communication": 0.0
+          },
+          "answer_chars": 6
+        },
+        "fixed": {
+          "score": 78.0,
+          "provider": "lightweight_memory",
+          "path": "jobs\\business-fixed-r1\\evolution\\round_00\\base_logs\\1.json",
+          "dimensions": {
+            "material_accuracy": 3.8,
+            "strategic_analysis": 3.5,
+            "argument": 3.9,
+            "execution": 4.3,
+            "communication": 4.1
+          },
+          "answer_chars": 13043
+        },
+        "full": {
+          "score": 90.7,
+          "provider": "lightweight_memory",
+          "path": "jobs\\business-full-r1\\evolution\\round_00\\base_logs\\1.json",
+          "dimensions": {
+            "material_accuracy": 4.6,
+            "strategic_analysis": 4.4,
+            "argument": 4.4,
+            "execution": 4.7,
+            "communication": 4.6
+          },
+          "answer_chars": 22974
+        }
+      },
+      "full_minus_native": 90.7,
+      "full_minus_fixed": 12.700000000000003,
+      "fixed_minus_native": 78.0
+    },
+    {
+      "domain": "business",
+      "task_id": "WB0835",
+      "groups": {
+        "native": {
+          "score": 80.7,
+          "provider": "lightweight_memory",
+          "path": "jobs\\business-native-r1\\evolution\\round_00\\base_logs\\2.json",
+          "dimensions": {
+            "material_accuracy": 3.2,
+            "strategic_analysis": 4.4,
+            "argument": 4.4,
+            "execution": 3.9,
+            "communication": 4.4
+          },
+          "answer_chars": 7857
+        },
+        "fixed": {
+          "score": 84.3,
+          "provider": "lightweight_memory",
+          "path": "jobs\\business-fixed-r1\\evolution\\round_00\\base_logs\\2.json",
+          "dimensions": {
+            "material_accuracy": 4.0,
+            "strategic_analysis": 4.5,
+            "argument": 4.2,
+            "execution": 4.0,
+            "communication": 4.5
+          },
+          "answer_chars": 4896
+        },
+        "full": {
+          "score": 80.7,
+          "provider": "lightweight_memory",
+          "path": "jobs\\business-full-r1\\evolution\\round_00\\base_logs\\2.json",
+          "dimensions": {
+            "material_accuracy": 3.6,
+            "strategic_analysis": 4.2,
+            "argument": 4.0,
+            "execution": 4.1,
+            "communication": 4.4
+          },
+          "answer_chars": 9166
+        }
+      },
+      "full_minus_native": 0.0,
+      "full_minus_fixed": -3.5999999999999943,
+      "fixed_minus_native": 3.5999999999999943
+    },
+    {
+      "domain": "humanities",
+      "task_id": "WB0191",
+      "groups": {
+        "native": {
+          "score": 88.2,
+          "provider": "lightweight_memory",
+          "path": "jobs\\humanities-native-r1\\evolution\\round_00\\base_logs\\2.json",
+          "dimensions": {
+            "material_accuracy": 4.4,
+            "interpretation": 4.6,
+            "argument": 4.4,
+            "critical_engagement": 4.0,
+            "communication": 4.5
+          },
+          "answer_chars": 2725
+        },
+        "fixed": {
+          "score": 90.7,
+          "provider": "lightweight_memory",
+          "path": "jobs\\humanities-fixed-r1\\evolution\\round_00\\base_logs\\2.json",
+          "dimensions": {
+            "material_accuracy": 4.5,
+            "interpretation": 4.6,
+            "argument": 4.5,
+            "critical_engagement": 4.6,
+            "communication": 4.4
+          },
+          "answer_chars": 2360
+        },
+        "full": {
+          "score": 89.5,
+          "provider": "lightweight_memory",
+          "path": "jobs\\humanities-full-r1\\evolution\\round_00\\base_logs\\2.json",
+          "dimensions": {
+            "material_accuracy": 4.2,
+            "interpretation": 4.6,
+            "argument": 4.4,
+            "critical_engagement": 4.7,
+            "communication": 4.5
+          },
+          "answer_chars": 2041
+        }
+      },
+      "full_minus_native": 1.2999999999999972,
+      "full_minus_fixed": -1.2000000000000028,
+      "fixed_minus_native": 2.5
+    },
+    {
+      "domain": "humanities",
+      "task_id": "WB0193",
+      "groups": {
+        "native": {
+          "score": 91.1,
+          "provider": "lightweight_memory",
+          "path": "jobs\\humanities-native-r1\\evolution\\round_00\\base_logs\\1.json",
+          "dimensions": {
+            "material_accuracy": 4.4,
+            "interpretation": 4.7,
+            "argument": 4.5,
+            "critical_engagement": 4.6,
+            "communication": 4.5
+          },
+          "answer_chars": 1302
+        },
+        "fixed": {
+          "score": 82.8,
+          "provider": "lightweight_memory",
+          "path": "jobs\\humanities-fixed-r1\\evolution\\round_00\\base_logs\\1.json",
+          "dimensions": {
+            "material_accuracy": 4.0,
+            "interpretation": 4.5,
+            "argument": 4.0,
+            "critical_engagement": 3.8,
+            "communication": 4.2
+          },
+          "answer_chars": 1149
+        },
+        "full": {
+          "score": 83.0,
+          "provider": "lightweight_memory",
+          "path": "jobs\\humanities-full-r1\\evolution\\round_00\\base_logs\\1.json",
+          "dimensions": {
+            "material_accuracy": 3.9,
+            "interpretation": 4.3,
+            "argument": 4.2,
+            "critical_engagement": 4.0,
+            "communication": 4.3
+          },
+          "answer_chars": 1152
+        }
+      },
+      "full_minus_native": -8.099999999999994,
+      "full_minus_fixed": 0.20000000000000284,
+      "fixed_minus_native": -8.299999999999997
+    },
+    {
+      "domain": "social",
+      "task_id": "WB0133",
+      "groups": {
+        "native": {
+          "score": 67.0,
+          "provider": "lightweight_memory",
+          "path": "jobs\\social-native-r1\\evolution\\round_00\\base_logs\\2.json",
+          "dimensions": {
+            "material_accuracy": 4.8,
+            "mechanism_analysis": 3.3,
+            "argument": 3.0,
+            "implications": 2.7,
+            "communication": 2.6
+          },
+          "answer_chars": 7976
+        },
+        "fixed": {
+          "score": 76.0,
+          "provider": "lightweight_memory",
+          "path": "jobs\\social-fixed-r1\\evolution\\round_00\\base_logs\\2.json",
+          "dimensions": {
+            "material_accuracy": 4.5,
+            "mechanism_analysis": 3.8,
+            "argument": 3.5,
+            "implications": 3.4,
+            "communication": 3.8
+          },
+          "answer_chars": 8357
+        },
+        "full": {
+          "score": 76.6,
+          "provider": "lightweight_memory",
+          "path": "jobs\\social-full-r1\\evolution\\round_00\\base_logs\\2.json",
+          "dimensions": {
+            "material_accuracy": 4.8,
+            "mechanism_analysis": 3.9,
+            "argument": 3.5,
+            "implications": 3.4,
+            "communication": 3.2
+          },
+          "answer_chars": 8047
+        }
+      },
+      "full_minus_native": 9.599999999999994,
+      "full_minus_fixed": 0.5999999999999943,
+      "fixed_minus_native": 9.0
+    },
+    {
+      "domain": "social",
+      "task_id": "WB0682",
+      "groups": {
+        "native": {
+          "score": 87.4,
+          "provider": "lightweight_memory",
+          "path": "jobs\\social-native-r1\\evolution\\round_00\\base_logs\\1.json",
+          "dimensions": {
+            "material_accuracy": 4.2,
+            "mechanism_analysis": 4.5,
+            "argument": 4.3,
+            "implications": 4.3,
+            "communication": 4.6
+          },
+          "answer_chars": 17589
+        },
+        "fixed": {
+          "score": 93.4,
+          "provider": "lightweight_memory",
+          "path": "jobs\\social-fixed-r1\\evolution\\round_00\\base_logs\\1.json",
+          "dimensions": {
+            "material_accuracy": 4.6,
+            "mechanism_analysis": 4.7,
+            "argument": 4.6,
+            "implications": 4.7,
+            "communication": 4.8
+          },
+          "answer_chars": 18795
+        },
+        "full": {
+          "score": 89.6,
+          "provider": "lightweight_memory",
+          "path": "jobs\\social-full-r1\\evolution\\round_00\\base_logs\\1.json",
+          "dimensions": {
+            "material_accuracy": 4.0,
+            "mechanism_analysis": 4.6,
+            "argument": 4.5,
+            "implications": 4.6,
+            "communication": 4.8
+          },
+          "answer_chars": 29801
+        }
+      },
+      "full_minus_native": 2.1999999999999886,
+      "full_minus_fixed": -3.8000000000000114,
+      "fixed_minus_native": 6.0
+    }
+  ],
+  "post_evolution_round01_base_repetition1": [
+    {
+      "domain": "humanities",
+      "task_id": "WB0373",
+      "groups": {
+        "native": {
+          "score": 96.3,
+          "provider": "calibra_loom_memory",
+          "path": "jobs\\humanities-native-r1\\evolution\\round_01\\base_logs\\6.json",
+          "dimensions": {
+            "material_accuracy": 4.7,
+            "interpretation": 5.0,
+            "argument": 4.8,
+            "critical_engagement": 4.5,
+            "communication": 5.0
+          },
+          "answer_chars": 1501
+        },
+        "full": {
+          "score": 78.6,
+          "provider": "credence_lattice",
+          "path": "jobs\\humanities-full-r1\\evolution\\round_01\\base_logs\\6.json",
+          "dimensions": {
+            "material_accuracy": 3.4,
+            "interpretation": 4.2,
+            "argument": 3.9,
+            "critical_engagement": 3.7,
+            "communication": 4.6
+          },
+          "answer_chars": 1493
+        }
+      },
+      "full_minus_native": -17.700000000000003,
+      "full_minus_fixed": null,
+      "fixed_minus_native": null
+    },
+    {
+      "domain": "humanities",
+      "task_id": "WB0635",
+      "groups": {
+        "native": {
+          "score": 85.9,
+          "provider": "calibra_loom_memory",
+          "path": "jobs\\humanities-native-r1\\evolution\\round_01\\base_logs\\5.json",
+          "dimensions": {
+            "material_accuracy": 4.0,
+            "interpretation": 4.5,
+            "argument": 4.3,
+            "critical_engagement": 4.0,
+            "communication": 4.7
+          },
+          "answer_chars": 1934
+        },
+        "full": {
+          "score": 90.0,
+          "provider": "credence_lattice",
+          "path": "jobs\\humanities-full-r1\\evolution\\round_01\\base_logs\\5.json",
+          "dimensions": {
+            "material_accuracy": 4.5,
+            "interpretation": 4.5,
+            "argument": 4.5,
+            "critical_engagement": 4.5,
+            "communication": 4.5
+          },
+          "answer_chars": 1962
+        }
+      },
+      "full_minus_native": 4.099999999999994,
+      "full_minus_fixed": null,
+      "fixed_minus_native": null
+    },
+    {
+      "domain": "social",
+      "task_id": "WB0143",
+      "groups": {
+        "native": {
+          "score": 73.6,
+          "provider": "praxis_ledger",
+          "path": "jobs\\social-native-r1\\evolution\\round_01\\base_logs\\6.json",
+          "dimensions": {
+            "material_accuracy": 3.5,
+            "mechanism_analysis": 3.7,
+            "argument": 3.3,
+            "implications": 3.8,
+            "communication": 4.5
+          },
+          "answer_chars": 11214
+        },
+        "fixed": {
+          "score": 81.8,
+          "provider": "palimpsest_memory",
+          "path": "jobs\\social-fixed-r1\\evolution\\round_01\\base_logs\\6.json",
+          "dimensions": {
+            "material_accuracy": 4.2,
+            "mechanism_analysis": 4.0,
+            "argument": 3.9,
+            "implications": 4.2,
+            "communication": 4.3
+          },
+          "answer_chars": 15018
+        }
+      },
+      "full_minus_native": null,
+      "full_minus_fixed": null,
+      "fixed_minus_native": 8.200000000000003
+    },
+    {
+      "domain": "social",
+      "task_id": "WB0704",
+      "groups": {
+        "native": {
+          "score": 79.8,
+          "provider": "praxis_ledger",
+          "path": "jobs\\social-native-r1\\evolution\\round_01\\base_logs\\5.json",
+          "dimensions": {
+            "material_accuracy": 4.2,
+            "mechanism_analysis": 3.8,
+            "argument": 4.0,
+            "implications": 3.8,
+            "communication": 4.5
+          },
+          "answer_chars": 2766
+        },
+        "fixed": {
+          "score": 88.0,
+          "provider": "palimpsest_memory",
+          "path": "jobs\\social-fixed-r1\\evolution\\round_01\\base_logs\\5.json",
+          "dimensions": {
+            "material_accuracy": 4.5,
+            "mechanism_analysis": 4.4,
+            "argument": 4.4,
+            "implications": 4.3,
+            "communication": 4.4
+          },
+          "answer_chars": 2847
+        },
+        "full": {
+          "score": 79.0,
+          "provider": "lightweight_memory",
+          "path": "jobs\\social-full-r1\\evolution\\round_01\\base_logs\\5.json",
+          "dimensions": {
+            "material_accuracy": 4.0,
+            "mechanism_analysis": 3.8,
+            "argument": 4.0,
+            "implications": 3.8,
+            "communication": 4.5
+          },
+          "answer_chars": 2787
+        }
+      },
+      "full_minus_native": -0.7999999999999972,
+      "full_minus_fixed": -9.0,
+      "fixed_minus_native": 8.200000000000003
+    }
+  ],
+  "pre_evolution_domain_means": {
+    "humanities": {
+      "native": 89.65,
+      "fixed": 86.75,
+      "full": 86.25
+    },
+    "social": {
+      "native": 77.2,
+      "fixed": 84.7,
+      "full": 83.1
+    },
+    "business": {
+      "native": 40.35,
+      "fixed": 81.15,
+      "full": 85.7
+    }
+  },
+  "winner_same_task_comparisons": [
+    {
+      "domain": "humanities",
+      "round": 0,
+      "task_count": 3,
+      "task_scores": [
+        {
+          "task_id": "WB0191",
+          "scores": {
+            "native": 91.9,
+            "full": 88.1
+          },
+          "full_minus_native": -3.8000000000000114,
+          "full_minus_fixed": null
+        },
+        {
+          "task_id": "WB0371",
+          "scores": {
+            "native": 89.0,
+            "full": 90.8
+          },
+          "full_minus_native": 1.7999999999999972,
+          "full_minus_fixed": null
+        },
+        {
+          "task_id": "WB0804",
+          "scores": {
+            "native": 88.3,
+            "full": 90.8
+          },
+          "full_minus_native": 2.5,
+          "full_minus_fixed": null
+        }
+      ],
+      "mean": {
+        "native": 89.73333333333333,
+        "full": 89.89999999999999
+      },
+      "warning": "Adaptive selection set; these are not held-out effect estimates."
+    },
+    {
+      "domain": "social",
+      "round": 0,
+      "task_count": 3,
+      "task_scores": [
+        {
+          "task_id": "WB0126",
+          "scores": {
+            "native": 87.2,
+            "fixed": 78.2,
+            "full": 91.4
+          },
+          "full_minus_native": 4.200000000000003,
+          "full_minus_fixed": 13.200000000000003
+        },
+        {
+          "task_id": "WB0628",
+          "scores": {
+            "native": 87.8,
+            "fixed": 91.6,
+            "full": 91.0
+          },
+          "full_minus_native": 3.200000000000003,
+          "full_minus_fixed": -0.5999999999999943
+        },
+        {
+          "task_id": "WB0682",
+          "scores": {
+            "native": 90.2,
+            "fixed": 91.6,
+            "full": 87.2
+          },
+          "full_minus_native": -3.0,
+          "full_minus_fixed": -4.3999999999999915
+        }
+      ],
+      "mean": {
+        "native": 88.4,
+        "fixed": 87.13333333333333,
+        "full": 89.86666666666667
+      },
+      "warning": "Adaptive selection set; these are not held-out effect estimates."
+    }
+  ],
+  "post_evolution_humanities_native_full": {
+    "tasks": [
+      "WB0635",
+      "WB0373"
+    ],
+    "native_mean": 91.1,
+    "full_mean": 84.3,
+    "full_minus_native": -6.8,
+    "individual_deltas": [
+      4.1,
+      -17.7
+    ]
+  },
+  "terminal_results": 0,
+  "warnings": [
+    "134 completed works cover 16 distinct questions; multiple candidates, phases and repetitions reuse questions. Do not use n=134 as independent sample size.",
+    "Base round00 full and fixed both start with the same Phi and no Phi evolution has occurred; their differences cannot estimate benefit of revisability.",
+    "Round00 finalist winners have been selected on these scores; follow-up and held-out outcomes are needed.",
+    "Humanities fixed, business and repetition2+ lack complete corresponding rounds; no complete 27-lineage estimate is available.",
+    "One additional graded record is not completed/ingested, and is excluded from completed counts and comparisons.",
+    "Business-native WB0100 score0 is a real submitted answer placeholder; original final-answer argument is literally answer, not a recovered full report. It dominates the 2-task business base mean.",
+    "Judge scores/comments are one model assessment per work, not independent verification of all claims.",
+    "Repairs restored interfaces and some paid records; costs include recovery and some actor retries."
+  ]
+}

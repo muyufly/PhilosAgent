@@ -1,0 +1,155 @@
+{
+  "recorded_utc": "2026-10-29T15:18:05.083012+00:00",
+  "revision": "repair-r9",
+  "tests": {
+    "full_suite_passed": 556,
+    "duration_seconds": 109.43,
+    "offline_no_paid_model_calls": true
+  },
+  "adapter_frozen": true,
+  "upstream_frozen": true,
+  "input_files_unchanged": true,
+  "protocol_unchanged": true,
+  "protocol_revision": "repair-r4",
+  "manifest_jobs_unchanged": true,
+  "changed_adapter_files": [
+    "ablation_policy.py",
+    "hss_experiment.py",
+    "hss_generation_format.py",
+    "hss_memory_format.py",
+    "hss_native.py",
+    "hss_recovery_queue.py"
+  ],
+  "live_workers_preserved_at_publication": 7,
+  "primary_judge_recovery": {
+    "status": "completed",
+    "quality_score": 78.6,
+    "memory_ingestion_complete": true,
+    "answer_sha256": "2b77bcf6d0b6a8282346323e6861e2035bef856ab02b6a71c6e703a78f0b9e3b",
+    "raw_judge_sha256": "04ca8ee915a6ef4fc73418d12ba02981aeb60ecb6476f4bd25f2e262ee02f7bd",
+    "original_judge_attempt": 4888,
+    "excluded_auxiliary_fields": {
+      "dimensions.argument_placeholder": 0
+    },
+    "resumed_phase": "judge",
+    "additional_judge_requests_authorized": 0
+  },
+  "candidate_recovery": {
+    "humanities-native-r1": {
+      "original_attempt": 5211,
+      "provider": "gradus_memory",
+      "new_generation_requests": 0,
+      "earlier_candidates_unchanged": true,
+      "saved_config_sha256": "33b0af69951d9b3d114279b8d53846e8795494c51bbf4da49faeaa545fc54863",
+      "create_completed": false,
+      "validate_completed": false
+    },
+    "social-native-r1": {
+      "original_attempt": 5304,
+      "provider": "concordance_loom_memory",
+      "new_generation_requests": 0,
+      "earlier_candidates_unchanged": true,
+      "saved_config_sha256": "d9f5885eaf3c6e9e115d9e6a88b06512f19d42817c119aead2f4991b84c31c76",
+      "create_completed": false,
+      "validate_completed": false
+    }
+  },
+  "fixed_actor_recovery": {
+    "status": "actor_recovery_started",
+    "actor_recovery_attempts": 1,
+    "prior_execution_id": "f208823d721d4a009f398bf072eed28d",
+    "partial_trajectory_preserved": true
+  },
+  "queue": {
+    "status": "running",
+    "pid": 28172,
+    "counts": {
+      "queued": 17,
+      "running": 10,
+      "complete": 0,
+      "failed": 0,
+      "interrupted": 0,
+      "owned_running": 10
+    },
+    "waiting_reason": "worker_cap",
+    "attempted_job_ids": [
+      "humanities-native-r1",
+      "social-native-r1",
+      "humanities-fixed-r1"
+    ],
+    "pending_job_ids": [
+      "humanities-fixed-r2",
+      "humanities-full-r2",
+      "social-native-r2",
+      "social-fixed-r2",
+      "social-full-r2",
+      "business-native-r2",
+      "business-fixed-r2",
+      "business-full-r2",
+      "humanities-native-r3",
+      "humanities-fixed-r3",
+      "humanities-full-r3",
+      "social-native-r3",
+      "social-fixed-r3",
+      "social-full-r3",
+      "business-native-r3",
+      "business-fixed-r3",
+      "business-full-r3"
+    ],
+    "failed_job_ids": []
+  },
+  "queue_process_owned": true,
+  "queue_covers_all_27_jobs": true,
+  "repaired_workers": {
+    "humanities-native-r1": {
+      "status": "running",
+      "pid": 25256,
+      "owned_process": true,
+      "source_revision": "repair-r9"
+    },
+    "social-native-r1": {
+      "status": "running",
+      "pid": 23420,
+      "owned_process": true,
+      "source_revision": "repair-r9"
+    },
+    "humanities-fixed-r1": {
+      "status": "running",
+      "pid": 33240,
+      "owned_process": true,
+      "source_revision": "repair-r9"
+    }
+  },
+  "budget": {
+    "attempt_count": 6281,
+    "successful_requests": 6262,
+    "failed_requests": 13,
+    "actual_tokens": 106768445,
+    "unknown_usage_attempts": 6,
+    "reserved_unknown_tokens": 589403,
+    "blocked_reason": null,
+    "max_inflight_requests": 6,
+    "pending_count": 6,
+    "reserved_unknown_attempt_ids": [
+      810,
+      845,
+      857,
+      858,
+      859,
+      3835
+    ]
+  },
+  "report_counts": {
+    "queued": 17,
+    "running": 10,
+    "complete": 0,
+    "failed": 0,
+    "interrupted": 0
+  },
+  "limitations": [
+    "Snapshot only; queued tasks wait for lineage capacity",
+    "Recovered candidates still require native creation and validation",
+    "Unfinished fixed-group actor retry consumes the original shared budget",
+    "Historical unknown service usage remains unknown despite conservative reservation"
+  ]
+}

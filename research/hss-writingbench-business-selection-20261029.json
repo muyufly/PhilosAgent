@@ -1,0 +1,95 @@
+{
+  "dataset": "WritingBench",
+  "domain": "business",
+  "source_commit": "ae2d5176449b7b769815482641d35926f26793eb",
+  "source_file": "data/writingbench/ae2d5176449b7b769815482641d35926f26793eb/benchmark_all.jsonl",
+  "domain1": "Finance & Business",
+  "lang": "zh",
+  "selection_basis": "优先商业分析与经营决策，覆盖产品、用户、竞争与定价、市场、战略、组织和风险；保留现成题目，不要求预设哲学冲突。标题仅作索引，不替换原始query。",
+  "tasks": [
+    {
+      "source_index": 86,
+      "domain2": "Product Proposal",
+      "title": "小微企业智能记账软件规划",
+      "split": "learning",
+      "reason": "开放的产品规划任务，需要自行形成用户需求、功能取舍和商业定位，避免只填固定文书模板。"
+    },
+    {
+      "source_index": 285,
+      "domain2": "User Research",
+      "title": "90后理财产品用户访谈设计",
+      "split": "learning",
+      "reason": "补充用户研究任务，要求把风险偏好、决策因素和产品选择转成可执行的深度访谈问题。"
+    },
+    {
+      "source_index": 307,
+      "domain2": "Market Analysis",
+      "title": "新能源汽车竞争与定价分析",
+      "split": "learning",
+      "reason": "基于现成行业材料比较三家企业的细分市场、定价和份额变化，并分析经销商与消费者影响。"
+    },
+    {
+      "source_index": 311,
+      "domain2": "Human Resource Management",
+      "title": "制造企业文化与激励落地方案",
+      "split": "learning",
+      "reason": "把组织价值、不同层级员工、培训激励与有限预算结合，要求提出可落实、可评估的经营管理方案。"
+    },
+    {
+      "source_index": 321,
+      "domain2": "Strategic Planning",
+      "title": "中式快餐连锁全国扩张战略",
+      "split": "learning",
+      "reason": "围绕已有四家门店制定三年扩张，综合区域选择、直营加盟、供应链、人才和风险。"
+    },
+    {
+      "source_index": 504,
+      "domain2": "Market Analysis",
+      "title": "下沉城市电商机会与物流策略",
+      "split": "learning",
+      "reason": "结合材料分析消费潜力、技术和物流约束，形成面向行业从业者与创业者的实用建议。"
+    },
+    {
+      "source_index": 100,
+      "domain2": "Risk Management",
+      "title": "互联网金融平台全面风险框架",
+      "split": "learning",
+      "reason": "提供开放的风险治理设计任务，连接技术、信用、运营、组织架构与应急响应。"
+    },
+    {
+      "source_index": 835,
+      "domain2": "Product Proposal",
+      "title": "企业管理工具差异化与商业化",
+      "split": "learning",
+      "reason": "要求结合三家竞品形成产品定位、效率价值、用户体验、六个月路线和盈利模式，涵盖完整商业论证。"
+    },
+    {
+      "source_index": 623,
+      "domain2": "Market Research",
+      "title": "科技产品东南亚推广调研",
+      "split": "heldout",
+      "reason": "以跨国市场、文化偏好和渠道选择检验市场研究与行动建议能力，场景有别于学习题的国内扩张。"
+    },
+    {
+      "source_index": 777,
+      "domain2": "Market Analysis",
+      "title": "智能穿戴设备中老年市场进入",
+      "split": "heldout",
+      "reason": "结合新客群需求、技术接受度、价格敏感度、产品设计与用户教育形成市场进入策略。"
+    },
+    {
+      "source_index": 837,
+      "domain2": "Market Research",
+      "title": "二手奢侈品市场与消费心理",
+      "split": "heldout",
+      "reason": "针对不同消费行业综合增长前景、价格敏感度、消费者心理、平台竞争与进入决策。"
+    },
+    {
+      "source_index": 572,
+      "domain2": "Human Resource Management",
+      "title": "远程与混合办公生产力管理",
+      "split": "heldout",
+      "reason": "以跨地区案例、理论和实证材料分析生产力、目标反馈与工作监测，检验组织管理分析能力。"
+    }
+  ]
+}

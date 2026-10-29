@@ -1,0 +1,122 @@
+{
+  "snapshot_hkt": "2026-10-29T19:13:19.767647+08:00",
+  "kind": "descriptive_interim_not_final_effect",
+  "humanities_base_comparisons": [
+    {
+      "task_id": "WB0193",
+      "quality": {
+        "native": 91.1,
+        "fixed": 82.8,
+        "full": 83.0
+      },
+      "answer_chars": {
+        "native": 1302,
+        "fixed": 1149,
+        "full": 1152
+      }
+    },
+    {
+      "task_id": "WB0191",
+      "quality": {
+        "native": 88.2,
+        "fixed": 90.7,
+        "full": 89.5
+      },
+      "answer_chars": {
+        "native": 2725,
+        "fixed": 2360,
+        "full": 2041
+      }
+    }
+  ],
+  "humanities_two_task_means": {
+    "native": 89.65,
+    "fixed": 86.75,
+    "full": 86.25
+  },
+  "role_costs": {
+    "memory_retrieval": {
+      "requests": 514,
+      "confirmed_tokens": 3112262,
+      "confirmed_token_share_percent": 18.1824
+    },
+    "actor": {
+      "requests": 383,
+      "confirmed_tokens": 6781973,
+      "confirmed_token_share_percent": 39.6215
+    },
+    "judge": {
+      "requests": 14,
+      "confirmed_tokens": 93348,
+      "confirmed_token_share_percent": 0.5454
+    },
+    "memory_ingestion": {
+      "requests": 15,
+      "confirmed_tokens": 282679,
+      "confirmed_token_share_percent": 1.6515
+    },
+    "analysis": {
+      "requests": 86,
+      "confirmed_tokens": 6411163,
+      "confirmed_token_share_percent": 37.4552
+    },
+    "trajectory_summary": {
+      "requests": 10,
+      "confirmed_tokens": 75587,
+      "confirmed_token_share_percent": 0.4416
+    },
+    "generation": {
+      "requests": 10,
+      "confirmed_tokens": 359888,
+      "confirmed_token_share_percent": 2.1025
+    }
+  },
+  "budget": {
+    "attempt_count": 1032,
+    "actual_tokens": 17116900,
+    "prompt_tokens": 15174581,
+    "completion_tokens": 1942319,
+    "reserved_unknown_tokens": 509359,
+    "unknown_usage_attempts": 5
+  },
+  "effective_budget_share_percent": 5.0361,
+  "invalidated_social_scores": [
+    {
+      "job_id": "social-native-r1",
+      "task": "WB0682",
+      "invalid_score": 10.8,
+      "source_attempt": 705,
+      "old_answer_chars": 595,
+      "recovered_answer_chars": 17589
+    },
+    {
+      "job_id": "social-fixed-r1",
+      "task": "WB0682",
+      "invalid_score": 17.0,
+      "source_attempt": 682,
+      "old_answer_chars": 2936,
+      "recovered_answer_chars": 18795
+    }
+  ],
+  "social_following_tasks_not_used_for_effect_comparison": "WB0133 was completed after erroneous feedback on WB0682; archived and scheduled again after corrected ingestion",
+  "final_holdout_results": 0,
+  "completed_rounds": 0,
+  "restored_social_base_scores": {
+    "native": {
+      "task_id": "WB0682",
+      "score": 87.4,
+      "status": "completed",
+      "answer_chars": 17589,
+      "source_attempt": 705,
+      "new_actor_requests": 0
+    },
+    "fixed": {
+      "task_id": "WB0682",
+      "score": 93.4,
+      "status": "completed",
+      "answer_chars": 18795,
+      "source_attempt": 682,
+      "new_actor_requests": 0
+    }
+  }
+}

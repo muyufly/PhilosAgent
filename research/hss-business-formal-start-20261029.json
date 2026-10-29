@@ -1,0 +1,143 @@
+{
+  "date": "2026-10-29",
+  "verified_hong_kong_time": "2026-10-29T18:05:52.043523+08:00",
+  "run_dir": "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01",
+  "supervisor_pid": 13040,
+  "supervisor_alive": true,
+  "workers": 6,
+  "six_simultaneous_requests_observed": true,
+  "parallelism_evidence": "budget/attempts 000007-000011 and pending snapshot with 6 live requests",
+  "current_counts": {
+    "queued": 21,
+    "running": 6,
+    "complete": 0,
+    "failed": 0
+  },
+  "current_budget": {
+    "version": 2,
+    "limits": {
+      "max_calls": 60000,
+      "max_tokens": 350000000
+    },
+    "max_inflight_requests": 6,
+    "attempt_count": 29,
+    "successful_requests": 24,
+    "failed_requests": 0,
+    "prompt_tokens": 112256,
+    "completion_tokens": 42827,
+    "actual_tokens": 155083,
+    "unknown_usage_attempts": 0,
+    "pending": {
+      "25": {
+        "attempt": 25,
+        "pid": 12436,
+        "slot": 2,
+        "role": "memory_retrieval",
+        "started_unix": 1793268346.8990455
+      },
+      "26": {
+        "attempt": 26,
+        "pid": 11796,
+        "slot": 3,
+        "role": "actor",
+        "started_unix": 1793268347.8180718
+      },
+      "27": {
+        "attempt": 27,
+        "pid": 20056,
+        "slot": 5,
+        "role": "memory_retrieval",
+        "started_unix": 1793268348.5271559
+      },
+      "28": {
+        "attempt": 28,
+        "pid": 15628,
+        "slot": 4,
+        "role": "actor",
+        "started_unix": 1793268349.283313
+      },
+      "29": {
+        "attempt": 29,
+        "pid": 24496,
+        "slot": 0,
+        "role": "memory_retrieval",
+        "started_unix": 1793268350.8602793
+      }
+    },
+    "blocked_reason": null,
+    "request_count_scope": "hard_cap_before_network",
+    "token_limit_scope": "whole_experiment_actual_usage_soft_stop",
+    "token_tail_limit": "At most 6 admitted in-flight responses can cross the token soft stop; unknown usage blocks subsequent requests.",
+    "pending_count": 5,
+    "inflight_count": 5,
+    "capacity": 6,
+    "orphaned_pending_count": 0,
+    "live_inflight_count": 5,
+    "ledger_path": "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01\\budget\\budget.json",
+    "request_count": 29,
+    "input_tokens": 112256,
+    "output_tokens": 42827,
+    "total_tokens": 155083
+  },
+  "jobs_with_real_requests": [
+    "humanities-fixed-r1",
+    "humanities-full-r1",
+    "humanities-native-r1",
+    "social-fixed-r1",
+    "social-full-r1",
+    "social-native-r1"
+  ],
+  "observed_tasks": [
+    {
+      "job": "humanities-fixed-r1",
+      "task_id": "WB0193",
+      "status": "started",
+      "quality_score": null,
+      "answer_characters": 0
+    },
+    {
+      "job": "humanities-full-r1",
+      "task_id": "WB0193",
+      "status": "started",
+      "quality_score": null,
+      "answer_characters": 0
+    },
+    {
+      "job": "humanities-native-r1",
+      "task_id": "WB0193",
+      "status": "started",
+      "quality_score": null,
+      "answer_characters": 0
+    },
+    {
+      "job": "social-fixed-r1",
+      "task_id": "WB0682",
+      "status": "started",
+      "quality_score": null,
+      "answer_characters": 0
+    },
+    {
+      "job": "social-full-r1",
+      "task_id": "WB0682",
+      "status": "started",
+      "quality_score": null,
+      "answer_characters": 0
+    },
+    {
+      "job": "social-native-r1",
+      "task_id": "WB0682",
+      "status": "started",
+      "quality_score": null,
+      "answer_characters": 0
+    }
+  ],
+  "verification": {
+    "previous_full_suite_passed": 307,
+    "hss_parallel_combination_passed": 50,
+    "final_budget_passed": 14,
+    "real_native_fake_transport_two_round_closure_passed": true,
+    "no_experiment_api_request_mocked": true
+  },
+  "progress_report": "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01\\report.json",
+  "budget_ledger": "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01\\budget\\budget.json"
+}

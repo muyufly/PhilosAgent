@@ -1,0 +1,172 @@
+{
+  "checked_hkt": "2026-10-29T19:06:33.729236+08:00",
+  "revision": "repair-r3",
+  "supervisor_alive": true,
+  "supervisor": {
+    "status": "running",
+    "pid": 7620,
+    "process_identity": {
+      "pid": 7620,
+      "started_unix": 1793271873.9393063,
+      "executable": "C:\\Users\\muyufly\\AppData\\Roaming\\uv\\python\\cpython-3.10.20-windows-x86_64-none\\python.exe"
+    },
+    "started_utc": "2026-10-29T11:04:34.387466+00:00",
+    "workers": 6
+  },
+  "launcher": {
+    "kind": "Win32_Process.Create direct python with ShowWindow=0",
+    "bootstrap_pid": 4532,
+    "bootstrap_parent_pid": 7052,
+    "bootstrap_parent_name": "WmiPrvSE.exe"
+  },
+  "counts": {
+    "queued": 21,
+    "running": 6,
+    "complete": 0,
+    "failed": 0,
+    "interrupted": 0
+  },
+  "workers": [
+    {
+      "job_id": "humanities-fixed-r1",
+      "pid": 584,
+      "owned_process_alive": true
+    },
+    {
+      "job_id": "humanities-full-r1",
+      "pid": 18380,
+      "owned_process_alive": true
+    },
+    {
+      "job_id": "humanities-native-r1",
+      "pid": 24348,
+      "owned_process_alive": true
+    },
+    {
+      "job_id": "social-fixed-r1",
+      "pid": 8068,
+      "owned_process_alive": true
+    },
+    {
+      "job_id": "social-full-r1",
+      "pid": 18396,
+      "owned_process_alive": true
+    },
+    {
+      "job_id": "social-native-r1",
+      "pid": 7904,
+      "owned_process_alive": true
+    }
+  ],
+  "post_repair_requests": {
+    "admitted": 50,
+    "successful": 45,
+    "failed": 0,
+    "pending": 5
+  },
+  "budget": {
+    "actual_tokens": 13343482,
+    "reserved_unknown_tokens": 509359,
+    "effective_tokens": 13852841,
+    "unknown_usage_attempts": 5,
+    "live_inflight_count": 5,
+    "blocked_reason": null
+  },
+  "actor_decoder_evidence": [
+    {
+      "job_id": "humanities-native-r1",
+      "task_status": "actor_recovery_started",
+      "decoded_actor_turns": 2,
+      "normalized_turns": 0,
+      "invalid_turns_with_feedback": 0
+    },
+    {
+      "job_id": "social-full-r1",
+      "task_status": "actor_recovery_started",
+      "decoded_actor_turns": 4,
+      "normalized_turns": 0,
+      "invalid_turns_with_feedback": 0
+    }
+  ],
+  "full_regression": {
+    "passed": 384,
+    "warnings": "existing ffmpeg availability warning"
+  },
+  "saved_candidate_reuse": [
+    {
+      "kind": "offline_saved_response_reuse",
+      "original_attempt": 561,
+      "original_raw_path": "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01\\jobs\\humanities-full-r1\\evolution\\round_00\\llm_raw_output_20261029_183606.txt",
+      "original_raw_sha256": "8df0389b30df69303e4d301395bf70032ef359898265a95ebde215086d55f501",
+      "original_response_sha256": "b023a0eaa3cbe29e0ca29589ee22e72c3137accd17b5f9c14629d6df4a40a0d8",
+      "new_model_requests": 0,
+      "native_creation_and_validation_required": true,
+      "job_id": "humanities-full-r1",
+      "round": "round_00",
+      "recorded_utc": "2026-10-29T11:02:13.795378+00:00",
+      "original_attempt_path": "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01\\budget\\attempts\\000561.json",
+      "original_attempt_usage": {
+        "prompt_tokens": 20041,
+        "completion_tokens": 32049,
+        "total_tokens": 52090
+      },
+      "generated_config": "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01\\jobs\\humanities-full-r1\\evolution\\round_00\\generated_system_1.json",
+      "generated_file_sha256": "c66460154c9fc7648f81ff3b0df04e4c1ec45372daaf60af8af2d9e65ffb9549",
+      "provider": "palimpsest_memory",
+      "state_before": "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01\\jobs\\humanities-full-r1\\evolution\\round_00\\_saved_generation_recovery\\state.before.json",
+      "checkpoint_before": "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01\\jobs\\humanities-full-r1\\evolution\\round_00\\_saved_generation_recovery\\checkpoint.before.json",
+      "analysis_reused": true,
+      "generated_code_executed": false
+    },
+    {
+      "kind": "offline_saved_response_reuse",
+      "original_attempt": 742,
+      "original_raw_path": "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01\\jobs\\humanities-fixed-r1\\evolution\\round_00\\llm_raw_output_20261029_184240.txt",
+      "original_raw_sha256": "49ffae2dfe72bb4d1b18fe58c1cb952e5140ae9c14c790f33e8ea5044bbf4ca7",
+      "original_response_sha256": "a2d214805c165a6492b588c277f1da917ab1f74abb79be3679356fe1d53067a9",
+      "new_model_requests": 0,
+      "native_creation_and_validation_required": true,
+      "job_id": "humanities-fixed-r1",
+      "round": "round_00",
+      "recorded_utc": "2026-10-29T11:02:13.719626+00:00",
+      "original_attempt_path": "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01\\budget\\attempts\\000742.json",
+      "original_attempt_usage": {
+        "prompt_tokens": 18419,
+        "completion_tokens": 28818,
+        "total_tokens": 47237
+      },
+      "generated_config": "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01\\jobs\\humanities-fixed-r1\\evolution\\round_00\\generated_system_1.json",
+      "generated_file_sha256": "0e3e8399dd718de018a4a7a4b2c8305166c40e2fad4865a2c5e0f9df1e4b5f07",
+      "provider": "aether_loom_memory",
+      "state_before": "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01\\jobs\\humanities-fixed-r1\\evolution\\round_00\\_saved_generation_recovery\\state.before.json",
+      "checkpoint_before": "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01\\jobs\\humanities-fixed-r1\\evolution\\round_00\\_saved_generation_recovery\\checkpoint.before.json",
+      "analysis_reused": true,
+      "generated_code_executed": false
+    },
+    {
+      "kind": "offline_saved_response_reuse",
+      "original_attempt": 799,
+      "original_raw_path": "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01\\jobs\\social-fixed-r1\\evolution\\round_00\\llm_raw_output_20261029_184515.txt",
+      "original_raw_sha256": "f4b68bfc8f1251c6acd5155a0a1a80c6b6a8b28a3480cc6b83d2a179ce371c27",
+      "original_response_sha256": "b6b651044a2ec6e40f5263ac945a32f79ccac3913c3a84dd2694581fa95f90a2",
+      "new_model_requests": 0,
+      "native_creation_and_validation_required": true,
+      "job_id": "social-fixed-r1",
+      "round": "round_00",
+      "recorded_utc": "2026-10-29T11:02:13.806603+00:00",
+      "original_attempt_path": "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01\\budget\\attempts\\000799.json",
+      "original_attempt_usage": {
+        "prompt_tokens": 18419,
+        "completion_tokens": 33208,
+        "total_tokens": 51627
+      },
+      "generated_config": "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01\\jobs\\social-fixed-r1\\evolution\\round_00\\generated_system_1.json",
+      "generated_file_sha256": "83f31232937930470ed7b572cd018475ec3b955036d0790410996ad6af66e5ad",
+      "provider": "lattice_echo_memory",
+      "state_before": "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01\\jobs\\social-fixed-r1\\evolution\\round_00\\_saved_generation_recovery\\state.before.json",
+      "checkpoint_before": "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01\\jobs\\social-fixed-r1\\evolution\\round_00\\_saved_generation_recovery\\checkpoint.before.json",
+      "analysis_reused": true,
+      "generated_code_executed": false
+    }
+  ]
+}

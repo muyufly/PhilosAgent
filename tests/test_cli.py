@@ -1,6 +1,7 @@
 """Offline launcher checks using a tiny fake upstream checkout."""
 
 import contextlib
+import hashlib
 import io
 import json
 import os
@@ -47,6 +48,57 @@ class LauncherTests(unittest.TestCase):
 
     def create_run(self, name="sample", seed="engineering"):
         return Path(cli.init_run(name, seed, self.source)["run_dir"])
+
+    def test_none_initializes_an_explicit_empty_orientation(self):
+        run = self.create_run("no-initial-phi", "none")
+        self.assertEqual(load(run / "lineage", cli.PROVIDER).items, ())
+        self.assertTrue(load(run / "lineage", cli.PROVIDER).initialized)
+
+    def test_custom_seed_is_frozen_with_raw_source_provenance(self):
+        seed_path = self.project / "seeds" / "custom.json"
+        seed_bytes = b'\xef\xbb\xbf' + '{\r\n  "schema_version": 1, "items": ["核对来源", "test an alternative"]\r\n}\r\n'.encode("utf-8")
+        seed_path.write_bytes(seed_bytes)
+        output = io.StringIO()
+        with contextlib.redirect_stdout(output):
+            self.assertEqual(cli.main(["init", "custom", "--seed", "critical", "--seed-file", str(seed_path), "--data", str(self.source)]), 0)
+        report = json.loads(output.getvalue())
+        run = Path(report["run_dir"])
+        snapshot = load(run / "lineage", cli.PROVIDER)
+        self.assertEqual(snapshot.items, ("核对来源", "test an alternative"))
+        self.assertEqual(report["seed"], "critical")
+        manifest = json.loads((run / "run.json").read_text(encoding="utf-8"))
+        self.assertEqual(manifest["seed_source"], {
+            "path": str(seed_path.resolve()), "sha256": hashlib.sha256(seed_bytes).hexdigest(),
+            "snapshot": "seed_source.json",
+        })
+        seed_path.write_text('{"schema_version": 1, "items": ["changed later"]}', encoding="utf-8")
+        self.assertEqual((run / "seed_source.json").read_bytes(), seed_bytes)
+        self.assertEqual(load(run / "lineage", cli.PROVIDER), snapshot)
+        default_run = self.create_run("default-after-custom", "critical")
+        self.assertEqual(load(default_run / "lineage", cli.PROVIDER).items, ("critical initial method",))
+        self.assertFalse((default_run / "seed_source.json").exists())
+        self.assertNotIn("seed_source", json.loads((default_run / "run.json").read_text(encoding="utf-8")))
+
+    def test_invalid_custom_seed_is_rejected_before_copying_workspace(self):
+        seed_path = self.project / "seeds" / "invalid.json"
+        invalid_documents = [
+            "not json", "[]", '{}', '{"schema_version": true, "items": ["valid"]}',
+            '{"schema_version": 2, "items": ["valid"]}', '{"schema_version": 1, "items": []}',
+            '{"schema_version": 1, "items": "not a list"}',
+            '{"schema_version": 1, "items": ["valid", "  "]}',
+            '{"schema_version": 1, "items": ["valid", 1]}',
+        ]
+        for document in invalid_documents:
+            with self.subTest(document=document):
+                seed_path.write_text(document, encoding="utf-8")
+                with patch.object(cli.shutil, "copytree") as copy, self.assertRaises(ValueError):
+                    cli.init_run("invalid", "engineering", self.source, seed_file=seed_path)
+                copy.assert_not_called()
+                self.assertFalse((self.project / "runs" / "invalid").exists())
+        with patch.object(cli.shutil, "copytree") as copy, self.assertRaisesRegex(ValueError, "cannot be combined"):
+            cli.init_run("empty-conflict", "none", self.source, seed_file=seed_path)
+        copy.assert_not_called()
+        self.assertFalse((self.project / "runs" / "empty-conflict").exists())
 
     def test_init_isolates_code_orientation_and_development_data(self):
         first = self.create_run("first")
@@ -107,6 +159,18 @@ class LauncherTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, r"lines \[1\]") as caught:
             cli.environment()
         self.assertNotIn("test-secret", str(caught.exception))
+
+    def test_deepseek_web_backends_reuse_model_credentials(self):
+        configured = {"DEFAULT_MODEL": "deepseek-flash", "OPENAI_API_KEY": "test-private",
+                      "WEB_SEARCH_PROVIDER": "deepseek", "WEB_ACCESS_PROVIDER": "deepseek"}
+        self.assertEqual(cli.missing_configuration(configured), [])
+        with patch.dict(os.environ, {**configured, "WEB_SEARCH_PROVIDER": " DeepSeek "}, clear=True):
+            values = cli.environment()
+            self.assertEqual(values["WEB_SEARCH_PROVIDER"], "deepseek")
+        with patch.dict(os.environ, {"WEB_SEARCH_PROVIDER": "typo-private"}, clear=True):
+            with self.assertRaisesRegex(ValueError, "WEB_SEARCH_PROVIDER must be one of") as caught:
+                cli.environment()
+            self.assertNotIn("typo-private", str(caught.exception))
 
     def test_resume_uses_remaining_rounds_and_current_best_provider(self):
         run = self.create_run()

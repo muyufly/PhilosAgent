@@ -50,7 +50,8 @@ class PhaseValidator:
         self.dataset_name = dataset_name
         self.datasets_config = datasets_config or DEFAULT_DATASETS
         self.use_fast_validation = use_fast_validation
-        self.enable_auto_fix = enable_auto_fix
+        # Automatic repairs would silently change the P factor of an experiment.
+        self.enable_auto_fix = enable_auto_fix and not bool(os.environ.get("PHILO_LINEAGE_ROOT"))
         self.max_fix_attempts = max_fix_attempts
         self.cleanup_temp = cleanup_temp
         
@@ -372,6 +373,24 @@ class PhaseValidator:
         
         return True
 
+    def _load_experimental_provider(self, system_name: str, model):
+        """Use the task runner's real loader against the isolated registrations.
+
+        A fresh runner module matters: a cached runner can retain MemoryType and
+        PROVIDER_MAPPING from a different candidate workspace. EvolveLab has
+        already been imported from the isolated directory before this call.
+        """
+        import importlib.util
+
+        sys.path.insert(1, str(self.project_root.resolve()))
+        runner_path = self.project_root / "run_flash_searcher_webwalkerqa.py"
+        spec = importlib.util.spec_from_file_location("_philo_validation_runner", runner_path)
+        if spec is None or spec.loader is None:
+            raise ImportError(f"Unable to load native provider loader: {runner_path}")
+        runner = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(runner)
+        return runner.load_memory_provider(system_name, model)
+
     def _run_fast_validation(self, system_name: str, setup_env: bool = True) -> Dict:
         """
         Fast simulation-based validation in isolated environment
@@ -542,6 +561,7 @@ class PhaseValidator:
             
             print(f"    [Simulation] Test 2: Get config and instantiate provider...")
             provider = None
+            provider_initialized = False
             
             from EvolveLab.config import get_memory_config
             try:
@@ -562,7 +582,11 @@ class PhaseValidator:
                 return result
             
             try:
-                provider = provider_class(config=config)
+                if os.environ.get("PHILO_LINEAGE_ROOT"):
+                    provider = self._load_experimental_provider(system_name, model)
+                    provider_initialized = True  # The shared loader initializes it.
+                else:
+                    provider = provider_class(config=config)
                 
                 # Check captured logs for ERROR level messages
                 captured = log_capture.getvalue()
@@ -595,7 +619,7 @@ class PhaseValidator:
             
             print(f"    [Simulation] Test 3: Call initialize()...")
             try:
-                init_success = provider.initialize()
+                init_success = True if provider_initialized else provider.initialize()
                 if not init_success:
                     result["verdict"] = "failed"
                     error_msg = "initialize() returned False"
@@ -626,11 +650,13 @@ class PhaseValidator:
                 response = provider.provide_memory(test_request)
                 
                 if not isinstance(response, MemoryResponse):
+                    result["verdict"] = "failed"
                     result["tests"]["provide_memory"] = {
-                        "status": "warning",
+                        "status": "failed",
                         "error": f"Return type error: expected MemoryResponse, got {type(response)}"
                     }
                     result["errors"].append("provide_memory() returned incorrect type")
+                    return result
                 else:
                     # Record detailed memory content
                     memories_content = []
@@ -731,12 +757,17 @@ class PhaseValidator:
                     "storage_changes": storage_changes
                 }
                 
-                if not isinstance(success, bool):
+                if success is not True:
+                    result["verdict"] = "failed"
+                    error_msg = ("take_in_memory() returned False" if success is False else
+                                 f"Return type error: expected (bool, str), got {type(success)}")
                     result["tests"]["take_in_memory"] = {
-                        "status": "warning",
-                        "error": f"Return type error: expected (bool, str), got {type(success)}"
+                        "status": "failed",
+                        "error": error_msg,
+                        "success": success,
                     }
-                    result["errors"].append("take_in_memory() returned incorrect type")
+                    result["errors"].append(error_msg)
+                    return result
                 else:
                     result["tests"]["take_in_memory"] = {
                         "status": "passed",
@@ -835,4 +866,3 @@ class PhaseValidator:
         else:
             print(f"    Provider file not found in isolated environment: {isolated_provider}")
             return False
-

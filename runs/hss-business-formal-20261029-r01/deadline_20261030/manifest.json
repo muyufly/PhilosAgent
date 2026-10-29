@@ -1,0 +1,836 @@
+{
+  "mode": "deadline_rapid_v1",
+  "started_utc": "2026-10-29T16:21:44+00:00",
+  "deadline_utc": "2026-10-29T17:21:44+00:00",
+  "deadline_unix": 1793294504.0,
+  "original_run": "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01",
+  "jobs": [
+    {
+      "code_evolve": true,
+      "domain": "humanities",
+      "evaluation_file": "inputs/evaluation/humanities-native-r1.jsonl",
+      "evaluation_order": [
+        "WB0372",
+        "WB0388",
+        "WB0596",
+        "WB0930"
+      ],
+      "group": "native",
+      "initial_phi": "none",
+      "job_id": "humanities-native-r1",
+      "learning_file": "inputs/learning/humanities-native-r1.jsonl",
+      "learning_order": [
+        "WB0193",
+        "WB0191",
+        "WB0804",
+        "WB0371",
+        "WB0635",
+        "WB0373",
+        "WB0207",
+        "WB0801"
+      ],
+      "order_seed": 20261029,
+      "orientation_evolve": false,
+      "repetition": 1,
+      "heldout_file": "inputs/evaluation/humanities-native-r1.jsonl",
+      "replicate": 0
+    },
+    {
+      "code_evolve": true,
+      "domain": "humanities",
+      "evaluation_file": "inputs/evaluation/humanities-fixed-r1.jsonl",
+      "evaluation_order": [
+        "WB0372",
+        "WB0388",
+        "WB0596",
+        "WB0930"
+      ],
+      "group": "fixed",
+      "initial_phi": "dialectical-v1",
+      "job_id": "humanities-fixed-r1",
+      "learning_file": "inputs/learning/humanities-fixed-r1.jsonl",
+      "learning_order": [
+        "WB0193",
+        "WB0191",
+        "WB0804",
+        "WB0371",
+        "WB0635",
+        "WB0373",
+        "WB0207",
+        "WB0801"
+      ],
+      "order_seed": 20261029,
+      "orientation_evolve": false,
+      "repetition": 1,
+      "heldout_file": "inputs/evaluation/humanities-fixed-r1.jsonl",
+      "replicate": 0
+    },
+    {
+      "code_evolve": true,
+      "domain": "humanities",
+      "evaluation_file": "inputs/evaluation/humanities-full-r1.jsonl",
+      "evaluation_order": [
+        "WB0372",
+        "WB0388",
+        "WB0596",
+        "WB0930"
+      ],
+      "group": "full",
+      "initial_phi": "dialectical-v1",
+      "job_id": "humanities-full-r1",
+      "learning_file": "inputs/learning/humanities-full-r1.jsonl",
+      "learning_order": [
+        "WB0193",
+        "WB0191",
+        "WB0804",
+        "WB0371",
+        "WB0635",
+        "WB0373",
+        "WB0207",
+        "WB0801"
+      ],
+      "order_seed": 20261029,
+      "orientation_evolve": true,
+      "repetition": 1,
+      "heldout_file": "inputs/evaluation/humanities-full-r1.jsonl",
+      "replicate": 0
+    },
+    {
+      "code_evolve": true,
+      "domain": "social",
+      "evaluation_file": "inputs/evaluation/social-native-r1.jsonl",
+      "evaluation_order": [
+        "WB0783",
+        "WB0626",
+        "WB0342",
+        "WB0753"
+      ],
+      "group": "native",
+      "initial_phi": "none",
+      "job_id": "social-native-r1",
+      "learning_file": "inputs/learning/social-native-r1.jsonl",
+      "learning_order": [
+        "WB0682",
+        "WB0133",
+        "WB0628",
+        "WB0126",
+        "WB0704",
+        "WB0143",
+        "WB0518",
+        "WB0333"
+      ],
+      "order_seed": 20261030,
+      "orientation_evolve": false,
+      "repetition": 1,
+      "heldout_file": "inputs/evaluation/social-native-r1.jsonl",
+      "replicate": 0
+    },
+    {
+      "code_evolve": true,
+      "domain": "social",
+      "evaluation_file": "inputs/evaluation/social-fixed-r1.jsonl",
+      "evaluation_order": [
+        "WB0783",
+        "WB0626",
+        "WB0342",
+        "WB0753"
+      ],
+      "group": "fixed",
+      "initial_phi": "dialectical-v1",
+      "job_id": "social-fixed-r1",
+      "learning_file": "inputs/learning/social-fixed-r1.jsonl",
+      "learning_order": [
+        "WB0682",
+        "WB0133",
+        "WB0628",
+        "WB0126",
+        "WB0704",
+        "WB0143",
+        "WB0518",
+        "WB0333"
+      ],
+      "order_seed": 20261030,
+      "orientation_evolve": false,
+      "repetition": 1,
+      "heldout_file": "inputs/evaluation/social-fixed-r1.jsonl",
+      "replicate": 0
+    },
+    {
+      "code_evolve": true,
+      "domain": "social",
+      "evaluation_file": "inputs/evaluation/social-full-r1.jsonl",
+      "evaluation_order": [
+        "WB0783",
+        "WB0626",
+        "WB0342",
+        "WB0753"
+      ],
+      "group": "full",
+      "initial_phi": "dialectical-v1",
+      "job_id": "social-full-r1",
+      "learning_file": "inputs/learning/social-full-r1.jsonl",
+      "learning_order": [
+        "WB0682",
+        "WB0133",
+        "WB0628",
+        "WB0126",
+        "WB0704",
+        "WB0143",
+        "WB0518",
+        "WB0333"
+      ],
+      "order_seed": 20261030,
+      "orientation_evolve": true,
+      "repetition": 1,
+      "heldout_file": "inputs/evaluation/social-full-r1.jsonl",
+      "replicate": 0
+    },
+    {
+      "code_evolve": true,
+      "domain": "business",
+      "evaluation_file": "inputs/evaluation/business-native-r1.jsonl",
+      "evaluation_order": [
+        "WB0837",
+        "WB0572",
+        "WB0623",
+        "WB0777"
+      ],
+      "group": "native",
+      "initial_phi": "none",
+      "job_id": "business-native-r1",
+      "learning_file": "inputs/learning/business-native-r1.jsonl",
+      "learning_order": [
+        "WB0100",
+        "WB0835",
+        "WB0307",
+        "WB0086",
+        "WB0311",
+        "WB0504",
+        "WB0285",
+        "WB0321"
+      ],
+      "order_seed": 20261031,
+      "orientation_evolve": false,
+      "repetition": 1,
+      "heldout_file": "inputs/evaluation/business-native-r1.jsonl",
+      "replicate": 0
+    },
+    {
+      "code_evolve": true,
+      "domain": "business",
+      "evaluation_file": "inputs/evaluation/business-fixed-r1.jsonl",
+      "evaluation_order": [
+        "WB0837",
+        "WB0572",
+        "WB0623",
+        "WB0777"
+      ],
+      "group": "fixed",
+      "initial_phi": "dialectical-v1",
+      "job_id": "business-fixed-r1",
+      "learning_file": "inputs/learning/business-fixed-r1.jsonl",
+      "learning_order": [
+        "WB0100",
+        "WB0835",
+        "WB0307",
+        "WB0086",
+        "WB0311",
+        "WB0504",
+        "WB0285",
+        "WB0321"
+      ],
+      "order_seed": 20261031,
+      "orientation_evolve": false,
+      "repetition": 1,
+      "heldout_file": "inputs/evaluation/business-fixed-r1.jsonl",
+      "replicate": 0
+    },
+    {
+      "code_evolve": true,
+      "domain": "business",
+      "evaluation_file": "inputs/evaluation/business-full-r1.jsonl",
+      "evaluation_order": [
+        "WB0837",
+        "WB0572",
+        "WB0623",
+        "WB0777"
+      ],
+      "group": "full",
+      "initial_phi": "dialectical-v1",
+      "job_id": "business-full-r1",
+      "learning_file": "inputs/learning/business-full-r1.jsonl",
+      "learning_order": [
+        "WB0100",
+        "WB0835",
+        "WB0307",
+        "WB0086",
+        "WB0311",
+        "WB0504",
+        "WB0285",
+        "WB0321"
+      ],
+      "order_seed": 20261031,
+      "orientation_evolve": true,
+      "repetition": 1,
+      "heldout_file": "inputs/evaluation/business-full-r1.jsonl",
+      "replicate": 0
+    },
+    {
+      "code_evolve": true,
+      "domain": "humanities",
+      "evaluation_file": "inputs/evaluation/humanities-native-r2.jsonl",
+      "evaluation_order": [
+        "WB0388",
+        "WB0372",
+        "WB0930",
+        "WB0596"
+      ],
+      "group": "native",
+      "initial_phi": "none",
+      "job_id": "humanities-native-r2",
+      "learning_file": "inputs/learning/humanities-native-r2.jsonl",
+      "learning_order": [
+        "WB0193",
+        "WB0804",
+        "WB0801",
+        "WB0207",
+        "WB0635",
+        "WB0373",
+        "WB0371",
+        "WB0191"
+      ],
+      "order_seed": 20261129,
+      "orientation_evolve": false,
+      "repetition": 2,
+      "heldout_file": "inputs/evaluation/humanities-native-r2.jsonl",
+      "replicate": 1
+    },
+    {
+      "code_evolve": true,
+      "domain": "humanities",
+      "evaluation_file": "inputs/evaluation/humanities-fixed-r2.jsonl",
+      "evaluation_order": [
+        "WB0388",
+        "WB0372",
+        "WB0930",
+        "WB0596"
+      ],
+      "group": "fixed",
+      "initial_phi": "dialectical-v1",
+      "job_id": "humanities-fixed-r2",
+      "learning_file": "inputs/learning/humanities-fixed-r2.jsonl",
+      "learning_order": [
+        "WB0193",
+        "WB0804",
+        "WB0801",
+        "WB0207",
+        "WB0635",
+        "WB0373",
+        "WB0371",
+        "WB0191"
+      ],
+      "order_seed": 20261129,
+      "orientation_evolve": false,
+      "repetition": 2,
+      "heldout_file": "inputs/evaluation/humanities-fixed-r2.jsonl",
+      "replicate": 1
+    },
+    {
+      "code_evolve": true,
+      "domain": "humanities",
+      "evaluation_file": "inputs/evaluation/humanities-full-r2.jsonl",
+      "evaluation_order": [
+        "WB0388",
+        "WB0372",
+        "WB0930",
+        "WB0596"
+      ],
+      "group": "full",
+      "initial_phi": "dialectical-v1",
+      "job_id": "humanities-full-r2",
+      "learning_file": "inputs/learning/humanities-full-r2.jsonl",
+      "learning_order": [
+        "WB0193",
+        "WB0804",
+        "WB0801",
+        "WB0207",
+        "WB0635",
+        "WB0373",
+        "WB0371",
+        "WB0191"
+      ],
+      "order_seed": 20261129,
+      "orientation_evolve": true,
+      "repetition": 2,
+      "heldout_file": "inputs/evaluation/humanities-full-r2.jsonl",
+      "replicate": 1
+    },
+    {
+      "code_evolve": true,
+      "domain": "social",
+      "evaluation_file": "inputs/evaluation/social-native-r2.jsonl",
+      "evaluation_order": [
+        "WB0753",
+        "WB0342",
+        "WB0783",
+        "WB0626"
+      ],
+      "group": "native",
+      "initial_phi": "none",
+      "job_id": "social-native-r2",
+      "learning_file": "inputs/learning/social-native-r2.jsonl",
+      "learning_order": [
+        "WB0333",
+        "WB0628",
+        "WB0133",
+        "WB0682",
+        "WB0704",
+        "WB0126",
+        "WB0518",
+        "WB0143"
+      ],
+      "order_seed": 20261130,
+      "orientation_evolve": false,
+      "repetition": 2,
+      "heldout_file": "inputs/evaluation/social-native-r2.jsonl",
+      "replicate": 1
+    },
+    {
+      "code_evolve": true,
+      "domain": "social",
+      "evaluation_file": "inputs/evaluation/social-fixed-r2.jsonl",
+      "evaluation_order": [
+        "WB0753",
+        "WB0342",
+        "WB0783",
+        "WB0626"
+      ],
+      "group": "fixed",
+      "initial_phi": "dialectical-v1",
+      "job_id": "social-fixed-r2",
+      "learning_file": "inputs/learning/social-fixed-r2.jsonl",
+      "learning_order": [
+        "WB0333",
+        "WB0628",
+        "WB0133",
+        "WB0682",
+        "WB0704",
+        "WB0126",
+        "WB0518",
+        "WB0143"
+      ],
+      "order_seed": 20261130,
+      "orientation_evolve": false,
+      "repetition": 2,
+      "heldout_file": "inputs/evaluation/social-fixed-r2.jsonl",
+      "replicate": 1
+    },
+    {
+      "code_evolve": true,
+      "domain": "social",
+      "evaluation_file": "inputs/evaluation/social-full-r2.jsonl",
+      "evaluation_order": [
+        "WB0753",
+        "WB0342",
+        "WB0783",
+        "WB0626"
+      ],
+      "group": "full",
+      "initial_phi": "dialectical-v1",
+      "job_id": "social-full-r2",
+      "learning_file": "inputs/learning/social-full-r2.jsonl",
+      "learning_order": [
+        "WB0333",
+        "WB0628",
+        "WB0133",
+        "WB0682",
+        "WB0704",
+        "WB0126",
+        "WB0518",
+        "WB0143"
+      ],
+      "order_seed": 20261130,
+      "orientation_evolve": true,
+      "repetition": 2,
+      "heldout_file": "inputs/evaluation/social-full-r2.jsonl",
+      "replicate": 1
+    },
+    {
+      "code_evolve": true,
+      "domain": "business",
+      "evaluation_file": "inputs/evaluation/business-native-r2.jsonl",
+      "evaluation_order": [
+        "WB0623",
+        "WB0837",
+        "WB0777",
+        "WB0572"
+      ],
+      "group": "native",
+      "initial_phi": "none",
+      "job_id": "business-native-r2",
+      "learning_file": "inputs/learning/business-native-r2.jsonl",
+      "learning_order": [
+        "WB0504",
+        "WB0307",
+        "WB0086",
+        "WB0835",
+        "WB0285",
+        "WB0311",
+        "WB0321",
+        "WB0100"
+      ],
+      "order_seed": 20261131,
+      "orientation_evolve": false,
+      "repetition": 2,
+      "heldout_file": "inputs/evaluation/business-native-r2.jsonl",
+      "replicate": 1
+    },
+    {
+      "code_evolve": true,
+      "domain": "business",
+      "evaluation_file": "inputs/evaluation/business-fixed-r2.jsonl",
+      "evaluation_order": [
+        "WB0623",
+        "WB0837",
+        "WB0777",
+        "WB0572"
+      ],
+      "group": "fixed",
+      "initial_phi": "dialectical-v1",
+      "job_id": "business-fixed-r2",
+      "learning_file": "inputs/learning/business-fixed-r2.jsonl",
+      "learning_order": [
+        "WB0504",
+        "WB0307",
+        "WB0086",
+        "WB0835",
+        "WB0285",
+        "WB0311",
+        "WB0321",
+        "WB0100"
+      ],
+      "order_seed": 20261131,
+      "orientation_evolve": false,
+      "repetition": 2,
+      "heldout_file": "inputs/evaluation/business-fixed-r2.jsonl",
+      "replicate": 1
+    },
+    {
+      "code_evolve": true,
+      "domain": "business",
+      "evaluation_file": "inputs/evaluation/business-full-r2.jsonl",
+      "evaluation_order": [
+        "WB0623",
+        "WB0837",
+        "WB0777",
+        "WB0572"
+      ],
+      "group": "full",
+      "initial_phi": "dialectical-v1",
+      "job_id": "business-full-r2",
+      "learning_file": "inputs/learning/business-full-r2.jsonl",
+      "learning_order": [
+        "WB0504",
+        "WB0307",
+        "WB0086",
+        "WB0835",
+        "WB0285",
+        "WB0311",
+        "WB0321",
+        "WB0100"
+      ],
+      "order_seed": 20261131,
+      "orientation_evolve": true,
+      "repetition": 2,
+      "heldout_file": "inputs/evaluation/business-full-r2.jsonl",
+      "replicate": 1
+    },
+    {
+      "code_evolve": true,
+      "domain": "humanities",
+      "evaluation_file": "inputs/evaluation/humanities-native-r3.jsonl",
+      "evaluation_order": [
+        "WB0930",
+        "WB0388",
+        "WB0596",
+        "WB0372"
+      ],
+      "group": "native",
+      "initial_phi": "none",
+      "job_id": "humanities-native-r3",
+      "learning_file": "inputs/learning/humanities-native-r3.jsonl",
+      "learning_order": [
+        "WB0193",
+        "WB0191",
+        "WB0804",
+        "WB0373",
+        "WB0801",
+        "WB0207",
+        "WB0635",
+        "WB0371"
+      ],
+      "order_seed": 20261229,
+      "orientation_evolve": false,
+      "repetition": 3,
+      "heldout_file": "inputs/evaluation/humanities-native-r3.jsonl",
+      "replicate": 2
+    },
+    {
+      "code_evolve": true,
+      "domain": "humanities",
+      "evaluation_file": "inputs/evaluation/humanities-fixed-r3.jsonl",
+      "evaluation_order": [
+        "WB0930",
+        "WB0388",
+        "WB0596",
+        "WB0372"
+      ],
+      "group": "fixed",
+      "initial_phi": "dialectical-v1",
+      "job_id": "humanities-fixed-r3",
+      "learning_file": "inputs/learning/humanities-fixed-r3.jsonl",
+      "learning_order": [
+        "WB0193",
+        "WB0191",
+        "WB0804",
+        "WB0373",
+        "WB0801",
+        "WB0207",
+        "WB0635",
+        "WB0371"
+      ],
+      "order_seed": 20261229,
+      "orientation_evolve": false,
+      "repetition": 3,
+      "heldout_file": "inputs/evaluation/humanities-fixed-r3.jsonl",
+      "replicate": 2
+    },
+    {
+      "code_evolve": true,
+      "domain": "humanities",
+      "evaluation_file": "inputs/evaluation/humanities-full-r3.jsonl",
+      "evaluation_order": [
+        "WB0930",
+        "WB0388",
+        "WB0596",
+        "WB0372"
+      ],
+      "group": "full",
+      "initial_phi": "dialectical-v1",
+      "job_id": "humanities-full-r3",
+      "learning_file": "inputs/learning/humanities-full-r3.jsonl",
+      "learning_order": [
+        "WB0193",
+        "WB0191",
+        "WB0804",
+        "WB0373",
+        "WB0801",
+        "WB0207",
+        "WB0635",
+        "WB0371"
+      ],
+      "order_seed": 20261229,
+      "orientation_evolve": true,
+      "repetition": 3,
+      "heldout_file": "inputs/evaluation/humanities-full-r3.jsonl",
+      "replicate": 2
+    },
+    {
+      "code_evolve": true,
+      "domain": "social",
+      "evaluation_file": "inputs/evaluation/social-native-r3.jsonl",
+      "evaluation_order": [
+        "WB0783",
+        "WB0342",
+        "WB0753",
+        "WB0626"
+      ],
+      "group": "native",
+      "initial_phi": "none",
+      "job_id": "social-native-r3",
+      "learning_file": "inputs/learning/social-native-r3.jsonl",
+      "learning_order": [
+        "WB0126",
+        "WB0704",
+        "WB0143",
+        "WB0628",
+        "WB0133",
+        "WB0682",
+        "WB0518",
+        "WB0333"
+      ],
+      "order_seed": 20261230,
+      "orientation_evolve": false,
+      "repetition": 3,
+      "heldout_file": "inputs/evaluation/social-native-r3.jsonl",
+      "replicate": 2
+    },
+    {
+      "code_evolve": true,
+      "domain": "social",
+      "evaluation_file": "inputs/evaluation/social-fixed-r3.jsonl",
+      "evaluation_order": [
+        "WB0783",
+        "WB0342",
+        "WB0753",
+        "WB0626"
+      ],
+      "group": "fixed",
+      "initial_phi": "dialectical-v1",
+      "job_id": "social-fixed-r3",
+      "learning_file": "inputs/learning/social-fixed-r3.jsonl",
+      "learning_order": [
+        "WB0126",
+        "WB0704",
+        "WB0143",
+        "WB0628",
+        "WB0133",
+        "WB0682",
+        "WB0518",
+        "WB0333"
+      ],
+      "order_seed": 20261230,
+      "orientation_evolve": false,
+      "repetition": 3,
+      "heldout_file": "inputs/evaluation/social-fixed-r3.jsonl",
+      "replicate": 2
+    },
+    {
+      "code_evolve": true,
+      "domain": "social",
+      "evaluation_file": "inputs/evaluation/social-full-r3.jsonl",
+      "evaluation_order": [
+        "WB0783",
+        "WB0342",
+        "WB0753",
+        "WB0626"
+      ],
+      "group": "full",
+      "initial_phi": "dialectical-v1",
+      "job_id": "social-full-r3",
+      "learning_file": "inputs/learning/social-full-r3.jsonl",
+      "learning_order": [
+        "WB0126",
+        "WB0704",
+        "WB0143",
+        "WB0628",
+        "WB0133",
+        "WB0682",
+        "WB0518",
+        "WB0333"
+      ],
+      "order_seed": 20261230,
+      "orientation_evolve": true,
+      "repetition": 3,
+      "heldout_file": "inputs/evaluation/social-full-r3.jsonl",
+      "replicate": 2
+    },
+    {
+      "code_evolve": true,
+      "domain": "business",
+      "evaluation_file": "inputs/evaluation/business-native-r3.jsonl",
+      "evaluation_order": [
+        "WB0777",
+        "WB0572",
+        "WB0623",
+        "WB0837"
+      ],
+      "group": "native",
+      "initial_phi": "none",
+      "job_id": "business-native-r3",
+      "learning_file": "inputs/learning/business-native-r3.jsonl",
+      "learning_order": [
+        "WB0100",
+        "WB0835",
+        "WB0285",
+        "WB0311",
+        "WB0086",
+        "WB0504",
+        "WB0307",
+        "WB0321"
+      ],
+      "order_seed": 20261231,
+      "orientation_evolve": false,
+      "repetition": 3,
+      "heldout_file": "inputs/evaluation/business-native-r3.jsonl",
+      "replicate": 2
+    },
+    {
+      "code_evolve": true,
+      "domain": "business",
+      "evaluation_file": "inputs/evaluation/business-fixed-r3.jsonl",
+      "evaluation_order": [
+        "WB0777",
+        "WB0572",
+        "WB0623",
+        "WB0837"
+      ],
+      "group": "fixed",
+      "initial_phi": "dialectical-v1",
+      "job_id": "business-fixed-r3",
+      "learning_file": "inputs/learning/business-fixed-r3.jsonl",
+      "learning_order": [
+        "WB0100",
+        "WB0835",
+        "WB0285",
+        "WB0311",
+        "WB0086",
+        "WB0504",
+        "WB0307",
+        "WB0321"
+      ],
+      "order_seed": 20261231,
+      "orientation_evolve": false,
+      "repetition": 3,
+      "heldout_file": "inputs/evaluation/business-fixed-r3.jsonl",
+      "replicate": 2
+    },
+    {
+      "code_evolve": true,
+      "domain": "business",
+      "evaluation_file": "inputs/evaluation/business-full-r3.jsonl",
+      "evaluation_order": [
+        "WB0777",
+        "WB0572",
+        "WB0623",
+        "WB0837"
+      ],
+      "group": "full",
+      "initial_phi": "dialectical-v1",
+      "job_id": "business-full-r3",
+      "learning_file": "inputs/learning/business-full-r3.jsonl",
+      "learning_order": [
+        "WB0100",
+        "WB0835",
+        "WB0285",
+        "WB0311",
+        "WB0086",
+        "WB0504",
+        "WB0307",
+        "WB0321"
+      ],
+      "order_seed": 20261231,
+      "orientation_evolve": true,
+      "repetition": 3,
+      "heldout_file": "inputs/evaluation/business-full-r3.jsonl",
+      "replicate": 2
+    }
+  ],
+  "protocol": {
+    "learning_tasks_per_job": 8,
+    "heldout_tasks_per_job": 4,
+    "rounds": 2,
+    "round_learning_tasks": 4,
+    "actor": "single_pass_no_web_tools",
+    "evolution": "one_compact_memory_policy_and_optional_phi_update_per_round",
+    "grading": "quick_model_then_explicit_heuristic_fallback",
+    "request_slots": 32,
+    "spending_enforcement": "disabled",
+    "reuse_original_completed_answers": true,
+    "original_full_candidate_tournament": "superseded_for_remaining_work"
+  },
+  "expected_jobs": 27,
+  "expected_tasks": 324,
+  "expected_heldout_tasks": 108,
+  "user_instruction": "一小时内跑完所有实验并出初步结果，评分必须存在，可以牺牲严谨性"
+}

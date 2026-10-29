@@ -1,0 +1,1223 @@
+{
+  "source": "Read-only audit of existing artifacts; no model calls; no experiment edits",
+  "planned_native_executions_per_job": 32,
+  "compressed_executions_per_job": 12,
+  "planned_total_executions": 864,
+  "compressed_total_executions": 324,
+  "net_execution_reduction_percent": 62.5,
+  "retained_distinct_task_slots_per_job": 12,
+  "jobs": [
+    {
+      "job": "business-fixed-r1",
+      "domain": "business",
+      "group": "fixed",
+      "repetition": 1,
+      "starting_provider": "lightweight_memory",
+      "native_rounds_completed": 1,
+      "dataset_cursor": 4,
+      "phi_initial_equals_seed": true,
+      "initial_memory_count": 0,
+      "reused_count": 6,
+      "new_count": 6,
+      "reused_providers": {
+        "lightweight_memory": 6
+      },
+      "reused_stages": {
+        "learning": 6
+      }
+    },
+    {
+      "job": "business-fixed-r2",
+      "domain": "business",
+      "group": "fixed",
+      "repetition": 2,
+      "starting_provider": "lightweight_memory",
+      "native_rounds_completed": 0,
+      "dataset_cursor": 0,
+      "phi_initial_equals_seed": true,
+      "initial_memory_count": 0,
+      "reused_count": 0,
+      "new_count": 12,
+      "reused_providers": {},
+      "reused_stages": {}
+    },
+    {
+      "job": "business-fixed-r3",
+      "domain": "business",
+      "group": "fixed",
+      "repetition": 3,
+      "starting_provider": "lightweight_memory",
+      "native_rounds_completed": 0,
+      "dataset_cursor": 0,
+      "phi_initial_equals_seed": true,
+      "initial_memory_count": 0,
+      "reused_count": 0,
+      "new_count": 12,
+      "reused_providers": {},
+      "reused_stages": {}
+    },
+    {
+      "job": "business-full-r1",
+      "domain": "business",
+      "group": "full",
+      "repetition": 1,
+      "starting_provider": "lightweight_memory",
+      "native_rounds_completed": 0,
+      "dataset_cursor": 0,
+      "phi_initial_equals_seed": true,
+      "initial_memory_count": 0,
+      "reused_count": 4,
+      "new_count": 8,
+      "reused_providers": {
+        "mnemosyne_loom": 2,
+        "lightweight_memory": 2
+      },
+      "reused_stages": {
+        "learning": 4
+      }
+    },
+    {
+      "job": "business-full-r2",
+      "domain": "business",
+      "group": "full",
+      "repetition": 2,
+      "starting_provider": "lightweight_memory",
+      "native_rounds_completed": 0,
+      "dataset_cursor": 0,
+      "phi_initial_equals_seed": true,
+      "initial_memory_count": 0,
+      "reused_count": 0,
+      "new_count": 12,
+      "reused_providers": {},
+      "reused_stages": {}
+    },
+    {
+      "job": "business-full-r3",
+      "domain": "business",
+      "group": "full",
+      "repetition": 3,
+      "starting_provider": "lightweight_memory",
+      "native_rounds_completed": 0,
+      "dataset_cursor": 0,
+      "phi_initial_equals_seed": true,
+      "initial_memory_count": 0,
+      "reused_count": 0,
+      "new_count": 12,
+      "reused_providers": {},
+      "reused_stages": {}
+    },
+    {
+      "job": "business-native-r1",
+      "domain": "business",
+      "group": "native",
+      "repetition": 1,
+      "starting_provider": "lightweight_memory",
+      "native_rounds_completed": 1,
+      "dataset_cursor": 4,
+      "phi_initial_equals_seed": false,
+      "initial_memory_count": 0,
+      "reused_count": 5,
+      "new_count": 7,
+      "reused_providers": {
+        "lightweight_memory": 5
+      },
+      "reused_stages": {
+        "learning": 5
+      }
+    },
+    {
+      "job": "business-native-r2",
+      "domain": "business",
+      "group": "native",
+      "repetition": 2,
+      "starting_provider": "lightweight_memory",
+      "native_rounds_completed": 0,
+      "dataset_cursor": 0,
+      "phi_initial_equals_seed": false,
+      "initial_memory_count": 0,
+      "reused_count": 1,
+      "new_count": 11,
+      "reused_providers": {
+        "lightweight_memory": 1
+      },
+      "reused_stages": {
+        "learning": 1
+      }
+    },
+    {
+      "job": "business-native-r3",
+      "domain": "business",
+      "group": "native",
+      "repetition": 3,
+      "starting_provider": "lightweight_memory",
+      "native_rounds_completed": 0,
+      "dataset_cursor": 0,
+      "phi_initial_equals_seed": false,
+      "initial_memory_count": 0,
+      "reused_count": 1,
+      "new_count": 11,
+      "reused_providers": {
+        "lightweight_memory": 1
+      },
+      "reused_stages": {
+        "learning": 1
+      }
+    },
+    {
+      "job": "humanities-fixed-r1",
+      "domain": "humanities",
+      "group": "fixed",
+      "repetition": 1,
+      "starting_provider": "aether_loom_memory",
+      "native_rounds_completed": 1,
+      "dataset_cursor": 4,
+      "phi_initial_equals_seed": true,
+      "initial_memory_count": 0,
+      "reused_count": 6,
+      "new_count": 6,
+      "reused_providers": {
+        "lightweight_memory": 2,
+        "aether_loom_memory": 4
+      },
+      "reused_stages": {
+        "learning": 6
+      }
+    },
+    {
+      "job": "humanities-fixed-r2",
+      "domain": "humanities",
+      "group": "fixed",
+      "repetition": 2,
+      "starting_provider": "lightweight_memory",
+      "native_rounds_completed": 0,
+      "dataset_cursor": 0,
+      "phi_initial_equals_seed": true,
+      "initial_memory_count": 0,
+      "reused_count": 1,
+      "new_count": 11,
+      "reused_providers": {
+        "lightweight_memory": 1
+      },
+      "reused_stages": {
+        "learning": 1
+      }
+    },
+    {
+      "job": "humanities-fixed-r3",
+      "domain": "humanities",
+      "group": "fixed",
+      "repetition": 3,
+      "starting_provider": "lightweight_memory",
+      "native_rounds_completed": 0,
+      "dataset_cursor": 0,
+      "phi_initial_equals_seed": true,
+      "initial_memory_count": 0,
+      "reused_count": 1,
+      "new_count": 11,
+      "reused_providers": {
+        "lightweight_memory": 1
+      },
+      "reused_stages": {
+        "learning": 1
+      }
+    },
+    {
+      "job": "humanities-full-r1",
+      "domain": "humanities",
+      "group": "full",
+      "repetition": 1,
+      "starting_provider": "credence_lattice",
+      "native_rounds_completed": 1,
+      "dataset_cursor": 4,
+      "phi_initial_equals_seed": false,
+      "initial_memory_count": 0,
+      "reused_count": 7,
+      "new_count": 5,
+      "reused_providers": {
+        "lightweight_memory": 2,
+        "praxis_reliquary": 1,
+        "credence_lattice": 4
+      },
+      "reused_stages": {
+        "learning": 7
+      }
+    },
+    {
+      "job": "humanities-full-r2",
+      "domain": "humanities",
+      "group": "full",
+      "repetition": 2,
+      "starting_provider": "lightweight_memory",
+      "native_rounds_completed": 0,
+      "dataset_cursor": 0,
+      "phi_initial_equals_seed": true,
+      "initial_memory_count": 0,
+      "reused_count": 1,
+      "new_count": 11,
+      "reused_providers": {
+        "lightweight_memory": 1
+      },
+      "reused_stages": {
+        "learning": 1
+      }
+    },
+    {
+      "job": "humanities-full-r3",
+      "domain": "humanities",
+      "group": "full",
+      "repetition": 3,
+      "starting_provider": "lightweight_memory",
+      "native_rounds_completed": 0,
+      "dataset_cursor": 0,
+      "phi_initial_equals_seed": true,
+      "initial_memory_count": 0,
+      "reused_count": 0,
+      "new_count": 12,
+      "reused_providers": {},
+      "reused_stages": {}
+    },
+    {
+      "job": "humanities-native-r1",
+      "domain": "humanities",
+      "group": "native",
+      "repetition": 1,
+      "starting_provider": "calibra_loom_memory",
+      "native_rounds_completed": 1,
+      "dataset_cursor": 4,
+      "phi_initial_equals_seed": false,
+      "initial_memory_count": 0,
+      "reused_count": 7,
+      "new_count": 5,
+      "reused_providers": {
+        "lightweight_memory": 2,
+        "vigil_atlas_memory": 1,
+        "calibra_loom_memory": 4
+      },
+      "reused_stages": {
+        "learning": 7
+      }
+    },
+    {
+      "job": "humanities-native-r2",
+      "domain": "humanities",
+      "group": "native",
+      "repetition": 2,
+      "starting_provider": "lightweight_memory",
+      "native_rounds_completed": 0,
+      "dataset_cursor": 0,
+      "phi_initial_equals_seed": false,
+      "initial_memory_count": 0,
+      "reused_count": 3,
+      "new_count": 9,
+      "reused_providers": {
+        "lightweight_memory": 2,
+        "audit_weave_memory": 1
+      },
+      "reused_stages": {
+        "learning": 3
+      }
+    },
+    {
+      "job": "humanities-native-r3",
+      "domain": "humanities",
+      "group": "native",
+      "repetition": 3,
+      "starting_provider": "lightweight_memory",
+      "native_rounds_completed": 0,
+      "dataset_cursor": 0,
+      "phi_initial_equals_seed": false,
+      "initial_memory_count": 0,
+      "reused_count": 1,
+      "new_count": 11,
+      "reused_providers": {
+        "lightweight_memory": 1
+      },
+      "reused_stages": {
+        "learning": 1
+      }
+    },
+    {
+      "job": "social-fixed-r1",
+      "domain": "social",
+      "group": "fixed",
+      "repetition": 1,
+      "starting_provider": "palimpsest_memory",
+      "native_rounds_completed": 1,
+      "dataset_cursor": 4,
+      "phi_initial_equals_seed": true,
+      "initial_memory_count": 0,
+      "reused_count": 6,
+      "new_count": 6,
+      "reused_providers": {
+        "palimpsest_memory": 4,
+        "lightweight_memory": 2
+      },
+      "reused_stages": {
+        "learning": 6
+      }
+    },
+    {
+      "job": "social-fixed-r2",
+      "domain": "social",
+      "group": "fixed",
+      "repetition": 2,
+      "starting_provider": "lightweight_memory",
+      "native_rounds_completed": 0,
+      "dataset_cursor": 0,
+      "phi_initial_equals_seed": true,
+      "initial_memory_count": 0,
+      "reused_count": 1,
+      "new_count": 11,
+      "reused_providers": {
+        "lightweight_memory": 1
+      },
+      "reused_stages": {
+        "learning": 1
+      }
+    },
+    {
+      "job": "social-fixed-r3",
+      "domain": "social",
+      "group": "fixed",
+      "repetition": 3,
+      "starting_provider": "lightweight_memory",
+      "native_rounds_completed": 0,
+      "dataset_cursor": 0,
+      "phi_initial_equals_seed": true,
+      "initial_memory_count": 0,
+      "reused_count": 1,
+      "new_count": 11,
+      "reused_providers": {
+        "lightweight_memory": 1
+      },
+      "reused_stages": {
+        "learning": 1
+      }
+    },
+    {
+      "job": "social-full-r1",
+      "domain": "social",
+      "group": "full",
+      "repetition": 1,
+      "starting_provider": "lightweight_memory",
+      "native_rounds_completed": 1,
+      "dataset_cursor": 4,
+      "phi_initial_equals_seed": true,
+      "initial_memory_count": 0,
+      "reused_count": 6,
+      "new_count": 6,
+      "reused_providers": {
+        "lightweight_memory": 6
+      },
+      "reused_stages": {
+        "learning": 6
+      }
+    },
+    {
+      "job": "social-full-r2",
+      "domain": "social",
+      "group": "full",
+      "repetition": 2,
+      "starting_provider": "lightweight_memory",
+      "native_rounds_completed": 0,
+      "dataset_cursor": 0,
+      "phi_initial_equals_seed": true,
+      "initial_memory_count": 0,
+      "reused_count": 1,
+      "new_count": 11,
+      "reused_providers": {
+        "lightweight_memory": 1
+      },
+      "reused_stages": {
+        "learning": 1
+      }
+    },
+    {
+      "job": "social-full-r3",
+      "domain": "social",
+      "group": "full",
+      "repetition": 3,
+      "starting_provider": "lightweight_memory",
+      "native_rounds_completed": 0,
+      "dataset_cursor": 0,
+      "phi_initial_equals_seed": true,
+      "initial_memory_count": 0,
+      "reused_count": 1,
+      "new_count": 11,
+      "reused_providers": {
+        "lightweight_memory": 1
+      },
+      "reused_stages": {
+        "learning": 1
+      }
+    },
+    {
+      "job": "social-native-r1",
+      "domain": "social",
+      "group": "native",
+      "repetition": 1,
+      "starting_provider": "praxis_ledger",
+      "native_rounds_completed": 1,
+      "dataset_cursor": 4,
+      "phi_initial_equals_seed": false,
+      "initial_memory_count": 0,
+      "reused_count": 6,
+      "new_count": 6,
+      "reused_providers": {
+        "praxis_ledger": 4,
+        "lightweight_memory": 2
+      },
+      "reused_stages": {
+        "learning": 6
+      }
+    },
+    {
+      "job": "social-native-r2",
+      "domain": "social",
+      "group": "native",
+      "repetition": 2,
+      "starting_provider": "lightweight_memory",
+      "native_rounds_completed": 0,
+      "dataset_cursor": 0,
+      "phi_initial_equals_seed": false,
+      "initial_memory_count": 0,
+      "reused_count": 1,
+      "new_count": 11,
+      "reused_providers": {
+        "lightweight_memory": 1
+      },
+      "reused_stages": {
+        "learning": 1
+      }
+    },
+    {
+      "job": "social-native-r3",
+      "domain": "social",
+      "group": "native",
+      "repetition": 3,
+      "starting_provider": "lightweight_memory",
+      "native_rounds_completed": 0,
+      "dataset_cursor": 0,
+      "phi_initial_equals_seed": false,
+      "initial_memory_count": 0,
+      "reused_count": 2,
+      "new_count": 10,
+      "reused_providers": {
+        "lightweight_memory": 2
+      },
+      "reused_stages": {
+        "learning": 2
+      }
+    }
+  ],
+  "reflection_records": [
+    {
+      "job": "business-fixed-r1",
+      "group": "fixed",
+      "domain": "business",
+      "round": 0,
+      "error": null,
+      "phi_changed": false,
+      "memory_count_before": 4,
+      "memory_count_after": 5
+    },
+    {
+      "job": "business-fixed-r1",
+      "group": "fixed",
+      "domain": "business",
+      "round": 1,
+      "error": null,
+      "phi_changed": false,
+      "memory_count_before": 9,
+      "memory_count_after": 10
+    },
+    {
+      "job": "business-fixed-r2",
+      "group": "fixed",
+      "domain": "business",
+      "round": 0,
+      "error": null,
+      "phi_changed": false,
+      "memory_count_before": 4,
+      "memory_count_after": 5
+    },
+    {
+      "job": "business-fixed-r2",
+      "group": "fixed",
+      "domain": "business",
+      "round": 1,
+      "error": null,
+      "phi_changed": false,
+      "memory_count_before": 9,
+      "memory_count_after": 10
+    },
+    {
+      "job": "business-fixed-r3",
+      "group": "fixed",
+      "domain": "business",
+      "round": 0,
+      "error": null,
+      "phi_changed": false,
+      "memory_count_before": 4,
+      "memory_count_after": 5
+    },
+    {
+      "job": "business-fixed-r3",
+      "group": "fixed",
+      "domain": "business",
+      "round": 1,
+      "error": null,
+      "phi_changed": false,
+      "memory_count_before": 9,
+      "memory_count_after": 10
+    },
+    {
+      "job": "business-full-r1",
+      "group": "full",
+      "domain": "business",
+      "round": 0,
+      "error": null,
+      "phi_changed": true,
+      "memory_count_before": 4,
+      "memory_count_after": 5
+    },
+    {
+      "job": "business-full-r1",
+      "group": "full",
+      "domain": "business",
+      "round": 1,
+      "error": null,
+      "phi_changed": true,
+      "memory_count_before": 9,
+      "memory_count_after": 10
+    },
+    {
+      "job": "business-full-r2",
+      "group": "full",
+      "domain": "business",
+      "round": 0,
+      "error": null,
+      "phi_changed": true,
+      "memory_count_before": 4,
+      "memory_count_after": 5
+    },
+    {
+      "job": "business-full-r2",
+      "group": "full",
+      "domain": "business",
+      "round": 1,
+      "error": null,
+      "phi_changed": true,
+      "memory_count_before": 9,
+      "memory_count_after": 10
+    },
+    {
+      "job": "business-full-r3",
+      "group": "full",
+      "domain": "business",
+      "round": 0,
+      "error": "ValueError: Reflection JSON missing",
+      "phi_changed": false,
+      "memory_count_before": 4,
+      "memory_count_after": 4
+    },
+    {
+      "job": "business-full-r3",
+      "group": "full",
+      "domain": "business",
+      "round": 1,
+      "error": null,
+      "phi_changed": true,
+      "memory_count_before": 8,
+      "memory_count_after": 9
+    },
+    {
+      "job": "business-native-r1",
+      "group": "native",
+      "domain": "business",
+      "round": 0,
+      "error": null,
+      "phi_changed": false,
+      "memory_count_before": 4,
+      "memory_count_after": 5
+    },
+    {
+      "job": "business-native-r1",
+      "group": "native",
+      "domain": "business",
+      "round": 1,
+      "error": null,
+      "phi_changed": false,
+      "memory_count_before": 9,
+      "memory_count_after": 10
+    },
+    {
+      "job": "business-native-r2",
+      "group": "native",
+      "domain": "business",
+      "round": 0,
+      "error": null,
+      "phi_changed": false,
+      "memory_count_before": 4,
+      "memory_count_after": 5
+    },
+    {
+      "job": "business-native-r2",
+      "group": "native",
+      "domain": "business",
+      "round": 1,
+      "error": null,
+      "phi_changed": false,
+      "memory_count_before": 9,
+      "memory_count_after": 10
+    },
+    {
+      "job": "business-native-r3",
+      "group": "native",
+      "domain": "business",
+      "round": 0,
+      "error": null,
+      "phi_changed": false,
+      "memory_count_before": 4,
+      "memory_count_after": 5
+    },
+    {
+      "job": "business-native-r3",
+      "group": "native",
+      "domain": "business",
+      "round": 1,
+      "error": null,
+      "phi_changed": false,
+      "memory_count_before": 9,
+      "memory_count_after": 10
+    },
+    {
+      "job": "humanities-fixed-r1",
+      "group": "fixed",
+      "domain": "humanities",
+      "round": 0,
+      "error": null,
+      "phi_changed": false,
+      "memory_count_before": 4,
+      "memory_count_after": 5
+    },
+    {
+      "job": "humanities-fixed-r1",
+      "group": "fixed",
+      "domain": "humanities",
+      "round": 1,
+      "error": null,
+      "phi_changed": false,
+      "memory_count_before": 9,
+      "memory_count_after": 10
+    },
+    {
+      "job": "humanities-fixed-r2",
+      "group": "fixed",
+      "domain": "humanities",
+      "round": 0,
+      "error": null,
+      "phi_changed": false,
+      "memory_count_before": 4,
+      "memory_count_after": 5
+    },
+    {
+      "job": "humanities-fixed-r2",
+      "group": "fixed",
+      "domain": "humanities",
+      "round": 1,
+      "error": null,
+      "phi_changed": false,
+      "memory_count_before": 9,
+      "memory_count_after": 10
+    },
+    {
+      "job": "humanities-fixed-r3",
+      "group": "fixed",
+      "domain": "humanities",
+      "round": 0,
+      "error": null,
+      "phi_changed": false,
+      "memory_count_before": 4,
+      "memory_count_after": 5
+    },
+    {
+      "job": "humanities-fixed-r3",
+      "group": "fixed",
+      "domain": "humanities",
+      "round": 1,
+      "error": null,
+      "phi_changed": false,
+      "memory_count_before": 9,
+      "memory_count_after": 10
+    },
+    {
+      "job": "humanities-full-r1",
+      "group": "full",
+      "domain": "humanities",
+      "round": 0,
+      "error": null,
+      "phi_changed": true,
+      "memory_count_before": 4,
+      "memory_count_after": 5
+    },
+    {
+      "job": "humanities-full-r1",
+      "group": "full",
+      "domain": "humanities",
+      "round": 1,
+      "error": "ValueError: Reflection JSON missing",
+      "phi_changed": false,
+      "memory_count_before": 9,
+      "memory_count_after": 9
+    },
+    {
+      "job": "humanities-full-r2",
+      "group": "full",
+      "domain": "humanities",
+      "round": 0,
+      "error": null,
+      "phi_changed": true,
+      "memory_count_before": 4,
+      "memory_count_after": 5
+    },
+    {
+      "job": "humanities-full-r2",
+      "group": "full",
+      "domain": "humanities",
+      "round": 1,
+      "error": null,
+      "phi_changed": true,
+      "memory_count_before": 9,
+      "memory_count_after": 10
+    },
+    {
+      "job": "humanities-full-r3",
+      "group": "full",
+      "domain": "humanities",
+      "round": 0,
+      "error": "ValueError: Reflection JSON missing",
+      "phi_changed": false,
+      "memory_count_before": 4,
+      "memory_count_after": 4
+    },
+    {
+      "job": "humanities-full-r3",
+      "group": "full",
+      "domain": "humanities",
+      "round": 1,
+      "error": null,
+      "phi_changed": true,
+      "memory_count_before": 8,
+      "memory_count_after": 9
+    },
+    {
+      "job": "humanities-native-r1",
+      "group": "native",
+      "domain": "humanities",
+      "round": 0,
+      "error": null,
+      "phi_changed": false,
+      "memory_count_before": 4,
+      "memory_count_after": 5
+    },
+    {
+      "job": "humanities-native-r1",
+      "group": "native",
+      "domain": "humanities",
+      "round": 1,
+      "error": null,
+      "phi_changed": false,
+      "memory_count_before": 9,
+      "memory_count_after": 10
+    },
+    {
+      "job": "humanities-native-r2",
+      "group": "native",
+      "domain": "humanities",
+      "round": 0,
+      "error": null,
+      "phi_changed": false,
+      "memory_count_before": 4,
+      "memory_count_after": 5
+    },
+    {
+      "job": "humanities-native-r2",
+      "group": "native",
+      "domain": "humanities",
+      "round": 1,
+      "error": null,
+      "phi_changed": false,
+      "memory_count_before": 9,
+      "memory_count_after": 10
+    },
+    {
+      "job": "humanities-native-r3",
+      "group": "native",
+      "domain": "humanities",
+      "round": 0,
+      "error": null,
+      "phi_changed": false,
+      "memory_count_before": 4,
+      "memory_count_after": 5
+    },
+    {
+      "job": "humanities-native-r3",
+      "group": "native",
+      "domain": "humanities",
+      "round": 1,
+      "error": null,
+      "phi_changed": false,
+      "memory_count_before": 9,
+      "memory_count_after": 10
+    },
+    {
+      "job": "social-fixed-r1",
+      "group": "fixed",
+      "domain": "social",
+      "round": 0,
+      "error": null,
+      "phi_changed": false,
+      "memory_count_before": 4,
+      "memory_count_after": 5
+    },
+    {
+      "job": "social-fixed-r1",
+      "group": "fixed",
+      "domain": "social",
+      "round": 1,
+      "error": null,
+      "phi_changed": false,
+      "memory_count_before": 9,
+      "memory_count_after": 10
+    },
+    {
+      "job": "social-fixed-r2",
+      "group": "fixed",
+      "domain": "social",
+      "round": 0,
+      "error": null,
+      "phi_changed": false,
+      "memory_count_before": 4,
+      "memory_count_after": 5
+    },
+    {
+      "job": "social-fixed-r2",
+      "group": "fixed",
+      "domain": "social",
+      "round": 1,
+      "error": "ValueError: Reflection JSON missing",
+      "phi_changed": false,
+      "memory_count_before": 9,
+      "memory_count_after": 9
+    },
+    {
+      "job": "social-fixed-r3",
+      "group": "fixed",
+      "domain": "social",
+      "round": 0,
+      "error": null,
+      "phi_changed": false,
+      "memory_count_before": 4,
+      "memory_count_after": 5
+    },
+    {
+      "job": "social-fixed-r3",
+      "group": "fixed",
+      "domain": "social",
+      "round": 1,
+      "error": null,
+      "phi_changed": false,
+      "memory_count_before": 9,
+      "memory_count_after": 10
+    },
+    {
+      "job": "social-full-r1",
+      "group": "full",
+      "domain": "social",
+      "round": 0,
+      "error": "ValueError: Reflection JSON missing",
+      "phi_changed": false,
+      "memory_count_before": 4,
+      "memory_count_after": 4
+    },
+    {
+      "job": "social-full-r1",
+      "group": "full",
+      "domain": "social",
+      "round": 1,
+      "error": null,
+      "phi_changed": true,
+      "memory_count_before": 8,
+      "memory_count_after": 9
+    },
+    {
+      "job": "social-full-r2",
+      "group": "full",
+      "domain": "social",
+      "round": 0,
+      "error": null,
+      "phi_changed": true,
+      "memory_count_before": 4,
+      "memory_count_after": 5
+    },
+    {
+      "job": "social-full-r2",
+      "group": "full",
+      "domain": "social",
+      "round": 1,
+      "error": null,
+      "phi_changed": false,
+      "memory_count_before": 9,
+      "memory_count_after": 10
+    },
+    {
+      "job": "social-full-r3",
+      "group": "full",
+      "domain": "social",
+      "round": 0,
+      "error": null,
+      "phi_changed": true,
+      "memory_count_before": 4,
+      "memory_count_after": 5
+    },
+    {
+      "job": "social-full-r3",
+      "group": "full",
+      "domain": "social",
+      "round": 1,
+      "error": null,
+      "phi_changed": true,
+      "memory_count_before": 9,
+      "memory_count_after": 10
+    },
+    {
+      "job": "social-native-r1",
+      "group": "native",
+      "domain": "social",
+      "round": 0,
+      "error": null,
+      "phi_changed": false,
+      "memory_count_before": 4,
+      "memory_count_after": 5
+    },
+    {
+      "job": "social-native-r1",
+      "group": "native",
+      "domain": "social",
+      "round": 1,
+      "error": null,
+      "phi_changed": false,
+      "memory_count_before": 9,
+      "memory_count_after": 10
+    },
+    {
+      "job": "social-native-r2",
+      "group": "native",
+      "domain": "social",
+      "round": 0,
+      "error": null,
+      "phi_changed": false,
+      "memory_count_before": 4,
+      "memory_count_after": 5
+    },
+    {
+      "job": "social-native-r2",
+      "group": "native",
+      "domain": "social",
+      "round": 1,
+      "error": null,
+      "phi_changed": false,
+      "memory_count_before": 9,
+      "memory_count_after": 10
+    },
+    {
+      "job": "social-native-r3",
+      "group": "native",
+      "domain": "social",
+      "round": 0,
+      "error": null,
+      "phi_changed": false,
+      "memory_count_before": 4,
+      "memory_count_after": 5
+    },
+    {
+      "job": "social-native-r3",
+      "group": "native",
+      "domain": "social",
+      "round": 1,
+      "error": null,
+      "phi_changed": false,
+      "memory_count_before": 9,
+      "memory_count_after": 10
+    }
+  ],
+  "reuse": {
+    "total": 69,
+    "by_group": {
+      "fixed": 22,
+      "full": 20,
+      "native": 27
+    },
+    "by_repetition": {
+      "1": 53,
+      "2": 9,
+      "3": 7
+    },
+    "by_domain": {
+      "business": 17,
+      "humanities": 27,
+      "social": 25
+    },
+    "by_phase": {
+      "learning": 69
+    },
+    "source_categories": {
+      "eval_finalists": 21,
+      "base_logs": 48
+    },
+    "different_from_starting_native_provider": [
+      {
+        "job": "business-full-r1",
+        "task": "WB0086",
+        "provider": "mnemosyne_loom",
+        "starting_provider": "lightweight_memory",
+        "source": "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01\\jobs\\business-full-r1\\evolution\\round_00\\eval_finalists\\mnemosyne_loom\\4.json"
+      },
+      {
+        "job": "business-full-r1",
+        "task": "WB0307",
+        "provider": "mnemosyne_loom",
+        "starting_provider": "lightweight_memory",
+        "source": "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01\\jobs\\business-full-r1\\evolution\\round_00\\eval_finalists\\mnemosyne_loom\\3.json"
+      },
+      {
+        "job": "humanities-fixed-r1",
+        "task": "WB0191",
+        "provider": "lightweight_memory",
+        "starting_provider": "aether_loom_memory",
+        "source": "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01\\jobs\\humanities-fixed-r1\\evolution\\round_00\\base_logs\\2.json"
+      },
+      {
+        "job": "humanities-fixed-r1",
+        "task": "WB0193",
+        "provider": "lightweight_memory",
+        "starting_provider": "aether_loom_memory",
+        "source": "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01\\jobs\\humanities-fixed-r1\\evolution\\round_00\\base_logs\\1.json"
+      },
+      {
+        "job": "humanities-full-r1",
+        "task": "WB0191",
+        "provider": "lightweight_memory",
+        "starting_provider": "credence_lattice",
+        "source": "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01\\jobs\\humanities-full-r1\\evolution\\round_00\\base_logs\\2.json"
+      },
+      {
+        "job": "humanities-full-r1",
+        "task": "WB0193",
+        "provider": "lightweight_memory",
+        "starting_provider": "credence_lattice",
+        "source": "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01\\jobs\\humanities-full-r1\\evolution\\round_00\\base_logs\\1.json"
+      },
+      {
+        "job": "humanities-full-r1",
+        "task": "WB0207",
+        "provider": "praxis_reliquary",
+        "starting_provider": "credence_lattice",
+        "source": "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01\\jobs\\humanities-full-r1\\evolution\\round_01\\eval_finalists\\praxis_reliquary\\7.json"
+      },
+      {
+        "job": "humanities-native-r1",
+        "task": "WB0191",
+        "provider": "lightweight_memory",
+        "starting_provider": "calibra_loom_memory",
+        "source": "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01\\jobs\\humanities-native-r1\\evolution\\round_00\\base_logs\\2.json"
+      },
+      {
+        "job": "humanities-native-r1",
+        "task": "WB0193",
+        "provider": "lightweight_memory",
+        "starting_provider": "calibra_loom_memory",
+        "source": "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01\\jobs\\humanities-native-r1\\evolution\\round_00\\base_logs\\1.json"
+      },
+      {
+        "job": "humanities-native-r1",
+        "task": "WB0207",
+        "provider": "vigil_atlas_memory",
+        "starting_provider": "calibra_loom_memory",
+        "source": "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01\\jobs\\humanities-native-r1\\evolution\\round_01\\eval_finalists\\vigil_atlas_memory\\7.json"
+      },
+      {
+        "job": "humanities-native-r2",
+        "task": "WB0801",
+        "provider": "audit_weave_memory",
+        "starting_provider": "lightweight_memory",
+        "source": "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01\\jobs\\humanities-native-r2\\evolution\\round_00\\eval_finalists\\audit_weave_memory\\3.json"
+      },
+      {
+        "job": "social-fixed-r1",
+        "task": "WB0133",
+        "provider": "lightweight_memory",
+        "starting_provider": "palimpsest_memory",
+        "source": "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01\\jobs\\social-fixed-r1\\evolution\\round_00\\base_logs\\2.json"
+      },
+      {
+        "job": "social-fixed-r1",
+        "task": "WB0682",
+        "provider": "lightweight_memory",
+        "starting_provider": "palimpsest_memory",
+        "source": "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01\\jobs\\social-fixed-r1\\evolution\\round_00\\base_logs\\1.json"
+      },
+      {
+        "job": "social-native-r1",
+        "task": "WB0133",
+        "provider": "lightweight_memory",
+        "starting_provider": "praxis_ledger",
+        "source": "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01\\jobs\\social-native-r1\\evolution\\round_00\\base_logs\\2.json"
+      },
+      {
+        "job": "social-native-r1",
+        "task": "WB0682",
+        "provider": "lightweight_memory",
+        "starting_provider": "praxis_ledger",
+        "source": "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01\\jobs\\social-native-r1\\evolution\\round_00\\base_logs\\1.json"
+      }
+    ]
+  },
+  "source_lines": {
+    "initialization": "philoagent/hss_deadline_worker.py:58-71",
+    "reuse_selection": "philoagent/hss_deadline_worker.py:74-105",
+    "actor_context": "philoagent/hss_deadline_worker.py:156-166",
+    "reflection": "philoagent/hss_deadline_worker.py:169-210",
+    "learning_update": "philoagent/hss_deadline_worker.py:285-299",
+    "heldout_frozen": "philoagent/hss_deadline_worker.py:236-263"
+  },
+  "original_native_completed_rounds_at_switch": 8,
+  "original_native_rounds_unfinished_at_switch": 46,
+  "mechanism_changes": {
+    "P": "Original generated provider never imported/executed by deadline worker; starting provider kept as metadata",
+    "M": "Starts empty for every job; each learning result contributes first 1400 answer characters and first 900 comment characters; Actor sees last 3 memory items; round reflections may add summary",
+    "Phi": "Native none, fixed phi0, full current native winner orientation when available otherwise phi0; only humanities-full-r1 starts with orientation !=phi0",
+    "Actor": "Original max_steps32 tool agent with WebSearchTool and CrawlPageTool replaced by direct model completion with no tools; initial output cap32768->4096, retry8192",
+    "Selection": "No candidate program creation, validation, preliminary or finalist comparison remains in compressed stage",
+    "Holdout": "Same 4 heldout IDs per domain/repetition with frozen end-learning prompt state retained; no heldout memory ingestion"
+  },
+  "reflections_summary": {
+    "total": 54,
+    "successful_json": 49,
+    "fallback_json_missing": 5,
+    "full_group_reflections": 18,
+    "full_phi_changed": 13,
+    "fallback_by_group": {
+      "full": 4,
+      "fixed": 1
+    }
+  },
+  "percentages": {
+    "reuse_all": 21.296296296296298,
+    "new_all": 78.70370370370371,
+    "reuse_learning": 31.944444444444443,
+    "native_rounds_unfinished": 85.18518518518519,
+    "holdout_fully_compressed": 100.0
+  }
+}

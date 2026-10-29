@@ -20,7 +20,7 @@ PROJECT = Path(__file__).resolve().parent.parent
 UPSTREAM = PROJECT / "vendor" / "MemEvolve"
 FLASH = UPSTREAM / "Flash-Searcher-main"
 PROVIDER = "lightweight_memory"
-SEEDS = ("engineering", "dialectical", "critical")
+SEEDS = ("engineering", "dialectical", "critical", "none")
 
 
 def source_hash(root):
@@ -51,11 +51,21 @@ def environment(env_file=None):
         raise ValueError("OPENAI_BASE_URL and OPENAI_API_BASE must identify the same endpoint")
     if base:
         values["OPENAI_BASE_URL"] = values["OPENAI_API_BASE"] = base
+    for name, default, allowed in (
+        ("WEB_SEARCH_PROVIDER", "serper", {"serper", "deepseek"}),
+        ("WEB_ACCESS_PROVIDER", "jina", {"jina", "crawl4ai", "deepseek"}),
+    ):
+        provider = values.get(name, default).strip().lower()
+        if provider not in allowed:
+            raise ValueError(f"{name} must be one of: {', '.join(sorted(allowed))}")
+        values[name] = provider
     return values
 
 
 def missing_configuration(values, *, evolving=False):
-    names = ["DEFAULT_MODEL", "OPENAI_API_KEY", "SERPER_API_KEY"]
+    names = ["DEFAULT_MODEL", "OPENAI_API_KEY"]
+    if values.get("WEB_SEARCH_PROVIDER", "serper") == "serper":
+        names.append("SERPER_API_KEY")
     if values.get("WEB_ACCESS_PROVIDER", "jina") == "jina":
         names.append("JINA_API_KEY")
     if evolving:
@@ -79,6 +89,10 @@ def doctor(env_file=None):
         "missing_modules": missing,
         "missing_live_configuration": missing_configuration(values, evolving=True),
         "configuration_error": configuration_error,
+        "web_backends": {
+            "search": values.get("WEB_SEARCH_PROVIDER", "serper"),
+            "fetch": values.get("WEB_ACCESS_PROVIDER", "jina"),
+        },
         "live_model_calls_performed": False,
     }
     if (UPSTREAM / ".git").exists():
@@ -88,11 +102,13 @@ def doctor(env_file=None):
     return result
 
 
-def init_run(name, seed, data=None, *, output_root=None):
+def init_run(name, seed, data=None, *, output_root=None, seed_file=None):
     if not re.fullmatch(r"[a-zA-Z0-9][a-zA-Z0-9_-]{0,63}", name):
         raise ValueError("Run name must contain only letters, digits, underscores or hyphens")
     if seed not in SEEDS:
         raise ValueError(f"Unknown seed: {seed}")
+    if seed == "none" and seed_file is not None:
+        raise ValueError("--seed none cannot be combined with --seed-file")
     destination = (Path(output_root) if output_root else PROJECT / "runs") / name
     if destination.exists():
         raise FileExistsError(f"Run already exists: {destination}; reuse it with run, or choose a new name")
@@ -103,8 +119,19 @@ def init_run(name, seed, data=None, *, output_root=None):
         if not rows or any(not all(isinstance(row.get(field), str) and row[field].strip()
                                   for field in ("question", "answer", "root_url")) for row in rows):
             raise ValueError("Development data must be nonempty WebWalkerQA JSONL")
-    seed_path = PROJECT / "seeds" / f"{seed}.json"
-    items = json.loads(seed_path.read_text(encoding="utf-8"))["items"]
+    seed_bytes = None
+    if seed_file is not None:
+        seed_path = Path(seed_file).resolve(strict=True)
+        seed_bytes = seed_path.read_bytes()
+        document = json.loads(seed_bytes.decode("utf-8-sig"))
+        items = document.get("items") if isinstance(document, dict) else None
+        if (not isinstance(document, dict) or type(document.get("schema_version")) is not int
+                or document["schema_version"] != 1 or not isinstance(items, list) or not items
+                or any(not isinstance(item, str) or not item.strip() for item in items)):
+            raise ValueError("Custom seed requires schema_version 1 and a nonempty items list of nonempty strings")
+    else:
+        seed_path = PROJECT / "seeds" / f"{seed}.json"
+        items = [] if seed == "none" else json.loads(seed_path.read_text(encoding="utf-8"))["items"]
     if not FLASH.is_dir():
         raise FileNotFoundError(f"Pinned upstream source missing: {FLASH}")
     workspace = destination / "workspace"
@@ -113,6 +140,8 @@ def init_run(name, seed, data=None, *, output_root=None):
     shutil.copytree(FLASH, workspace, ignore=shutil.ignore_patterns(
         ".git", ".env", ".env.*", "__pycache__", "*.pyc", "storage", "data", ".DS_Store"
     ))
+    if seed_bytes is not None:
+        (destination / "seed_source.json").write_bytes(seed_bytes)
     phi_path = bootstrap(destination / "lineage", PROVIDER, items)
     data_hash = None
     if source:
@@ -131,11 +160,17 @@ def init_run(name, seed, data=None, *, output_root=None):
         "development_data_sha256": data_hash,
         "development_task_count": len(rows) if source else 0,
     }
+    if seed_bytes is not None:
+        manifest["seed_source"] = {
+            "path": str(seed_path),
+            "sha256": hashlib.sha256(seed_bytes).hexdigest(),
+            "snapshot": "seed_source.json",
+        }
     (destination / "run.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return {"run_dir": str(destination.resolve()), "orientation_path": str(phi_path), **manifest}
 
 
-def launch(run_dir, *, mode="task", env_file=None, tasks=2, rounds=2, candidates=1, batch_size=2, dry_run=False):
+def launch(run_dir, *, mode="task", env_file=None, tasks=2, rounds=2, candidates=1, batch_size=2, max_steps=40, dry_run=False):
     run_dir = Path(run_dir).resolve(strict=True)
     manifest = json.loads((run_dir / "run.json").read_text(encoding="utf-8"))
     workspace = run_dir / "workspace"
@@ -156,14 +191,15 @@ def launch(run_dir, *, mode="task", env_file=None, tasks=2, rounds=2, candidates
     state_path = run_dir / "evolution" / "evolve_state.json"
     state = json.loads(state_path.read_text(encoding="utf-8")) if state_path.exists() else {}
     current_provider = state.get("best_provider", PROVIDER)
-    if min(tasks, rounds, candidates, batch_size) < 1:
+    if min(tasks, rounds, candidates, batch_size, max_steps) < 1:
         raise ValueError("Task, round, candidate and batch counts must be positive")
     if mode == "task":
         if tasks > manifest["development_task_count"]:
             raise ValueError("Requested more tasks than the development dataset contains")
         cmd = [sys.executable, "run_flash_searcher_webwalkerqa.py", "--infile", str(data_path),
                "--outfile", str(run_dir / "task_results.jsonl"), "--memory_provider", current_provider,
-               "--sample_num", str(tasks), "--concurrency", "1", "--direct_output_dir", str(run_dir / "tasks")]
+               "--sample_num", str(tasks), "--concurrency", "1", "--max_steps", str(max_steps),
+               "--direct_output_dir", str(run_dir / "tasks")]
     else:
         cursor = state.get("dataset_cursor", 0)
         remaining_rounds = rounds - state.get("round", 0)
@@ -196,12 +232,14 @@ def main(argv=None):
     create = commands.add_parser("init", help="Create an isolated native workspace and initial orientation")
     create.add_argument("name")
     create.add_argument("--seed", choices=SEEDS, default="engineering")
+    create.add_argument("--seed-file", help="Custom schema_version 1 seed JSON, frozen into the new run; incompatible with --seed none")
     create.add_argument("--data", help="Development split only; holdout must stay outside the run")
     run = commands.add_parser("run", help="Launch a native task batch or native outer evolution")
     run.add_argument("run_dir")
     run.add_argument("--mode", choices=["task", "evolve"], default="task")
     run.add_argument("--env-file")
     run.add_argument("--tasks", type=int, default=2)
+    run.add_argument("--max-steps", type=int, default=40, help="Maximum actor steps per task (task mode)")
     run.add_argument("--rounds", type=int, default=2, help="Total target rounds, including already completed rounds")
     run.add_argument("--candidates", type=int, default=1)
     run.add_argument("--batch-size", type=int, default=2)
@@ -211,13 +249,14 @@ def main(argv=None):
         if args.command == "doctor":
             result = doctor(args.env_file)
         elif args.command == "init":
-            result = init_run(args.name, args.seed, args.data)
+            result = init_run(args.name, args.seed, args.data, seed_file=args.seed_file)
         elif args.command == "prepare-data":
             from .data import prepare_dataset
             result = prepare_dataset(args.source, args.output_dir)
         else:
             result = launch(args.run_dir, mode=args.mode, env_file=args.env_file, tasks=args.tasks,
-                            rounds=args.rounds, candidates=args.candidates, batch_size=args.batch_size, dry_run=args.dry_run)
+                            rounds=args.rounds, candidates=args.candidates, batch_size=args.batch_size,
+                            max_steps=args.max_steps, dry_run=args.dry_run)
         print(json.dumps(result, ensure_ascii=False, indent=2))
         return 0
     except (ValueError, OSError, subprocess.CalledProcessError) as exc:

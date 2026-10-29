@@ -1,0 +1,706 @@
+[
+  {
+    "event_id": "event-0001",
+    "group": "M0",
+    "ingest": false,
+    "memory": "initial",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "provenance",
+    "task_id": "provenance_learn_01"
+  },
+  {
+    "event_id": "event-0002",
+    "group": "M1",
+    "ingest": true,
+    "memory": "persistent_primary_M",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "provenance",
+    "task_id": "provenance_learn_01"
+  },
+  {
+    "event_id": "event-0003",
+    "group": "S0",
+    "ingest": true,
+    "memory": "persistent_primary_M",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "provenance",
+    "task_id": "provenance_learn_01"
+  },
+  {
+    "event_id": "event-0004",
+    "group": "S1",
+    "ingest": true,
+    "memory": "persistent_primary_M",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "provenance",
+    "task_id": "provenance_learn_01"
+  },
+  {
+    "event_id": "event-0005",
+    "group": "M0",
+    "ingest": false,
+    "memory": "initial",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "provenance",
+    "task_id": "provenance_learn_02"
+  },
+  {
+    "event_id": "event-0006",
+    "group": "M1",
+    "ingest": true,
+    "memory": "persistent_primary_M",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "provenance",
+    "task_id": "provenance_learn_02"
+  },
+  {
+    "event_id": "event-0007",
+    "group": "S0",
+    "ingest": true,
+    "memory": "persistent_primary_M",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "provenance",
+    "task_id": "provenance_learn_02"
+  },
+  {
+    "event_id": "event-0008",
+    "group": "S1",
+    "ingest": true,
+    "memory": "persistent_primary_M",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "provenance",
+    "task_id": "provenance_learn_02"
+  },
+  {
+    "event_id": "event-0009",
+    "group": "M0",
+    "ingest": false,
+    "memory": "initial",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "provenance",
+    "task_id": "provenance_learn_03"
+  },
+  {
+    "event_id": "event-0010",
+    "group": "M1",
+    "ingest": true,
+    "memory": "persistent_primary_M",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "provenance",
+    "task_id": "provenance_learn_03"
+  },
+  {
+    "event_id": "event-0011",
+    "group": "S0",
+    "ingest": true,
+    "memory": "persistent_primary_M",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "provenance",
+    "task_id": "provenance_learn_03"
+  },
+  {
+    "event_id": "event-0012",
+    "group": "S1",
+    "ingest": true,
+    "memory": "persistent_primary_M",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "provenance",
+    "task_id": "provenance_learn_03"
+  },
+  {
+    "event_id": "event-0013",
+    "group": "M0",
+    "ingest": false,
+    "memory": "initial",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "provenance",
+    "task_id": "provenance_learn_04"
+  },
+  {
+    "event_id": "event-0014",
+    "group": "M1",
+    "ingest": true,
+    "memory": "persistent_primary_M",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "provenance",
+    "task_id": "provenance_learn_04"
+  },
+  {
+    "event_id": "event-0015",
+    "group": "S0",
+    "ingest": true,
+    "memory": "persistent_primary_M",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "provenance",
+    "task_id": "provenance_learn_04"
+  },
+  {
+    "event_id": "event-0016",
+    "group": "S1",
+    "ingest": true,
+    "memory": "persistent_primary_M",
+    "phase": "primary_learning",
+    "phi": "initial",
+    "stream": "provenance",
+    "task_id": "provenance_learn_04"
+  },
+  {
+    "event_id": "event-0017",
+    "group": "S0",
+    "ingest": false,
+    "phase": "system_reflection",
+    "stream": "provenance",
+    "task_id": null
+  },
+  {
+    "event_id": "event-0018",
+    "group": "S0",
+    "ingest": false,
+    "memory": "discarded_copy",
+    "phase": "native_interface_validation",
+    "stream": "provenance",
+    "task_id": null
+  },
+  {
+    "event_id": "event-0019",
+    "group": "S1",
+    "ingest": false,
+    "phase": "system_reflection",
+    "stream": "provenance",
+    "task_id": null
+  },
+  {
+    "event_id": "event-0020",
+    "group": "S1",
+    "ingest": false,
+    "memory": "discarded_copy",
+    "phase": "native_interface_validation",
+    "stream": "provenance",
+    "task_id": null
+  },
+  {
+    "event_id": "event-0021",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "parent",
+    "stream": "provenance",
+    "task_id": "provenance_learn_01"
+  },
+  {
+    "event_id": "event-0022",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "candidate",
+    "stream": "provenance",
+    "task_id": "provenance_learn_01"
+  },
+  {
+    "event_id": "event-0023",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "candidate",
+    "stream": "provenance",
+    "task_id": "provenance_learn_02"
+  },
+  {
+    "event_id": "event-0024",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "parent",
+    "stream": "provenance",
+    "task_id": "provenance_learn_02"
+  },
+  {
+    "event_id": "event-0025",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "parent",
+    "stream": "provenance",
+    "task_id": "provenance_learn_03"
+  },
+  {
+    "event_id": "event-0026",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "candidate",
+    "stream": "provenance",
+    "task_id": "provenance_learn_03"
+  },
+  {
+    "event_id": "event-0027",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "candidate",
+    "stream": "provenance",
+    "task_id": "provenance_learn_04"
+  },
+  {
+    "event_id": "event-0028",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "parent",
+    "stream": "provenance",
+    "task_id": "provenance_learn_04"
+  },
+  {
+    "event_id": "event-0029",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "finalist_comparison",
+    "phi": "candidate",
+    "stream": "provenance",
+    "task_id": "provenance_learn_01"
+  },
+  {
+    "event_id": "event-0030",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "finalist_comparison",
+    "phi": "parent",
+    "stream": "provenance",
+    "task_id": "provenance_learn_01"
+  },
+  {
+    "event_id": "event-0031",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "finalist_comparison",
+    "phi": "parent",
+    "stream": "provenance",
+    "task_id": "provenance_learn_03"
+  },
+  {
+    "event_id": "event-0032",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "finalist_comparison",
+    "phi": "candidate",
+    "stream": "provenance",
+    "task_id": "provenance_learn_03"
+  },
+  {
+    "event_id": "event-0033",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "finalist_comparison",
+    "phi": "candidate",
+    "stream": "provenance",
+    "task_id": "provenance_learn_04"
+  },
+  {
+    "event_id": "event-0034",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "finalist_comparison",
+    "phi": "parent",
+    "stream": "provenance",
+    "task_id": "provenance_learn_04"
+  },
+  {
+    "adoption": "retain_initial",
+    "event_id": "event-0035",
+    "group": "S0",
+    "ingest": false,
+    "phase": "native_selection",
+    "stream": "provenance",
+    "task_id": null
+  },
+  {
+    "event_id": "event-0036",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "parent",
+    "stream": "provenance",
+    "task_id": "provenance_learn_01"
+  },
+  {
+    "event_id": "event-0037",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "candidate",
+    "stream": "provenance",
+    "task_id": "provenance_learn_01"
+  },
+  {
+    "event_id": "event-0038",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "candidate",
+    "stream": "provenance",
+    "task_id": "provenance_learn_02"
+  },
+  {
+    "event_id": "event-0039",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "parent",
+    "stream": "provenance",
+    "task_id": "provenance_learn_02"
+  },
+  {
+    "event_id": "event-0040",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "parent",
+    "stream": "provenance",
+    "task_id": "provenance_learn_03"
+  },
+  {
+    "event_id": "event-0041",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "candidate",
+    "stream": "provenance",
+    "task_id": "provenance_learn_03"
+  },
+  {
+    "event_id": "event-0042",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "candidate",
+    "stream": "provenance",
+    "task_id": "provenance_learn_04"
+  },
+  {
+    "event_id": "event-0043",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "candidate_comparison",
+    "phi": "parent",
+    "stream": "provenance",
+    "task_id": "provenance_learn_04"
+  },
+  {
+    "event_id": "event-0044",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "finalist_comparison",
+    "phi": "candidate",
+    "stream": "provenance",
+    "task_id": "provenance_learn_01"
+  },
+  {
+    "event_id": "event-0045",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "finalist_comparison",
+    "phi": "parent",
+    "stream": "provenance",
+    "task_id": "provenance_learn_01"
+  },
+  {
+    "event_id": "event-0046",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "finalist_comparison",
+    "phi": "parent",
+    "stream": "provenance",
+    "task_id": "provenance_learn_03"
+  },
+  {
+    "event_id": "event-0047",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "finalist_comparison",
+    "phi": "candidate",
+    "stream": "provenance",
+    "task_id": "provenance_learn_03"
+  },
+  {
+    "event_id": "event-0048",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "finalist_comparison",
+    "phi": "candidate",
+    "stream": "provenance",
+    "task_id": "provenance_learn_04"
+  },
+  {
+    "event_id": "event-0049",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "finalist_comparison",
+    "phi": "parent",
+    "stream": "provenance",
+    "task_id": "provenance_learn_04"
+  },
+  {
+    "adoption": "native_winner",
+    "event_id": "event-0050",
+    "group": "S1",
+    "ingest": false,
+    "phase": "native_selection",
+    "stream": "provenance",
+    "task_id": null
+  },
+  {
+    "event_id": "event-0051",
+    "group": "M0",
+    "ingest": false,
+    "memory": "initial",
+    "phase": "primary_holdout",
+    "phi": "initial",
+    "stream": "provenance",
+    "task_id": "provenance_probe_01"
+  },
+  {
+    "event_id": "event-0052",
+    "group": "M1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "primary_holdout",
+    "phi": "initial",
+    "stream": "provenance",
+    "task_id": "provenance_probe_01"
+  },
+  {
+    "event_id": "event-0053",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "primary_holdout",
+    "phi": "initial",
+    "stream": "provenance",
+    "task_id": "provenance_probe_01"
+  },
+  {
+    "event_id": "event-0054",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "primary_holdout",
+    "phi": "selected",
+    "stream": "provenance",
+    "task_id": "provenance_probe_01"
+  },
+  {
+    "event_id": "event-0055",
+    "group": "M0",
+    "ingest": false,
+    "memory": "initial",
+    "phase": "primary_holdout",
+    "phi": "initial",
+    "stream": "provenance",
+    "task_id": "provenance_probe_02"
+  },
+  {
+    "event_id": "event-0056",
+    "group": "M1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "primary_holdout",
+    "phi": "initial",
+    "stream": "provenance",
+    "task_id": "provenance_probe_02"
+  },
+  {
+    "event_id": "event-0057",
+    "group": "S0",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "primary_holdout",
+    "phi": "initial",
+    "stream": "provenance",
+    "task_id": "provenance_probe_02"
+  },
+  {
+    "event_id": "event-0058",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "primary_holdout",
+    "phi": "selected",
+    "stream": "provenance",
+    "task_id": "provenance_probe_02"
+  },
+  {
+    "event_id": "event-0059",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "same_phi_baseline",
+    "phi": "initial",
+    "repetition": 0,
+    "stream": "provenance",
+    "task_id": "provenance_probe_01"
+  },
+  {
+    "event_id": "event-0060",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "same_phi_baseline",
+    "phi": "initial",
+    "repetition": 1,
+    "stream": "provenance",
+    "task_id": "provenance_probe_01"
+  },
+  {
+    "event_id": "event-0061",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "paired_probe",
+    "phi": "initial",
+    "repetition": 0,
+    "stream": "provenance",
+    "task_id": "provenance_probe_01"
+  },
+  {
+    "event_id": "event-0062",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "paired_probe",
+    "phi": "selected",
+    "repetition": 0,
+    "stream": "provenance",
+    "task_id": "provenance_probe_01"
+  },
+  {
+    "event_id": "event-0063",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "paired_probe",
+    "phi": "selected",
+    "repetition": 1,
+    "stream": "provenance",
+    "task_id": "provenance_probe_01"
+  },
+  {
+    "event_id": "event-0064",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "paired_probe",
+    "phi": "initial",
+    "repetition": 1,
+    "stream": "provenance",
+    "task_id": "provenance_probe_01"
+  },
+  {
+    "event_id": "event-0065",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "same_phi_baseline",
+    "phi": "initial",
+    "repetition": 0,
+    "stream": "provenance",
+    "task_id": "provenance_probe_02"
+  },
+  {
+    "event_id": "event-0066",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "same_phi_baseline",
+    "phi": "initial",
+    "repetition": 1,
+    "stream": "provenance",
+    "task_id": "provenance_probe_02"
+  },
+  {
+    "event_id": "event-0067",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "paired_probe",
+    "phi": "selected",
+    "repetition": 0,
+    "stream": "provenance",
+    "task_id": "provenance_probe_02"
+  },
+  {
+    "event_id": "event-0068",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "paired_probe",
+    "phi": "initial",
+    "repetition": 0,
+    "stream": "provenance",
+    "task_id": "provenance_probe_02"
+  },
+  {
+    "event_id": "event-0069",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "paired_probe",
+    "phi": "initial",
+    "repetition": 1,
+    "stream": "provenance",
+    "task_id": "provenance_probe_02"
+  },
+  {
+    "event_id": "event-0070",
+    "group": "S1",
+    "ingest": false,
+    "memory": "fresh_final_primary_M_copy",
+    "phase": "paired_probe",
+    "phi": "selected",
+    "repetition": 1,
+    "stream": "provenance",
+    "task_id": "provenance_probe_02"
+  }
+]

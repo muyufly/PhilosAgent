@@ -1,0 +1,53 @@
+{
+  "date": "2026-10-29",
+  "timezone": "Asia/Hong_Kong",
+  "main_plan": "planv0.0.6.md",
+  "direction": "humanities_social_business_full_method_value_ablation",
+  "new_paid_model_calls": 0,
+  "new_experiment_model_answers_observed": false,
+  "official_source": {
+    "repository": "https://github.com/X-PLUG/WritingBench",
+    "commit": "ae2d5176449b7b769815482641d35926f26793eb",
+    "questions": 1000,
+    "sha256": "18fee37c645166eb2e206b36366b2e354265b1e4201db2c86e759e825eaddcbe"
+  },
+  "selected_questions": 36,
+  "learning_questions": 24,
+  "evaluation_questions": 12,
+  "prepared_packages": [
+    {
+      "repetitions": 1,
+      "path": "D:\\PhiloAgent\\data\\hss_business\\writingbench-20261029-r1",
+      "manifest_sha256": "df885a8f75205c8cf1ba5829c0ec5df14e3acc2ff47c670710a35ecf5004cbab",
+      "questions": 36,
+      "jobs": 9,
+      "actor_task_executions": 288,
+      "source_queries_and_checklists_preserved": true,
+      "same_tasks_and_order_across_groups": true,
+      "artifacts_verified": true
+    },
+    {
+      "repetitions": 3,
+      "path": "D:\\PhiloAgent\\data\\hss_business\\writingbench-20261029-r3",
+      "manifest_sha256": "151ce020686ddeba1e411cf2c83123084a47c8bd0cbf83c1c1a72ee6e9f95f4d",
+      "questions": 36,
+      "jobs": 27,
+      "actor_task_executions": 864,
+      "source_queries_and_checklists_preserved": true,
+      "same_tasks_and_order_across_groups": true,
+      "artifacts_verified": true
+    }
+  ],
+  "evaluation_adapter_checks": {
+    "new_tests_passed": 17,
+    "full_suite_passed": 258,
+    "full_suite_seconds": 47.86,
+    "full_suite_failed": 0,
+    "actual_native_selector_preserves_continuous_quality": true,
+    "judge_group_metadata_omitted": true,
+    "unknown_usage_not_zero": true
+  },
+  "old_toy_matrix": "historical_engineering_tests_only; not_main_experiment",
+  "runtime_integration": "pending_open_task_runner_persistent_native_learning_and_judge_wiring",
+  "budget": "full_round_total_budget_planning; no_per_task_spend_stop; no_new_paid_requests"
+}

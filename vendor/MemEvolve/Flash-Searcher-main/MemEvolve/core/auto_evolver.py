@@ -32,7 +32,8 @@ from ..config import (
     EVOLVE_RANDOM_SEED,
 )
 
-load_dotenv(override=True)
+if not os.environ.get("PHILO_LINEAGE_ROOT"):
+    load_dotenv(override=True)
 
 
 class AutoEvolver:
@@ -877,7 +878,9 @@ class AutoEvolver:
                     print(f"[Mode] Storage clearing disabled - providers keep previous knowledge")
                 
                 # Step 1: Run base provider on x tasks
-                batch_indices = self._select_tasks(dataset_cursor, self.task_batch_x)
+                batch_indices = checkpoint.get("batch_indices")
+                if batch_indices is None:
+                    batch_indices = self._select_tasks(dataset_cursor, self.task_batch_x)
                 
                 if checkpoint and checkpoint.get("step_completed", 0) >= 1:
                     print(f"[Checkpoint] Skipping Step 1 (base logs exist)")
@@ -955,9 +958,13 @@ class AutoEvolver:
                 print(f"[Selection] Top {len(top_candidates)} candidates: {top_candidates}")
 
                 # Step 4: Finalists run on (y sampled + new x)
-                sampled_tasks = random.sample(batch_indices, min(self.extra_sample_y, len(batch_indices)))
-                new_tasks = self._select_tasks(dataset_cursor + self.task_batch_x, self.task_batch_x)
-                finalist_tasks = sampled_tasks + new_tasks
+                finalist_tasks = checkpoint.get("finalist_tasks")
+                if finalist_tasks is None:
+                    sampled_tasks = random.sample(batch_indices, min(self.extra_sample_y, len(batch_indices)))
+                    new_tasks = self._select_tasks(dataset_cursor + self.task_batch_x, self.task_batch_x)
+                    finalist_tasks = sampled_tasks + new_tasks
+                    checkpoint["finalist_tasks"] = finalist_tasks
+                    self._save_checkpoint(r, checkpoint)
                 finalists = top_candidates[:self.top_t]
                 
                 if checkpoint and checkpoint.get("step_completed", 0) >= 4:
@@ -978,7 +985,10 @@ class AutoEvolver:
                 checkpoint["finalist_results"] = finalist_results
                 self._save_checkpoint(r, checkpoint)
                 
-                winner = self._select_top(finalist_results, k=1)[0] if finalist_results else current_provider
+                successful_finalists = self._select_top(finalist_results, k=1)
+                if not successful_finalists:
+                    raise RuntimeError("No successful finalist evaluation; inspect the saved finalist_results before resuming")
+                winner = successful_finalists[0]
                 print(f"[Winner] {winner}")
 
                 # Advance dataset cursor
@@ -1046,7 +1056,14 @@ class AutoEvolver:
 
         # Save complete history
         history_path = self.work_root / "auto_history.json"
+        all_history = []
+        for summary_path in self.work_root.glob("round_*/round_summary.json"):
+            with open(summary_path, "r", encoding="utf-8") as f:
+                saved_summary = json.load(f)
+            if saved_summary["round"] < self.state.get("round", 0):
+                all_history.append(saved_summary)
+        all_history.sort(key=lambda summary: summary["round"])
         with open(history_path, "w", encoding="utf-8") as f:
-            json.dump(history, f, indent=2, ensure_ascii=False)
+            json.dump(all_history, f, indent=2, ensure_ascii=False)
 
         return {"history_path": str(history_path), "rounds": len(history), "history": history}

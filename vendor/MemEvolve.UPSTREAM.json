@@ -3,7 +3,7 @@
   "commit": "6035d5659d7a092dbfa6a87b1a32a3cee652ba54",
   "license": "Apache-2.0; bundled mini-swe-agent MIT",
   "local_changes_patch": "MemEvolve.philoagent.patch",
-  "patch_sha256": "f86c5a5d01b7489b0d46dbefd3c8f4705425971144de73e9b911201ffc26a20a",
+  "patch_sha256": "5a7c6feae5b128695ae611dfc9a14f1158304518d0071113cceff3dcc06d34df",
   "distribution": "vendored source snapshot",
   "excluded": [
     "Git metadata",

@@ -1,0 +1,218 @@
+[
+  {
+    "case": "词表第一册",
+    "constraints": [
+      "不得改动词表原文；所有行动只生成可替换的检索副本。"
+    ],
+    "deadline": 3,
+    "objective": "在窗口内交付可读检索页，并扣除实际检查及行动费用。",
+    "options": {
+      "index_x": {
+        "cost": 0,
+        "description": "按甲式制作检索页",
+        "one_use": true,
+        "reversible": true,
+        "terminal": true,
+        "time": 1
+      },
+      "index_y": {
+        "cost": 0,
+        "description": "按乙式制作检索页",
+        "one_use": true,
+        "reversible": true,
+        "terminal": true,
+        "time": 1
+      },
+      "literal_list": {
+        "cost": 0,
+        "description": "只交付逐字清单，不进行栏序推断",
+        "one_use": true,
+        "reversible": true,
+        "terminal": true,
+        "time": 1
+      }
+    },
+    "rules": "调用按所列时间和费用结算；wait和非法调用消耗1单位。每个行动最多实际执行一次。检查可重复且每次计费。操作时长超过剩余窗口则耗尽剩余时间，该操作不执行也不收费。正好在截止时完成的操作有效。前置条件不满足的行动不执行，消耗1单位；可稍后再试。完成终结行动或到期后不得继续。工具只返回实际观察，不能访问其他行动的结果。",
+    "scenario": "一份双栏方言词表要制作检索页。甲式与乙式使用相反的栏序约定。排对可交付14单位，逐字不编序的清单可交付6单位。",
+    "sources": {
+      "batch_key": {
+        "cost": 2,
+        "description": "本册封底的实际栏序读取标志",
+        "time": 1
+      },
+      "copied_note": {
+        "cost": 0,
+        "description": "旧排样说明的复印页；不是独立来源",
+        "time": 1
+      },
+      "desk_note": {
+        "cost": 0,
+        "description": "旧排样说明；版本可能早于本册",
+        "time": 1
+      }
+    },
+    "task_id": "provenance_learn_01"
+  },
+  {
+    "case": "词表第二册",
+    "constraints": [
+      "不得改动词表原文；所有行动只生成可替换的检索副本。"
+    ],
+    "deadline": 3,
+    "objective": "在窗口内交付可读检索页，并扣除实际检查及行动费用。",
+    "options": {
+      "index_x": {
+        "cost": 0,
+        "description": "按甲式制作检索页",
+        "one_use": true,
+        "reversible": true,
+        "terminal": true,
+        "time": 1
+      },
+      "index_y": {
+        "cost": 0,
+        "description": "按乙式制作检索页",
+        "one_use": true,
+        "reversible": true,
+        "terminal": true,
+        "time": 1
+      },
+      "literal_list": {
+        "cost": 0,
+        "description": "只交付逐字清单，不进行栏序推断",
+        "one_use": true,
+        "reversible": true,
+        "terminal": true,
+        "time": 1
+      }
+    },
+    "rules": "调用按所列时间和费用结算；wait和非法调用消耗1单位。每个行动最多实际执行一次。检查可重复且每次计费。操作时长超过剩余窗口则耗尽剩余时间，该操作不执行也不收费。正好在截止时完成的操作有效。前置条件不满足的行动不执行，消耗1单位；可稍后再试。完成终结行动或到期后不得继续。工具只返回实际观察，不能访问其他行动的结果。",
+    "scenario": "一份双栏方言词表要制作检索页。甲式与乙式使用相反的栏序约定。排对可交付14单位，逐字不编序的清单可交付6单位。",
+    "sources": {
+      "batch_key": {
+        "cost": 2,
+        "description": "本册封底的实际栏序读取标志",
+        "time": 1
+      },
+      "copied_note": {
+        "cost": 0,
+        "description": "旧排样说明的复印页；不是独立来源",
+        "time": 1
+      },
+      "desk_note": {
+        "cost": 0,
+        "description": "旧排样说明；版本可能早于本册",
+        "time": 1
+      }
+    },
+    "task_id": "provenance_learn_02"
+  },
+  {
+    "case": "词表第三册",
+    "constraints": [
+      "不得改动词表原文；所有行动只生成可替换的检索副本。"
+    ],
+    "deadline": 3,
+    "objective": "在窗口内交付可读检索页，并扣除实际检查及行动费用。",
+    "options": {
+      "index_x": {
+        "cost": 0,
+        "description": "按甲式制作检索页",
+        "one_use": true,
+        "reversible": true,
+        "terminal": true,
+        "time": 1
+      },
+      "index_y": {
+        "cost": 0,
+        "description": "按乙式制作检索页",
+        "one_use": true,
+        "reversible": true,
+        "terminal": true,
+        "time": 1
+      },
+      "literal_list": {
+        "cost": 0,
+        "description": "只交付逐字清单，不进行栏序推断",
+        "one_use": true,
+        "reversible": true,
+        "terminal": true,
+        "time": 1
+      }
+    },
+    "rules": "调用按所列时间和费用结算；wait和非法调用消耗1单位。每个行动最多实际执行一次。检查可重复且每次计费。操作时长超过剩余窗口则耗尽剩余时间，该操作不执行也不收费。正好在截止时完成的操作有效。前置条件不满足的行动不执行，消耗1单位；可稍后再试。完成终结行动或到期后不得继续。工具只返回实际观察，不能访问其他行动的结果。",
+    "scenario": "一份双栏方言词表要制作检索页。甲式与乙式使用相反的栏序约定。排对可交付14单位，逐字不编序的清单可交付6单位。",
+    "sources": {
+      "batch_key": {
+        "cost": 2,
+        "description": "本册封底的实际栏序读取标志",
+        "time": 1
+      },
+      "copied_note": {
+        "cost": 0,
+        "description": "旧排样说明的复印页；不是独立来源",
+        "time": 1
+      },
+      "desk_note": {
+        "cost": 0,
+        "description": "旧排样说明；版本可能早于本册",
+        "time": 1
+      }
+    },
+    "task_id": "provenance_learn_03"
+  },
+  {
+    "case": "双向可读的附录",
+    "constraints": [
+      "不得改动词表原文；所有行动只生成可替换的检索副本。"
+    ],
+    "deadline": 3,
+    "objective": "在窗口内交付可读检索页，并扣除实际检查及行动费用。",
+    "options": {
+      "index_x": {
+        "cost": 0,
+        "description": "按甲式制作检索页",
+        "one_use": true,
+        "reversible": true,
+        "terminal": true,
+        "time": 1
+      },
+      "index_y": {
+        "cost": 0,
+        "description": "按乙式制作检索页",
+        "one_use": true,
+        "reversible": true,
+        "terminal": true,
+        "time": 1
+      },
+      "literal_list": {
+        "cost": 0,
+        "description": "只交付逐字清单，不进行栏序推断",
+        "one_use": true,
+        "reversible": true,
+        "terminal": true,
+        "time": 1
+      }
+    },
+    "rules": "调用按所列时间和费用结算；wait和非法调用消耗1单位。每个行动最多实际执行一次。检查可重复且每次计费。操作时长超过剩余窗口则耗尽剩余时间，该操作不执行也不收费。正好在截止时完成的操作有效。前置条件不满足的行动不执行，消耗1单位；可稍后再试。完成终结行动或到期后不得继续。工具只返回实际观察，不能访问其他行动的结果。",
+    "scenario": "一份双栏方言词表要制作检索页。甲式与乙式使用相反的栏序约定。排对可交付14单位，逐字不编序的清单可交付6单位。本附录接收方两种栏序均可读取，两种编序均可交付14单位。",
+    "sources": {
+      "batch_key": {
+        "cost": 2,
+        "description": "本册封底的实际栏序读取标志",
+        "time": 1
+      },
+      "copied_note": {
+        "cost": 0,
+        "description": "旧排样说明的复印页；不是独立来源",
+        "time": 1
+      },
+      "desk_note": {
+        "cost": 0,
+        "description": "旧排样说明；版本可能早于本册",
+        "time": 1
+      }
+    },
+    "task_id": "provenance_learn_04"
+  }
+]

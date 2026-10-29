@@ -1,0 +1,151 @@
+{
+  "meta": {
+    "formal_initial_memory": {
+      "common_methods_source_sha256": "d82cd7e91c56c28d01e8eeb6c686e7c466d03ddb1926f4451ef6c89b4562e003",
+      "native_priors": 7,
+      "ordinary_learning_rule": "native_success_only_extraction",
+      "provider_source_sha256": "ce0c1f36ca9fb095c8448fab9b3e35e3c97e5928d115fdf98d56f48c842750f4",
+      "schema_version": 1,
+      "shared_methods": 4
+    },
+    "version": 1
+  },
+  "operational": [
+    {
+      "content": "When crawling web pages: Use specific queries for exact information, extract numbers with full context (units, date, conditions).",
+      "signature": "e53bb5b6cfc0208a9f23aa29312effe8a99b2b71d7ef970a04ddf70aaaf4512d",
+      "source_id": "native:operational:1",
+      "source_kind": "native_cold_start_prior",
+      "success_count": 0,
+      "tags": [
+        "web_search",
+        "extraction"
+      ],
+      "usage_count": 0
+    },
+    {
+      "content": "For multi-source information tasks: Navigate to exact source, extract verbatim values, write formula with units, apply formatting only at end.",
+      "signature": "1a51f2a5dd1d7394472c1c9a260f93bd26636625d5ba75689a1acacd70db5e2c",
+      "source_id": "native:operational:2",
+      "source_kind": "native_cold_start_prior",
+      "success_count": 0,
+      "tags": [
+        "procedure",
+        "information_retrieval"
+      ],
+      "usage_count": 0
+    }
+  ],
+  "strategic": [
+    {
+      "content": "Execute directly rather than over-planning. Prioritize immediate action and concrete steps over extensive theoretical analysis.",
+      "signature": "4f4f6eeec3f5af78d31f7fd3b086c7f177f59846a18aa6f93aaf89f7aa1996fd",
+      "source_id": "native:strategic:1",
+      "source_kind": "native_cold_start_prior",
+      "success_count": 0,
+      "tags": [
+        "execution",
+        "planning"
+      ],
+      "usage_count": 0
+    },
+    {
+      "content": "Interpret task instructions literally and precisely. Pay close attention to output format requirements (units, separators, capitalization).",
+      "signature": "bb652f19089a6a7543c5c28ce8335d273297dde91007af6e0d2c83b2b73678c0",
+      "source_id": "native:strategic:2",
+      "source_kind": "native_cold_start_prior",
+      "success_count": 0,
+      "tags": [
+        "instruction",
+        "format"
+      ],
+      "usage_count": 0
+    },
+    {
+      "content": "For numerical tasks, identify all units explicitly and track unit conversions through each step of calculation.",
+      "signature": "9b41531ec2f83468f2d8c8edb1acefcc2443c706537813516bf6eb29baa1be06",
+      "source_id": "native:strategic:3",
+      "source_kind": "native_cold_start_prior",
+      "success_count": 0,
+      "tags": [
+        "computation",
+        "units"
+      ],
+      "usage_count": 0
+    },
+    {
+      "content": "When tasks present contradictory instructions that test the agent's internal logic or ability to follow specific directives, prioritize direct compliance with the explicit instruction over meta-analysis of the contradiction.",
+      "signature": "2876d2b4050ee472d48c3b28a1d09d15487af5f0b8721a089f5797599cec072e",
+      "source_id": "native:strategic:4",
+      "source_kind": "native_cold_start_prior",
+      "success_count": 0,
+      "tags": [
+        "instruction",
+        "contradiction",
+        "compliance"
+      ],
+      "usage_count": 0
+    },
+    {
+      "content": "If there is no direct or first-hand authoritative evidence, other sources or the most likely answer analyzed can also be provided when reporting the answer, as long as it is clearly labeled.",
+      "signature": "4ce7d080addd5b3c0ef1152da86c48ab3521b088c970b9aeaeeb77492f6df784",
+      "source_id": "native:strategic:5",
+      "source_kind": "native_cold_start_prior",
+      "success_count": 0,
+      "tags": [
+        "evidence",
+        "reporting",
+        "transparency"
+      ],
+      "usage_count": 0
+    },
+    {
+      "content": "【可选方法资源 METHOD-1｜任务分解】当多个子问题相互依赖时，可将目标拆成有输入、输出和依赖的少量部分，先解决阻塞项，再核对整体结果。适用前提是分解确实减少遗漏或不确定性；简单任务、分解后丢失关键关联的任务不必采用。该方法可被组合、重解释或放弃，不是所有任务的起始步骤。",
+      "signature": "8e1c0e8dee978c220752c71802c1ff71bd38b895aed05cf2c29b84751a490f39",
+      "source_id": "METHOD-1",
+      "source_kind": "shared_method_resource",
+      "source_sha256": "d82cd7e91c56c28d01e8eeb6c686e7c466d03ddb1926f4451ef6c89b4562e003",
+      "success_count": 0,
+      "tags": [
+        "shared_method"
+      ],
+      "usage_count": 0
+    },
+    {
+      "content": "【可选方法资源 METHOD-2｜依据对应】当结论涉及多个对象、材料或中间结果时，可逐项保留结论与来源的对应，区分观察、推导和未确定内容，并在交付时检查必要限定是否保留。它用于检查依据是否齐全，不凭来源数量自动判定结论正确；核对成本超过其对当前判断的价值时，可选择更有限的检查。",
+      "signature": "311f7cfd2d87568b7af3305f1328511e79029e6d614423c00a30d914dc754962",
+      "source_id": "METHOD-2",
+      "source_kind": "shared_method_resource",
+      "source_sha256": "d82cd7e91c56c28d01e8eeb6c686e7c466d03ddb1926f4451ef6c89b4562e003",
+      "success_count": 0,
+      "tags": [
+        "shared_method"
+      ],
+      "usage_count": 0
+    },
+    {
+      "content": "【可选方法资源 METHOD-3｜局部诊断】当预期与结果不同，可选择一个能够区分若干原因的小检查，比较输入、工具、推理及输出环节，再判断是否需要修改方法。一次检查不能区分时保留多种原因，不强行给出确定归因。检查、修改和恢复都只是可选操作，不要求每次失败改写整体体系。",
+      "signature": "3d8a199d1344c76584c9c5cc4f5402d237a818c1457298e02d9ad9e46257dc83",
+      "source_id": "METHOD-3",
+      "source_kind": "shared_method_resource",
+      "source_sha256": "d82cd7e91c56c28d01e8eeb6c686e7c466d03ddb1926f4451ef6c89b4562e003",
+      "success_count": 0,
+      "tags": [
+        "shared_method"
+      ],
+      "usage_count": 0
+    },
+    {
+      "content": "【可选方法资源 METHOD-4｜经验适用性检查】复用旧经验时，可比较它与当前任务的目标、条件及资源差异，沿用有支持的部分并标明未知。该方法提供一次适用性审查，不预设差异必然使旧经验失效，也不要求为每次重复使用做完整复盘。是否采用及采用多深，由当前问题与理由决定。",
+      "signature": "17420814292941eca46b3e3440344b82b6a8c5612db24f9a1a71623c87796544",
+      "source_id": "METHOD-4",
+      "source_kind": "shared_method_resource",
+      "source_sha256": "d82cd7e91c56c28d01e8eeb6c686e7c466d03ddb1926f4451ef6c89b4562e003",
+      "success_count": 0,
+      "tags": [
+        "shared_method"
+      ],
+      "usage_count": 0
+    }
+  ]
+}

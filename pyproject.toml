@@ -14,9 +14,13 @@ test = ["pytest==8.3.5"]
 
 [project.scripts]
 philoagent = "philoagent.cli:main"
+philoagent-app = "philoagent_app.cli:main"
 
 [tool.setuptools]
-packages = ["philoagent"]
+packages = ["philoagent", "philoagent_app"]
+
+[tool.setuptools.package-data]
+philoagent_app = ["static/*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

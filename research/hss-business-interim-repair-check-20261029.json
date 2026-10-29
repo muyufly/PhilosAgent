@@ -1,0 +1,151 @@
+{
+  "checked_hkt": "2026-10-29T19:28:09.554147+08:00",
+  "revision": "repair-r4",
+  "counts": {
+    "queued": 20,
+    "running": 7,
+    "complete": 0,
+    "failed": 0,
+    "interrupted": 0
+  },
+  "budget": {
+    "attempt_count": 1092,
+    "actual_tokens": 18650033,
+    "reserved_unknown_tokens": 509359,
+    "effective_tokens": 19159392,
+    "live_inflight_count": 6,
+    "blocked_reason": null
+  },
+  "full_regression_passed": 404,
+  "social_corrected_tasks": [
+    {
+      "job_id": "social-native-r1",
+      "status": "completed",
+      "quality_score": 87.4,
+      "memory_ingestion_complete": true,
+      "answer_extraction_recovery": {
+        "revision": "repair-r4",
+        "extraction": {
+          "method": "complete_final_string_span",
+          "lossless": true,
+          "source_field": "arguments",
+          "source_body_span": [
+            348,
+            18291
+          ],
+          "source_body_span_basis": "stripped JSON content without markdown fence",
+          "source_content_sha256": "405f66551299e790d0f19ff07abb1cc0f773d2f26e30e9bb38d27e2fd71ccfb5",
+          "source_body_chars": 17943,
+          "source_body_sha256": "4ba8034c2f213c2a2fe42ebd7bc2c73e16aaab886bd977845eb02181deb2945e",
+          "decoded_answer_chars": 17589,
+          "decoded_answer_sha256": "311f1e3f2097a50267d252984462abb7562823a2de998a4fe3a23692184b986f",
+          "escape_decoding": "JSON string escapes once; ordinary quotes preserved",
+          "source_attempt": 705
+        },
+        "old_answer_chars": 595,
+        "new_answer_chars": 17589,
+        "old_grade": {
+          "domain": "social",
+          "dimensions": {
+            "material_accuracy": {
+              "score": 1.5,
+              "weight": 20,
+              "reason": "前言中对国办发〔2018〕45号文件、'七个统一'体系以及国家平台注册用户规模等内容的复述，基本符合所给材料与公开事实；但多处具体数据（如1376项服务事项、519万余项地方事项、9.5亿注册用户、946.48亿次访问）未在给定材料中出现，也未标明来源或说明统计口径。材料称2023年3月全国一体化平台实名注册用户超10亿，而文中2025年国家平台9.5亿与之一并呈现，未区分口径，容易引起误读。整体上仅偶有可核对之处，且文本在关键处截断。"
+            },
+            "mechanism_analysis": {
+              "score": 0.2,
+              "weight": 30,
+              "reason": "所交付内容仅覆盖封面和前言开头，未展开任何关于部门协同、数据共享、纵向与横向条块关系和激励约束机制的分析，也没有讨论地区之间和群体之间的差异。仅有的'从部门窗口到整体政府'属于概括性判断，未提供机制说明。"
+            },
+            "argument": {
+              "score": 0.2,
+              "weight": 20,
+              "reason": "全文没有形成任何论证结构。'三个层面取得实质性突破'只是一个断言式框架，未给出证据链、反例或竞争性解释，也未区分相关与因果。由于正文缺失，无法核验其论断是否成立。"
+            },
+            "implications": {
+              "score": 0.2,
+              "weight": 20,
+              "reason": "未提出任何可供执行的政策建议或研究判断。前言提到改革主线与效能目标，但未涉及执行难点、成本、区域差距或对弱势群体的分配影响。"
+            },
+            "communication": {
+              "score": 1.0,
+              "weight": 10,
+              "reason": "封面要素（标题、编写单位、发布日期）齐全，前言开头语言较为专业，也具备白皮书常见的行文风格。但交付物在'在效能层面，一网通办'处突然中断，没有目录、六大章节、结语和附录，字数远少于5000字，也未包含任何案例和关键发现总结。因此，以完整交付物标准衡量，沟通目的基本未达成。"
+            }
+          },
+          "quality_score": 10.8,
+          "overall_comment": "这是严重未完成的白皮书草稿：只有封面和约五百字的前言残段，任务要求的目录、六章主体、结语、附录、五个以上典型案例、定量与定性分析以及各章关键发现全部缺失，字数远低于5000字下限。可评价部分显示出对政策文本的熟悉和较规范的专业语体，个别数据与材料吻合，但存在来源不明、统计口径混用的问题。按维度整体评分处于很低水平，主要扣分原因是交付不完整，而非个别表述错误。",
+          "score_scale": "0_to_100_continuous"
+        },
+        "archived_job": "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01\\revisions\\repair-r4\\restarted_jobs\\social-native-r1",
+        "native_memory_reset": true,
+        "new_actor_requests": 0
+      }
+    },
+    {
+      "job_id": "social-fixed-r1",
+      "status": "completed",
+      "quality_score": 93.4,
+      "memory_ingestion_complete": true,
+      "answer_extraction_recovery": {
+        "revision": "repair-r4",
+        "extraction": {
+          "method": "complete_final_string_span",
+          "lossless": true,
+          "source_field": "arguments",
+          "source_body_span": [
+            391,
+            19551
+          ],
+          "source_body_span_basis": "stripped JSON content without markdown fence",
+          "source_content_sha256": "65ed02a7bc372ad72d839f80c473b82cb3f8927ab261205f6cac3efd517ce899",
+          "source_body_chars": 19160,
+          "source_body_sha256": "ced5e447ff1932d603edab65ede06b3231e4b0234546b1bf9a0920939acc61c1",
+          "decoded_answer_chars": 18795,
+          "decoded_answer_sha256": "c1ce058ea2a6da686746fea8d6e34a146fa52547196d6763f1bcec4b16cf3ba7",
+          "escape_decoding": "JSON string escapes once; ordinary quotes preserved",
+          "source_attempt": 682
+        },
+        "old_answer_chars": 2936,
+        "new_answer_chars": 18795,
+        "old_grade": {
+          "domain": "social",
+          "dimensions": {
+            "material_accuracy": {
+              "score": 1.0,
+              "weight": 20,
+              "reason": "可见部分正确引用了国发〔2022〕5号、14号、国办函〔2022〕102号、国发〔2024〕3号等文件的核心目标和日期，EGDI 0.8119→0.8718、排名43→35、用户10.04亿等数据与所给材料吻合；但作品在第一章表格中途截断，绝大多数所给材料（平台业务数据、国际对标细节）未被处理，无法确认对数据口径与不确定性的整体把握。"
+            },
+            "mechanism_analysis": {
+              "score": 0.8,
+              "weight": 30,
+              "reason": "仅在前言与1.1中提出'规模扩张→质量提升'和四阶段划分的机制性判断，但四阶段论证仅限罗列，未展开因果链条；截断导致后续关于数据共享、平台建设、区域差异等机制分析完全缺失。"
+            },
+            "argument": {
+              "score": 0.8,
+              "weight": 20,
+              "reason": "前言以三层变化支撑'进入质量提升阶段'的判断，属有根据的立论；但仅停留在提纲式表态，未展开比较或反证，且正文在第一章即中断，无法检验论证的完整性与严密性。"
+            },
+            "implications": {
+              "score": 0.5,
+              "weight": 20,
+              "reason": "仅在前言末尾笼统提及为政府、企业提供参考，缺乏与证据相称的具体政策或研究判断；截断处未涉及建议、执行影响或分配后果。"
+            },
+            "communication": {
+              "score": 1.5,
+              "weight": 10,
+              "reason": "封面、前言、目录结构清晰，目录覆盖全部要求章节，开篇文字专业；但交付物在第一章表格第5行硬性截断，六章主体、案例、结语、附录均未出现，远未完成5000字以上的白皮书，组织性无法在完整篇幅上体现。"
+            }
+          },
+          "quality_score": 17.0,
+          "overall_comment": "交付物仅有封面、约800字前言、目录及第一章开头的一页半内容，随后在政策文件表格中截断。已显示部分写作专业、政策引证大体准确、结构设计符合白皮书规范，但六章主体、5个以上案例、每章关键发现、结语与附录全部缺失，实际完成度不足任务要求的一小部分，无法作为一份完整的《中国'互联网+政务服务'发展现状与趋势白皮书》来评价。",
+          "score_scale": "0_to_100_continuous"
+        },
+        "archived_job": "D:\\PhiloAgent\\runs\\hss-business-formal-20261029-r01\\revisions\\repair-r4\\restarted_jobs\\social-fixed-r1",
+        "native_memory_reset": true,
+        "new_actor_requests": 0
+      }
+    }
+  ],
+  "human_full_maintenance_cache_recovery_alive": true
+}

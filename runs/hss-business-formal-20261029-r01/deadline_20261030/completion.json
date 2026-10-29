@@ -1,0 +1,37 @@
+{
+  "finalized_utc": "2026-10-29T16:44:52.985115+00:00",
+  "mode": "deadline_rapid_v1",
+  "complete_jobs": 27,
+  "scored_tasks": 324,
+  "learning_tasks": 216,
+  "heldout_tasks": 108,
+  "all_scores_numeric": true,
+  "all_works_nonempty": true,
+  "exact_matrix_coverage": true,
+  "pending_tasks": 0,
+  "execution_failures": 0,
+  "reused_original_works": 69,
+  "quick_model_scores": 204,
+  "heuristic_scores": 51,
+  "round_reflection_steps": 54,
+  "reflection_model_success": 49,
+  "reflection_retained_after_failure": 5,
+  "original_native_tournaments_completed": false,
+  "full_phi_changes": 13,
+  "rescue_state": {
+    "status": "complete",
+    "started_utc": "2026-10-29T16:38:23.476779+00:00",
+    "pid": 41136,
+    "process_identity": {
+      "pid": 41136,
+      "started_unix": 1793291903.3341675,
+      "executable": "C:\\Users\\muyufly\\AppData\\Roaming\\uv\\python\\cpython-3.10.20-windows-x86_64-none\\python.exe"
+    },
+    "deadline_unix": 1793294504.0,
+    "updated_utc": "2026-10-29T16:43:32.528214+00:00",
+    "active_main_jobs": 0,
+    "waiting_process_exit": [],
+    "exhausted_rescue_gaps": [],
+    "completed_utc": "2026-10-29T16:43:32.531210+00:00"
+  }
+}

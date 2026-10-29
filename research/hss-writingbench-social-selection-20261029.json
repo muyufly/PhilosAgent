@@ -1,0 +1,93 @@
+{
+  "domain": "social",
+  "source": "WritingBench",
+  "source_commit": "ae2d5176449b7b769815482641d35926f26793eb",
+  "source_file": "data/writingbench/ae2d5176449b7b769815482641d35926f26793eb/benchmark_all.jsonl",
+  "selection_method": "人工审阅原题及原有checklist，按社会分析和公共议题内容选择，不依据模型作答、哲学冲突或实验结果；保留原题与原有评分标准。",
+  "tasks": [
+    {
+      "source_index": 126,
+      "domain2": "Policy Interpretation",
+      "title": "便民服务与营商环境政策解读",
+      "split": "learning",
+      "selection_reason": "以提供的民生服务措施为基础，解释制度安排如何影响群众和企业，原评分关注政策洞察和实用性。"
+    },
+    {
+      "source_index": 133,
+      "domain2": "Policy Advocacy",
+      "title": "乡村振兴责任体系的公众解读",
+      "split": "learning",
+      "selection_reason": "将多层级责任、考核和监督机制转化为可理解的公共政策说明，覆盖农村治理与政策沟通。"
+    },
+    {
+      "source_index": 143,
+      "domain2": "White Paper",
+      "title": "法律援助质量与能力建设白皮书修订",
+      "split": "learning",
+      "selection_reason": "基于已有白皮书补充质量评估、人才培训与信息化方案，考察公共服务改进及内容整合。"
+    },
+    {
+      "source_index": 333,
+      "domain2": "Policy Advocacy",
+      "title": "垃圾分类治理与市民行动指南",
+      "split": "learning",
+      "selection_reason": "围绕环境公共事务解释政策、居民责任和实施方式，覆盖政策传播与日常行为指导。"
+    },
+    {
+      "source_index": 518,
+      "domain2": "White Paper",
+      "title": "资源不足地区的司法援助系统建设",
+      "split": "learning",
+      "selection_reason": "面对基层资源不足，比较经验并提出人力、资金、数字化和监督方案，属于公共服务资源配置分析。"
+    },
+    {
+      "source_index": 628,
+      "domain2": "Policy Advocacy",
+      "title": "法治建设与营商环境的制度关联",
+      "split": "learning",
+      "selection_reason": "要求结合历史、理论、实践及国内外经验解释制度作用，并提出可实施政策建议。"
+    },
+    {
+      "source_index": 682,
+      "domain2": "White Paper",
+      "title": "互联网政务服务的发展与用户体验",
+      "split": "learning",
+      "selection_reason": "结合所附政策与数据分析数字政务、服务体验和发展趋势，覆盖量化资料与制度实践。"
+    },
+    {
+      "source_index": 704,
+      "domain2": "Educational Consulting",
+      "title": "择校焦虑的原因与教育选择建议",
+      "split": "learning",
+      "selection_reason": "面向家长分析教育资源、社会期待与选择焦虑，结合数据案例形成教育公共议题判断。"
+    },
+    {
+      "source_index": 342,
+      "domain2": "White Paper",
+      "title": "农村基层治理与村民自治的演进",
+      "split": "heldout",
+      "selection_reason": "要求系统分析基层治理制度的发展和改革方向，作为未用于学习的综合治理论述题。"
+    },
+    {
+      "source_index": 626,
+      "domain2": "Policy Interpretation",
+      "title": "数据安全政策对公众和中小企业的影响",
+      "split": "heldout",
+      "selection_reason": "解释政策对不同社会主体的实际影响并提出操作建议，作为未用于学习的数字社会公共议题。"
+    },
+    {
+      "source_index": 753,
+      "domain2": "Coursework",
+      "title": "互联网对现代教育的综合影响",
+      "split": "heldout",
+      "selection_reason": "比较资源共享、学习创新与传统教学受到的冲击，要求有证据的综合评价，作为教育议题留出。"
+    },
+    {
+      "source_index": 783,
+      "domain2": "Policy Advocacy",
+      "title": "司法资源下沉基层的成效与难点",
+      "split": "heldout",
+      "selection_reason": "结合案例和数据诊断基层服务不足并设计政策措施，作为公共服务治理题留出。"
+    }
+  ]
+}

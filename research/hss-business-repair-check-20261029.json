@@ -1,0 +1,75 @@
+{
+  "checked_hkt": "2026-10-29T18:33:38.437667+08:00",
+  "revision": "repair-r2",
+  "supervisor_alive": true,
+  "workers": 6,
+  "restored_tasks": [
+    {
+      "job_id": "humanities-native-r1",
+      "status": "completed",
+      "memory_ingestion_complete": true,
+      "actor_recovery_attempts": 0,
+      "judge_recovery_attempts": 0,
+      "normalization": {
+        "normalization_version": 1,
+        "repaired": true,
+        "repairs": [
+          {
+            "operation": "append_missing_object_closures",
+            "count": 1
+          },
+          {
+            "operation": "relocate_overall_comment",
+            "from": "dimensions.overall_comment",
+            "to": "overall_comment"
+          }
+        ],
+        "raw_sha256": "a74f2348c5ccdff8eada4555346eb87ddaa714e6e7e09e767574cf2d5e90a1d5",
+        "normalized_sha256": "d97c611575832fae37cc3f8c0fc0b469553769ee6472f5bbfaeea6c7d040c723"
+      }
+    },
+    {
+      "job_id": "humanities-full-r1",
+      "status": "completed",
+      "memory_ingestion_complete": true,
+      "actor_recovery_attempts": 0,
+      "judge_recovery_attempts": 1,
+      "normalization": {
+        "normalization_version": 1,
+        "repaired": true,
+        "repairs": [
+          {
+            "operation": "append_missing_object_closures",
+            "count": 1
+          },
+          {
+            "operation": "relocate_overall_comment",
+            "from": "dimensions.overall_comment",
+            "to": "overall_comment"
+          }
+        ],
+        "raw_sha256": "ab0ab992aa973e94f25d62a1e803ad75a6dada70748c751a4eb12d79ea1f0efd",
+        "normalized_sha256": "252e1c6dec7793fa671d212b5aa1443077c9a038f924e8bad84d5c97f17b4be8"
+      }
+    }
+  ],
+  "new_requests": {
+    "admitted": 63,
+    "success": 57,
+    "failed": 0,
+    "pending": 6
+  },
+  "ledger": {
+    "attempt_count": 547,
+    "actual_tokens": 6920497,
+    "live_inflight_count": 6,
+    "unknown_usage_attempts": 0,
+    "blocked_reason": null
+  },
+  "legacy_job_counts_including_waiting_retries": {
+    "queued": 16,
+    "running": 6,
+    "complete": 0,
+    "failed": 5
+  }
+}

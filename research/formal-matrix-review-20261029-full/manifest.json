@@ -1,0 +1,165 @@
+{
+  "artifact_hashes": {
+    "evaluation_only/authority.json": "4aaf6a4b7c9e8b7a7785febd8f97b1726924b7fdc35e0dbab3663989fbc2c109",
+    "evaluation_only/provenance.json": "26009ced755ab2fcffd299b8ab28d026c699ca99e2b354cd2adb02712b4c6482",
+    "evaluation_only/sequence.json": "c2e1651a183ca9c84a385f196cc5d9acb82e2ddaf1f0518cfc590ab3c84ef35b",
+    "learning/authority.json": "b7917ee4d17655e0fd2b65b7a28fdd924fd17408f767f444fd64b69925a67240",
+    "learning/provenance.json": "1f4f7bda4be4397b0c3f13bdc10c0241f6a5c51fb30fc13acbde87c1e91146b5",
+    "learning/sequence.json": "c8dc22e319646b3baed5fba255092099c104b7d5c21a1374c897a5bf592ef130",
+    "protocol.json": "45c34a879ccf3768cc9b5a9482a58d1a55c0568201e2e81cc0c01823e7dc4797",
+    "schedule.json": "7683754f6f43c1ed297c397bda894cd3e19990e0b02aa1490ef80257e6dc28e2",
+    "seeds/initial_memory.json": "86caee8e8c5c367c246ca4cd57d07180cbcb6af87cec23a92e45e943699bc7e9",
+    "seeds/phi0.json": "bfe6d2279fd8b9b3961c67c91c55a29fab94c46f3e54c253a009554d59333755"
+  },
+  "budget": {
+    "approved_limits": null,
+    "automatic_budget_expansion": false,
+    "currency_estimate": null,
+    "first_stage_option": {
+      "actor_task_executions": 16,
+      "automatically_continue_to_comparisons": false,
+      "planning_requests": 216,
+      "planning_tokens": 1106576,
+      "proposed_max_calls": 216,
+      "proposed_token_soft_stop": 1300000,
+      "scope": "one_stream_primary_learning_system_proposals_and_interface_validation",
+      "system_lineages": 2
+    },
+    "interface_validation_unit": {
+      "input_tokens": 20000,
+      "output_tokens": 12288,
+      "requests": 4
+    },
+    "method": "planning_units_from_r01; not_worst_case_bound; validator_unit_unmeasured",
+    "planning_envelope": {
+      "input_tokens": 9216000,
+      "output_tokens": 1447728,
+      "requests": 2376,
+      "total_tokens": 10663728
+    },
+    "proposed_limits": {
+      "max_calls": 2400,
+      "max_tokens_soft_stop": 12000000
+    },
+    "reflection_unit": {
+      "input_tokens": 76000,
+      "output_tokens": 37000,
+      "requests": 8
+    },
+    "tail_risk": "one_admitted_response_may_exceed_reservation; unknown_usage_locks_ledger",
+    "task_unit": {
+      "input_tokens": 45000,
+      "output_tokens": 6000,
+      "requests": 12
+    }
+  },
+  "counts": {
+    "actor_task_executions": 192,
+    "by_phase": {
+      "candidate_comparison": 48,
+      "finalist_comparison": 36,
+      "native_interface_validation": 6,
+      "native_selection": 6,
+      "paired_probe": 24,
+      "primary_holdout": 24,
+      "primary_learning": 48,
+      "same_phi_baseline": 12,
+      "system_reflection": 6
+    },
+    "events": 210,
+    "system_lineages": 6
+  },
+  "date": "2026-10-29",
+  "formal_matrix_authorized": false,
+  "group_order": [
+    [
+      "M0",
+      "M1",
+      "S0",
+      "S1"
+    ],
+    [
+      "M1",
+      "S0",
+      "S1",
+      "M0"
+    ],
+    [
+      "S0",
+      "S1",
+      "M0",
+      "M1"
+    ]
+  ],
+  "inference_limit": "3_designed_streams; repeats_and_comparison_runs_not_new_samples; not_iid",
+  "kind": "formal_matrix_review_proposal",
+  "live_executor_ready": false,
+  "live_model_calls_performed": false,
+  "model_training_or_probe_results_observed": false,
+  "pilot_policy": "pilot_is_exploratory; do_not_pool_into_later_confirmatory_results",
+  "proposal_sha256": "2ba103a91b56eced836cb599b525c2bd5fc13a6335f007c4007cbfd00a2c454e",
+  "remaining_before_live": [
+    "specific_protocol_and_budget_user_approval",
+    "formal_native_validation_selection_live_adapter",
+    "offline_transport_closure_of_full_formal_lifecycle"
+  ],
+  "review_reference": "research/formal-matrix-review-20261029.md",
+  "schema_version": 1,
+  "scope": "full",
+  "scope_policy": "pilot_and_full_are_alternatives; after_pilot_full_is_exploratory_and_confirmation_needs_new_tasks",
+  "sources": {
+    "adapter_python_sha256": "a89ef2ce939cece5be1dffe739e4767ee13493cf668d459154fc2adc0c81e207",
+    "native_python_sha256": "751d710a81c68d259479a30eedd87dfb3f92c1bc2bb3eecca73130b3144e4fae",
+    "seed_files": {
+      "seeds/systems/common-methods.json": "d82cd7e91c56c28d01e8eeb6c686e7c466d03ddb1926f4451ef6c89b4562e003",
+      "seeds/systems/dialectical-v1.json": "23470d976588d8b7fa69b388a09685c4be34f026221bf3b8fb9200fe9318efab"
+    }
+  },
+  "status": "pending_user_review",
+  "streams": {
+    "authority": {
+      "probe_ids": [
+        "authority_probe_01",
+        "authority_probe_02"
+      ],
+      "train_ids": [
+        "authority_learn_01",
+        "authority_learn_02",
+        "authority_learn_03",
+        "authority_learn_04"
+      ]
+    },
+    "provenance": {
+      "probe_ids": [
+        "provenance_probe_01",
+        "provenance_probe_02"
+      ],
+      "train_ids": [
+        "provenance_learn_01",
+        "provenance_learn_02",
+        "provenance_learn_03",
+        "provenance_learn_04"
+      ]
+    },
+    "sequence": {
+      "probe_ids": [
+        "sequence_probe_01",
+        "sequence_probe_02"
+      ],
+      "train_ids": [
+        "sequence_learn_01",
+        "sequence_learn_02",
+        "sequence_learn_03",
+        "sequence_learn_04"
+      ]
+    }
+  },
+  "task_generation": {
+    "independence": "distinct_causal_structures; no_iid_population_claim",
+    "mode": "hand_authored_deterministic_versioned_fixtures",
+    "model_sampling_seed": null,
+    "random_seed": null,
+    "version": "formal-tasks-draft-20261029-v1"
+  },
+  "timezone": "Asia/Hong_Kong"
+}

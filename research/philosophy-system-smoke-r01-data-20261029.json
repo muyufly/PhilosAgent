@@ -1,0 +1,721 @@
+{
+  "report_date": "2026-10-29",
+  "run_id": "philosophy-system-smoke-20261029-r01",
+  "scope": "minimal_mechanism_acceptance_not_formal_matrix_or_selection_loop",
+  "final_status": {
+    "protocol_completed": true,
+    "formal_matrix_started": false,
+    "model": "deepseek-flash",
+    "training": [
+      {
+        "task_id": "train_01",
+        "done": true,
+        "time": 2,
+        "deadline": 3,
+        "reward": 12,
+        "cost": 0,
+        "utility": 12,
+        "success": true,
+        "completed": true,
+        "feedback": "12单位按时交付。",
+        "violations": [],
+        "observations": 2,
+        "audit": [
+          {
+            "tool": "inspect",
+            "argument": "previous_log",
+            "result": {
+              "ok": true,
+              "cost": 0,
+              "observation": "上一班主机池容量充足，错误计数0。",
+              "time": 1,
+              "remaining": 2,
+              "done": false
+            }
+          },
+          {
+            "tool": "act",
+            "argument": "primary",
+            "result": {
+              "ok": true,
+              "observation": "12单位按时交付。",
+              "time": 2,
+              "remaining": 1,
+              "done": true
+            }
+          }
+        ]
+      },
+      {
+        "task_id": "train_02",
+        "done": true,
+        "time": 2,
+        "deadline": 3,
+        "reward": -12,
+        "cost": 0,
+        "utility": -12,
+        "success": false,
+        "completed": true,
+        "feedback": "整批未交付，并产生12单位返工损耗。",
+        "violations": [],
+        "observations": 2,
+        "audit": [
+          {
+            "tool": "inspect",
+            "argument": "previous_log",
+            "result": {
+              "ok": true,
+              "cost": 0,
+              "observation": "上一班主机池容量充足，错误计数0。",
+              "time": 1,
+              "remaining": 2,
+              "done": false
+            }
+          },
+          {
+            "tool": "act",
+            "argument": "primary",
+            "result": {
+              "ok": true,
+              "observation": "整批未交付，并产生12单位返工损耗。",
+              "time": 2,
+              "remaining": 1,
+              "done": true
+            }
+          }
+        ]
+      }
+    ],
+    "trials": {
+      "probe_old_01": {
+        "task_id": "probe_01",
+        "done": true,
+        "time": 2,
+        "deadline": 2,
+        "reward": 6,
+        "cost": 0,
+        "utility": 6,
+        "success": true,
+        "completed": true,
+        "feedback": "小厅按时开放，完成6单位。",
+        "violations": [],
+        "observations": 2,
+        "audit": [
+          {
+            "tool": "inspect",
+            "argument": "yesterday",
+            "result": {
+              "ok": true,
+              "cost": 0,
+              "observation": "昨天闭馆时场地无风，展架稳定。",
+              "time": 1,
+              "remaining": 1,
+              "done": false
+            }
+          },
+          {
+            "tool": "act",
+            "argument": "hall",
+            "result": {
+              "ok": true,
+              "observation": "小厅按时开放，完成6单位。",
+              "deadline_reached": true,
+              "time": 2,
+              "remaining": 0,
+              "done": true
+            }
+          }
+        ]
+      },
+      "probe_new_01": {
+        "task_id": "probe_01",
+        "done": true,
+        "time": 2,
+        "deadline": 2,
+        "reward": -13,
+        "cost": 0,
+        "utility": -13,
+        "success": false,
+        "completed": true,
+        "feedback": "阵风损坏展架，布展失败并损耗13单位。",
+        "violations": [],
+        "observations": 2,
+        "audit": [
+          {
+            "tool": "inspect",
+            "argument": "yesterday",
+            "result": {
+              "ok": true,
+              "cost": 0,
+              "observation": "昨天闭馆时场地无风，展架稳定。",
+              "time": 1,
+              "remaining": 1,
+              "done": false
+            }
+          },
+          {
+            "tool": "act",
+            "argument": "courtyard",
+            "result": {
+              "ok": true,
+              "observation": "阵风损坏展架，布展失败并损耗13单位。",
+              "deadline_reached": true,
+              "time": 2,
+              "remaining": 0,
+              "done": true
+            }
+          }
+        ]
+      },
+      "probe_new_02": {
+        "task_id": "probe_02",
+        "done": true,
+        "time": 3,
+        "deadline": 3,
+        "reward": 6,
+        "cost": 1,
+        "utility": 5,
+        "success": true,
+        "completed": true,
+        "feedback": "表面干式整理完成，原件材料未受损。",
+        "violations": [],
+        "observations": 3,
+        "audit": [
+          {
+            "tool": "inspect",
+            "argument": "routine_card",
+            "result": {
+              "ok": true,
+              "cost": 0,
+              "observation": "通用流程过去用于现代聚酯覆膜件，未记录本件检测。",
+              "time": 1,
+              "remaining": 2,
+              "done": false
+            }
+          },
+          {
+            "tool": "inspect",
+            "argument": "material_record",
+            "result": {
+              "ok": true,
+              "cost": 1,
+              "observation": "原件为醋酸纤维素粘结层；该清洁液会使此层不可逆膨胀。",
+              "time": 2,
+              "remaining": 1,
+              "done": false
+            }
+          },
+          {
+            "tool": "act",
+            "argument": "dry",
+            "result": {
+              "ok": true,
+              "observation": "表面干式整理完成，原件材料未受损。",
+              "deadline_reached": true,
+              "time": 3,
+              "remaining": 0,
+              "done": true
+            }
+          }
+        ]
+      },
+      "probe_old_02": {
+        "task_id": "probe_02",
+        "done": true,
+        "time": 3,
+        "deadline": 3,
+        "reward": 6,
+        "cost": 1,
+        "utility": 5,
+        "success": true,
+        "completed": true,
+        "feedback": "表面干式整理完成，原件材料未受损。",
+        "violations": [],
+        "observations": 3,
+        "audit": [
+          {
+            "tool": "inspect",
+            "argument": "routine_card",
+            "result": {
+              "ok": true,
+              "cost": 0,
+              "observation": "通用流程过去用于现代聚酯覆膜件，未记录本件检测。",
+              "time": 1,
+              "remaining": 2,
+              "done": false
+            }
+          },
+          {
+            "tool": "inspect",
+            "argument": "material_record",
+            "result": {
+              "ok": true,
+              "cost": 1,
+              "observation": "原件为醋酸纤维素粘结层；该清洁液会使此层不可逆膨胀。",
+              "time": 2,
+              "remaining": 1,
+              "done": false
+            }
+          },
+          {
+            "tool": "act",
+            "argument": "dry",
+            "result": {
+              "ok": true,
+              "observation": "表面干式整理完成，原件材料未受损。",
+              "deadline_reached": true,
+              "time": 3,
+              "remaining": 0,
+              "done": true
+            }
+          }
+        ]
+      }
+    },
+    "orientation_changed": false,
+    "parent_phi_sha256": "821f1c120b55e5438d6f534cfdac1b184151310a22a94265066f21d82134a2d0",
+    "candidate_phi_sha256": "821f1c120b55e5438d6f534cfdac1b184151310a22a94265066f21d82134a2d0",
+    "policy_fixed": true,
+    "all_probes_started_from_identical_memory": true,
+    "probe_ingestion_disabled": true,
+    "comparisons": [
+      {
+        "task_id": "probe_01",
+        "old_actions": [
+          [
+            "inspect",
+            "yesterday"
+          ],
+          [
+            "act",
+            "hall"
+          ]
+        ],
+        "new_actions": [
+          [
+            "inspect",
+            "yesterday"
+          ],
+          [
+            "act",
+            "courtyard"
+          ]
+        ],
+        "action_sequence_changed": true,
+        "old_utility": 6,
+        "new_utility": -13,
+        "old_violations": [],
+        "new_violations": []
+      },
+      {
+        "task_id": "probe_02",
+        "old_actions": [
+          [
+            "inspect",
+            "routine_card"
+          ],
+          [
+            "inspect",
+            "material_record"
+          ],
+          [
+            "act",
+            "dry"
+          ]
+        ],
+        "new_actions": [
+          [
+            "inspect",
+            "routine_card"
+          ],
+          [
+            "inspect",
+            "material_record"
+          ],
+          [
+            "act",
+            "dry"
+          ]
+        ],
+        "action_sequence_changed": false,
+        "old_utility": 5,
+        "new_utility": 5,
+        "old_violations": [],
+        "new_violations": []
+      }
+    ],
+    "runtime_checks": {
+      "probe_old_01": {
+        "loaded_P_sha256": "ce0c1f36ca9fb095c8448fab9b3e35e3c97e5928d115fdf98d56f48c842750f4",
+        "provider": "lightweight_memory",
+        "phi_in_actual_request": true,
+        "no_ingestion_runtime_calls": true
+      },
+      "probe_new_01": {
+        "loaded_P_sha256": "ce0c1f36ca9fb095c8448fab9b3e35e3c97e5928d115fdf98d56f48c842750f4",
+        "provider": "philo_minimal_decision_phi_smoke_4221f91228815c",
+        "phi_in_actual_request": true,
+        "no_ingestion_runtime_calls": true
+      },
+      "probe_new_02": {
+        "loaded_P_sha256": "ce0c1f36ca9fb095c8448fab9b3e35e3c97e5928d115fdf98d56f48c842750f4",
+        "provider": "philo_minimal_decision_phi_smoke_4221f91228815c",
+        "phi_in_actual_request": true,
+        "no_ingestion_runtime_calls": true
+      },
+      "probe_old_02": {
+        "loaded_P_sha256": "ce0c1f36ca9fb095c8448fab9b3e35e3c97e5928d115fdf98d56f48c842750f4",
+        "provider": "lightweight_memory",
+        "phi_in_actual_request": true,
+        "no_ingestion_runtime_calls": true
+      }
+    },
+    "all_episodes_reached_terminal_state": true,
+    "decision_success_count": 4,
+    "task_executions": 6,
+    "budget": {
+      "version": 1,
+      "limits": {
+        "max_calls": 150,
+        "max_tokens": 800000
+      },
+      "model": "deepseek-flash",
+      "request_count_scope": "hard_cap_before_network",
+      "token_limit_scope": "soft_stop_with_conservative_reservation",
+      "token_estimate": "serialized_request_utf8_bytes + max_output + 4096",
+      "token_tail_limit": "At most one admitted request beyond the estimate; no tokenizer-independent numeric bound. Failed or interrupted request usage may be unknown.",
+      "actual_tokens": 210060,
+      "unknown_usage_attempts": 0,
+      "blocked_reason": null,
+      "attempt_count": 54,
+      "ledger_path": "D:\\PhiloAgent\\runs\\philosophy-system-smoke-20261029-r01\\decision_smoke\\budget\\budget.json"
+    },
+    "roles": {
+      "actor-and-memory:decision_smoke:train": {
+        "requests": 17,
+        "total_tokens": 60133
+      },
+      "decision-evolve-analysis": {
+        "requests": 4,
+        "total_tokens": 38712
+      },
+      "decision-evolve-generation": {
+        "requests": 1,
+        "total_tokens": 3162
+      },
+      "actor-and-memory:probe_old_01:result": {
+        "requests": 8,
+        "total_tokens": 26902
+      },
+      "actor-and-memory:probe_new_01:result": {
+        "requests": 8,
+        "total_tokens": 26875
+      },
+      "actor-and-memory:probe_new_02:result": {
+        "requests": 8,
+        "total_tokens": 27646
+      },
+      "actor-and-memory:probe_old_02:result": {
+        "requests": 8,
+        "total_tokens": 26630
+      }
+    },
+    "candidate_provider": "philo_minimal_decision_phi_smoke_4221f91228815c",
+    "run_dir": "D:\\PhiloAgent\\runs\\philosophy-system-smoke-20261029-r01",
+    "interpretation": "Mechanism acceptance only; one proposed version and two probe pairs do not establish efficacy or causality."
+  },
+  "protocol_manifest": {
+    "kind": "minimal_decision_mechanism_smoke",
+    "formal_matrix_authorized": false,
+    "model": "deepseek-flash",
+    "temperature": 0,
+    "thinking": "disabled",
+    "train_ids": [
+      "train_01",
+      "train_02"
+    ],
+    "probe_ids": [
+      "probe_01",
+      "probe_02"
+    ],
+    "task_executions": 6,
+    "native_revision_proposals": 1,
+    "factor_policy": {
+      "code_evolve": false,
+      "orientation_evolve": true
+    },
+    "max_calls": 150,
+    "max_tokens_soft_stop": 800000,
+    "protocol_version": 2,
+    "budget_authorization": "User authorized expanding the minimal validation budget on 2026-10-29.",
+    "actor_max_steps": 6,
+    "actor_max_output_tokens": 3072,
+    "analysis_max_steps": 4,
+    "analysis_max_output_tokens": 4096,
+    "generation_max_output_tokens": 12000,
+    "adapter_sha256": "ba50ac477cf25929fc51af3f8ee101f85b93a742baabf76b05f62e550759b3f0",
+    "fixture_sha256": "bd69ef7b58ac6aaa2be6276c980d3bbc7d1b19dca73bcaa58c939d3aab05cdef",
+    "seed_sha256": "1e0e276e77e0845c2365de86b0a42d379419de8cc536c499b0985af74feb22ee",
+    "probe_protocol": "Fresh process and identical post-train M for each old/new Phi replay; no probe ingestion.",
+    "selection": "One proposal is a diagnostic candidate, not a selected winner. No formal selection loop.",
+    "stopping": "Reuse completed phases without payment; preserve failures and require an explicit repair before retry. Never expand the formal matrix."
+  },
+  "reflection": {
+    "analysis_coverage": {
+      "basis": "successful_native_tool_returns",
+      "required_tasks": [
+        "train_01",
+        "train_02"
+      ],
+      "summary_tasks": [
+        "train_01",
+        "train_02"
+      ],
+      "step_indices": {
+        "train_01": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "train_02": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "complete": true
+    },
+    "raw_logs_unchanged": true,
+    "no_held_out_inputs": true,
+    "generated_summary_calls": 0,
+    "source_bytes": 93158,
+    "projection_bytes": 22317,
+    "byte_reduction_fraction": 0.7604392537409562,
+    "measurement_scope": "serialized_training_logs_not_all_requests_or_tokens"
+  },
+  "paired_requests": {
+    "01": [
+      {
+        "index": 0,
+        "old_attempt": 23,
+        "new_attempt": 31,
+        "request_messages_equal": true,
+        "full_request_hash_equal": true,
+        "assistant_content_equal": false
+      },
+      {
+        "index": 1,
+        "old_attempt": 24,
+        "new_attempt": 32,
+        "request_messages_equal": false,
+        "full_request_hash_equal": false,
+        "assistant_content_equal": false
+      },
+      {
+        "index": 2,
+        "old_attempt": 25,
+        "new_attempt": 33,
+        "request_messages_equal": false,
+        "full_request_hash_equal": false,
+        "assistant_content_equal": false
+      },
+      {
+        "index": 3,
+        "old_attempt": 26,
+        "new_attempt": 34,
+        "request_messages_equal": false,
+        "full_request_hash_equal": false,
+        "assistant_content_equal": false
+      },
+      {
+        "index": 4,
+        "old_attempt": 27,
+        "new_attempt": 35,
+        "request_messages_equal": false,
+        "full_request_hash_equal": false,
+        "assistant_content_equal": false
+      },
+      {
+        "index": 5,
+        "old_attempt": 28,
+        "new_attempt": 36,
+        "request_messages_equal": false,
+        "full_request_hash_equal": false,
+        "assistant_content_equal": false
+      },
+      {
+        "index": 6,
+        "old_attempt": 29,
+        "new_attempt": 37,
+        "request_messages_equal": false,
+        "full_request_hash_equal": false,
+        "assistant_content_equal": false
+      },
+      {
+        "index": 7,
+        "old_attempt": 30,
+        "new_attempt": 38,
+        "request_messages_equal": false,
+        "full_request_hash_equal": false,
+        "assistant_content_equal": false
+      }
+    ],
+    "02": [
+      {
+        "index": 0,
+        "old_attempt": 47,
+        "new_attempt": 39,
+        "request_messages_equal": true,
+        "full_request_hash_equal": true,
+        "assistant_content_equal": false
+      },
+      {
+        "index": 1,
+        "old_attempt": 48,
+        "new_attempt": 40,
+        "request_messages_equal": false,
+        "full_request_hash_equal": false,
+        "assistant_content_equal": false
+      },
+      {
+        "index": 2,
+        "old_attempt": 49,
+        "new_attempt": 41,
+        "request_messages_equal": false,
+        "full_request_hash_equal": false,
+        "assistant_content_equal": false
+      },
+      {
+        "index": 3,
+        "old_attempt": 50,
+        "new_attempt": 42,
+        "request_messages_equal": false,
+        "full_request_hash_equal": false,
+        "assistant_content_equal": false
+      },
+      {
+        "index": 4,
+        "old_attempt": 51,
+        "new_attempt": 43,
+        "request_messages_equal": false,
+        "full_request_hash_equal": false,
+        "assistant_content_equal": false
+      },
+      {
+        "index": 5,
+        "old_attempt": 52,
+        "new_attempt": 44,
+        "request_messages_equal": false,
+        "full_request_hash_equal": false,
+        "assistant_content_equal": false
+      },
+      {
+        "index": 6,
+        "old_attempt": 53,
+        "new_attempt": 45,
+        "request_messages_equal": false,
+        "full_request_hash_equal": false,
+        "assistant_content_equal": false
+      },
+      {
+        "index": 7,
+        "old_attempt": 54,
+        "new_attempt": 46,
+        "request_messages_equal": false,
+        "full_request_hash_equal": false,
+        "assistant_content_equal": false
+      }
+    ]
+  },
+  "recovery": {
+    "checked_at_utc": "2026-10-29T08:20:49.001078+00:00",
+    "operation": "run_all(existing_complete_run)",
+    "phases": [
+      {
+        "phase_completed": "train",
+        "reused": true
+      },
+      {
+        "phase_completed": "evolve",
+        "reused": true
+      },
+      {
+        "phase_completed": "probe_old_01",
+        "reused": true
+      },
+      {
+        "phase_completed": "probe_new_01",
+        "reused": true
+      },
+      {
+        "phase_completed": "probe_new_02",
+        "reused": true
+      },
+      {
+        "phase_completed": "probe_old_02",
+        "reused": true
+      }
+    ],
+    "ledger_sha256_before": "27cc0df25487a392a1f27c48692c7f46f85147cb65cd89eeaac8aae416253aaf",
+    "ledger_sha256_after": "27cc0df25487a392a1f27c48692c7f46f85147cb65cd89eeaac8aae416253aaf",
+    "ledger_bytes_unchanged": true,
+    "additional_requests": 0,
+    "additional_tokens": 0,
+    "adapter_freeze_verified": true,
+    "finalize_passed": true
+  },
+  "offline_validation": {
+    "targeted_cases_passed": 87,
+    "e2e_pytest_cases_passed": 1,
+    "e2e_subcases": [
+      "change_phi",
+      "retain_phi"
+    ],
+    "total_pytest_cases_passed": 88,
+    "does_not_establish_model_efficacy": true
+  },
+  "historical_cost_only": {
+    "r00_requests": 23,
+    "r00_tokens": 160028,
+    "r00_and_r01_requests": 77,
+    "r00_and_r01_tokens": 370088,
+    "not_pooled_as_effectiveness_samples": true
+  },
+  "interpretation_limits": [
+    "Phi retained: candidate alias is not a changed philosophical treatment.",
+    "Identical first full request hashes yielded differing model outputs at temperature 0.",
+    "Native cold-start priors and on-demand synthesis are not prior observed task episodes.",
+    "Failed task ingestion follows unchanged native P; philosophy analysis still read its failure.",
+    "One proposal and two paired probes do not establish efficacy or causality."
+  ],
+  "source_files": {
+    "runs/philosophy-system-smoke-20261029-r01/decision_smoke/manifest.json": "c65a60a99def6e96ac816cb97f0ab5842668831a5278657b791c3785bf9d0ff0",
+    "runs/philosophy-system-smoke-20261029-r01/decision_smoke/final_status.json": "d3dca5d1712ea1f369153b1a642a45281603cb060450448d2cfda3621684f99e",
+    "runs/philosophy-system-smoke-20261029-r01/decision_smoke/evolve/summary.json": "6b519e72098b75b7e8b65d9e577ee85508784e1d43b717d01637c866e47b5ed5",
+    "runs/philosophy-system-smoke-20261029-r01/decision_smoke/evolve/analysis_coverage.json": "7c3a36e9153edd72f33d5f33fde413e5651727a77761ebcb9e7776aa046376ce",
+    "runs/philosophy-system-smoke-20261029-r01/decision_smoke/evolve/reflection_view/source_map.json": "132f3e74ab4c3004f88e334fa0913e623b8433bba88804f740f38c7635c007f0",
+    "runs/philosophy-system-smoke-20261029-r01/decision_smoke/paired_request_comparison.json": "e5704fe9cd397c0046f2126fbfaa1e578fb34b75f855c820330f1b1053b7e3b1",
+    "runs/philosophy-system-smoke-20261029-r01/decision_smoke/recovery_check.json": "648140a970b438881850cfa4762d75cc0da2805e1066ec6e3fea4532d4ef38d1",
+    "runs/philosophy-system-smoke-20261029-r01/decision_smoke/budget/budget.json": "27cc0df25487a392a1f27c48692c7f46f85147cb65cd89eeaac8aae416253aaf",
+    "runs/philosophy-system-smoke-20261029-r01/decision_smoke/train/task_logs/train_01.json": "2910074fc43832b93ca1d4784906aab91003c2136ebc8de0af51dda84ad392f3",
+    "runs/philosophy-system-smoke-20261029-r01/decision_smoke/train/task_logs/train_02.json": "273d942f5fa9c3974cfd4702cafed9bfb97f3fe4fd7d5eb43d856fc8ab938510"
+  },
+  "training_ingestion": {
+    "train_01": {
+      "ingestion_status": "accepted",
+      "native_result": [
+        true,
+        "Lightweight memory absorbed 4 items"
+      ]
+    },
+    "train_02": {
+      "ingestion_status": "accepted",
+      "native_result": [
+        true,
+        "Lightweight memory absorbed 0 items"
+      ]
+    }
+  }
+}
