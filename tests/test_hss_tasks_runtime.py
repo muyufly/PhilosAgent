@@ -25,6 +25,7 @@ def test_current_reserved_connection_error_and_success_keep_actual_and_reserved_
               {"task_execution_id": "other", "attempt": 103, "status": "error", "usage": None}]
     callback = object.__new__(NativeHSSRunner)
     callback.usage_reader = lambda: events
+    callback.data_first = False
     usage = callback._usage("current")
     assert usage["total_tokens"] == 12 and usage["reserved_unknown_tokens"] == 30000
     assert usage["unknown_usage_attempts"] == 1
