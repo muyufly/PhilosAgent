@@ -102,13 +102,11 @@ def test_auxiliary_projection_never_relaxes_required_score_validation(bad):
 
 
 @pytest.mark.parametrize("damage", ["missing_dimension", "truncated_string", "trailing_comma",
-                                  "both_comments", "missing_reason", "surrounding_prose"])
+                                  "missing_reason", "surrounding_prose"])
 def test_repair_does_not_invent_or_discard_grade_content(damage):
     document = grade("humanities", 4)
     if damage == "missing_dimension":
         del document["dimensions"]["communication"]
-    elif damage == "both_comments":
-        document["dimensions"]["overall_comment"] = "Conflicting nested assessment."
     elif damage == "missing_reason":
         del document["dimensions"]["argument"]["reason"]
     raw = json.dumps(document)

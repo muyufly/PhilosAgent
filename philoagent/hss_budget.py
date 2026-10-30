@@ -713,6 +713,8 @@ class HSSAuditSink(AuditSink):
                          generation_tokens=protocol.get("generation_max_output_tokens", 60000),
                          timeout=protocol.get("request_timeout_seconds", 300), thinking="provider-default")
         self.budget, self.protocol = budget, protocol
+        from .credential_pool import CredentialPool
+        self.credential_pool = CredentialPool.from_environment()
         self.connection_recovery = protocol.get("connection_recovery")
         if self.connection_recovery is not None:
             if not isinstance(self.connection_recovery, dict):
@@ -795,7 +797,7 @@ class HSSAuditedClient(AuditedClient):
         if _INSIDE_AUDIT.get():
             return self.client.chat.completions.create(**kwargs)
         return _audited_dispatch(self.sink, self.client.chat.completions.create, kwargs,
-                                 context=self.context, secrets=self.secrets)
+                                 context=self.context, secrets=self.secrets, credential_client=self.client)
 
 
 def _exception_audit(error, secrets):
@@ -817,7 +819,7 @@ def _exception_audit(error, secrets):
             "request_id": identifier}
 
 
-def _audited_dispatch(sink, dispatch, kwargs, *, context=None, secrets=(), transport="openai"):
+def _audited_dispatch(sink, dispatch, kwargs, *, context=None, secrets=(), transport="openai", credential_client=None):
     context = {**(context or {}), **_CONTEXT.get()}
     context.setdefault("job_id", sink.job_id)
     context.setdefault("role", "repair" if transport == "litellm" else "unscoped")
@@ -854,11 +856,21 @@ def _audited_dispatch(sink, dispatch, kwargs, *, context=None, secrets=(), trans
     connection = sink.connection_recovery
     if observe_only and connection is None:
         connection = {"max_additional_attempts": 2, "backoff_seconds": [1, 3]}
-    chain_id = uuid4().hex if recovery is not None or connection is not None else None
+    credential_pool = getattr(sink, "credential_pool", None)
+    chain_id = uuid4().hex if recovery is not None or connection is not None or credential_pool is not None else None
     failed_attempts = []
     previous_error = None
     recovery_index = 0
     while True:
+        credential = credential_pool.select() if credential_pool is not None else None
+        if credential is not None:
+            if transport == "litellm":
+                kwargs["api_key"] = credential.api_key
+            elif credential_client is not None:
+                credential_client.api_key = credential.api_key
+            else:
+                raise BudgetRefused("Credential routing requires an owned SDK client")
+            secrets = (*secrets, credential.api_key)
         request = _safe(kwargs, secrets)
         event = {**_safe(context, secrets), "model": model, "requested_model": requested_model,
                  "transport": transport, "request": request,
@@ -869,6 +881,8 @@ def _audited_dispatch(sink, dispatch, kwargs, *, context=None, secrets=(), trans
                  "role_min_output_tokens": role_floor,
                  "thinking": "provider-default", "timeout_seconds": sink.timeout,
                  "sdk_max_retries": 0, "status_scope": "sdk_request_and_output"}
+        if credential is not None:
+            event["credential_slot"] = credential.slot
         if chain_id is not None:
             event.update(recovery_chain_id=chain_id, recovery_index=recovery_index,
                          retry_of_attempt=failed_attempts[-1] if failed_attempts else None,
@@ -891,17 +905,23 @@ def _audited_dispatch(sink, dispatch, kwargs, *, context=None, secrets=(), trans
                 finish_reasons = [choice.get("finish_reason") for choice in response_record["choices"]]
                 event.update(response_has_content=content, response_has_tool_calls=tools,
                              response_finish_reasons=finish_reasons)
-                if usage is None:
+                if "length" in finish_reasons:
+                    # Accounting policy never authorizes a partial response.
+                    # Even clients without retry configuration must reject it.
+                    error_type = "TruncatedModelResponse"
+                elif usage is None:
                     error_type = "MissingOrInvalidUsage"
                     if observe_only and (content or tools) and "length" not in finish_reasons:
                         event["response_accepted_without_usage"] = True
                 elif not content and not tools:
                     error_type = "EmptyModelContentError"
-                elif recovery is not None and "length" in finish_reasons:
-                    error_type = "TruncatedModelResponse"
             except BaseException as exc:
                 error_type = type(exc).__name__
                 event.update(_exception_audit(exc, secrets))
+                if credential is not None:
+                    from .credential_pool import is_quota_exhausted
+                    if is_quota_exhausted(exc):
+                        event["credential_quota_exhausted"] = True
                 usage = _usage(getattr(exc, "usage", None))
                 if usage is None and isinstance(getattr(exc, "body", None), dict):
                     usage = _usage(exc.body.get("usage"))
@@ -926,7 +946,8 @@ def _audited_dispatch(sink, dispatch, kwargs, *, context=None, secrets=(), trans
                                    usage_reservation=reservation,
                                    **{key: value for key, value in event.items()
                                       if key in {"duration_seconds", "response_finish_reasons", "transport_recovered", "recovered_attempts",
-                                                 "exception_chain", "http_status", "request_id", "response_accepted_without_usage"}})
+                                                 "exception_chain", "http_status", "request_id", "response_accepted_without_usage",
+                                                 "credential_quota_exhausted"}})
                 if settled.get("reserved_unknown_tokens", 0) > 0:
                     event.update(reserved_unknown_tokens=settled["reserved_unknown_tokens"],
                                  usage_reservation=settled["usage_reservation"])
@@ -935,6 +956,13 @@ def _audited_dispatch(sink, dispatch, kwargs, *, context=None, secrets=(), trans
             raise interrupted
         if not error_type or event.get("response_accepted_without_usage"):
             return result
+        if credential is not None and event.get("credential_quota_exhausted"):
+            replacement = credential_pool.exhausted(credential.slot)
+            if replacement is not None and replacement.slot != credential.slot:
+                failed_attempts.append(number)
+                previous_error = "CredentialQuotaExhausted"
+                recovery_index += 1
+                continue
         transient = (error_type in _CONNECTION_ERRORS
                      or observe_only and event.get("http_status") in {408, 429, 500, 502, 503, 504})
         if (connection is not None and transient
@@ -945,7 +973,7 @@ def _audited_dispatch(sink, dispatch, kwargs, *, context=None, secrets=(), trans
             time.sleep(connection["backoff_seconds"][recovery_index])
             recovery_index += 1
             continue
-        if (recovery is not None and usage is not None
+        if (recovery is not None and (usage is not None or observe_only)
                 and error_type in {"EmptyModelContentError", "TruncatedModelResponse"}
                 and recovery_index < recovery["max_additional_attempts"]):
             expanded = min(recovery["max_output_tokens"],

@@ -28,11 +28,16 @@ def test_identical_redundant_comment_has_one_canonical_location():
     assert normalized == expected and evidence["repaired"]
 
 
-def test_conflicting_comments_remain_an_error():
-    duplicated = grade()
+def test_schema_comment_wins_and_auxiliary_comment_is_preserved_in_audit():
+    expected = grade()
+    duplicated = deepcopy(expected)
     duplicated["dimensions"]["overall_comment"] = "A conflicting assessment."
-    with pytest.raises(ValueError):
-        normalize_grade_output(duplicated, "business")
+    raw = json.dumps(duplicated)
+    normalized, evidence = normalize_grade_output(raw, "business")
+    assert normalized == expected
+    assert evidence["excluded_fields"] == {"dimensions.overall_comment": "A conflicting assessment."}
+    assert validate_grade(normalized, "business")["quality_score"] == 84
+    assert duplicated["dimensions"]["overall_comment"] == "A conflicting assessment."
 
 
 def test_complete_rubric_projects_placeholder_without_altering_any_grade_content():
@@ -72,12 +77,45 @@ def test_missing_required_dimension_cannot_be_replaced_by_extra_or_alias():
         normalize_grade_output(document, "business")
 
 
-def test_extra_fields_do_not_hide_conflicting_comments():
+def test_multiple_auxiliary_fields_are_retained_without_changing_complete_rubric():
+    expected = grade()
     document = grade()
     document["dimensions"]["placeholder"] = 0
     document["dimensions"]["overall_comment"] = "A conflicting comment."
-    with pytest.raises(ValueError, match="conflicting overall comments"):
+    normalized, evidence = normalize_grade_output(document, "business")
+    assert normalized == expected
+    assert evidence["excluded_fields"] == {"dimensions.placeholder": 0,
+                                            "dimensions.overall_comment": "A conflicting comment."}
+
+
+@pytest.mark.parametrize("damage", ["missing_dimension", "invalid_score", "missing_reason", "invalid_top_comment"])
+def test_auxiliary_comment_cannot_repair_incomplete_or_invalid_rubric(damage):
+    document = grade()
+    document["dimensions"]["overall_comment"] = "A nested auxiliary assessment."
+    if damage == "missing_dimension":
+        document["dimensions"].pop("execution")
+    elif damage == "invalid_score":
+        document["dimensions"]["execution"]["score"] = 6
+    elif damage == "missing_reason":
+        document["dimensions"]["execution"].pop("reason")
+    else:
+        document["overall_comment"] = None
+    with pytest.raises(ValueError):
         normalize_grade_output(document, "business")
+
+
+def test_actual_paid_business_grade_can_be_parsed_without_changing_raw_or_scores():
+    from pathlib import Path
+    path = Path(__file__).resolve().parents[1] / "runs/hss-business-formal-20261029-r01/budget/attempts/013093.json"
+    paid = json.loads(path.read_text(encoding="utf-8"))
+    raw = paid["response"]["choices"][0]["message"]["content"]
+    parsed = json.loads(raw)
+    normalized, evidence = normalize_grade_output(raw, "business")
+    assert normalized["dimensions"] == {name: parsed["dimensions"][name] for name in rubric("business")}
+    assert normalized["overall_comment"] == parsed["overall_comment"]
+    assert evidence["excluded_fields"] == {"dimensions.overall_comment": parsed["dimensions"]["overall_comment"]}
+    assert validate_grade(normalized, "business")["quality_score"] == 91.3
+    assert paid["response"]["choices"][0]["message"]["content"] == raw
 
 
 @pytest.mark.parametrize("redundant", [False, True])

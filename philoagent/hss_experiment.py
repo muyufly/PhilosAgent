@@ -288,6 +288,12 @@ def run_one(root, job_id):
     if result_path.exists() and read_json(result_path).get("status") == "complete":
         return read_json(result_path)
     values = environment()
+    from .credential_pool import CredentialPool
+    pool_path = values.get("PHILO_HSS_CREDENTIAL_POOL") or PROJECT / ".env.credentials.local.json"
+    if Path(pool_path).exists():
+        values = {**values, "PHILO_HSS_CREDENTIAL_POOL": str(Path(pool_path).resolve()),
+                  "PHILO_HSS_CREDENTIAL_STATE": str(root / "credential_pool_state.json")}
+        values["OPENAI_API_KEY"] = CredentialPool.from_environment(values).select().api_key
     if configuration(values) != {key: manifest["protocol"][key] for key in configuration(values)}:
         raise ValueError("Model/tool configuration changed since authorization freeze")
     for key, value in values.items():

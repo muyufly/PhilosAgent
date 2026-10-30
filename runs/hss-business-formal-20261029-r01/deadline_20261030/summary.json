@@ -1004,5 +1004,23 @@
     }
   ],
   "pending": [],
-  "extra_records_excluded": []
+  "extra_records_excluded": [],
+  "validity_assessment": {
+    "assessed_utc": "2026-10-29T17:03:07.331598+00:00",
+    "status": "diagnostic_only",
+    "numeric_coverage_is_not_delivery_completion": true,
+    "eligible_for_original_method_conclusion": false,
+    "native_tournaments_completed": false,
+    "new_answers": 255,
+    "final_responses_at_output_limit": 114,
+    "heldout_answers": 108,
+    "heldout_final_responses_at_output_limit": 56,
+    "heldout_quick_model_grades": 86,
+    "heldout_heuristic_grades": 22,
+    "original_completion_counts_describe_numeric_coverage_only": true,
+    "evidence_path": "research/compression-response-flags-20261030.jsonl",
+    "evidence_sha256": "9183be784aa473b59884cdd73a3daa2e9d56a8c29eeca81b6b7183addbcb1fc4",
+    "report": "research/hss-compression-impact-and-recovery-20261030.md",
+    "reason": "Compressed workflow changed the method, accepted length-ended responses and mixed graders; formal native execution resumes from preserved checkpoints."
+  }
 }

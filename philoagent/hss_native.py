@@ -16,6 +16,7 @@ import os
 from pathlib import Path
 import shutil
 import sys
+from uuid import uuid4
 from unittest.mock import patch
 
 from .ablation_runtime import (
@@ -73,11 +74,30 @@ def _remap_storage_config(value, workspace, snapshot_root):
 
 
 @contextmanager
-def _terminal_storage(workspace, frozen_storage, snapshot_root, runner):
+def _terminal_storage(workspace, frozen_storage, snapshot_root, runner, *, resume=False):
     """One task gets its own copy; retrieval-time writes cannot train the next."""
     workspace, frozen_storage, snapshot_root = map(Path, (workspace, frozen_storage, snapshot_root))
     if snapshot_root.exists():
-        raise FileExistsError("Terminal task snapshot already exists; do not silently replay it")
+        if not resume:
+            raise FileExistsError("Terminal task snapshot already exists; do not silently replay it")
+        # Retrieval can update its isolated copy before an interrupted task is
+        # saved. Keep that copy as evidence and start the recovery from the same
+        # frozen training state. Paid task records remain outside this directory
+        # and NativeHSSRunner still verifies/reuses their answer and grade.
+        parent = snapshot_root.parent.resolve()
+        history = parent / "_recovery"
+        history.mkdir(exist_ok=True)
+        archive = history / f"{snapshot_root.name}-{uuid4().hex}"
+        if snapshot_root.is_symlink() or not archive.resolve().is_relative_to(parent):
+            raise ValueError("Terminal recovery snapshot is outside its evaluation directory")
+        previous_manifest = _tree_manifest(snapshot_root)
+        snapshot_root.rename(archive)
+        write_json(archive.with_suffix(".json"), {
+            "kind": "terminal_snapshot_recovery", "archived_snapshot": str(archive),
+            "prior_snapshot_manifest": previous_manifest,
+            "new_snapshot_source": str(frozen_storage),
+            "trained_storage_modified": False, "paid_task_records_modified": False,
+        })
     snapshot_root.mkdir(parents=True)
     shutil.copytree(frozen_storage, snapshot_root / "storage")
     original_config = runner.get_memory_config
@@ -261,7 +281,8 @@ def _terminal_evaluation(run_dir, workspace, winner, heldout_path, protocol, mod
             ContinuousQualityAggregator(output).aggregate()
         else:
             with _terminal_storage(workspace, frozen_storage,
-                                   terminal / "evaluation_snapshots" / str(index + 1), runner):
+                                   terminal / "evaluation_snapshots" / str(index + 1), runner,
+                                   resume=True):
                 callback("writingbench", winner, [index], heldout_path, output)
         records.append(json.loads(existing_record.read_text(encoding="utf-8")))
         if _tree_manifest(storage) != before:

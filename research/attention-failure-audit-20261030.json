@@ -1,0 +1,345 @@
+{
+  "audited_utc": "2026-10-29T17:36:04.378996+00:00",
+  "scope": "eight attention jobs seen before credential pool restoration; original_native only",
+  "period_started_unix": 1793293754,
+  "job_counts": {
+    "generation_HTTP402": 4,
+    "actor_failure": 1,
+    "judge_retry_exhausted_after_HTTP402": 1,
+    "committed_ingestion_mutations": 2,
+    "proven_bad_generated_programs": 0
+  },
+  "request_http_failures": {
+    "429": 13,
+    "402": 27
+  },
+  "total_failed_requests": 40,
+  "jobs": [
+    {
+      "job_id": "humanities-fixed-r1",
+      "classification": "actor_failed_after_429_and_402",
+      "http_failures": {
+        "429": 6,
+        "402": 1
+      },
+      "attempts": [
+        {
+          "attempt": 11274,
+          "role": "memory_retrieval",
+          "http_status": 429,
+          "response_present": false
+        },
+        {
+          "attempt": 11278,
+          "role": "memory_retrieval",
+          "http_status": 429,
+          "response_present": false
+        },
+        {
+          "attempt": 11290,
+          "role": "memory_retrieval",
+          "http_status": 429,
+          "response_present": false
+        },
+        {
+          "attempt": 11292,
+          "role": "actor",
+          "http_status": 429,
+          "response_present": false
+        },
+        {
+          "attempt": 11304,
+          "role": "actor",
+          "http_status": 429,
+          "response_present": false
+        },
+        {
+          "attempt": 11324,
+          "role": "actor",
+          "http_status": 429,
+          "response_present": false
+        },
+        {
+          "attempt": 11368,
+          "role": "actor",
+          "http_status": 402,
+          "response_present": false
+        }
+      ],
+      "recovery": "Keep completed provider/task records. Authorize one Actor retry after credential epoch change; preserve prior failed receipts and usage unknowns. Do not repeatedly relaunch identical failed credential."
+    },
+    {
+      "job_id": "humanities-full-r1",
+      "classification": "native_ingestion_committed_before_failed_sdk_guard",
+      "http_failures": {
+        "429": 3
+      },
+      "attempts": [
+        {
+          "attempt": 11297,
+          "role": "memory_ingestion",
+          "http_status": 429,
+          "response_present": false
+        },
+        {
+          "attempt": 11308,
+          "role": "memory_ingestion",
+          "http_status": 429,
+          "response_present": false
+        },
+        {
+          "attempt": 11330,
+          "role": "memory_ingestion",
+          "http_status": 429,
+          "response_present": false
+        }
+      ],
+      "recovery": "Use research/attention_ingestion_plans_20261030.py plan. Delete precisely six counter14 additions; subtract partial credit .5 from five semantic and three anti IDs; reconstruct consumed native snapshot; retain Actor usage/last_used and existing answer/89.7 grade. Resume ingestion only."
+    },
+    {
+      "job_id": "business-native-r1",
+      "classification": "native_ingestion_success_credit_saved_after_failed_extraction",
+      "http_failures": {
+        "429": 1,
+        "402": 6
+      },
+      "attempts": [
+        {
+          "attempt": 11329,
+          "role": "memory_ingestion",
+          "http_status": 429,
+          "response_present": false
+        },
+        {
+          "attempt": 11339,
+          "role": "memory_ingestion",
+          "http_status": 402,
+          "response_present": false
+        },
+        {
+          "attempt": 11353,
+          "role": "memory_retrieval",
+          "http_status": 402,
+          "response_present": false
+        },
+        {
+          "attempt": 11371,
+          "role": "memory_retrieval",
+          "http_status": 402,
+          "response_present": false
+        },
+        {
+          "attempt": 11389,
+          "role": "actor",
+          "http_status": 402,
+          "response_present": false
+        },
+        {
+          "attempt": 11408,
+          "role": "memory_retrieval",
+          "http_status": 402,
+          "response_present": false
+        },
+        {
+          "attempt": 11415,
+          "role": "actor",
+          "http_status": 402,
+          "response_present": false
+        }
+      ],
+      "recovery": "Use exact plan. Subtract success credit1 from strategic_11/strategic_13/operational_16; retain usage. Restore three RAM used_memory_ids from paid BEGIN9722 under receipt, resume ingestion only; answer/93.5 grade unchanged."
+    },
+    {
+      "job_id": "humanities-full-r2",
+      "classification": "generation_no_response_HTTP402",
+      "http_failures": {
+        "402": 4
+      },
+      "attempts": [
+        {
+          "attempt": 11406,
+          "role": "analysis",
+          "http_status": 402,
+          "response_present": false
+        },
+        {
+          "attempt": 11416,
+          "role": "analysis",
+          "http_status": 402,
+          "response_present": false
+        },
+        {
+          "attempt": 11436,
+          "role": "analysis",
+          "http_status": 402,
+          "response_present": false
+        },
+        {
+          "attempt": 11442,
+          "role": "generation",
+          "http_status": 402,
+          "response_present": false
+        }
+      ],
+      "recovery": "Retain successful base works, analysis report and validated candidates. Resume checkpoint to generate only missing candidates using current credential. Failed 402 responses contain no usable candidate and must not count as systems."
+    },
+    {
+      "job_id": "humanities-fixed-r3",
+      "classification": "generation_no_response_HTTP402",
+      "http_failures": {
+        "429": 3,
+        "402": 3
+      },
+      "attempts": [
+        {
+          "attempt": 11287,
+          "role": "analysis",
+          "http_status": 429,
+          "response_present": false
+        },
+        {
+          "attempt": 11294,
+          "role": "analysis",
+          "http_status": 429,
+          "response_present": false
+        },
+        {
+          "attempt": 11318,
+          "role": "analysis",
+          "http_status": 429,
+          "response_present": false
+        },
+        {
+          "attempt": 11374,
+          "role": "analysis",
+          "http_status": 402,
+          "response_present": false
+        },
+        {
+          "attempt": 11388,
+          "role": "analysis",
+          "http_status": 402,
+          "response_present": false
+        },
+        {
+          "attempt": 11392,
+          "role": "generation",
+          "http_status": 402,
+          "response_present": false
+        }
+      ],
+      "recovery": "Retain successful base works, analysis report and validated candidates. Resume checkpoint to generate only missing candidates using current credential. Failed 402 responses contain no usable candidate and must not count as systems."
+    },
+    {
+      "job_id": "social-native-r3",
+      "classification": "generation_no_response_HTTP402",
+      "http_failures": {
+        "402": 7
+      },
+      "attempts": [
+        {
+          "attempt": 11342,
+          "role": "analysis",
+          "http_status": 402,
+          "response_present": false
+        },
+        {
+          "attempt": 11372,
+          "role": "analysis",
+          "http_status": 402,
+          "response_present": false
+        },
+        {
+          "attempt": 11405,
+          "role": "analysis",
+          "http_status": 402,
+          "response_present": false
+        },
+        {
+          "attempt": 11422,
+          "role": "analysis",
+          "http_status": 402,
+          "response_present": false
+        },
+        {
+          "attempt": 11438,
+          "role": "analysis",
+          "http_status": 402,
+          "response_present": false
+        },
+        {
+          "attempt": 11458,
+          "role": "analysis",
+          "http_status": 402,
+          "response_present": false
+        },
+        {
+          "attempt": 11470,
+          "role": "generation",
+          "http_status": 402,
+          "response_present": false
+        }
+      ],
+      "recovery": "Retain successful base works, analysis report and validated candidates. Resume checkpoint to generate only missing candidates using current credential. Failed 402 responses contain no usable candidate and must not count as systems."
+    },
+    {
+      "job_id": "social-fixed-r3",
+      "classification": "generation_no_response_HTTP402",
+      "http_failures": {
+        "402": 5
+      },
+      "attempts": [
+        {
+          "attempt": 11345,
+          "role": "generation",
+          "http_status": 402,
+          "response_present": false
+        },
+        {
+          "attempt": 11404,
+          "role": "analysis",
+          "http_status": 402,
+          "response_present": false
+        },
+        {
+          "attempt": 11417,
+          "role": "analysis",
+          "http_status": 402,
+          "response_present": false
+        },
+        {
+          "attempt": 11435,
+          "role": "analysis",
+          "http_status": 402,
+          "response_present": false
+        },
+        {
+          "attempt": 11453,
+          "role": "generation",
+          "http_status": 402,
+          "response_present": false
+        }
+      ],
+      "recovery": "Retain successful base works, analysis report and validated candidates. Resume checkpoint to generate only missing candidates using current credential. Failed 402 responses contain no usable candidate and must not count as systems."
+    },
+    {
+      "job_id": "business-native-r3",
+      "classification": "judge_recovery_limit_after_no_response_HTTP402",
+      "http_failures": {
+        "402": 1
+      },
+      "attempts": [
+        {
+          "attempt": 11379,
+          "role": "judge",
+          "http_status": 402,
+          "response_present": false
+        }
+      ],
+      "recovery": "Preserve WB0835 answer/native trajectory. Allow one independently audited judge attempt under changed credential epoch; old attempt11379 was HTTP402 response=None and supplies no grade. Keep unknown usage rather than fabricate zero."
+    }
+  ],
+  "bad_program_finding": "No evidence that bad provider code caused these eight latest stoppages. HSSComparisonIncomplete is an aggregate of missing provider task results, not a diagnosis itself.",
+  "ingestion_plan_file": "research/attention-ingestion-plans-20261030.json",
+  "native_mutation_applied_by_audit": false
+}

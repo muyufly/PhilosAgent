@@ -1,6 +1,7 @@
 """Offline native callback tests: no dotenv reads or provider requests."""
 
 from concurrent.futures import ThreadPoolExecutor
+import hashlib
 import json
 import time
 from pathlib import Path
@@ -562,6 +563,209 @@ def test_unknown_usage_cannot_complete_as_zero_cost(harness):
     assert saved["status"] == "integrity_failed"
     assert not saved["api_usage"]["usage_complete"]
     assert saved["answer"]
+
+
+def test_observe_accounting_keeps_unknown_usage_without_relaxing_native_quality(harness, monkeypatch):
+    monkeypatch.delenv("PHILO_HSS_DATA_FIRST", raising=False)
+    monkeypatch.setenv("PHILO_HSS_OBSERVE_ACCOUNTING", "1")
+    h = harness
+    h.state.omit_usage = True
+    run(h)
+    saved = record(h)
+    assert saved["status"] == "completed" and saved["memory_ingestion_complete"]
+    assert saved["api_usage"]["accounting_policy"] == "observe_only"
+    assert not saved["api_usage"]["usage_complete"]
+    assert not saved["api_usage"]["usage_accounted"]
+    assert saved["confirmed_model_tokens"] == 0
+    assert not h.callback.data_first
+
+
+def test_observe_accounting_rejects_unrecovered_actor_error_before_judge_or_ingestion(harness, monkeypatch):
+    monkeypatch.setenv("PHILO_HSS_OBSERVE_ACCOUNTING", "1")
+    h = harness
+    h.state.actor_event_error = True
+    with pytest.raises(RuntimeError, match="audited SDK usage"):
+        run(h)
+    assert not h.ingestions
+    assert [event["role"] for event in h.events] == ["actor"]
+    assert record(h)["status"] == "actor_failed"
+
+
+def test_complete_response_with_missing_usage_is_accounting_error_only():
+    callback = object.__new__(NativeHSSRunner)
+    event = {"task_execution_id": "current", "attempt": 7, "status": "error",
+             "error_type": "MissingOrInvalidUsage", "usage": None,
+             "response_accepted_without_usage": True, "response_has_content": True,
+             "response_finish_reasons": ["stop"]}
+    callback.usage_reader = lambda: [event]
+    usage = callback._usage("current")
+    assert not usage["usage_complete"] and not usage["usage_accounted"]
+    assert usage["failed_request_count"] == 1
+    assert usage["unrecovered_failed_request_count"] == 0
+    event["response_finish_reasons"] = ["length"]
+    assert callback._usage("current")["unrecovered_failed_request_count"] == 1
+
+
+def denied_quota_judge_record(h):
+    h.state.judge_output = "unusable original fixture"
+    with pytest.raises(ValueError):
+        run(h)
+    authorize_recovery(h, known_failed=[11379])
+    saved = record(h)
+    saved.pop("judge_output")
+    saved["judge_recovery_attempts"] = 1
+    saved["api_usage"].update(failed_request_count=1, unrecovered_failed_request_count=1,
+                              unrecovered_failed_attempt_ids=[11379])
+    saved["recovery_authorized"]["next_phase"] = "judge"
+    receipt = h.output.parent / "denied-judge.json"
+    receipt.write_text(json.dumps({"attempt": 11379, "status": "error", "http_status": 402,
+                                   "role": "judge", "response": None,
+                                   "task_execution_id": saved["task_execution_id"]}), encoding="utf8")
+    saved["recovery_authorized"]["additional_judge_recovery_attempt"] = {
+        "prior_counter": 1, "allowed_counter": 2, "denied_attempt_id": 11379,
+        "denied_receipt_path": str(receipt.resolve()),
+        "denied_receipt_sha256": hashlib.sha256(receipt.read_bytes()).hexdigest(),
+        "task_identity": saved["task_identity"], "prior_task_execution_id": saved["task_execution_id"],
+        "saved_answer_sha256": hashlib.sha256(saved["answer"].encode()).hexdigest()}
+    (h.output / "1.json").write_text(json.dumps(saved), encoding="utf8")
+    h.events.clear()
+    return saved, receipt
+
+
+def test_one_extra_judge_after_quota_denial_reuses_answer_and_keeps_old_counter(harness):
+    h = harness
+    original, _ = denied_quota_judge_record(h)
+    h.state.judge_output = grade_output()
+    run(h)
+    saved = record(h)
+    assert saved["status"] == "completed" and saved["judge_recovery_attempts"] == 2
+    assert saved["answer"] == original["answer"] and len(h.agents) == 1
+    assert [event["role"] for event in h.events] == ["judge", "memory_ingestion"]
+    assert saved["api_usage"]["failed_request_count"] == 1
+    assert saved["api_usage"]["unrecovered_failed_request_count"] == 0
+
+
+@pytest.mark.parametrize("damage", ["http429", "response", "hash", "counter", "answer", "json_output"])
+def test_extra_quota_judge_grant_rejects_nonquota_or_reused_authority(harness, damage):
+    h = harness
+    saved, receipt = denied_quota_judge_record(h)
+    if damage in ("http429", "response"):
+        denied = json.loads(receipt.read_text(encoding="utf8"))
+        denied.update({"http_status": 429} if damage == "http429" else {"response": {"choices": []}})
+        receipt.write_text(json.dumps(denied), encoding="utf8")
+        saved["recovery_authorized"]["additional_judge_recovery_attempt"]["denied_receipt_sha256"] = hashlib.sha256(receipt.read_bytes()).hexdigest()
+    elif damage == "hash":
+        saved["recovery_authorized"]["additional_judge_recovery_attempt"]["denied_receipt_sha256"] = "0" * 64
+    elif damage == "counter":
+        saved["judge_recovery_attempts"] = 2
+    elif damage == "answer":
+        saved["answer"] += "changed"
+    else:
+        saved["judge_output"] = "malformed JSON is not a quota denial"
+    (h.output / "1.json").write_text(json.dumps(saved), encoding="utf8")
+    with pytest.raises(HSSResumeRequired, match="judge recovery limit exhausted"):
+        run(h)
+    assert h.events == [] and len(h.agents) == 1
+
+
+def test_complete_unknown_usage_replacement_resolves_prior_truncation_without_erasing_cost_errors():
+    callback = object.__new__(NativeHSSRunner)
+    events = [{"task_execution_id": "current", "role": "actor", "attempt": 6,
+               "status": "error", "error_type": "TruncatedModelResponse", "usage": None,
+               "response_finish_reasons": ["length"]},
+              {"task_execution_id": "current", "role": "actor", "attempt": 7,
+               "status": "error", "error_type": "MissingOrInvalidUsage", "usage": None,
+               "response_accepted_without_usage": True, "response_has_content": True,
+               "response_finish_reasons": ["stop"], "recovered_attempts": [6]}]
+    callback.usage_reader = lambda: events
+    usage = callback._usage("current")
+    assert usage["failed_request_count"] == 2 and usage["unknown_usage_attempts"] == 2
+    assert not usage["usage_complete"] and not usage["usage_accounted"]
+    assert usage["unrecovered_failed_request_count"] == 0
+    assert not callback._actor_truncated("current")
+
+
+def restored_ingestion_record(h):
+    """Model helper's exact post-rollback receipt, with one unknown failed call."""
+    h.state.ingest_success = False
+    with pytest.raises(RuntimeError, match="ingestion returned false"):
+        run(h)
+    authorize_recovery(h, known_failed=[9079])
+    saved = record(h)
+    saved.update(status="graded", memory_ingestion_started=False, memory_ingestion_complete=False)
+    saved["api_usage"].update(usage_complete=False, usage_accounted=False,
+                             unknown_usage_attempts=1, failed_request_count=1,
+                             unrecovered_failed_request_count=1, unrecovered_failed_attempt_ids=[9079])
+    saved["recovery_authorized"].update(revision="repair-r13", next_phase="ingestion")
+    storage = h.output.parent / "restored-credit.json"
+    storage.write_text('{"credit":0}', encoding="utf-8")
+    sha = lambda value: hashlib.sha256(value).hexdigest()
+    evidence = {"status": "storage_restored_for_ingestion_retry", "revision": "repair-r13",
+                "task_identity": saved["task_identity"], "prior_task_execution_id": saved["task_execution_id"],
+                "provider": saved["provider"], "failed_attempt_ids": [9079], "next_phase": "ingestion",
+                "method": "rollback_unique_credit_tail_then_restart_ingestion",
+                "source_record_before_sha256": "a" * 64,
+                "storage_files_after": {str(storage.resolve()): sha(storage.read_bytes())},
+                "saved_answer_sha256": sha(saved["answer"].encode("utf-8")),
+                "saved_grade_sha256": sha(json.dumps(saved["grade"], ensure_ascii=False, sort_keys=True,
+                                                      separators=(",", ":")).encode("utf-8"))}
+    receipt = h.output.parent / "rollback-receipt.json"
+    receipt.write_text(json.dumps(evidence), encoding="utf-8")
+    saved["native_ingestion_recovery"] = {**evidence, "receipt_path": str(receipt.resolve()),
+                                          "receipt_sha256": sha(receipt.read_bytes())}
+    (h.output / "1.json").write_text(json.dumps(saved), encoding="utf-8")
+    h.state.ingest_success = True
+    return saved, storage
+
+
+def test_verified_storage_rollback_retries_only_ingestion_and_links_unknown_failure_after_success(harness, monkeypatch):
+    monkeypatch.setenv("PHILO_HSS_OBSERVE_ACCOUNTING", "1")
+    h = harness
+    original, _ = restored_ingestion_record(h)
+    h.events.clear()
+    run(h)
+    saved = record(h)
+    assert saved["status"] == "completed" and saved["memory_ingestion_complete"]
+    assert len(h.agents) == 1 and len(h.ingestions) == 2
+    assert [event["role"] for event in h.events] == ["memory_ingestion"]
+    assert saved["answer"] == original["answer"] and saved["grade"] == original["grade"]
+    assert saved["api_usage"]["unknown_usage_attempts"] == 1
+    assert saved["api_usage"]["failed_request_count"] == 1
+    assert saved["api_usage"]["unrecovered_failed_request_count"] == 0
+    assert not saved["api_usage"]["usage_complete"]
+    assert [(x["phase"], x["recovered_attempts"]) for x in saved["phase_recovery_receipts"]] == [("ingestion", [9079])]
+
+
+@pytest.mark.parametrize("damage", ["storage", "receipt_hash", "failed_ids"])
+def test_ingestion_retry_rejects_missing_or_changed_rollback_proof(harness, monkeypatch, damage):
+    monkeypatch.setenv("PHILO_HSS_OBSERVE_ACCOUNTING", "1")
+    h = harness
+    saved, storage = restored_ingestion_record(h)
+    if damage == "storage":
+        storage.write_text('{"credit":99}', encoding="utf-8")
+    elif damage == "receipt_hash":
+        saved["native_ingestion_recovery"]["receipt_sha256"] = "0" * 64
+    else:
+        saved["recovery_authorized"]["known_failed_attempts"] = [9080]
+    (h.output / "1.json").write_text(json.dumps(saved), encoding="utf-8")
+    h.events.clear()
+    with pytest.raises(HSSResumeRequired):
+        run(h)
+    assert not h.events and len(h.ingestions) == 1
+
+
+def test_failed_ingestion_retry_never_links_old_failure_at_judge_phase(harness, monkeypatch):
+    monkeypatch.setenv("PHILO_HSS_OBSERVE_ACCOUNTING", "1")
+    h = harness
+    restored_ingestion_record(h)
+    h.state.ingest_success = False
+    h.events.clear()
+    with pytest.raises(RuntimeError, match="ingestion returned false"):
+        run(h)
+    saved = record(h)
+    assert saved["api_usage"]["unrecovered_failed_attempt_ids"] == [9079]
+    assert not saved.get("phase_recovery_receipts")
+    assert not saved["memory_ingestion_complete"]
 
 
 def test_candidate_calls_are_scoped_independently_under_parallel_execution(harness):

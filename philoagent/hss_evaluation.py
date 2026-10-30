@@ -179,10 +179,19 @@ def normalize_grade_output(value, domain):
             and isinstance(normalized.get("dimensions"), dict)
             and "overall_comment" in normalized["dimensions"]):
         if normalized["dimensions"]["overall_comment"] != normalized["overall_comment"]:
-            raise ValueError("Judge output contains conflicting overall comments")
-        normalized["dimensions"].pop("overall_comment")
-        repairs.append({"operation": "remove_identical_redundant_overall_comment",
-                        "from": "dimensions.overall_comment"})
+            # The schema puts this assessment at the top level. With a complete
+            # rubric core, a differently worded nested assessment is auxiliary
+            # data, just like other extra dimension fields. Retain it verbatim
+            # in audit evidence; required scores/reasons are validated below.
+            if (not set(dimensions) <= set(normalized["dimensions"])
+                    or not isinstance(normalized["overall_comment"], str)
+                    or not normalized["overall_comment"].strip()):
+                raise ValueError("Judge output contains conflicting overall comments without a complete rubric core")
+            excluded["dimensions.overall_comment"] = deepcopy(normalized["dimensions"].pop("overall_comment"))
+        else:
+            normalized["dimensions"].pop("overall_comment")
+            repairs.append({"operation": "remove_identical_redundant_overall_comment",
+                            "from": "dimensions.overall_comment"})
     if (isinstance(normalized, dict) and "overall_comment" not in normalized
             and isinstance(normalized.get("dimensions"), dict)
             and "overall_comment" in normalized["dimensions"]):

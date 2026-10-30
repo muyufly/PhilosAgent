@@ -1,0 +1,152 @@
+{
+  "audited_utc": "2026-10-29T18:29:23.853077+00:00",
+  "diagnosis": "Windows Modern Standby after lid close interrupted otherwise active parallel model traffic. DNS, SSL and remote-protocol errors coincide with sleep/network transitions; service overload or a single reused client is not established.",
+  "connection_errors": 79,
+  "affected_jobs": {
+    "business-native-r2": 3,
+    "business-fixed-r2": 5,
+    "business-fixed-r3": 2,
+    "humanities-native-r2": 4,
+    "humanities-fixed-r3": 5,
+    "humanities-full-r3": 4,
+    "social-fixed-r2": 4,
+    "social-full-r3": 4,
+    "business-full-r1": 3,
+    "social-native-r1": 4,
+    "social-full-r1": 5,
+    "social-fixed-r3": 1,
+    "business-native-r3": 1,
+    "humanities-fixed-r1": 5,
+    "business-fixed-r1": 4,
+    "social-fixed-r1": 3,
+    "business-full-r3": 4,
+    "humanities-native-r3": 3,
+    "business-native-r1": 1,
+    "humanities-native-r1": 3,
+    "social-native-r2": 1,
+    "social-native-r3": 3,
+    "humanities-fixed-r2": 2,
+    "social-full-r2": 3,
+    "humanities-full-r2": 2
+  },
+  "affected_pids": 25,
+  "exception_chains": [
+    {
+      "exception_chain": [
+        "APIConnectionError",
+        "ConnectError",
+        "ConnectError",
+        "SSLEOFError"
+      ],
+      "count": 5,
+      "started_hkt": [
+        "2026-10-30T02:08:00+08:00",
+        "2026-10-30T02:08:01+08:00"
+      ],
+      "reported_duration_seconds": {
+        "min": 5.015,
+        "median": 5.016,
+        "max": 5.032
+      },
+      "receipt_wall_seconds": {
+        "min": 5.035749673843384,
+        "max": 5.301032304763794
+      }
+    },
+    {
+      "exception_chain": [
+        "APIConnectionError",
+        "ConnectError",
+        "ConnectError",
+        "gaierror"
+      ],
+      "count": 64,
+      "started_hkt": [
+        "2026-10-30T02:08:00+08:00",
+        "2026-10-30T02:08:06+08:00"
+      ],
+      "reported_duration_seconds": {
+        "min": 0.0,
+        "median": 0.0,
+        "max": 0.125
+      },
+      "receipt_wall_seconds": {
+        "min": 0.017210721969604492,
+        "max": 1026.8674426078796
+      }
+    },
+    {
+      "exception_chain": [
+        "APIConnectionError",
+        "RemoteProtocolError",
+        "RemoteProtocolError",
+        "RemoteProtocolError"
+      ],
+      "count": 10,
+      "started_hkt": [
+        "2026-10-30T01:53:41+08:00",
+        "2026-10-30T01:55:22+08:00"
+      ],
+      "reported_duration_seconds": {
+        "min": 757.047,
+        "median": 759.023,
+        "max": 857.765
+      },
+      "receipt_wall_seconds": {
+        "min": 758.6439347267151,
+        "max": 859.1695804595947
+      }
+    }
+  ],
+  "sdk_max_retries": {
+    "0": 79
+  },
+  "recovery_indices": {
+    "0": 36,
+    "1": 25,
+    "2": 18
+  },
+  "errors_linked_to_successful_transport_recovery": 25,
+  "post_wake_success_count": 325,
+  "post_wake_success_jobs": 26,
+  "post_wake_first_success_attempt": 14756,
+  "post_wake_last_started_hkt": "2026-10-30T02:29:18+08:00",
+  "windows_power_events": [
+    {
+      "time_utc": "2026-10-29T18:25:08.4156918Z",
+      "Id": 507,
+      "Message": "系统正在退出新型待机状态 \r\n\r\n原因: Lid。"
+    },
+    {
+      "time_utc": "2026-10-29T18:07:59.7754153Z",
+      "Id": 506,
+      "Message": "系统正在进入新型待机状态 \r\n\r\n原因: Austerity Battery Drain Budget Exceeded。"
+    },
+    {
+      "time_utc": "2026-10-29T18:07:59.7735146Z",
+      "Id": 507,
+      "Message": "系统正在退出新型待机状态 \r\n\r\n原因: Austerity Battery Drain Budget Exceeded。"
+    },
+    {
+      "time_utc": "2026-10-29T17:55:18.4604754Z",
+      "Id": 506,
+      "Message": "系统正在进入新型待机状态 \r\n\r\n原因: AC/DC Display Burst Suppressed。"
+    },
+    {
+      "time_utc": "2026-10-29T17:55:18.4545262Z",
+      "Id": 507,
+      "Message": "系统正在退出新型待机状态 \r\n\r\n原因: AC/DC Display Burst Suppressed。"
+    },
+    {
+      "time_utc": "2026-10-29T17:55:08.7060514Z",
+      "Id": 506,
+      "Message": "系统正在进入新型待机状态 \r\n\r\n原因: Lid。"
+    }
+  ],
+  "recommendations": [
+    "Keep machine awake and powered during experiments. Local 30 minute automation cannot execute while the machine is asleep.",
+    "Existing current-key retries and checkpoint resume have restored successful requests; no key switch or concurrency reduction is justified by this incident.",
+    "If adding awake handling, prefer an experiment-scoped reversible OS power request and disclose its limits for explicit lid closure; do not silently alter global lid or battery settings."
+  ],
+  "changes_applied": false
+}

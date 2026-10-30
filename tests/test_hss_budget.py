@@ -766,6 +766,32 @@ class HSSBudgetTests(unittest.TestCase):
             self.assertEqual(sink.events[-1]["recovered_attempts"], [1, 2])
             self.assertEqual(sink.budget.summary()["actual_tokens"], 45)
 
+    def test_truncated_output_is_rejected_without_an_expansion_policy(self):
+        with TemporaryDirectory() as temporary:
+            client, raw, sink = _client(temporary, lambda **kw: response(content="partial", finish_reason="length"))
+            with self.assertRaisesRegex(BudgetCallError, "TruncatedModelResponse"):
+                _call(client, max_tokens=32768)
+            self.assertEqual(len(raw.calls), 1)
+            self.assertEqual(sink.events[0]["status"], "error")
+
+    def test_observe_accounting_expands_unknown_usage_truncation_without_accepting_it(self):
+        with TemporaryDirectory() as temporary:
+            replies = iter([response(content="partial", usage=False, finish_reason="length"),
+                            response(content="complete")])
+            client, raw, sink = _client(temporary, lambda **kw: next(replies),
+                                       protocol={"transport_recovery": {"max_output_tokens": 60000}})
+            state = json.loads(sink.budget.path.read_text(encoding="utf-8"))
+            state["enforcement_policy"] = {"mode": "observe_only"}
+            sink.budget.path.write_text(json.dumps(state), encoding="utf-8")
+            result = _call(client, max_tokens=32768)
+            self.assertEqual(result.choices[0].message.content, "complete")
+            self.assertEqual([call["max_tokens"] for call in raw.calls], [32768, 60000])
+            self.assertEqual(sink.events[0]["error_type"], "TruncatedModelResponse")
+            self.assertFalse(sink.events[0].get("response_accepted_without_usage", False))
+            self.assertEqual(sink.events[-1]["recovered_attempts"], [1])
+            self.assertEqual(sink.budget.summary()["unknown_usage_attempts"], 1)
+            self.assertIsNone(sink.budget.summary()["blocked_reason"])
+
     def test_recovery_exhaustion_retains_every_known_usage_failure(self):
         with TemporaryDirectory() as temporary:
             client, raw, sink = _client(temporary, lambda **kw: response(content=None),
