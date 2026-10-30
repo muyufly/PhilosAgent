@@ -1,5 +1,7 @@
 # PhiloAgent
 
+本项目原创代码采用 [MIT 开源协议](LICENSE)。`vendor/` 中的第三方代码遵循各自附带的许可证，其中 MemEvolve 采用 [Apache License 2.0](vendor/MemEvolve/LICENSE)。
+
 PhiloAgent 现在提供可直接使用的文社商研究与写作智能体：导入初始哲学系统，提交任务，自主调用搜索、网页与记忆工具，保存作品、独立评分并积累经验。支持简单本机网页、命令行和 Python `Agent` 类；手动演化与隔离配对评测也有独立入口。
 
 ```powershell

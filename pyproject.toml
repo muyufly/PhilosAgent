@@ -6,6 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "philoagent"
 version = "0.1.0"
 description = "Philosophical initial state for MemEvolve memory evolution"
+license = {file = "LICENSE"}
 requires-python = ">=3.10"
 dependencies = ["python-dotenv==1.0.1"]
 
